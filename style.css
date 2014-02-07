@@ -46,7 +46,10 @@ a:hover { border-color: hsl(45,98%,77%); }
 
 h1, h2, h3 { line-height: 1em; }
 h1 { font-size: 20px; font-weight: 200; }
-h2 { font-size: 14px; font-weight: 400; }
+/* h2 { font-size: 14px; font-weight: 400; } */
+
+table, tr, td { border-collapse:collapse; border-spacing:0; padding: 0; vertical-align: top; }
+
 
 .q { margin-left: -0.5em; }
 .at { color: hsl(215, 50%, 70%); }
@@ -55,7 +58,7 @@ h2 { font-size: 14px; font-weight: 400; }
 .buttons a { color: hsl(215, 50%, 70%); border-bottom-style: dotted; }
 .buttons a:hover { color: white; }
 
-.card { width: 470px; height: 195px; border: 1px solid white; margin: 0 auto; padding: 30px 20px 30px 30px; position: relative; }
+.card { width: 470px; height: 195px; border: 1px solid white; margin: 0 auto; padding: 30px 10px 30px 30px; position: relative; }
 .card > .text { margin: -10px 0 0 100px; }
 .card h1 { font-size: 26px; margin: 10px 0; }
 .card p { margin: 0.5em 0; }
@@ -69,16 +72,18 @@ h2 { font-size: 14px; font-weight: 400; }
 
 .birth { clear: both; border: 1px solid white; width: 50px; height: 30px; margin: 0 auto; text-align: center; padding: 4px 0 0 0; }
 
-.lc, .rc { width: 370px; float: left; }
-.mc { width: 2px; height: 2160px; margin: 0 33px; float: left; border: 1px solid white; }
+.lc, .rc { width: 403px; }
+.lc { padding-right: 33px; }
+.rc { padding-left: 33px; }
+.mc { width: 0px; border: 1px solid white; background: white }
 
 .c_title { text-align: center; font-size: 10px; margin: 60px 0 40px 0;  }
 
 .event { margin: 0 0 50px 0; }
 .keywords { font-style: italic; }
 
-.lc h2 { text-align: right; margin-right: -33px; }
-.rc h2 { margin-left: -33px; }
+.lc .ts { text-align: right; margin-right: -33px; }
+.rc .ts { margin-left: -33px; }
 .line { width: 28px; height: 1px; border-top: 1px solid white; display: inline-block; position: relative; bottom: 4px; }
 .lc .line { margin: 0 0 0 5px; }
 .rc .line { margin: 0 5px 0 0; }
@@ -89,6 +94,7 @@ h2 { font-size: 14px; font-weight: 400; }
   html { background: white; color: black; }
   body { margin-bottom: 0; }
   .mc, .line, .card, .birth { border-color: #BBB; }
+  .space { display: none; }
   a { border-bottom: 1px solid #CCC; }
   a:hover { border-color: #000; }
   .links { display: none; }
