@@ -104,7 +104,7 @@ table, tr, td { border-collapse:collapse; border-spacing:0; padding: 0; vertical
   .buttons { display: none; }
   .at { color: #bbb; }
   .permalink, .version { color: #aaa; }
-  .card { height: 230px; }
+  .card { height: 240px; }
   .photo { background: transparent; }
   .photo img { display: block; }
   .card .links { margin-top: 1.3em; font-size: 12px; }
