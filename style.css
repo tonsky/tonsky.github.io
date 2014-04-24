@@ -8,7 +8,7 @@
   font-family:"firasans";
   src: url('f/FiraSans-Regular.eot');
   src: url('f/FiraSans-Regular.woff') format('woff'),
-       url('f/FiraSans/FiraSans-Regular.ttf') format('truetype');
+       url('f/FiraSans-Regular.ttf') format('truetype');
   font-style:normal;
   font-weight:400;
 }
@@ -31,82 +31,91 @@
   font-weight:200;
 }
 
+@font-face {
+  font-family:"firamono";
+  src: url('f/FiraMono-Regular.eot');
+  src: url('f/FiraMono-Regular.woff') format('woff'),
+       url('f/FiraMono-Regular.ttf') format('truetype');
+  font-style:normal;
+  font-weight:400;
+}
 
 html {
   background: hsl(215, 50%, 55%);
   color: white;
-  font: 14px/20px 'firasans', sans-serif;
+  font: 17px/30px 'firasans', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 body { width: 900px; margin: 50px auto; }
 .page { width: 810px; margin: 0 auto; padding: 0 0 0 2px; }
-a { color: inherit; text-decoration: none; border-bottom: 1px solid hsl(215, 50%, 70%); }
+
+.menu { width: 32em; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
+.menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
+.menu__item, a.menu__item { color: hsl(215, 50%, 77%); border-color: transparent; display: inline-block; }
+a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width: 2px; }
+.menu__item_selected, a.menu__item_selected { color: white; border-bottom: 2px solid hsl(45,98%,77%); }
+.menu__item_inside, a.menu__item_inside { border-bottom: 2px solid hsl(215,50%,70%); }
+
+h1, h2 { font: 200 1em 'firasans'; margin: 2.5em 0 0.5em; }
+pre, code { font: 16px/1.5em 'firamono', monospace; }
+
+.post {
+  width: 32em; margin: 4em auto;
+  position: relative;
+}
+
+::selection, ::-moz-selection { background-color: hsl(225, 10%, 85%); }
+a { color: inherit; text-decoration: none; border-bottom: 2px solid hsl(215, 50%, 70%); }
 a:hover { border-color: hsl(45,98%,77%); }
+p, blockquote { margin: 15px 0; }
+blockquote { margin-left: 2em; font-style: italic;  }
+blockquote em, blockquote i { font-style: normal; }
+strong { font-weight: 500; }
+/* a[href] { color: inherit; text-decoration: none; border-bottom: 2px solid #ccc }
+a[href]:hover { border-color: hsl(45,98%,57%); }
+ */
+h1 { font-size: 1.7em; margin-bottom: 1.2em; }
+h2 { font-size: 1.3em; }
+h1, h2 { color: hsl(215, 40%, 95%); }
 
-h1, h2, h3 { line-height: 1em; }
-h1 { font-size: 20px; font-weight: 200; }
-/* h2 { font-size: 14px; font-weight: 400; } */
+.sq0 { margin-left: 0.3em; }
+.sq1 { margin-left: -0.3em; }
 
-table, tr, td { border-collapse:collapse; border-spacing:0; padding: 0; vertical-align: top; }
+img { max-width: 100%; }
 
+pre { font-size: 14px;
+      line-height: 24px;
+      border: 1px solid #CCC;
+      padding: 16px 40px 14px 40px;
+      margin: 1em -15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-wrap: break-word; }
+pre, code { border: none; }
 
-.q { margin-left: -0.5em; }
-.at { color: hsl(215, 50%, 70%); }
+sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
+sup, .note-ref, .note-number  { bottom: 1.4ex; }
+sub { top: .5ex; }
 
-.buttons { float: right; font-size: 12px; margin-top: 38px; }
-.buttons a { color: hsl(215, 50%, 70%); border-bottom-style: dotted; }
-.buttons a:hover { color: white; }
+.date { font-size: 13px; color: hsl(215, 50%, 75%); }
 
-.card { width: 470px; height: 195px; border: 1px solid white; margin: 0 auto; padding: 30px 10px 30px 30px; position: relative; }
-.card > .text { margin: -10px 0 0 100px; }
-.card h1 { font-size: 26px; margin: 10px 0; }
-.card p { margin: 0.5em 0; }
-.card .links { margin-top: 2.5em; }
-.card .links > a { margin: 0 0.3em 0 0; }
-.photo { width: 75px; height: 75px; float: left; border: 1px solid white; background: url('i/photo@2x.jpg'); background-size: 73px; }
-.photo img { width: 73px; height: 73px; display: none; }
-.permalink, .version { position: absolute; bottom: -22px; font-size: 10px; color: hsl(215, 50%, 75%); }
-.version { right: 0; }
-.permalink { left: 0; display: none; }
+.notes { font-size: 0.8em; }
+.note-number { margin-left: -1em; }
 
-.birth { clear: both; border: 1px solid white; width: 50px; height: 30px; margin: 0 auto; text-align: center; padding: 4px 0 0 0; }
+/* Smartphones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
+  html { font-size: 36px; line-height: 56px; background-color: hsl(235, 35%, 50%); }
+  .post { width: 94%; }
+}
+/* iPads */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  html { background-color: hsl(235, 35%, 50%); }
+  html { font-size: 24px; line-height: 36px; }
+  .post { width: 82%; }
+}
 
-.lc, .rc { width: 403px; }
-.lc { padding-right: 33px; }
-.rc { padding-left: 33px; }
-.mc { width: 0px; border: 1px solid white; background: white }
-
-.c_title { text-align: center; font-size: 10px; margin: 60px 0 40px 0;  }
-
-.event { margin: 0 0 50px 0; }
-.keywords { font-style: italic; }
-
-.lc .ts { text-align: right; margin-right: -33px; }
-.rc .ts { margin-left: -33px; }
-.line { width: 28px; height: 1px; border-top: 1px solid white; display: inline-block; position: relative; bottom: 4px; }
-.lc .line { margin: 0 0 0 5px; }
-.rc .line { margin: 0 5px 0 0; }
-
-.links.print { display: none; }
-
-@media print {
-  html { background: white; color: black; }
-  body { margin-bottom: 0; }
-  .mc, .line, .card, .birth { border-color: #BBB; }
-  .space { display: none; }
-  a { border-bottom: 1px solid #CCC; }
-  a:hover { border-color: #000; }
-  .links { display: none; }
-  .links.print { display: block; }
-  ul.links { list-style: none; padding: 0; }
-  ul.links > li { display: block; }
-  .buttons { display: none; }
-  .at { color: #bbb; }
-  .permalink, .version { color: #aaa; }
-  .card { height: 240px; }
-  .photo { background: transparent; }
-  .photo img { display: block; }
-  .card .links { margin-top: 1.3em; font-size: 12px; }
-  .permalink { display: block; }
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
 }
