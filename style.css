@@ -104,6 +104,9 @@ sub { top: .5ex; }
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
 
+.comments {  margin: 90px 0 0 0; }
+.comments > a { position: relative; top: -5px; margin: 0 15px 0 0; }
+
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
   html { font-size: 36px; line-height: 56px; background-color: hsl(235, 35%, 50%); }
