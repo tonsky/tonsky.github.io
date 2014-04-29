@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <link href='/style.css' rel='stylesheet' type='text/css' />
+
+  <link href="/blog/atom.xml" rel="alternate" title="Nikita Prokopov’s blog" type="application/atom+xml" />
+
+  <meta name="author" content="Nikita Prokopov" />
+  <meta property="og:title" content="Datomic as protocol" />
+  <meta property="og:url" content="http://tonsky.me/blog/datomic-as-protocol/" />
+  <meta property="og:description" content="Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance." />
+  <meta property="og:type" content="article" />
+
+  <meta property="og:site_name" content="tonsky.me" />
+  <meta property="article:author" content="https://www.facebook.com/nikitonsky" />
+  <meta property="article:published_time" content="2014-04-29" />
+  <meta property="profile:first_name" content="Nikita" />
+  <meta property="profile:last_name" content="Prokopov" />
+  <meta property="profile:username" content="tonsky" />
+  <meta property="profile:gender" content="male" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@nikitonsky" />
+  <meta name="twitter:title" content="Datomic as protocol" />
+  <meta name="twitter:description" content="Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance." />
+
+  <title>Datomic as protocol @ tonsky.me</title>
+</head>
+<body>
+<div class=page>
+
+<ul class=menu>
+  <li><a class="menu__item menu__item_inside" href="/">Blog</a>
+  <li><a class="menu__item" href="/about/">About</a>
+</ul>
+
+
+<div class="post">
+  
+<h1>Datomic as protocol</h1><p>Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.</p>
+<p>Data format is agile and multi-purpose. It works perfectly well with non-regular data, wide columns, a lot of rows, sparse data, graph data. It all can be efficiently stored and accessed.</p>
+<p>Since it’s a commercial database, it covers all sorts of use-cases real people face in real world while working with data. You can actually see how the Datomic team started small and added features to the data model as they felt need for them. In other words, the Datomic model is feature-full.</p>
+<p>Transactions are just data. In Clojure we’re <a href="http://www.infoq.com/presentations/Thinking-in-Data">used to data-oriented approach</a> and are well aware of its benefits. But there we have data representation not only for database itself, but also for transitions. Simple data structures work well at small scales and within the bounds of a single machine. If you have an atom, it’s easy to store and transfer its value. But when you do <code>(swap! atom inc)</code>, you cannot transfer that anywhere. You can transfer new value (and it’s totally ok while you can keep it small), but not the change. For dataset sizes up from few hundred kilobytes you start to feel need to transfer deltas instead of entire value. Datomic’s transaction report is a format that allows you to express that delta as a data structure. Benefits follow.</p>
+<p>Transaction format happens to match database format. Same exact queries can be run on both. Given a stream of all transactions going through your system, you can easily know when data you’re interested in changes. For example, you have a query that returns a list of items. To monitor for query result updates, you run same query over transaction’s data instead of entire DB and, when you get non-empty results, then some item has been changed, or new item has been added, or some item has been deleted. Note that we monitor not only for changes <em>inside</em> returned items, but for any changes <em>in a collection</em> of items that match or will match, once added, our query. And query doesn’t have to be simple <code>select * from table</code> query. It can include joins or filtering, and this property will still hold true. The ability to monitor query results’ relevance without querying entire database at each change is indispensable for reactive applications.</p>
+<p>Transaction format is reversible. You can easily build a transaction that reverts another transaction. It sure is a nice property to have. I was completely unaware of that before seeing <a href="https://gist.github.com/allgress/11348685">Dave Dixon’s gist</a>.</p>
+<p>Datomic model is compact and can be recreated from scratch. It opens the possibility for other languages to utilize same conventions and roll out alternate implementations. I love Rich’s work because he always spends extra time thinking how to reduce required development effort. If he happened, for example, to choose SQL for Datomic, we wouldn’t have any DataScript neither now nor in any foreseeable future. (and probably no Datomic either)</p>
+<p>I can easily imagine a distributed system where parts talk to each other via tx-reports and peers run Datalog queries over data and subscribe to database changes. The only big obstacle on our way there is, of course, lack of open-source implementation of Datomic’s basic parts like in-memory index and Datalog query engine. While Cognitect still hasn’t open-sourced these, I started <a href="https://github.com/tonsky/datascript">DataScript</a> to cover that breach for some time. I also see how open-source, lightweight library like DataScript may add value at server-side too, so there’s probably a Clojure version coming.</p>
+<p>Given all that, I believe that Datomic was more important as a format, protocol, standard, than as a particular implementation. It sure has a lot of potential, and, what’s more intriguing, not all of its potential is completely understood today. Maybe it’ll change Clojure development landscape to the better — once again.</p>
+
+<p class=date>April 29, 2014</p>
+
+<p class=comments>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tonsky.me/blog/datomic-as-protocol/" data-text="Datomic as Protocol" data-via="nikitonsky">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5928238-7', 'tonsky.me');
+  ga('send', 'pageview');
+
+</script>

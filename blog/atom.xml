@@ -6,8 +6,37 @@
   <link type="application/atom+xml" href="http://tonsky.me/blog/atom.xml" rel="self" />
   <link rel="alternate" type="text/html" href="http://tonsky.me/" />
   <id>http://tonsky.me/</id>
-  <updated>2014-04-24T18:35:00Z</updated>
+  <updated>2014-04-29T07:48:00Z</updated>
  
+
+
+  <entry>
+    <title>Datomic as protocol</title>
+    <link rel="alternate" type="text/html" href="http://tonsky.me/blog/datomic-as-protocol/" />
+    <id>http://tonsky.me/blog/datomic-as-protocol/</id>
+    <published>2014-04-29T07:48:00Z</published>
+    <updated>2014-04-29T07:48:00Z</updated>
+    <summary type="html"><![CDATA[
+      Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.
+    ]]></summary>
+    <content type="html"><![CDATA[
+<p>Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.</p>
+<p>Data format is agile and multi-purpose. It works perfectly well with non-regular data, wide columns, a lot of rows, sparse data, graph data. It all can be efficiently stored and accessed.</p>
+<p>Since it’s a commercial database, it covers all sorts of use-cases real people face in real world while working with data. You can actually see how the Datomic team started small and added features to the data model as they felt need for them. In other words, the Datomic model is feature-full.</p>
+<p>Transactions are just data. In Clojure we’re <a href="http://www.infoq.com/presentations/Thinking-in-Data">used to data-oriented approach</a> and are well aware of its benefits. But there we have data representation not only for database itself, but also for transitions. Simple data structures work well at small scales and within the bounds of a single machine. If you have an atom, it’s easy to store and transfer its value. But when you do <code>(swap! atom inc)</code>, you cannot transfer that anywhere. You can transfer new value (and it’s totally ok while you can keep it small), but not the change. For dataset sizes up from few hundred kilobytes you start to feel need to transfer deltas instead of entire value. Datomic’s transaction report is a format that allows you to express that delta as a data structure. Benefits follow.</p>
+<p>Transaction format happens to match database format. Same exact queries can be run on both. Given a stream of all transactions going through your system, you can easily know when data you’re interested in changes. For example, you have a query that returns a list of items. To monitor for query result updates, you run same query over transaction’s data instead of entire DB and, when you get non-empty results, then some item has been changed, or new item has been added, or some item has been deleted. Note that we monitor not only for changes <em>inside</em> returned items, but for any changes <em>in a collection</em> of items that match or will match, once added, our query. And query doesn’t have to be simple <code>select * from table</code> query. It can include joins or filtering, and this property will still hold true. The ability to monitor query results’ relevance without querying entire database at each change is indispensable for reactive applications.</p>
+<p>Transaction format is reversible. You can easily build a transaction that reverts another transaction. It sure is a nice property to have. I was completely unaware of that before seeing <a href="https://gist.github.com/allgress/11348685">Dave Dixon’s gist</a>.</p>
+<p>Datomic model is compact and can be recreated from scratch. It opens the possibility for other languages to utilize same conventions and roll out alternate implementations. I love Rich’s work because he always spends extra time thinking how to reduce required development effort. If he happened, for example, to choose SQL for Datomic, we wouldn’t have any DataScript neither now nor in any foreseeable future. (and probably no Datomic either)</p>
+<p>I can easily imagine a distributed system where parts talk to each other via tx-reports and peers run Datalog queries over data and subscribe to database changes. The only big obstacle on our way there is, of course, lack of open-source implementation of Datomic’s basic parts like in-memory index and Datalog query engine. While Cognitect still hasn’t open-sourced these, I started <a href="https://github.com/tonsky/datascript">DataScript</a> to cover that breach for some time. I also see how open-source, lightweight library like DataScript may add value at server-side too, so there’s probably a Clojure version coming.</p>
+<p>Given all that, I believe that Datomic was more important as a format, protocol, standard, than as a particular implementation. It sure has a lot of potential, and, what’s more intriguing, not all of its potential is completely understood today. Maybe it’ll change Clojure development landscape to the better — once again.</p>
+    ]]></content>
+    <author>
+      <name>Nikita Prokopov</name>
+      <email>prokopov@gmail.com</email>
+    </author>
+  </entry>
+
+
  
   <entry>
     <title>Decomposing web app development</title>
@@ -16,7 +45,7 @@
     <published>2014-04-24T12:13:00Z</published>
     <updated>2014-04-24T18:35:00Z</updated>
     <summary type="html"><![CDATA[
-      <p>DataScript is exactly that: it’s immutable uniform state management solution. You can think of it as a DB (and that’s totally correct because it imitates a server-side DB, <a href="http://www.datomic.com/">Datomic</a>), but very lightweight and pure in-memory. Or, to put it better, it’s an immutable data structure, like a Hashmap, with ability to run non-trivial queries over it. The whole database is an immutable value, and at any point you can take its value, run query over it (no matter if it’s current actual database or a snapshot from 2 weeks ago), pass it to render, put it into array, store it, send over the wire and so on. It then adds a thin layer on top of that which provides atomic mutations and ability to subscribe for data coming in and out of the database.</p>
+      DataScript is exactly that: it’s immutable uniform state management solution. You can think of it as a DB (and that’s totally correct because it imitates a server-side DB, <a href="http://www.datomic.com/">Datomic</a>), but very lightweight and pure in-memory. Or, to put it better, it’s an immutable data structure, like a Hashmap, with ability to run non-trivial queries over it. The whole database is an immutable value, and at any point you can take its value, run query over it (no matter if it’s current actual database or a snapshot from 2 weeks ago), pass it to render, put it into array, store it, send over the wire and so on. It then adds a thin layer on top of that which provides atomic mutations and ability to subscribe for data coming in and out of the database.
     ]]></summary>
     <content type="html"><![CDATA[
 <p>Web applications’ story has been incomplete for a long time. There’s a lot of people working in web development, a lot of effort put into it, a lot of thought (I hope), and still we’re far, far away from complex, evolving, reactive web apps. It’s still the Dark Ages.</p>
