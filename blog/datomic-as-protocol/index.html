@@ -7,7 +7,7 @@
   <link href="/blog/atom.xml" rel="alternate" title="Nikita Prokopov’s blog" type="application/atom+xml" />
 
   <meta name="author" content="Nikita Prokopov" />
-  <meta property="og:title" content="Datomic as protocol" />
+  <meta property="og:title" content="Datomic as a Protocol" />
   <meta property="og:url" content="http://tonsky.me/blog/datomic-as-protocol/" />
   <meta property="og:description" content="Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance." />
   <meta property="og:type" content="article" />
@@ -22,10 +22,10 @@
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:creator" content="@nikitonsky" />
-  <meta name="twitter:title" content="Datomic as protocol" />
+  <meta name="twitter:title" content="Datomic as a Protocol" />
   <meta name="twitter:description" content="Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance." />
 
-  <title>Datomic as protocol @ tonsky.me</title>
+  <title>Datomic as a Protocol @ tonsky.me</title>
 </head>
 <body>
 <div class=page>
@@ -38,7 +38,7 @@
 
 <div class="post">
   
-<h1>Datomic as protocol</h1><p>Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.</p>
+<h1>Datomic as a Protocol</h1><p>Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.</p>
 <p>Data format is agile and multi-purpose. It works perfectly well with non-regular data, wide columns, a lot of rows, sparse data, graph data. It all can be efficiently stored and accessed.</p>
 <p>Since it’s a commercial database, it covers all sorts of use-cases real people face in real world while working with data. You can actually see how the Datomic team started small and added features to the data model as they felt need for them. In other words, the Datomic model is feature-full.</p>
 <p>Transactions are just data. In Clojure we’re <a href="http://www.infoq.com/presentations/Thinking-in-Data">used to data-oriented approach</a> and are well aware of its benefits. But there we have data representation not only for database itself, but also for transitions. Simple data structures work well at small scales and within the bounds of a single machine. If you have an atom, it’s easy to store and transfer its value. But when you do <code>(swap! atom inc)</code>, you cannot transfer that anywhere. You can transfer new value (and it’s totally ok while you can keep it small), but not the change. For dataset sizes up from few hundred kilobytes you start to feel need to transfer deltas instead of entire value. Datomic’s transaction report is a format that allows you to express that delta as a data structure. Benefits follow.</p>
@@ -51,7 +51,7 @@
 <p class=date>April 29, 2014</p>
 
 <p class=comments>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tonsky.me/blog/datomic-as-protocol/" data-text="Datomic as Protocol" data-via="nikitonsky">Tweet</a>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tonsky.me/blog/datomic-as-protocol/" data-text="Datomic as a Protocol" data-via="nikitonsky">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </p>
 

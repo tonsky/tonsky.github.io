@@ -6,16 +6,16 @@
   <link type="application/atom+xml" href="http://tonsky.me/blog/atom.xml" rel="self" />
   <link rel="alternate" type="text/html" href="http://tonsky.me/" />
   <id>http://tonsky.me/</id>
-  <updated>2014-04-29T07:48:00Z</updated>
+  <updated>2014-04-29T09:20:00Z</updated>
  
 
 
   <entry>
-    <title>Datomic as protocol</title>
+    <title>Datomic as a Protocol</title>
     <link rel="alternate" type="text/html" href="http://tonsky.me/blog/datomic-as-protocol/" />
     <id>http://tonsky.me/blog/datomic-as-protocol/</id>
     <published>2014-04-29T07:48:00Z</published>
-    <updated>2014-04-29T07:48:00Z</updated>
+    <updated>2014-04-29T09:20:00Z</updated>
     <summary type="html"><![CDATA[
       Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.
     ]]></summary>
