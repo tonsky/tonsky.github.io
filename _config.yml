@@ -1,1 +1,2 @@
 permalink: /:categories/:title/
+markdown: kramdown
