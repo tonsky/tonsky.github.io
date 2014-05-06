@@ -61,6 +61,8 @@ a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width
 h1, h2 { font: 200 1em 'firasans'; margin: 2.5em 0 0.5em; }
 pre, code { font: 16px/1.5em 'firamono', monospace; }
 
+code { background: hsla(0,0%,100%,0.1); padding: 4px 6px; border-radius: 3px; }
+
 .post {
   width: 32em; margin: 4em auto;
   position: relative;
@@ -83,6 +85,7 @@ h1, h2 { color: hsl(215, 40%, 95%); }
 .sq0 { margin-left: 0.3em; }
 .sq1 { margin-left: -0.3em; }
 
+p > img { margin: 2em 0; }
 img { max-width: 100%; }
 
 pre { font-size: 14px;
@@ -95,6 +98,7 @@ pre { font-size: 14px;
       word-wrap: break-word; }
 pre, code { border: none;  }
 ul { padding: 0 0 0 1em; list-style-type: square; }
+ol > li { margin: 0.5em 0; }
 
 sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
 sup, .note-ref, .note-number  { bottom: 1.4ex; }
@@ -110,12 +114,13 @@ sub { top: .5ex; }
 
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
-  html { font-size: 36px; line-height: 56px; background-color: hsl(235, 35%, 50%); }
+  /*html { background-color: hsl(235, 35%, 50%); }*/
+  html { font-size: 36px; line-height: 56px; }
   .post { width: 94%; }
 }
 /* iPads */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  html { background-color: hsl(235, 35%, 50%); }
+  /*html { background-color: hsl(235, 35%, 50%); }*/
   html { font-size: 24px; line-height: 36px; }
   .post { width: 82%; }
 }
