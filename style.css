@@ -48,8 +48,8 @@ html {
   text-rendering: optimizeLegibility;
 }
 
-body { width: 900px; margin: 50px auto; }
-.page { width: 810px; margin: 0 auto; padding: 0 0 0 2px; }
+body { margin: 50px auto; }
+.page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
 
 .menu { width: 32em; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
 .menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
@@ -59,13 +59,12 @@ a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width
 .menu__item_inside, a.menu__item_inside { border-bottom: 2px solid hsl(215,50%,70%); }
 
 h1, h2 { font: 200 1em 'firasans'; margin: 2.5em 0 0.5em; }
-pre, code { font: 16px/1.5em 'firamono', monospace; }
+pre, code { font: 0.95em/1.5em 'firamono', monospace; }
 
 code { background: hsla(0,0%,100%,0.1); padding: 4px 6px; border-radius: 3px; }
 
 .post {
   width: 32em; margin: 4em auto;
-  position: relative;
 }
 
 ::selection, ::-moz-selection { background-color: hsl(225, 10%, 85%); }
@@ -79,7 +78,7 @@ strong { font-weight: 500; }
 a[href]:hover { border-color: hsl(45,98%,57%); }
  */
 h1 { font-size: 1.7em; margin-bottom: 1.2em; }
-h2 { font-size: 1.3em; }
+h2 { font-size: 1.4em; }
 h1, h2 { color: hsl(215, 40%, 95%); }
 
 .sq0 { margin-left: 0.3em; }
@@ -104,7 +103,7 @@ sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative
 sup, .note-ref, .note-number  { bottom: 1.4ex; }
 sub { top: .5ex; }
 
-.date { font-size: 13px; color: hsl(215, 50%, 75%); }
+.date { font-size: 0.8em; color: hsl(215, 50%, 75%); }
 
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
@@ -114,15 +113,11 @@ sub { top: .5ex; }
 
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
-  /*html { background-color: hsl(235, 35%, 50%); }*/
-  html { font-size: 36px; line-height: 56px; }
-  .post { width: 94%; }
+  html { background: hsl(220, 40%, 52%); }
 }
 /* iPads */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  /*html { background-color: hsl(235, 35%, 50%); }*/
-  html { font-size: 24px; line-height: 36px; }
-  .post { width: 82%; }
+  html { background: hsl(220, 40%, 52%); }
 }
 
 /* Retina */
