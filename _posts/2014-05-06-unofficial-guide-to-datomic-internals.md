@@ -49,7 +49,7 @@ Queries that cannot be covered by index (e.g., filter DB by Tx; or lookup by val
 
 Each index is conceptually a single unit, but (except Log) is technically split into three parts, with different location and usage pattern:
 
-1. *History* part contains retractions only (all of them), is durable and kept in storage.
+1. *History* part contains datoms that by now have been changed or deleted, so no longer hold true (both initial assertions and subsequent retractions). History is durable and kept in storage.
 2. *Current* part contains latest assertions only, facts that are relevant at the moment index was built. If “Mary” gets renamed to “John”, only “John”, as latest true datom, will be included. Current part is durable and is kept in the storage too.
 3. *In-memory* part contains both assertions and retractions, is ephemeral and is kept in peers’ and transactor’s memory.
 
@@ -77,7 +77,7 @@ Now, we have indexes and want to execute queries over them, right? It is just th
 
 ## Re-indexing and garbage collection
 
-When in-memory index gets too big (`memory-index-threshold`, e.g. 32 Mb), transactor starts current index re-built. It is done by merging latest current index with in-memory index. Assertions are copied from in-memory to current index, retractions are copied from in-memory to history. For attributes marked as `noHistory` retractions are silently dropped. When current index rebuild is done, peers and transactor learn about new version of it and drop all in-memory novelty that is now covered by the new current index.
+When in-memory index gets too big (`memory-index-threshold`, e.g. 32 Mb), transactor starts current index re-built. It is done by merging latest current index with in-memory index. Assertions are copied from in-memory to current index, outdated assertions and retractions are copied from in-memory to history. Changes in attributes marked as `noHistory` are silently dropped. When current/history index rebuild is done, peers and transactor learn about new version of them and drop all in-memory novelty that is now covered by the new indexes.
 
 <img src="./index-rebuild@2x.png" style="width: 505px; height: 220px" />
 
