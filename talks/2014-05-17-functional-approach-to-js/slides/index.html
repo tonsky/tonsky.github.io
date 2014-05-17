@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Функциональный подход к JavaScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href='style.css' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <textarea id="source">
+
+# Функциональный подход <nobr>к JavaScript</nobr>
+
+.spacer[ ]
+
+Никита Прокопов
+
+[@nikitonsky](http://twitter.com/nikitonsky)  
+[tonsky.livejournal.com](http://tonsky.livejournal.com)  
+[tonsky.me](http://tonsky.me/)  
+
+---
+
+# Web app story
+
+Живет _долго_  
+Взаимодействие _нетривиально_  
+Сложные внутренние связи  
+Интерфейс меняется _существенно_
+
+Проблема: как писать web applications?
+
+---
+# Безобидный JS
+```
+button.onClick = function() {
+  document.getElementById('table')
+    .style.display = 'none';
+  tables_counter--;
+}
+```
+
+---
+
+# Безобидный JS
+```
+*button.onClick = function() {
+  document.getElementById('table')
+    .style.display = 'none';
+  tables_counter--;
+}
+```
+
+Коллбек надо где-то установить
+
+---
+# Безобидный JS
+```
+*button.onClick = function() {
+  document.getElementById('table')
+    .style.display = 'none';
+  tables_counter--;
+}
+```
+
+Коллбек надо где-то установить
+
+- Когда и где устанавливать?  
+- Если там ресурсы? Таймер? AJAX-запрос?
+
+---
+# Безобидный JS
+
+```
+button.onClick = function() {
+  document.getElementById('table')
+*    .style.display = 'none';
+  tables_counter--;
+}
+```
+
+DOM надо как-то поменять
+
+---
+# Безобидный JS
+
+```
+button.onClick = function() {
+  document.getElementById('table')
+*    .style.display = 'none';
+  tables_counter--;
+}
+```
+
+DOM надо как-то поменять
+
+- Что менять, а что нет?  
+- N состояний = N<sup>2</sup> _переходов_
+
+---
+# Безобидный JS
+
+```
+button.onClick = function() {
+  document.getElementById('table')
+    .style.display = 'none';
+*  tables_counter--;
+}
+```
+
+Об изменениях надо кому-то сообщить
+
+---
+# Безобидный JS
+```
+button.onClick = function() {
+  document.getElementById('table')
+    .style.display = 'none';
+*  tables_counter--;
+}
+```
+
+Об изменениях надо кому-то сообщить
+
+- Кому сообщать?  
+- _Куда_ добавить нового listener?
+
+---
+# Динамические компоненты
+
+Устроены нетривиально:
+* Верстка
+* Состояния
+* Коллбеки
+* Ресурсы внутри
+* События наружу
+* Переиспользуемость
+
+---
+class: center
+# FLUX architecture
+
+Action  
+↓  
+Dispatcher  
+↓  
+Store  
+↓  
+View  
+↓  	
+Action
+
+---
+# FLUX architecture
+
+- Понятный поток данных
+- Нет комбинаторного взрыва
+- Тестируемость
+- Независимый выбор компонентов
+
+---
+class: center
+# FLUX architecture
+
+Action  
+↓  
+Dispatcher  
+↓  
+Store  
+↓  
+.hl[View]  
+↓  	
+Action
+
+---
+# View story: React.js
+
+f(data) → DOM
+
+Строишь всё DOM-tree каждый кадр  
+React вычисляет как к нему прийти
+
+Immediate mode  
+DOM и JS вместе  
+Только состояния, без переходов  
+
+---
+# Хитрости React.js
+
+DOM ненастоящий (т.е. быстрый)  
+diff упрощенный (т.е. быстрый)  
+Component lifecycle  
+Event dispatching  
+
+---
+# Плюсы React.js
+
+DOM как данные  
+Рендеринг это plain js  
+DOM и рендер _рядом_  
+Reusable components  
+Рендеринг на сервере  
+Low-level, _только_ view  
+
+---
+# React + immutability
+
+Как узнать, обновлять ли компонент?
+
+Сравнить state  
+Дорого в JS (deep equals)  
+Дешево в CLJS (pointer equals), т.к.  
+нет inplace модификаций  
+Отсечение по shouldComponentUpdate  
+
+---
+# React + CLJS
+
+ClojureScript
+
+- Язык, в котором _удобно_ работать с immutable data structures
+- Язык, ориентированный на чистые функции
+- Perfect match for React
+- _Быстрее_ нативного React-а
+- Для plain js есть mori
+
+---
+class: center
+# FLUX architecture
+
+Action  
+↓  
+Dispatcher  
+↓  
+.hl[Store]  
+↓  
+View  
+↓  	
+Action
+
+---
+# Store story
+
+- Subscriptions / data listeners
+- Change management
+- Durability, server sync
+- Caching, lazy loading
+- Failure handling
+
+---
+# Store + immutability
+
+- Store as a value
+- Хранение истории (эффективно)
+- Откат к любой версии (with React)  
+- Бесплатный batching изменений до requestAnimationFrame
+
+---
+# Store story: DataScript
+
+- Данных на клиенте уже порядком
+- Клиент может больше, чем тупо качать view model с сервера на каждый чих
+- DB на сервере: durability, ACID, queries
+- DB на клиенте: queries!
+
+---
+# Store story: DataScript
+
+- Скорее структура данных, чем DB
+- Pure in-memory
+- Triple store format (RDF-like)
+- Мощнее реляционных SQL и KV-stores
+- Иерархические, нерегулярные, sparse, графовые данные
+- Нативные многозначные атрибуты
+- Нативные двухсторонние связи
+
+---
+# Store story: DataScript
+
+- Быстрее поиска по массиву (индексы)
+- Реляционные запросы (Datalog)
+- Transactions monitoring
+- Есть pure JS интерфейс
+
+---
+# DataScript example: data
+
+```
+[1 :person/name "Ivan"]
+[1 :person/age  19]
+[2 :person/name "Petr"]
+[2 :person/sex  :male]
+```
+
+---
+# DataScript example: query
+
+```
+(q '[:find  ?age
+     :in    $ ?name
+     :where [?e :person/name ?name]
+            [?e :person/age  ?age]]
+  db "Ivan")
+```
+
+- Декларативный
+- Оптимизабельный
+- Несколько DB, cross-DB joins
+- Запросы поверх коллекций
+
+---
+# DataScript ex.: tx-data
+
+```
+[[:db/retract 1 :person/age  19]
+ [:db/add     1 :person/age  25]]
+```
+
+- Можно делать запросы по ней
+- Обратимость
+
+---
+class: center
+# FLUX architecture
+
+Action  
+↓  
+.hl[Dispatcher]  
+↓  
+Store  
+↓  
+View  
+↓  	
+Action
+
+---
+# Dispatcher story + FP
+
+f(Store) → Store′
+
+- Все изменения Store только через него
+- В идеале чистая функция
+- Тестируемость
+- Воспроизводимость
+- Аудит
+
+---
+class: center
+# FLUX architecture
+
+.hl[Action]  
+↓  
+Dispatcher  
+↓  
+Store  
+↓  
+View  
+↓  	
+.hl[Action]
+
+---
+# ClojureScript
+
+Компиляется в JS
+
+Исправляет семантические проблемы:
+
+- модули
+- строгая типизация
+- состояние, атомарность, время
+- полиморфизм
+- стандартная библиотека
+
+---
+# Спасибо за внимание
+
+.spacer[ ]
+
+Никита Прокопов
+
+[@nikitonsky](http://twitter.com/nikitonsky)  
+[tonsky.livejournal.com](http://tonsky.livejournal.com)  
+[tonsky.me](http://tonsky.me/)  
+
+    </textarea>
+    <script src="remark-latest.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

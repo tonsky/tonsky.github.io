@@ -1,0 +1,72 @@
+
+@font-face {
+  font-family:"meta";
+  src: url('/f/MetaWebPro');
+  font-style:normal;
+  font-weight:400;
+}
+
+@font-face {
+  font-family:"meta";
+  src: url('/f/MetaWebPro-Ita');
+  font-style:italic;
+  font-weight:400;
+}
+
+@font-face {
+  font-family:"firasans";
+  src: url('/f/FiraSans-Regular.eot');
+  src: url('/f/FiraSans-Regular.woff') format('woff'),
+       url('/f/FiraSans-Regular.ttf') format('truetype');
+  font-style:normal;
+  font-weight:400;
+}
+
+@font-face {
+  font-family:"firasans";
+  src: url('/f/FiraSans-RegularItalic.eot');
+  src: url('/f/FiraSans-RegularItalic.woff') format('woff'),
+       url('/f/FiraSans-RegularItalic.ttf') format('truetype');
+  font-style:italic;
+  font-weight:400;
+}
+
+@font-face {
+  font-family:"firasans";
+  src: url('/f/FiraSans-Light.eot');
+  src: url('/f/FiraSans-Light.woff') format('woff'),
+       url('/f/FiraSans-Light.ttf') format('truetype');
+  font-style:normal;
+  font-weight:200;
+}
+
+@font-face {
+  font-family:"firamono";
+  src: url('/f/FiraMono-Regular.eot');
+  src: url('/f/FiraMono-Regular.woff') format('woff'),
+       url('/f/FiraMono-Regular.ttf') format('truetype');
+  font-style:normal;
+  font-weight:400;
+}
+
+body { font-family: "meta"; font-weight: 400; line-height: 3em; }
+.remark-container, body, .remark-slide-content { background: hsl(215, 50%, 55%); color: white; }
+.remark-slide-scaler { box-shadow: none; }
+.remark-slide-content { font-size: 35px; }
+
+h1, h2, h3 { font-weight: 700; }
+.remark-slide-content h1 { font-size: 50px; margin-bottom: 1em; }
+
+ol, ul { padding: 0; }
+ul { list-style-type: none; }
+ul li { text-indent: -1em; }
+ul > li:before { content: "— ";  }
+a { color: inherit; text-decoration: none; }
+a:hover { color: hsl(45,98%,77%); }
+sup { vertical-align: baseline; position: relative; top: -1em; font-size: 0.6em; }
+
+.spacer { display: block; height: 80px; }
+
+pre, code { font-family: 'firamono'; line-height: 1.5em; }
+.remark-code { font-size: 20px; }
+.hl, .remark-code-line-highlighted { background-color: transparent; color: hsl(45,98%,77%); }
