@@ -70,3 +70,8 @@ sup { vertical-align: baseline; position: relative; top: -1em; font-size: 0.6em;
 pre, code { font-family: 'firamono'; line-height: 1.5em; }
 .remark-code { font-size: 20px; }
 .hl, .remark-code-line-highlighted { background-color: transparent; color: hsl(45,98%,77%); }
+
+/* Black & White*/
+
+ .remark-container, body, .remark-slide-content { background-color: black; }
+ a:hover, .hl, .remark-code-line-highlighted { color: hsl(100, 80%, 50%); }
