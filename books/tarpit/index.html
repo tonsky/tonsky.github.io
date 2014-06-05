@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <style>
+    /*2550 × 3300*/
+    @-ms-viewport{ width: 1080px; }
+    .page { width: 1080px; height: 1890px; border: 0px solid red;
+            background-position: -270px -200px;
+          }
+    html, body { margin: 0; padding: 0; }
+  </style>
+<body>
+
+  <div class=page id=v></div>
+
+  <script type='text/javascript'>
+    var i = 1;
+    if (window.location.hash != '') {
+      i = parseInt(window.location.hash.substr(1));
+    }
+    function img_url(i) {
+      return 'https://dl.dropboxusercontent.com/u/561580/books/tarpit/tarpit-' + i +'.jpeg';
+    }
+    var v = document.getElementById("v");
+    function reload() {
+      window.location.hash = i;
+      v.style.backgroundImage = 'url(' + img_url(i) + ')';
+      setTimeout(function() {
+        var _img = new Image();
+        _img.src = img_url(i+1);
+      }, 0);
+    }
+    reload();
+    v.onclick = function(e) {
+      var x = e.clientX;
+      var dirty = false;
+      if (x < 200) {
+        if (i > 1) --i;
+        dirty = true;
+      } else if (x > 880) {
+        if (i < 66) ++i;
+        dirty = true;
+      }
+      if (dirty)
+        reload();
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+  </script>
+
