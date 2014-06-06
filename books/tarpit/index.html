@@ -14,16 +14,17 @@
   <div class=page id=v></div>
 
   <script type='text/javascript'>
-    var i = 1;
-    if (window.location.hash != '') {
-      i = parseInt(window.location.hash.substr(1));
-    }
+    var storage = window.localStorage;
+    if (!storage.books_tarpit_page) storage.books_tarpit_page = 1;
+
+    var i = parseInt(storage.books_tarpit_page);
+
     function img_url(i) {
       return 'https://dl.dropboxusercontent.com/u/561580/books/tarpit/tarpit-' + i +'.jpeg';
     }
     var v = document.getElementById("v");
     function reload() {
-      window.location.hash = i;
+      storage.books_tarpit_page = i;
       v.style.backgroundImage = 'url(' + img_url(i) + ')';
       setTimeout(function() {
         var _img = new Image();
