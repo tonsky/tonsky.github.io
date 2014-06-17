@@ -38,8 +38,8 @@ Working copy is just a term for all changes you’ve made to the repo directory 
 As we’re building our (imaginary) brave new GIT interface, let’s make some principles and stick to them. Here’s the first one: never bother user with warnings, and never get in a user’s way. What he wants, he should be able to do. But we cannot lose the user’s data either. So what I propose is to, as soon as you need clean working copy, convert current work in progress into “WIP” commit automatically. It saves the user manual labour of commiting or stashing, and keeps unfinished work safe and accessible. The overall GIT experience should feel much  smoother and hassle-free.
 
 <div class="anim_cont">
-  <div class="anim" style="background-image: url(wip@2x.png);"></div>
-  <div class="label">Switching branches while having dirty working copy (hover to animate)</div>
+  <div class="anim" style="background-image: url(wip@2x.png);"></div> <div class="anim" style="background-image: url(two-wips@2x.png);"></div>
+  <div class="label">Switching branches while having dirty working copy; keeping 2 dirty working copies (hover to animate)</div>
 </div>
 
 Unification of working copy and commits brings another major win: it simplifies mental model and brings consistency to working copy interactions. GIT is built around commits manipulation, so it’s very logical and consistent to being able to apply all its tools to working copy too. Under the hood, working copy may be treated differently, but for a user there’s no point to be aware of that distinction. From a user’s standpoint, we’ve just removed the concept of working copy altogether, leaving him with the very basic idea&nbsp;— everything is a commit.
