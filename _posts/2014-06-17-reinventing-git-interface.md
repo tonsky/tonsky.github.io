@@ -20,7 +20,7 @@ So, what shall we do with it? I suggest we get to the core, remove everything ac
 
 At the very core, GIT is about keeping history of a directory. It can store all of the directory content _as a snapshot_, and it can store a lot of snapshots effectively. So, as you keep changing your project, you are making these snapshots and GIT puts them to its local database. You can later restore any of these snapshots, and it will bring your directory’s content exactly as it was back then. Snapshots are called _commits_, and we will stick to that term too.
 
-Besides directory’s content and some metadata like author and timestamp, each commit also remembers link to its parent commit. This is important because it helps tracking casuality. History in GIT is non-linear: there may be several versions of a project co-exisiting in parallel. History forms directed acyclic graph (DAG), a tree of commits with splits (branching) and joins (merges).
+Besides directory’s content and some metadata like author and timestamp, each commit also remembers link to its parent commit. This is important because it helps tracking causality. History in GIT is non-linear: there may be several versions of a project co-exisiting in parallel. History forms directed acyclic graph (DAG), a tree of commits with splits (branching) and joins (merges).
 
 Notice that commits and DAG are self-sufficient. They live without branches or remote repositories or stage index or whatever. It’s also important to remember what GIT is calling “a branch” has nothing to do with branches in graph terms. GIT’s branch is just a pointer to some commit, exactly like a tag is. To avoid confusion, we’ll call them _branch pointers_.
 
@@ -118,7 +118,7 @@ So, it has to be visual, what else? Nothing revolutionary here, just a few tweak
 
 ## Remote interface
 
-There’s one single feature that still makes CLI clients look so appealing: ability to work on another machine. Proxying CLI is ubiquotus, proxing GUI is uncommon and still awkward. Can we possibly answer to that?
+There’s one single feature that still makes CLI clients look so appealing: ability to work on another machine. Proxying CLI is ubiquitous, proxying GUI is uncommon and still awkward. Can we possibly answer to that?
 
 Thing is, we actually can. There’s one way to proxy GUI applications that is widely used and, if not as smooth as local apps, at least pretty usable. It’s web. Applications controlled via web browser can be run anywhere you can connect to, yet can have almost all the benefits of native GUI apps.
 
