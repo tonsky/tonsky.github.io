@@ -22,7 +22,7 @@ At the very core, GIT is about keeping history of a directory. It can store all 
 
 Besides directory’s content and some metadata like author and timestamp, each commit also remembers link to its parent commit. This is important because it helps tracking casuality. History in GIT is non-linear: there may be several versions of a project co-exisiting in parallel. History forms directed acyclic graph (DAG), a tree of commits with splits (branching) and joins (merges).
 
-Notice that commits and DAG are self-sufficient. They live without branches or remore repositories or stage index or whatever. It’s also important to remember what GIT is calling “a branch” has nothing to do with branches in graph terms. GIT’s branch is just a pointer to some commit, exactly like a tag is. To avoid confusion, we’ll call them _branch pointers_.
+Notice that commits and DAG are self-sufficient. They live without branches or remote repositories or stage index or whatever. It’s also important to remember what GIT is calling “a branch” has nothing to do with branches in graph terms. GIT’s branch is just a pointer to some commit, exactly like a tag is. To avoid confusion, we’ll call them _branch pointers_.
 
 ## Grow-only repository
 
@@ -33,7 +33,7 @@ Understanding there’s no harm to be done eases things a lot. It encourages exp
 ## Working with working copy
 
 Another step towards safe GIT experience is working copy management.
-Working copy is just a term for all changes you’ve made to the repo directory and haven’t commited yet, so GIT does not know nothing about them and is not managing them in any way. One sad case where you _may_ lose your work is when you have “dirty” working copy and want to perfom _any other operation_ with GIT. It’s a very common use-case, and what GIT recommends is to create temporary work-in-progress commit or stash current changes and return back to them later. GIT will, in fact, warn you and refuse to do anything before you get your working copy clean. This is very irritating.
+Working copy is just a term for all changes you’ve made to the repo directory and haven’t commited yet, so GIT knows nothing about them and is not managing them in any way. One sad case where you _may_ lose your work is when you have “dirty” working copy and want to perfom _any other operation_ with GIT. It’s a very common use-case, and what GIT recommends is to create temporary work-in-progress commit or stash current changes and return back to them later. GIT will, in fact, warn you and refuse to do anything before you get your working copy clean. This is very irritating.
 
 As we’re building our (imaginary) brave new GIT interface, let’s make some principles and stick to them. Here’s the first one: never bother user with warnings, and never get in a user’s way. What he wants, he should be able to do. But we cannot lose the user’s data either. So what I propose is to, as soon as you need clean working copy, convert current work in progress into “WIP” commit automatically. It saves the user manual labour of commiting or stashing, and keeps unfinished work safe and accessible. The overall GIT experience should feel much  smoother and hassle-free.
 
@@ -57,7 +57,7 @@ By leaving the user with just one concept that everything is a commit, we put hi
 
 As we more or less know how to commit changes, let’s move to the second most essential thing one can do with GIT repo&nbsp;— delta manipulation. Kind of advanced stuff, yet it occurs in everyday GIT usage nonetheless. But before discussing that, let me introduce you to commit’s delta-snapshot duality.
 
-As we’ve already learned, commit is a snapshot of repo directory at some point in time. This is technically correct (this is how GIT stores commits internally), and this is how commits are used for checkouts. But that’s not the only way one can look at commits. Each commit can also be viewed as delta (or diff, change) of parent’s snapthot and its own. If commit B is based on A, then `delta(B) := diff(snapshot(B), snapshot(A))`. Deltas are derived, they are not directly stored by GIT, but rather calculated on the fly when needed. Also, merge commits cannot be directly expressed as deltas because they are based on more than one commit.
+As we’ve already learned, commit is a snapshot of repo directory at some point in time. This is technically correct (this is how GIT stores commits internally), and this is how commits are used for checkouts. But that’s not the only way one can look at commits. Each commit can also be viewed as delta (or diff, change) of parent’s snapshot and its own. If commit B is based on A, then `delta(B) := diff(snapshot(B), snapshot(A))`. Deltas are derived, they are not directly stored by GIT, but rather calculated on the fly when needed. Also, merge commits cannot be directly expressed as deltas because they are based on more than one commit.
 
 So, we can view a GIT repository not only as a series of periodical backups, but also as a series of changes applied on top of one another. Deltas are easier to comprehend and more directly represent “work done” (you usually think in terms of what was changed rather than entire repo state). They also enable a rich set of interactions with repo we’ll call “delta algebra”.
 
