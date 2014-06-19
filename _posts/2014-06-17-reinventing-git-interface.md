@@ -98,6 +98,8 @@ There’s a solid foundation for such “always online” experience. <nobr><cod
 
 This is another huge win for us: we’ve removed a whole school of manual syncing commands besides just setting up remote’s URL. No questions to ask, nothing to learn, no place to make a mistake, it just works. And we haven’t really lost anything here because we’ve removed only mechanical operations, ones which do not require user’s decision. From now on, you’ll just commit locally and, magically, everybody else will be able to see your changes. Feels like Dropbox, and this is a big thing. You’ll love that ”always online” experience, I promise.
 
+You may think auto-sync will completely ruin your familiar “commit now, restructure later” workflow. It will not. As you’re working in your branch, you can still reorganise, restructure, reorder and rename commits in your branch. These changes will be incrementally synced to all other peoples’ machines as you go. They’ll initially see your mess, but then they’ll see all the changes you’re doing to make your branch look pretty. All happening without any manual button clicking/<wbr>remotes selections/<wbr>any other decisions from them. As this branch is yours, it’s a perfectly safe and does not require any human intervention.
+
 Remember that network connection is _not_ required for our client to work properly. Offline experience is more or less the same, but when you’re connected, you’ll have less buttons to click.
 
 ## Looks matter
