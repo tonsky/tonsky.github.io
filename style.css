@@ -110,7 +110,8 @@ sub { top: .5ex; }
 .note-number { margin-left: -1em; }
 
 .comments {  margin: 90px 0 0 0; }
-.comments > a { position: relative; top: -5px; margin: 0 15px 0 0; }
+.comments > a, .comments > span  { position: relative; top: -5px; margin-right: 5px; } 
+.comments > a:last-of-type { margin: 0 15px 0 0; }
 
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
