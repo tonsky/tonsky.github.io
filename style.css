@@ -45,6 +45,7 @@ html {
   color: white;
   font: 17px/30px 'firasans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 

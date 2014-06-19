@@ -156,7 +156,7 @@ I also ask not to discard all this nonsense right away, but at least give it a f
       el.offset = (el.offset || 0) - 250;  
       setTimeout(function() { animate(el); }, 700);
     }
-    el.style.backgroundPositionY = el.offset + "px";
+    el.style.backgroundPosition = "0 " + el.offset + "px";
   }
 
   var els = document.getElementsByClassName("anim");  
