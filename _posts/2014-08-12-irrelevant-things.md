@@ -2,6 +2,7 @@
 layout: post
 title: Irrelevant Things
 category: blog
+hackernews_id: 8167186
 summary: "As a programmer on a way to technical excellency, you should teach yourself to constantly spot and reduce waste."
 ---
 
