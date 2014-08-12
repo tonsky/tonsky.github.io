@@ -5,7 +5,7 @@ category: blog
 summary: "As a programmer on a way to technical excellency, you should teach yourself to constantly spot and reduce waste."
 ---
 
-I had a conversation once, whether trailing spaces should be removed from code or not. Real conversation, with an actual person, with “arguments”, “pros and cons”. Evan appeals to taste. Half an hour lost on something that isn’t a problem at all. Trailing spaces are okay, not having trailing spaces is okay too, I guess; I’m only concerned when somebody cares about such irrelevant thing.
+I had a conversation once, whether trailing spaces should be removed from code or not. Real conversation, with an actual person, with “arguments”, “pros and cons”. Even appeals to taste. Half an hour lost on something that isn’t a problem at all. Trailing spaces are okay, not having trailing spaces is okay too, I guess; I’m only concerned when somebody cares about such irrelevant thing.
 
 A lot of people care, to be frank. Enough to have plugins written for all major editors to check, highlight, eliminate trailing spaces. To make invisible, not-a-problem thing bold, visible disaster. But I’m more or less fine with this waste, I can accept it being small compared to the fact there’s a whole bunch of _companies_ building their _businesses_ around to-do applications. Even guy who wrote JavaDoc generator for getters in Eclipse seems to be making Earth a better place compared to that.
 
