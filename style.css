@@ -87,6 +87,9 @@ h1, h2 { color: hsl(215, 40%, 95%); }
 
 p > img { margin: 2em 0; }
 img { max-width: 100%; }
+.fig { text-align: center; }
+.fig > img { margin: 0; }
+.label { text-align: center; margin: -1em 0 1em 0; font-size: 12px; font-style: italic; }
 
 pre { font-size: 14px;
       line-height: 24px;

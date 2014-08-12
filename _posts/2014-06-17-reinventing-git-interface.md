@@ -148,7 +148,7 @@ I also ask not to discard all this nonsense right away, but at least give it a f
 <style type="text/css">
   .anim_cont { width: 1088px; text-align: center; margin: 2em 0 2em -272px; }
   .anim { width: 400px; height: 250px; background-size: 100%; background-color: white; border-radius: 3px; margin: 0 6px; display: inline-block; }
-  .label { text-align: center; font-size: 12px; font-style: italic; }
+  .label { margin: 0; text-align: center; font-size: 12px; font-style: italic; }
   img { border-radius: 3px; }
 </style>
 
