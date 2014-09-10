@@ -51,6 +51,7 @@ html {
 
 body { margin: 50px auto; }
 .page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
+.page_wide { width: 810px; }
 
 .menu { width: 32em; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
 .menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
@@ -62,7 +63,8 @@ a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width
 h1, h2 { font: 200 1em 'firasans'; margin: 2.5em 0 0.5em; }
 pre, code { font: 0.95em/1.5em 'firamono', monospace; }
 
-code { background: hsla(0,0%,100%,0.1); padding: 4px 6px; border-radius: 3px; }
+/*p > code { background: hsla(0,0%,100%,0.1); padding: 4px 6px; border-radius: 3px; }*/
+
 
 .post {
   width: 32em; margin: 4em auto;
@@ -115,6 +117,16 @@ sub { top: .5ex; }
 .comments {  margin: 90px 0 0 0; }
 .comments > a, .comments > span  { position: relative; top: -5px; margin-right: 5px; } 
 .comments > a:last-of-type { margin: 0 15px 0 0; }
+
+.event { font-size: 14px; display: inline-block; width: 400px; vertical-align: top; }
+.event > h1 { font-size: 20px; margin-bottom: 1em; }
+.event > p { margin: 10px 0 0 0; line-height: 22px; }
+.event a { border-width: 1px; }
+.q { margin-left: -0.5em; }
+.at { color: hsl(215, 50%, 70%); }
+.where { font-size: 11px; color: hsl(215, 50%, 70%); }
+.lang  { font-size: 11px; color: hsl(215, 50%, 90%); }
+
 
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
