@@ -118,14 +118,60 @@ sub { top: .5ex; }
 .comments > a, .comments > span  { position: relative; top: -5px; margin-right: 5px; } 
 .comments > a:last-of-type { margin: 0 15px 0 0; }
 
-.event { font-size: 14px; display: inline-block; width: 400px; vertical-align: top; }
-.event > h1 { font-size: 20px; margin-bottom: 1em; }
+.event { font-size: 14px; display: inline-block; width: 380px; vertical-align: top; margin: 0 20px 4em 0; }
+.event > h1 { font-size: 20px; margin: 0 0 1em 0; }
 .event > p { margin: 10px 0 0 0; line-height: 22px; }
 .event a { border-width: 1px; }
 .q { margin-left: -0.5em; }
 .at { color: hsl(215, 50%, 70%); }
 .where { font-size: 11px; color: hsl(215, 50%, 70%); }
 .lang  { font-size: 11px; color: hsl(215, 50%, 90%); }
+
+
+.card { font-size: 14px; line-height: 20px; width: 470px; height: 195px; border: 1px solid white; margin: 0 auto; padding: 30px 10px 30px 30px; position: relative; }
+.card > .text { margin: -10px 0 0 100px; }
+.card h1 { font-size: 26px; margin: 10px 0; }
+.card p { margin: 0.5em 0; }
+.card .links { margin-top: 2.5em; }
+.card .links > a { margin: 0 0.3em 0 0; }
+.card .photo { width: 75px; height: 75px; float: left; border: 1px solid white; background: url('/about/photo@2x.jpg'); background-size: 73px; }
+.card .photo img { width: 73px; height: 73px; display: none; }
+.card .permalink, .version { position: absolute; bottom: -22px; font-size: 10px; color: hsl(215, 50%, 75%); }
+.card .version { right: 0; }
+.card .permalink { left: 0; display: none; }
+
+.card a { border-width: 1px; }
+.card .buttons { position: absolute; left: 550px; font-size: 12px; width: 100px; }
+.card .buttons a { color: hsl(215, 50%, 70%); border-bottom-style: dotted; }
+.card .buttons a:hover { color: white; }
+
+.keywords { font-style: italic; }
+.links.print { display: none; }
+.star:before { content:"★"; }
+.star { position: absolute; font-size: 16px;  margin: 0px 0 0 -20px; color: hsl(45,98%,77%); }
+
+@media print {
+  html { background: white; color: black; }
+  body { margin-bottom: 0; }
+  .mc, .line, .card, .birth { border-color: #BBB; }
+  .menu, .space { display: none; }
+  a { border-bottom: 1px solid #CCC; }
+  a:hover { border-color: #000; }
+  .links { display: none; }
+  .links.print { display: block; }
+  ul.links { list-style: none; padding: 0; }
+  ul.links > li { display: block; }
+  h1, h2 { color: black; }
+  .card .buttons { display: none; }
+  .star { color: #bbb; }
+  .at { color: #bbb; }
+  .card .permalink, .card .version { color: #aaa; }
+  .card { height: 240px; }
+  .card .photo { background: transparent; }
+  .card .photo img { display: block; }
+  .card .links { margin-top: 1.3em; font-size: 12px; }
+  .permalink { display: block; }
+}
 
 
 /* Smartphones */
