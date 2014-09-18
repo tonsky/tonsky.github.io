@@ -103,7 +103,7 @@ pre { font-size: 14px;
       word-wrap: break-word; }
 pre, code { border: none;  }
 ul { padding: 0 0 0 1em; list-style-type: square; }
-ol > li { margin: 0.5em 0; }
+ul > li, ol > li { margin: 0.5em 0; }
 
 sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
 sup, .note-ref, .note-number  { bottom: 1.4ex; }
