@@ -10,8 +10,10 @@ I had a conversation once, whether trailing spaces should be removed from code o
 
 A lot of people care, to be frank. Enough to have plugins written for all major editors to check, highlight, eliminate trailing spaces. To make invisible, not-a-problem thing bold, visible disaster. But I’m more or less fine with this waste, I can accept it being small compared to the fact there’s a whole bunch of _companies_ building their _businesses_ around to-do applications. Even guy who wrote JavaDoc generator for getters in Eclipse seems to be making Earth a better place compared to that.
 
-<p class="fig"><img src="todos.png" style="width: 320px; height: 480px;"></p>
-<p class="label">There’s always a room for innovation</p>
+<p class="fig">
+<img src="todos.png" style="width: 320px; height: 480px;">
+There’s always a room for innovation
+</p>
 
 It’s easy to spot [muda](http://en.wikipedia.org/wiki/Muda_(Japanese_term)) in well-known holywars. But a lot of everyday programmer’s activities fall into the same category. Dependency management, for example. If you spent a day setting up compilation workflow and getting dependencies right, it’s not a day of good work. It’s a day lost. You haven’t created new value, you haven’t enabled a single person to do anything that wasn’t possible before. You were [satisfying other programs’ demands](http://www.lighttable.com/2014/05/16/pain-we-forgot/). Even the fact that this activity has its own name indicates there’s something wrong with it. I hope there isn’t an actual job title like “Dependency management engineer”, is there? I probably don’t want to know.
 
@@ -21,8 +23,10 @@ There’s some point in having full-blown class hierarchies, or paranoid incapsu
 
 There are practices to keep code ready for changes, but those are only for changes you can foresee. By leaving stuff out and keeping codebase small, you’re making it ready for _any change_ because there’s so little code to change in the first place. Small codebase is a valuable asset per se.
 
-<p class="fig"><img src="getters.png" style="width: 320px; height: 480px;"></p>
-<p class="label">How much value was added on this screen?</p>
+<p class="fig">
+  <img src="getters.png" style="width: 320px; height: 480px;">
+  How much value was added on this screen?
+</p>
 
 So the idea is to go with as little things as possible. Then look at yourself. Is your life getting easier? It probably won’t right away, as you’ll be kicked off your comfort zone and will have to fight habits. Habits are not good indicators of anything, they’re accidental, so let some time pass. Does it become harder to get tasks done? Are you slowing down or speeding up? Have you completed more? Has quality of your work increased?
 

@@ -11,10 +11,10 @@ I have a long love-hate relationship with Git. Despite solving all my problems w
 
 And it’s not just me&nbsp;— people are complaining about Git complexity on the internet _a lot_. I’ve seen my fellow developers needing a crash course into even basic Git usage, and many were still puzzled by some “advanced” stuff like rebasing months after starting using it. It’s easy to see how wrong it is: basic Git concepts can be explained in a matter of half an hour _on a whiteboard_, yet actually touching Git _on a computer_ takes you _weeks_ to get used to. Sure, it feels nice to be accounted for something like a “Git guru”, but, the thing is, I do not know that much about Git’s command-line arguments or advanced tricks. I just see that things are much simpler than they seem to be.
 
-<div class="anim_cont">
+<p class="fig">
   <img src="louie_ck_parking_sign@2x.jpg" style="width: 554px; height: 310px;" />
-  <div class="label">Typical Git cheatsheet</div>
-</div>
+  Typical Git cheatsheet
+</p>
 
 So, what shall we do with it? I suggest we get to the core, remove everything accidental, including any UIs and commands, and keep just fundamental information model. And then we start building from there.
 
