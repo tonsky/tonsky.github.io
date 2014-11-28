@@ -40,16 +40,15 @@
   font-weight:400;
 }
 
-html {
+body {
   background: hsl(215, 50%, 55%);
   color: white;
   font: 17px/30px 'firasans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin: 50px auto;
 }
-
-body { margin: 50px auto; }
 .page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
 .page_wide { width: 810px; }
 
