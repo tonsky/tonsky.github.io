@@ -5,9 +5,9 @@ category: blog
 summary: "Couple of new talks about DataScript"
 ---
 
-There’s couple of new resources avaliable about DataScript.
+There’s couple of new resources available about DataScript.
 
-On December 4th I gave a talk at Clojure eXchange conference about motivation behind DataScript, a little bit about internals, and then about how DataScript can be used for application development. Beyond traditional SPAs, there were couple of examples of new kind of archicetures that are trivial to execute given that DataScript exists.
+On December 4th I gave a talk at Clojure eXchange conference about motivation behind DataScript, a little bit about internals, and then about how DataScript can be used for application development. Beyond traditional SPAs, there were couple of examples of new kind of architectures that are trivial to execute given that DataScript exists.
 
 You can watch video of the talk [at SkillsMatter website](https://skillsmatter.com/skillscasts/6038-datascript-for-web-development) (free, registration required) and check out slides:
 
