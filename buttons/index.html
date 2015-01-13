@@ -8,7 +8,9 @@
     html, body { height: 100%; }
     body { background: radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 100%), url(satinweave_@2X.png);
            background-size: 100%, 24px 12px; }
-    .b { width: 250px; height: 250px; background: url(buttons@2x.png); background-size: 500px 500px; cursor: pointer; display: inline-block; }
+    .b { width: 250px; height: 250px; background: url(buttons@2x.png); background-size: 500px 500px; cursor: pointer; display: inline-block;
+         -webkit-tap-highlight-color: rgba(0,0,0,0); // ios highlight fix
+       }
     .b:active, .active { background-position-x: -250px; }
 
     .b-snore { background-position-y: 0px; }
@@ -28,6 +30,9 @@
 </div>
 
 <script>
+  // ios highlight fix
+  document.addEventListener("touchstart", function(){}, true);
+
   var active;
   function q(s) {
     return document.querySelector(s);
