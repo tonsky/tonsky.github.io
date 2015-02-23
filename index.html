@@ -10,7 +10,18 @@ title: Blog
 </ul>
 
 <div class="post">
+  <h1>2015</h1>
+  {% for post in site.posts %}
+    {% assign year = post.date | date: "%-Y" %}
+    {% if year == "2015" %}
+      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
+    {% endif %}
+  {% endfor %}
+
   <h1>2014</h1>
   {% for post in site.posts %}
-    <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
+    {% assign year = post.date | date: "%-Y" %}
+    {% if year == "2014" %}
+      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
+    {% endif %}
   {% endfor %}
