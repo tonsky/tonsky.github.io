@@ -176,11 +176,11 @@ sub { top: .5ex; }
 
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
-  html { background: hsl(220, 40%, 52%); }
+  body { background: hsl(220, 40%, 52%); }
 }
 /* iPads */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  html { background: hsl(220, 40%, 52%); }
+  body { background: hsl(220, 40%, 52%); }
 }
 
 /* Retina */
