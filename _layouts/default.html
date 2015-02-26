@@ -2,7 +2,11 @@
 <html lang="en" prefix="og: http://ogp.me/ns#" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
-  <meta name="viewport" content="width=600" />
+  {% if page.class == "page_wide" %}
+    <meta name="viewport" content="width=900, ya-title=fade, ya-dock=fade" />
+  {% else %}
+    <meta name="viewport" content="width=640, ya-title=fade, ya-dock=fade" />
+  {% endif %}
   <link href='/style.css' rel='stylesheet' type='text/css' />
   <title>{{ page.title }} @ tonsky.me</title>
 
@@ -34,7 +38,6 @@
   <meta property="profile:gender" content="male" />
 
   <meta name="twitter:creator" content="@nikitonsky" />
-  <meta name="viewport" content="ya-title=fade,ya-dock=fade" />
 </head>
 <body>
 <div class="page {{ page.class }}">

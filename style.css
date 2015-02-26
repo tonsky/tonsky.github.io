@@ -52,7 +52,7 @@ body {
 .page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
 .page_wide { width: 810px; }
 
-.menu { width: 32em; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
+.menu { width: 544px; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
 .menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
 .menu__item, a.menu__item { color: hsl(215, 50%, 77%); border-color: transparent; display: inline-block; }
 a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width: 2px; }
@@ -66,7 +66,7 @@ pre, code { font: 0.95em/1.5em 'firamono', monospace; }
 
 
 .post {
-  width: 32em; margin: 4em auto;
+  width: 544px; margin: 15px auto;
 }
 
 ::selection, ::-moz-selection { background-color: hsl(225, 10%, 85%); }
@@ -173,14 +173,11 @@ sub { top: .5ex; }
   .permalink { display: block; }
 }
 
-
 /* Smartphones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)  {
-  body { background: hsl(220, 40%, 52%); }
 }
 /* iPads */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  body { background: hsl(220, 40%, 52%); }
 }
 
 /* Retina */
