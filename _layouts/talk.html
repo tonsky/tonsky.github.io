@@ -46,8 +46,8 @@
 
     function q(selector) {
       var els = document.querySelectorAll(selector);
-      var res = [];
-      for (var i=els.length-1; i>=0; --i) {
+      var res = new Array();
+      for (var i=0; i<els.length; ++i) {
         res.push(els.item(i));
       }
       return res;
@@ -84,10 +84,20 @@
       window.scrollTo(0, to);
     }
 
+    function currentSlide() {
+      var slides = q(".slide");
+      for (var i in slides) {
+        var slide = slides[i];
+        if (slide.offsetTop >= windowScroll() &&
+            slide.offsetTop < windowScroll() + 450)
+          return slide;
+      }
+    }
+
     function nextSlide() {
-      var slides = document.querySelectorAll(".slide");
-      for (var i=0; i<slides.length; ++i) {
-        var slide = slides.item(i);
+      var slides = q(".slide");
+      for (var i in slides) {
+        var slide = slides[i];
         if (slide.offsetTop > windowScroll() + 450) {
           fast_scroll(slide);
           break;
@@ -97,9 +107,9 @@
 
 
     function prevSlide() {
-      var slides = document.querySelectorAll(".slide");
+      var slides = q(".slide");
       for (var i=slides.length-1; i>=0; --i) {
-        var slide = slides.item(i);
+        var slide = slides[i];
         if (slide.offsetTop < windowScroll()) {
           fast_scroll(slide);
           break;
@@ -125,7 +135,7 @@
             e.preventDefault();
             break;
           case 27: // esc
-            toggleZoom(null, "normal");
+            toggleZoom(currentSlide(), "normal");
             e.preventDefault();
             break;
         }
