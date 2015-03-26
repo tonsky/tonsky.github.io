@@ -42,44 +42,46 @@
 </div>
 
 <script type="text/javascript">
-    function scale() {
-      var s = document.body.style.zoom;
-      if (s == "") return 1.0; else return s;
+    var mode = "normal";
+
+    function q(selector) {
+      var els = document.querySelectorAll(selector);
+      var res = [];
+      for (var i=els.length-1; i>=0; --i) {
+        res.push(els.item(i));
+      }
+      return res;
+    }
+
+    function q1(selector) {
+      return q(selector)[0];
     }
 
     function windowHeight() {
-      return window.innerHeight / scale();
+      return window.innerHeight;
     }
 
     function windowScroll() {
-      return window.scrollY / scale();
+      return window.scrollY;
     }
 
     function smooth_scroll(el) {
-      var from = window.scrollY;
+      var from = windowScroll();
       var to   = (el.offsetTop + el.clientHeight/2) - windowHeight()/2;
-          to   = Math.max(0, scale() * to);
+          to   = Math.max(0, to);
       var delta = (to-from);
       for(var i=1; i<=19; ++i) {
         var percent = Math.sin(i*1.68/20);
         var pos = from+delta*percent;
-        console.log(percent);
-        var callback = function(pos) { return function() { console.log(pos); window.scrollTo(0, pos); } }(pos);
+        var callback = function(pos) { return function() { window.scrollTo(0, pos); } }(pos);
         setTimeout(callback, i*16);
       }
     }
 
     function fast_scroll(el) {
       var to = (el.offsetTop + el.clientHeight/2) - windowHeight()/2;
-          to = Math.max(0, scale() * to);
+          to = Math.max(0, to);
       window.scrollTo(0, to);
-    }
-
-    function scroll(el) {
-      if (scale() == 1)
-        smooth_scroll(el);
-      else
-        fast_scroll(el);
     }
 
     function nextSlide() {
@@ -87,7 +89,7 @@
       for (var i=0; i<slides.length; ++i) {
         var slide = slides.item(i);
         if (slide.offsetTop > windowScroll() + 450) {
-          scroll(slide);
+          fast_scroll(slide);
           break;
         }
       }
@@ -99,43 +101,60 @@
       for (var i=slides.length-1; i>=0; --i) {
         var slide = slides.item(i);
         if (slide.offsetTop < windowScroll()) {
-          scroll(slide);
+          fast_scroll(slide);
           break;
         }
       }
     }
 
     document.onkeydown = function(e) {
-      // console.log("Pressed", e.keyCode);
-      switch(e.keyCode) {
-        case 34: // page down
-        case 32: // space
-        case 39: // right
-        case 40: // down
-          nextSlide();
-          e.preventDefault();
-          break;
-        case 33: // page up
-        case 37: // left
-        case 38: // up
-          prevSlide();
-          e.preventDefault();
-          break;
-        case 27: // esc
-          document.body.style.zoom = "";
-          // window.scrollTo(0, window.scrollY / scale());
-          break;
+      if (mode == "presentation") {
+        // console.log("Pressed", e.keyCode);
+        switch(e.keyCode) {
+          case 34: // page down
+          case 32: // space
+          case 39: // right
+          case 40: // down
+            nextSlide();
+            e.preventDefault();
+            break;
+          case 33: // page up
+          case 37: // left
+          case 38: // up
+            prevSlide();
+            e.preventDefault();
+            break;
+          case 27: // esc
+            toggleZoom(null, "normal");
+            e.preventDefault();
+            break;
+        }
       }
     }
 
-    function toggleZoom(el) {
-      if (document.body.style.zoom == "") {
-        var factor = Math.min(window.innerWidth / 800, window.innerHeight / 450);
-        document.body.style.zoom = factor;
+    
+    function toggleZoom(el, where) {
+      where = where || (mode == "normal" ? "presentation" : "normal");
+      if (where == "presentation") {
+        var width =
+          window.innerHeight >= window.innerWidth * 9 / 16
+            ? window.innerWidth
+            : window.innerHeight * 16 / 9;
+
+        q(".slide").forEach(function(slide){ 
+          slide.style.width = width + "px";
+          slide.style.marginLeft = "" + (350 - width/2) + "px";
+        });
+        mode = "presentation";
       } else {
-        document.body.style.zoom = "";
+        q(".slide").forEach(function(slide){
+          slide.style.width = "800px";
+          slide.style.marginLeft = "-50px";
+        });
+        mode = "normal";
       }
-      scroll(el);
+      if (el != null)
+        fast_scroll(el);
     }
 
     var slides = document.querySelectorAll(".slide");
