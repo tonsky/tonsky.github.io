@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  <link href='/talk.css' rel='stylesheet' type='text/css' />
+  <title>{{ page.title }}</title>
+
+  <meta name="author" content="Nikita Prokopov" />
+  
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:url" content="http://tonsky.me{{ page.url }}" />
+  <meta property="og:type" content="article" />
+
+  <meta property="article:published_time" content='{{ page.date | date: "%Y-%m-%d" }}' />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+
+  <meta property="og:description" content="{{ page.summary }}" />
+  <meta name="twitter:description" content="{{ page.summary }}" />
+
+  <meta property="og:site_name" content="tonsky.me" />
+  <meta property="article:author" content="https://www.facebook.com/nikitonsky" />
+  <meta property="profile:first_name" content="Nikita" />
+  <meta property="profile:last_name" content="Prokopov" />
+  <meta property="profile:username" content="tonsky" />
+  <meta property="profile:gender" content="male" />
+
+  <meta name="twitter:creator" content="@nikitonsky" />
+
+</head>
+<body>
+
+<ul class=menu>
+  <li><a class="menu__item" href="/">Blog</a>
+  <li><a class="menu__item menu__item_inside" href="/talks/">Talks</a>
+  <li><a class="menu__item" href="/about/">About</a>
+</ul>
+
+<div class=page>
+{{ content }}
+</div>
+
+<script type="text/javascript">
+    function scale() {
+      var s = document.body.style.zoom;
+      if (s == "") return 1.0; else return s;
+    }
+
+    function windowHeight() {
+      return window.innerHeight / scale();
+    }
+
+    function windowScroll() {
+      return window.scrollY / scale();
+    }
+
+    function smooth_scroll(el) {
+      var from = window.scrollY;
+      var to   = (el.offsetTop + el.clientHeight/2) - windowHeight()/2;
+          to   = Math.max(0, scale() * to);
+      var delta = (to-from);
+      for(var i=1; i<=19; ++i) {
+        var percent = Math.sin(i*1.68/20);
+        var pos = from+delta*percent;
+        console.log(percent);
+        var callback = function(pos) { return function() { console.log(pos); window.scrollTo(0, pos); } }(pos);
+        setTimeout(callback, i*16);
+      }
+    }
+
+    function fast_scroll(el) {
+      var to = (el.offsetTop + el.clientHeight/2) - windowHeight()/2;
+          to = Math.max(0, scale() * to);
+      window.scrollTo(0, to);
+    }
+
+    function scroll(el) {
+      if (scale() == 1)
+        smooth_scroll(el);
+      else
+        fast_scroll(el);
+    }
+
+    function nextSlide() {
+      var slides = document.querySelectorAll(".slide");
+      for (var i=0; i<slides.length; ++i) {
+        var slide = slides.item(i);
+        if (slide.offsetTop > windowScroll() + 450) {
+          scroll(slide);
+          break;
+        }
+      }
+    }
+
+
+    function prevSlide() {
+      var slides = document.querySelectorAll(".slide");
+      for (var i=slides.length-1; i>=0; --i) {
+        var slide = slides.item(i);
+        if (slide.offsetTop < windowScroll()) {
+          scroll(slide);
+          break;
+        }
+      }
+    }
+
+    document.onkeydown = function(e) {
+      // console.log("Pressed", e.keyCode);
+      switch(e.keyCode) {
+        case 34: // page down
+        case 32: // space
+        case 39: // right
+        case 40: // down
+          nextSlide();
+          e.preventDefault();
+          break;
+        case 33: // page up
+        case 37: // left
+        case 38: // up
+          prevSlide();
+          e.preventDefault();
+          break;
+        case 27: // esc
+          document.body.style.zoom = "";
+          // window.scrollTo(0, window.scrollY / scale());
+          break;
+      }
+    }
+
+    function toggleZoom(el) {
+      if (document.body.style.zoom == "") {
+        var factor = Math.min(window.innerWidth / 800, window.innerHeight / 450);
+        document.body.style.zoom = factor;
+      } else {
+        document.body.style.zoom = "";
+      }
+      scroll(el);
+    }
+
+    var slides = document.querySelectorAll(".slide");
+    for (var i=slides.length-1; i>=0; --i) {
+      var slide = slides.item(i);
+      slide.addEventListener("dblclick", (function(s) { return function(e) { toggleZoom(s); }; })(slide));
+    }
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5928238-7', 'tonsky.me');
+  ga('send', 'pageview');
+
+</script>
