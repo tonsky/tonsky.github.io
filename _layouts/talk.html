@@ -150,15 +150,20 @@
           window.innerHeight >= window.innerWidth * 9 / 16
             ? window.innerWidth
             : window.innerHeight * 16 / 9;
+        var scale  = width / el.clientWidth;
+        // var height = scale * el.clientHeight;
 
-        q(".slide").forEach(function(slide){ 
+        q(".slide").forEach(function(slide){
           slide.style.width = width + "px";
+          slide.defaultHeight = slide.clientHeight;
+          slide.style.height = slide.clientHeight * scale + "px";
           slide.style.marginLeft = "" + (350 - width/2) + "px";
         });
         mode = "presentation";
       } else {
         q(".slide").forEach(function(slide){
           slide.style.width = "800px";
+          slide.style.height = slide.defaultHeight + "px";
           slide.style.marginLeft = "-50px";
         });
         mode = "normal";
@@ -167,7 +172,7 @@
         fast_scroll(el);
     }
 
-    var slides = document.querySelectorAll(".slide");
+    var slides = document.querySelectorAll("img.slide");
     for (var i=slides.length-1; i>=0; --i) {
       var slide = slides.item(i);
       slide.addEventListener("dblclick", (function(s) { return function(e) { toggleZoom(s); }; })(slide));

@@ -33,6 +33,7 @@ body {
 
 .slide {
   width: 800px;
+  height: 450px;
   border-radius: 10px;
   margin-left: -50px;
 }
