@@ -5,13 +5,6 @@
 }
 
 @font-face {
-  font-family:"input-sans-narrow";
-  src: url('f/InputSansNarrow-Regular.ttf') format('truetype');
-  font-style:normal;
-  font-weight:400;
-}
-
-@font-face {
   font-family:"firasans";
   src: url('f/FiraSans-Regular.eot');
   src: url('f/FiraSans-Regular.woff') format('woff'),
@@ -21,7 +14,7 @@
 }
 
 body {
-  font: 17px/30px 'input-sans-narrow', sans-serif;
+  font: 17px/30px 'Input Sans Narr', sans-serif;
   background: #F5F3F1;
   color: #1A1A1A;
   -webkit-font-smoothing: antialiased;
