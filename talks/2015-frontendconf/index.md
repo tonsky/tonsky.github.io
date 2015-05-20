@@ -7,8 +7,8 @@ summary: "Какие проблемы решает функциональное 
 <img class="slide" src="0000 title.png" />
 <img class="slide" src="0005 platforms.png" />
 <img class="slide" src="0010 eshop.png" />
-<img class="slide" src="0015 eshop-deps.png" />
-<img class="slide" src="0020 context.png" />
+<img class="slide" src="0015 context.png" />
+<img class="slide" src="0020 eshop-deps.png" />
 <img class="slide" src="0040 functional-programming.png" />
 <img class="slide" src="0050 pure-functions.png" />
 <img class="slide" src="0055 code-vs-data.png" />
@@ -29,12 +29,17 @@ summary: "Какие проблемы решает функциональное 
 <img class="slide" src="0153 model-history.png" />
 <img class="slide" src="0156 architecture.png" />
 <img class="slide" src="0158 speculative-model.png" />
+<video class="slide" controls><source src="vec history.mp4" type="video/mp4"></video>
 <img class="slide" src="0160 history-queries.png" />
+<video class="slide" controls><source src="atomic selective history.mp4" type="video/mp4"></video>
 <img class="slide" src="0164 decoupling.png" />
 <img class="slide" src="0167 architectures.png" />
 <img class="slide" src="0170 time-travel.png" />
+<video class="slide" controls><source src="elm debugger.mp4" type="video/mp4"></video>
+<a href="http://debug.elm-lang.org/edit/Stamps.elm">Elm Time-travelling debugger</a>
 <img class="slide" src="0180 ingridients.png" />
 <img class="slide" src="0190 clojurescript.png" />
 <img class="slide" src="0200 elm.png" />
 <img class="slide" src="0210 examples.png" />
 <img class="slide" src="0220 fin.png" />
+
