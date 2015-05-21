@@ -14,7 +14,7 @@
 }
 
 body {
-  font: 17px/30px 'Input Sans Narr', sans-serif;
+  font: 17px/30px 'Input Sans Narr', 'Input Sans Narrow', sans-serif;
   background: #F5F3F1;
   color: #1A1A1A;
   -webkit-font-smoothing: antialiased;
