@@ -13,7 +13,7 @@ Check out [source code](https://github.com/tonsky/datascript-chat) and [live ver
 
 CatChat is organized by principles of Flux architecture. DataScript is a storage, clojure/core.async is an event bus, DOM is rendered by React. Some [GSS](http://gridstylesheets.org) used out of curiosity. Not to complicate things, server-side calls are emulated.
 
-<p style="margin: -20px -18px; "><img src="./overview.png" style="width: 600px; height: 400px" /></p>
+<figure><img src="./overview.png" /></figure>
 
 ## Starting
 

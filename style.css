@@ -73,6 +73,7 @@ pre, code { font: 0.95em/1.5em 'firamono', monospace; }
 a { color: inherit; text-decoration: none; border-bottom: 2px solid hsl(215, 50%, 70%); }
 a:hover { border-color: hsl(45,98%,77%); }
 p, blockquote { margin: 15px 0; }
+h1 + p + blockquote { margin-bottom: 30px; margin-right: 2em; }
 blockquote { margin-left: 2em; font-style: italic;  }
 blockquote em, blockquote i { font-style: normal; }
 strong { font-weight: 500; }
@@ -86,11 +87,11 @@ h1, h2 { color: hsl(215, 40%, 95%); }
 .sq0 { margin-left: 0.3em; }
 .sq1 { margin-left: -0.3em; }
 
-p > img, .fig { margin: 2em 0; }
+p > img, .fig, figure { margin: 2em 0; }
 img { max-width: 100%; }
 
-.fig { text-align: center; font-size: 12px; font-style: italic; width: 600px; margin-left: -28px; margin-right: -28px; }
-.fig img { margin: 0 auto 1em; display: block; border-radius: 3px; }
+.fig, figure { text-align: center; font-size: 12px; font-style: italic; width: 600px; margin-left: -28px; margin-right: -28px; }
+.fig img, figure > img { margin: 0 auto 1em; display: block; border-radius: 3px; }
 .label { text-align: center; font-size: 12px; font-style: italic; margin: -1em 0 1em 0; }
 
 pre { font-size: 14px;
