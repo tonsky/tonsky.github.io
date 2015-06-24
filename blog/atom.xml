@@ -28,7 +28,9 @@ layout: nil
         ]]></summary>
       {% endif %}
       <content type="html"><![CDATA[
-        {{ post.content | figures_atom:post.url }}
+        {% assign rel_prefix = 'href="http://tonsky.me' | append: post.url %}
+        {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url | append:'rss/' %}
+        {{ post.content | replace:'src="./',img_rel_prefix | replace:'href="./',rel_prefix | replace:'src="/','src="http://tonsky.me/rss/' | replace:'href="/','href="http://tonsky.me/' }}
       ]]></content>  
       <author>
         <name>Nikita Prokopov</name>
