@@ -1,0 +1,129 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta name="viewport" content="width=768, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<style>
+	@font-face {
+    font-family: "Netto";
+    font-weight: 400;
+    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/u/561580/Fonts/Netto/ufonts.com_netto_ot.ttf') format('truetype');
+	}
+
+	html, body { width: 100%; height: 100%; margin:0; background: black; font: 48px Netto, sans-serif; }
+	#canvas { border: none; width: 768px; height: 768px; position: absolute; top: 50%; margin-top: -384px; }
+	.temperature, .place, .wind, .rain, .pun, .conditions, #tiltLR, #tiltFB { position: absolute; color: white; }
+	#tiltFB { top: 20px; }
+	.place { left: 40px; top: 40px; font-size: 80px; }
+	
+	.pun { font-size: 24px; bottom: 0; margin-top: 0px; height: 150px; color: #999; white-space: nowrap; }
+	
+	.temperature { bottom: 40px; left: 40px; }
+	.temperature-icon { height: 100px; float: left; margin-left: -15px; }
+	.temperature-high,
+	.temperature-low { margin-left: 45px; }
+	.temperature-low { font-size: 36px; }
+	
+	.wind { bottom: 40px; left: 240px; font-size: 36px; }
+	.wind-icon { height: 100px;  }
+	.wind-speed { margin: -10px 0 0 -10px; }
+	
+	.rain { bottom: 40px; left: 420px; font-size: 36px; }
+	.rain-icon { height: 100px;  }
+	.rain-percent { margin: -10px 0 0 0px; }
+	.rain > .pun { margin-left: -15px; }
+	
+	.conditions { bottom: 40px; left: 580px; }
+	.conditions-icon { margin-left: -30px; }
+</style>
+</head>
+<body>
+
+<canvas id="canvas" width="768" height="768"></canvas>
+	
+<div id="tiltLR"></div>
+<div id="tiltFB"></div>
+
+<div class=place>Jupiter</div>
+<div class=temperature>
+	<img class=temperature-icon src=temperature.svg/>
+	<div class=temperature-high>800°</div>
+	<div class=temperature-low>600°</div>
+	<div class=pun>Feels like 815°</div>
+</div>
+
+<div class=wind>
+	<img class=wind-icon src=wind.svg/>
+	<div class=wind-speed>1200 kph</div>
+	<div class=pun>Quite windy!</div>
+</div>
+
+<div class=rain>
+	<img class=rain-icon src=rain.svg/>
+	<div class=rain-percent>7,000%</div>
+	<div class=pun>Take umbrella</div>
+</div>
+
+<div class=conditions>
+	<img class=conditions-icon src=conditions.svg/>
+	<div class=pun>Other conditions</div>
+</div>
+
+
+<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightingDirection;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        vTextureCoord = aTextureCoord;
+
+        if (!uUseLighting) {
+            vLightWeighting = vec3(1.0, 1.0, 1.0);
+        } else {
+            vec3 transformedNormal = uNMatrix * aVertexNormal;
+            float directionalLightWeighting = max(dot(transformedNormal, uLightingDirection), 0.0);
+            vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+        }
+    }
+</script>
+
+<script>
+	var moonRotationMatrix;
+</script>
+<script src="render.js"></script>
+<script src="index.js"></script>
+
+</body>

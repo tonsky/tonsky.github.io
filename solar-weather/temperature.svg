@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="180px" viewBox="0 0 100 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>temperature</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-288.000000, -237.000000)">
+            <path d="M349,360.526985 C354.431542,364.214282 358,370.440412 358,377.5 C358,388.821837 348.821837,398 337.5,398 C326.178163,398 317,388.821837 317,377.5 C317,370.440412 320.568458,364.214282 326,360.526985 L326,266.50492 C326,260.150928 331.147329,255 337.5,255 C343.851275,255 349,260.144864 349,266.50492 L349,360.526985 Z" id="Oval-1" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+            <path d="M343,364.07947 C348.280811,366.245939 352,371.438638 352,377.5 C352,385.508129 345.508129,392 337.5,392 C329.491871,392 323,385.508129 323,377.5 C323,371.438638 326.719189,366.245939 332,364.07947 L332,266.49745 C332,263.461292 334.468615,261 337.5,261 C340.537566,261 343,263.463023 343,266.49745 L343,364.07947 Z" id="Oval-1-Copy" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
