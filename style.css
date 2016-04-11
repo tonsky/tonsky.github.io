@@ -121,9 +121,10 @@ sub { top: .5ex; }
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
 
-.comments {  margin: 90px 0 0 0; }
-.comments > a, .comments > span  { position: relative; top: -5px; margin-right: 5px; } 
-.comments > a:last-of-type { margin: 0 15px 0 0; }
+.comments {  margin: 90px 0 0 0; line-height: 20px; }
+.comments > a, .comments > span, .comments > iframe  {  margin-right: 5px; }
+.twitter-share-button { vertical-align: bottom; }
+
 
 .event { font-size: 14px; display: inline-block; width: 380px; vertical-align: top; margin: 0 20px 4em 0; }
 .event > h1 { font-size: 20px; margin: 0 0 1em 0; }
