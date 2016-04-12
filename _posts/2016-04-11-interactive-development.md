@@ -42,7 +42,9 @@ Now I’m in the era of interactive development. It builds on the fact that code
 Here’s a quick video to give you an idea how interactive development might actually looks like, given the right tools and setup:
 
 
-<figure><iframe width="600" height="338" src="https://www.youtube.com/embed/XEMI5-MBgaM" frameborder="0" allowfullscreen></iframe></figure>
-
+<figure>
+<iframe width="600" height="338" src="https://www.youtube.com/embed/XEMI5-MBgaM" frameborder="0" allowfullscreen></iframe>
+(You can grab my LightTable skin <a href="https://github.com/tonsky/alabaster-lighttable-skin" target="_blank">here</a>)
+</figure>
 
 What now? Even if you’re completely sold on the ideas, chances are you won’t be able to apply most of them immediately. My intention is to show you where to aim at and let you find your opportunities for yourself. Even if you can’t do everything, try to get as close as you can (e.g. unit tests + quick turnaround is pretty good, devtools console is a REPL, many compilers have fast compile times, etc). This is not an easy path, not a convenient path, not the most popular one, but I can assure you it’s worth it.
