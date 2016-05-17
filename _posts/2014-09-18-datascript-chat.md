@@ -289,6 +289,6 @@ This should bring sanity to web app development. Finally, server API is dumb and
 
 4. While DataScript doesn’t have its own documentation, take a look at Datomic’s docs on [queries](http://docs.datomic.com/query.html),  [transactions](http://docs.datomic.com/transactions.html), [entities](http://docs.datomic.com/entities.html) and [indexes](http://docs.datomic.com/indexes.html). They are pretty close, with some minor differences
 
-5. [DataScript tests suite](https://github.com/tonsky/datascript/blob/master/test/test/datascript.cljs) can give you a good overview of what’s possible with DataScript
+5. [DataScript tests suite](https://github.com/tonsky/datascript/tree/master/test/datascript/test) can give you a good overview of what’s possible with DataScript
 
 6. And, of course, don’t forget [CatChat codebase](https://github.com/tonsky/datascript-chat)
