@@ -92,8 +92,9 @@ What people don’t agree on is that every new version should come with a human-
 Not.
 
 <div class="footnotes-br"></div>
+
 <ol class="footnotes">
-<li id="fn1">Seriously, Github. Please figure that out. People try to use you for work stuff. People use versions. People need versions (except for Go folks, they gave up on them. They’re more than welcome to host on Github <a href="#f1" class>↩︎</a></li>
+<li id="fn1">Seriously, Github. Please figure that out. People try to use you for work stuff. People use versions. People need versions (except for Go folks, they gave up on them. They’re more than welcome to host on Github) <a href="#f1" class>↩︎</a></li>
 <li id="fn2">Where is your semantic versioning now, huh? <a href="#f2" class>↩︎</a></li>
 <li id="fn3">Nothing wrong with emoticons, of course. <a href="#f3" class>↩︎</a></li>
 <li id="fn4">Did I mentioned that Github won’t show you tags on commits page? Good luck figuring out when that release happened. <a href="#f4" class>↩︎</a></li>
