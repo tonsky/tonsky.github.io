@@ -112,14 +112,19 @@ pre, code { border: none;  }
 ul { padding: 0 0 0 1em; list-style-type: square; }
 ul > li, ol > li { margin: 0.5em 0; }
 
-sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
-sup, .note-ref, .note-number  { bottom: 1.4ex; }
+sup, sub, .note-ref, .note-number, .footnote { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
+sup, .note-ref, .note-number, .footnote { bottom: 1.4ex; }
 sub { top: .5ex; }
+.footnote { margin: 0 5px;  }
+.footnotes-br { width: 100px; height: 2px; background: hsl(215, 50%, 70%); margin-top: 5em; }
+.footnotes { padding-left: 1em;  }
 
 .date { font-size: 0.8em; color: hsl(215, 50%, 75%); }
 
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
+
+
 
 .comments {  margin: 90px 0 0 0; line-height: 20px; }
 .comments > a, .comments > span, .comments > iframe  {  margin-right: 5px; }
