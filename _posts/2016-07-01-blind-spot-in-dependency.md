@@ -81,7 +81,9 @@ _Rule 13._ If you forget something, so be it. It comes without warranties, right
 
 _Rule 14._ Have a changelog. This is probably the most important rule of them all. I just realized all other rules are meaningless without this one.
 
-_Rule 15._ Call it `CHANGELOG` so people will know it’s important.
+_Rule 15._ Put it in your repo. Don’t post it in user group. Well, you can, but don’t _just_ post it in user group. Three-years-old bug, remember? 
+
+_Rule 16._ Call it `CHANGELOG` so people will know it’s important.
 
 That’s it. Simple, right?
 
