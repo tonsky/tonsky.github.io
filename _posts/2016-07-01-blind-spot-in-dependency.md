@@ -11,11 +11,11 @@ And I’d agree with you. Not.
 
 But that’s not the point. What worries me is that while a lot of effort goes into fetching the right version of a library, close to none is spent on convincing me _why_ I should want it in the first place.
 
-Some tools fail to even fulfil the first part of the promise and will only fetch you _some_ version, effectively removing the second problem for you (if you don’t control what version you are getting you won’t be troubled choosing one).
+Some tools fail to even fulfill the first part of the promise and will only fetch you _some_ version, effectively removing the second problem for you (if you don’t control what version you are getting you won’t be troubled choosing one).
 
 Yet, some of us have slightly higher standards than that. Let’s assume that our tool is smart enough to fetch exactly what we’ve told it to. All is fine for a while, until, two years in a project, you ask yourself if something positive has happened with the libraries you started using back then. Maybe you’re lucky and your tool can even compile a list of outdated versions for you:
 
-<figure><img src="./lein_ancient.png" /></figure>
+<figure class="window"><img src="./lein_ancient.png" /></figure>
 
 But that’s not the problem. How do you decide, in each particular case, if you should type “yes” or “no” there? Guessing? Hard guessing? Is there a threshold? If you’re more than 3 minor versions behind, you upgrade, otherwise, you let it be? Scientifically controlled and totally fair coin toss?
 
@@ -39,7 +39,7 @@ Is there?
 
 <figure><img src="./github.jpg" /></figure>
 
-It’d be better if it wasn’t. Thing is, many people treat commit log as an actual log. A diary of theirs. They will write down their life events, current mood, messages to team members, emoticons in there.<a id="f3" href="#fn3" class="footnote">3</a> You’ll be reading about all the wrong paths taken, bad merges and attempts to fix them (no, you don’t want to see a visual tree of git commits in an actively developed project), and, best of all, typos. It also appears they can’t hold it, and their commit rate might approach several commits per minute. Good luck filtering the noise out.<a id="f4" href="#fn4" class="footnote">4</a>
+It’d be better if there wasn’t. Thing is, many people treat commit log as an actual log. A diary of theirs. They will write down their life events, current mood, messages to team members, emoticons in there.<a id="f3" href="#fn3" class="footnote">3</a> You’ll be reading about all the wrong paths taken, bad merges and attempts to fix them (no, you don’t want to see a visual tree of git commits in an actively developed project), and, best of all, typos. It also appears they can’t hold it, and their commit rate might approach several commits per minute. Good luck filtering the noise out.<a id="f4" href="#fn4" class="footnote">4</a>
 
 Which leads us to the obvious answer: _Changelog!_ Changelog. Pause right there and think for a second. What if there was a place specifically designed to communicate what has changed between releases? A changelog. The changelog.
 
@@ -49,7 +49,7 @@ So changelogs are a good thing. And they already exist. People are doing them, r
 
 That’s what concerns me. The lack of changelogs, and the lack of discussions about the lack of changelogs. I want to make conscious decisions about my project’s dependencies. I don’t want a pig in a poke. With my luck, I can’t rely on luck either.  I want to read, understand, track and evaluate every change until I’m like through 30 of them. Then I’ll blindly update rest of the libs and hope for the best anyways. But these 30, they are important. I want them to be quality changes. Is it too much to ask?
 
-Sorry for so much ranting so far. Let me make add some utility to this article and give some advice on good changeloggin:
+Sorry for so much ranting so far. Let me try to add some utility to this article and give an advice on good changeloggin:
 
 _Rule 1._ Good changelog is not a JIRA search page.
 
@@ -87,7 +87,7 @@ _Rule 16._ Call it `CHANGELOG` so people will know it’s important.
 
 That’s it. Simple, right?
 
-Dependency management software is pretty good. It is. You need to understand it (I know, totally unfair), but most of the time it gets the job done. Inside a single technology, people usually agree on version numbers, central repo, build tools—most of the technical details.
+Dependency management software is pretty good. It is. You need to understand it (I know, totally unfair), but most of the time it gets the job done. Inside a single technology, people usually agree on version numbers, central repo, build tools—most of the technicalities.
 
 What people don’t agree on is that every new version should come with a human-readable list of changes. Upgrading your stack shouldn’t be a blind game of luck. Maybe one day we’ll see a tool like `lein ancient` that will print you all the changes before asking you if you want to upgrade.<a id="f5" href="#fn5" class="footnote">5</a> And that list would be short, precise, well-written piece of poetry.
 
