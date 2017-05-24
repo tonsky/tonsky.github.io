@@ -20,6 +20,10 @@ layout: default
   <div id="fb-root"></div>
   
   <p class=comments>
+    <a class="btn-share" href="https://twitter.com/intent/tweet?url=http://tonsky.me{{ page.url }}&text={{ page.title }}" target="_blank"><svg viewBox="0 0 800 800"><path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"/></svg> Tweet</a>
+
+    <a class="btn-share" href="https://www.facebook.com/sharer/sharer.php?u=http://tonsky.me{{ page.url }}" target="_blank"><svg viewBox="0 0 800 800"><path d="M604 170c15 0 26 11 26 26v408c0 15-11 26-26 26H487V452h60l9-70h-69v-44c0-20 6-34 35-34h37v-62s-24-3-54-3c-53 0-89 33-89 92v51h-60v70h60v178H196c-15 0-26-11-26-26V196c0-15 11-26 26-26h408z"/></svg> Share</a>
+
     {% if page.hackernews_id or page.reddit_url %}
       <span>Discussion on</span>
       {% if page.hackernews_id %}
@@ -29,22 +33,8 @@ layout: default
         <a href="{{ page.reddit_url }}">Reddit</a>
       {% endif %}
     {% endif %}
-    
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tonsky.me{{ page.url }}" data-text="{{ page.title }}" data-via="nikitonsky">Tweet</a>
-    
-    <span class="fb-share-button" data-href="http://tonsky.me{{ page.url }}" data-layout="button_count"></span>
-    
+        
     
   </p>
 
 </div>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1539961276242187";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>

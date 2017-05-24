@@ -3,3 +3,5 @@
 _site
 *.sketch
 .vscode
+blog/readable-clojure/originals/*
+blog/readable-clojure/snippets/*
