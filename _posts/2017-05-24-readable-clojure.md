@@ -3,6 +3,7 @@ layout: post
 title: "Readable Clojure"
 category: blog
 summary: "Some advices to writing Clojure code"
+hackernews_id: 14413872
 ---
 
 <style>
