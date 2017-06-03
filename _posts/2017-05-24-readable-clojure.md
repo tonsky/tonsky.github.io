@@ -4,6 +4,7 @@ title: "Readable Clojure"
 category: blog
 summary: "Some advices to writing Clojure code"
 hackernews_id: 14413872
+reddit_url: "https://www.reddit.com/r/Clojure/comments/6d3w8i/readable_clojure/"
 ---
 
 <style>

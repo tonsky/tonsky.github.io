@@ -3,7 +3,7 @@ layout: post
 title: Reinventing Git interface
 category: blog
 hackernews_id: 7906511
-reddit_url: "http://www.reddit.com/r/programming/comments/28j3u7/reinventing_git_interface/"
+reddit_url: "https://www.reddit.com/r/programming/comments/28j3u7/reinventing_git_interface/"
 summary: "A set of recommendations on how Git UI can be improved not on a cosmetic, but on a very fundamental level. We aim at making Git more usable, powerful and easier to learn by radically simplifying its interface and keeping compartibility with the implementation"
 ---
 
