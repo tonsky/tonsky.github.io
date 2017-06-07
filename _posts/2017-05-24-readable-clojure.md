@@ -12,7 +12,20 @@ reddit_url: "https://www.reddit.com/r/Clojure/comments/6d3w8i/readable_clojure/"
 	.osx > img { border-radius: 5px; }
 </style>
 
-This is how you can make Clojure code more pleasant to work with.
+This is how you can make Clojure code more pleasant to work with:
+
+* <a href="#dont-use-use">Don’t use “use”</a>
+* <a href="#use-consistent-unique-namespace-aliases">Use consistent, unique namespace aliases</a>
+* <a href="#use-long-namespace-aliases">Use long namespace aliases</a>
+* <a href="#choose-readabilityover-compactness">Choose readability over compactness</a>
+* <a href="#dont-rely-on-implicit-nil-to-false-coercion">Don’t rely on implicit nil-to-false coercion</a>
+* <a href="#avoid-higher-order-functions">Avoid higher-order functions</a>
+* <a href="#dont-spare-names">Don’t spare names</a>
+* <a href="#dont-use-firstsecondnth-to-unpack-tuples">Don’t use first/second/nth to unpack tuples</a>
+* <a href="#dont-fall-for-expanded-opts">Don’t fall for expanded opts</a>
+* <a href="#use--as-prefix-for-references">Use * as prefix for references</a>
+* <a href="#align-let-bindings-in-two-columns">Align let bindings in two columns</a>
+* <a href="#use-two-empty-lines-between-top-level-forms">Use two empty lines between top-level forms</a>
 
 ## Don’t use “use”
 
