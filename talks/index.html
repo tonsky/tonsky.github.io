@@ -9,227 +9,560 @@ class: page_wide
   <li><a class="menu__item" href="/about/">About</a>
 </ul>
 
-<h1>Development, IT</h1>
+<style>
+    .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="hsl(215, 50%, 70%)" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .popup:hover::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="white" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .talk { width: 1000px; margin: 0 -100px 70px -100px; min-height: 315px; }
+    .talk-view { width: 560px; }
+    iframe { display: block; border-radius: 4px; }
+    .talk-view-stub { width: 100%; height: 315px; padding: 145px 20px 0 20px; background: hsl(215, 50%, 58%); border-radius: 4px; text-align: center; }
 
-<div class=event>
-    <h1>Client and Server need to talk<span class="lang lang_en"></span></h1>
-    <p>Overview of modern client-server data sync solutions
-    <p class=links><a href="https://www.youtube.com/watch?v=0nL6T-OPtM8">Video</a> and <a href="http://s.tonsky.me/conferences/2017.06%20FrontendConf.pdf">slides</a> <span class=lang>in Russian</span>
-    <p class=where>June 2017 <span class=at>@</span>&nbsp;FrontendConf, Moscow</a>
-</div>
+    .talk-view, .talk-details { display: table-cell; vertical-align: top; }
+    .talk-details { padding-left: 20px; }
+    audio { width: 100%; }
 
-<div class=event>
-    <h1>Client and Server need to talk<span class="lang lang_en"></span></h1>
-    <p>Overview of modern client-server data sync solutions
-    <p class=links><a href="https://www.youtube.com/watch?v=7ShYs5FQ6uc">Video</a> and <a href="http://s.tonsky.me/conferences/2017.05%20RigaDevDays.pdf">slides</a> <span class=lang>in English</span>
-    <p class=where>May 2017 <span class=at>@</span>&nbsp;RigaDevDays, Riga</a>
-</div>
+    .talk-details > h2 { margin: 0 0 0 0; }
+    .highlight::after { content: " "; margin: 0 0 -2px 4px; display: inline-block; width: 19px; height: 19px; background-image: url('data:image/svg+xml;utf8,<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="highlight" fill="%23FEE18B"><polygon id="Star" points="9.60845213 14 4.90617011 16.472136 5.80422607 11.236068 2 7.52786405 7.25731112 6.76393202 9.60845213 2 11.9595931 6.76393202 17.2169043 7.52786405 13.4126782 11.236068 14.3107341 16.472136"></polygon></g></svg>'); }
+    .talk-extras { font-size: 14px; margin: -15px 0 15px 0; }
+    .talk-downloads { display: none; font-size: 14px; margin: -15px 0 15px 0; }
+    .talk-version { font-size: 14px; line-height: 26px; color: hsl(215, 50%, 70%); cursor: pointer; }
+    .talk-version_active, .talk-version:hover { color: white; }
+    .talk-version_active { cursor: default; }
+    .talk-version-lang { background: hsl(215, 50%, 70%); color: hsl(215, 50%, 55%); padding: 1px 3px 0px 3px; border-radius: 2px; font-size: 10px; position: relative; top: -1px; margin: 0 3px 0 0; }
+    .talk-version_active > .talk-version-lang,
+    .talk-version:hover > .talk-version-lang { background: white; color: hsl(215, 50%, 55%); }
+    .talk-version-preview { display: none; }
+</style>
 
-<div class=event>
-    <h1>Client and Server need to talk<span class="lang lang_ru"></span></h1>
-    <p>Overview of modern client-server data sync solutions
-    <p class=links><a href="https://www.youtube.com/watch?v=m-siXL-mbbE">Video</a> and <a href="http://s.tonsky.me/conferences/2017.04%20Dump.pdf">slides</a> <span class=lang>in Russian</span>
-    <p class=where>April 2017 <span class=at>@</span>&nbsp;DUMP, Yekaterinburg</a>
-</div>
+<script>
+    function render_version_idx(event, idx) {
+        var version = event.currentTarget,
+            details = version.parentNode,
+            inner   = details.parentNode,
+            talk    = inner.parentNode;
+        render_version(talk, talk.querySelectorAll("script[type=talk-version]")[idx]);
+    }
 
-<div class=event>
-    <h1>Client and Server need to talk<span class="lang lang_ru"></span></h1>
-    <p>Overview of modern client-server data sync solutions
-    <p class=links><a href="https://www.youtube.com/watch?v=uHGeI9_fgUw">Video</a> and <a href="http://s.tonsky.me/conferences/2017.04%20Codefest.pdf">slides</a> <span class=lang>in Russian</span>
-    <p class=where>April 2017 <span class=at>@</span>&nbsp;Codefest, Novosibirsk</a>
-</div>
+    function render_version(talk, version) {
+        var html = version.innerHTML,
+            versions = talk.querySelectorAll("script[type=talk-version]");
+        for (var i = 0; i < versions.length; ++i) {
+            var lang   = versions[i].getAttribute("data-lang"),
+                date   = versions[i].getAttribute("data-date"),
+                place  = versions[i].getAttribute("data-place"),
+                active = versions[i] === version;
+            html += "<div"
+                 +  " class='talk-version" + (active ? " talk-version_active" : "") + "'"
+                 +  (active ? "" : " onclick='render_version_idx(event, " + i + ")'")
+                 +  ">"
+                 +    "<span class='talk-version-lang'>" + lang + "</span> "
+                 +    date
+                 +    (place === null ? "" : " × " + place)
+                 +  "</div>";
+        }
+        talk.querySelector(".talk-inner").innerHTML = html + "</div>";
+    }
 
-<div class=event>
-    <h1>Perfecting Clojure<span class="lang lang_ru"></span></h1>
-    <p>Couple of rules that helps make Clojure code better
-    <p class=links><a href="https://www.youtube.com/watch?v=oeA7k4XYJGs">Video</a> and <a href="http://s.tonsky.me/conferences/2017.02%20Moscow%20Clojure%20Meetup.pdf">slides</a> <span class=lang>in Russian</span>
-    <p class=where>February 2017 <span class=at>@</span>&nbsp;Moscow Clojure Meetup</a>
-</div>
+    function on_scroll() {
+        var wh     = window.innerHeight,
+            offset = document.body.scrollTop,
+            talks  = document.querySelectorAll(".talk_hidden");
+        for (var i = 0; i < talks.length; ++i) {
+            var talk = talks[i],
+                talk_top = talk.offsetTop,
+                talk_bottom = talk_top + talk.clientHeight,
+                visible = talk_bottom > offset && talk_top < offset + wh;
+            if (visible) {
+                talk.classList.remove("talk_hidden");
+                render_version(talk, talk.querySelector("script[data-active]"));
+            }
+        }
+    }
 
-<div class=event>
-    <h1>How to approach modern web apps<span class="lang lang_ru"></span></h1>
-    <p>High-level architecture overview of modern, collaborative web apps
-    <p class=links><a href="https://www.youtube.com/watch?v=x9yYlDNHI2Y">Video</a> <span class=lang>(in Russian)</span>, <a href="http://s.tonsky.me/conferences/2016.12%20HolyJS%20Moscow.pdf">slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>December 2016 <span class=at>@</span>&nbsp;HolyJS, Moscow</a>
-</div>
+    window.addEventListener("scroll", on_scroll);
+    window.addEventListener("load", function(e) {
+        on_scroll(e);
+    });
+</script>
 
-<div class=event>
-    <h1>How to approach modern web apps<span class="lang lang_en"></span></h1>
-    <p>High-level architecture overview of modern, collaborative web apps
-    <p class=links><a href="https://www.youtube.com/watch?v=bDBRY4e81Tk">Video</a> <span class=lang>(in English)</span>, <a href="http://s.tonsky.me/conferences/2016.12%20funcby.pdf">slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>December 2016 <span class=at>@</span>&nbsp;f(by), Minsk</a>
-</div>
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-lang="RU" data-date="June 2017" data-place="FrontendConf, Moscow">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0nL6T-OPtM8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Клиенту и серверу нужно поговорить</h2>
+            <p class="talk-description">Состояние и перспективы клиент-серверной синхронизации данных. GraphQL, Apollo, PouchDB, реактивность, Meteor, Firabase, журналы событий, работа с конфликтами, CRDT</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2017.06%20FrontendConf.pdf"></a></p>
+    </script>
 
-<div class=event>
-    <h1>Modern web apps with Rum<span class="lang lang_en"></span></h1>
-    <p>History and philosophy behind Rum
-    <p class=links><a href="https://skillsmatter.com/skillscasts/9149-modern-web-apps-with-rum">Video</a>, <a href="http://s.tonsky.me/conferences/2016.12%20Clojure%20eXchange.pdf">slides</a>
-    <p class=where>December 2016 <span class=at>@</span>&nbsp;Clojure eXchange, London</a>
-</div>
+    <script type="talk-version" data-active data-lang="EN" data-date="May 2017" data-place="RigaDevDays, Riga">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ShYs5FQ6uc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Client and Server need to talk</h2>
+            <p class="talk-description">Data sync problem space and solutions. GraphQL, Apollo, PouchDB, reactivity, Meteor, Firabase, event sourcing, conflict resolution, CRDTs</p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2017.05%20RigaDevDays.pdf" class="slides"></a></p>
+    </script>
 
+    <script type="talk-version" data-lang="RU" data-date="April 2017" data-place="DUMP, Yekaterinburg">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/m-siXL-mbbE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Клиенту и серверу нужно поговорить</h2>
+            <p class="talk-description">Состояние и перспективы клиент-серверной синхронизации данных. GraphQL, Apollo, PouchDB, реактивность, Meteor, Firabase, журналы событий, работа с конфликтами, CRDT</p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2017.04%20Dump.pdf" class="slides"></a></p>
+    </script>
 
-<div class=event>
-    <h1>Isomorphic web apps with Rum<span class="lang lang_en"></span></h1>
-    <p>History and philosophy behind Rum
-    <p class=links><a href="https://www.youtube.com/watch?v=2fLx4fu9VV8">Video</a>, <a href="http://s.tonsky.me/conferences/2016.09%20clojureTRE.pdf">slides</a>
-    <p class=where>September 2016 <span class=at>@</span>&nbsp;clojuTRE, Tampere</a>
-</div>
-
-<div class=event>
-    <h1>DevZen podcast episode 99<span class="lang lang_ru"></span></h1>
-    <p>ClojureCourse.by, Alan Kay AMA, HolyJS, clojure.spec
-    <p class=links><a href="http://devzen.ru/episode-0099/">Audio + links</a> <span class=lang>(in Russian)</span>
-    <p class=where>July 2016 <span class=at>@</span>&nbsp;DevZen</a>
-</div>
-
-<div class=event>
-    <h1>Rum workshop<span class="lang lang_en"></span></h1>
-    <p>Capabilities, design philosophy and usage scenarios
-    <p class=links><a href="https://www.youtube.com/watch?v=RqHnxkU9TZE">Video</a>
-    <p class=where>June 2016 <span class=at>@</span>&nbsp;Cognician</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Data on frontend” talk<span class="lang lang_ru"></span></h1>
-    <p>Analysis of modern client-server data sync solutions
-    <p class=links><a href="https://www.youtube.com/watch?v=ZWNtxmrA4UY">Video</a>, <a href="http://s.tonsky.me/conferences/2016.06%20holyjs.pdf">slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>June 2016 <span class=at>@</span>&nbsp;HolyJS, Saint-Petersburg</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>How immutability, FP, DBs and reactivity change front-end” talk<span class="lang lang_en"></span></h1>
-    <p>Why frontend apps need a storage
-    <p class=links><a href="https://www.youtube.com/watch?v=5DyQwMQbWvs">Video</a>, <a href="http://s.tonsky.me/conferences/2015.11%20reactive.pdf">slides</a>
-    <p class=where>November 2015 <span class=at>@</span>&nbsp;Reactive, Bratislava</a>
-</div>
-
-<div class=event>
-    <h1>Razbor Poletov podcast episode 92<span class="lang lang_ru"></span></h1>
-    <p>Clojure, ClojureScript, DataScript, Datomic
-    <p class=links><a href="http://razbor-poletov.com/2015/10/episode-92.html">Audio + links</a> <span class=lang>(in Russian)</span>
-    <p class=where>October 2015 <span class=at>@</span>&nbsp;Razbor Poletov</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Frontend with Joy” talk<span class="lang lang_en"></span></h1>
-    <p>How DataScript alleviates common SPA problems
-    <p class=links><a href="https://www.youtube.com/watch?v=cRWrrHPrk9g">Video</a> <span class=lang>(in Russian)</span>, <a href="http://s.tonsky.me/conferences/2015.08%20fpconf.pdf">slides</a>
-    <p class=where>August 2015 <span class=at>@</span>&nbsp;FPConf, Moscow</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Web UI with Database in a Browser” talk<span class="lang lang_en"></span></h1>
-    <p>How to apply DataScript to reactive single-page web applications
-    <p class=links><a href="http://www.youtube.com/watch?v=1dr-CzMMDD8">Video</a>, <a href="http://s.tonsky.me/conferences/2015.07%20polyconf.pdf">slides</a>
-    <p class=where>July 2015 <span class=at>@</span>&nbsp;PolyConf, Poznań</a>
-</div>
-
-<div class=event>
-    <h1><span class=star></span>Functional programming in a browser-2<span class="lang lang_ru"></span></h1>
-    <p>How functional programming can be applied to ease SPAs development
-    <p class=links><a href="2015-frontendconf/">Full transcript + Slides</a> <span class=lang>(in Russian)</span>,
-      <a href="http://leonov.net/pages/functional-programming-in-a-browser/">unofficial English translation</a>
-    <p class=where>May 2015 <span class=at>@</span>&nbsp;FrontendConf, Moscow</a>
-</div>
-
-<div class=event>
-    <h1><span class=star></span>Functional programming in a browser<span class="lang lang_ru"></span></h1>
-    <p>How functional programming can be applied to ease SPAs development
-    <p class=links><a href="2015-codefest/">Full transcript + Slides</a>, <a href="https://www.youtube.com/watch?v=CohpRapbXqA">video</a> <span class=lang>(in Russian)</span>
-    <p class=where>March 2015 <span class=at>@</span>&nbsp;Codefest, Novosibirsk</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>DataScript for Web Development” talk<span class="lang lang_en"></span></h1>
-    <p>Overview of DataScript implementation and range of application architectures it enables
-    <p class=links><a href="https://speakerdeck.com/tonsky/datascript-for-web-development">Slides</a>, <a href="https://skillsmatter.com/skillscasts/6038-datascript-for-web-development">video</a> <span class=lang>(in English)</span>
-    <p class=where>December 2014 <span class=at>@</span>&nbsp;Clojure eXchange, London</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>ToDo list in DataScript” webinar<span class="lang lang_en"></span></h1>
-    <p>Creating ToDo app from scratch using DataScript and React
-    <p class=links><a href="https://github.com/tonsky/datascript-todo/tree/gh-pages/src">Source code</a>, <a href="http://vimeo.com/114688970">video</a> <span class=lang>(in English)</span>
-    <p class=where>December 2014 <span class=at>@</span>&nbsp;ClojureScript NYC user group</a>
+    <script type="talk-version" data-lang="RU" data-date="April 2017" data-place="Codefest, Novosibirsk">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uHGeI9_fgUw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Клиенту и серверу нужно поговорить</h2>
+            <p class="talk-description">Состояние и перспективы клиент-серверной синхронизации данных. GraphQL, Apollo, PouchDB, реактивность, Meteor, Firabase, журналы событий, работа с конфликтами, CRDT</p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2017.04%20Codefest.pdf" class="slides"></a></p>
+    </script>
 </div>
 
 
-<div class=event>
-    <h1><span class=q>“</span>Criterias to evaluate PLs” talk<span class="lang lang_ru"></span></h1>
-    <p>Checklist for people arguing about pros and cons of programming languages
-    <p class=links><a href="http://tonsky.livejournal.com/297610.html">Full transcript</a> <span class=lang>(in Russian)</span>
-    <p class=where>November 2014 <span class=at>@</span>&nbsp;f(by), Minsk</a>
-</div>
-
-<div class=event>
-    <h1>DevZen podcast episode 12<span class="lang lang_ru"></span></h1>
-    <p>ClojureCup, Transit, transducers, ClojureScript rationale, React
-    <p class=links><a href="http://devzen.ru/episode-0012/">Audio + links</a> <span class=lang>(in Russian)</span>
-    <p class=where>October 2014 <span class=at>@</span>&nbsp;DevZen</a>
-</div>
-
-<div class=event>
-    <h1>EaxCast podcast s02e06<span class="lang lang_ru"></span></h1>
-    <p>Streams (Mail 3.0 concept), Lambda architecture, Storm, Zookeeper
-    <p class=links><a href="http://devzen.ru/episode-0012/">Audio + links</a> <span class=lang>(in Russian)</span>
-    <p class=where>July 2014 <span class=at>@</span>&nbsp;DevZen</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Functional approach to JS” talk<span class="lang lang_ru"></span></h1>
-    <p>How functional programming can help front-end devs
-    <p class=links><a href="2014-05-17-functional-approach-to-js/slides/">Slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>May 2014 <span class=at>@</span>&nbsp;IT Life—local meetup, Saint-Petersburg</a>
-</div>
-
-<div class=event>
-    <h1><span class=star></span>Clojure course lectures</h1>
-    <p>Video lectures &amp; coaching at <a href="http://clojurecourse.by">clojurecourse.by</a>, 2-month online course to cover Clojure language, libraries and ecosystem for 170+&nbsp;students
-    <p class=where>March–May 2014</p>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Why You Need Clojure?” talk<span class="lang lang_ru"></span></h1>
-    <p>Clojure applicability and benefits
-    <p class=links><a href="http://2013.codefest.ru/lecture/53">Announcement</a>, <a href="http://www.youtube.com/watch?v=jZI1aZcRHCI">video</a>, <a href="https://speakerdeck.com/tonsky/clojure-at-codefest-2013">slides</a>, <a href="http://tonsky.livejournal.com/274489.html">discussion</a> <span class=lang>(in Russian)</span>
-    <p class=where>March 2013 <span class=at>@</span>&nbsp;Codefest&#8202;—&#8202;big Russian IT conference, Novosibirsk</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>Clojure at Echo” lectures</h1>
-    <p>Series of 3 lectures exploring Clojure basics and benefits for Echo developers and all who are interested
-    <p class=links><a href="http://tonsky.livejournal.com/tag/clojure%20at%20echo">Video&#8202;+&#8202;slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>July 2012 <span class=at>@</span>&nbsp;Echo office, Ulyanovsk</a>
-</div>
-
-<h1>UI/UX</h1>
-
-<div class=event>
-    <h1><span class=q>“</span>Good Manners for Web UI” talk</h1>
-    <p>Simplest and most effective ways to avoid UX traps while building modern Web UI
-    <p class=links><a href="http://www.slideshare.net/nikitonsky/ss-9452463">Slides</a>, <a href="http://tonsky.livejournal.com/241759.html">discussion</a> <span class=lang>(in Russian)</span>
-    <p class=where>September 2011 <span class=at>@</span>&nbsp;ProfitConf&#8202;—&#8202;local Russian IT conference, Novosibirsk</a>
-</div>
-
-<div class=event>
-    <h1><span class=q>“</span>UX of Developer Tools v2” talk</h1>
-    <p>Where developer tools and IT best practices lack simplicity and can be improved
-    <p class=links><a href="https://vimeo.com/23726142">Video</a>, <a href="http://lib.custis.ru/1a2-philosophy-of-simplicity-prokopov">reactions</a>, <a href="http://tonsky.livejournal.com/230112.html">discussion</a> <span class=lang>(in Russian)</span>
-    <p class=where>May 2011 <span class=at>@</span>&nbsp;AddConf&#8202;—&#8202;big Russian IT conference, Saint-Petersburg</a>
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="February 2017" data-place="Moscow Clojure Meetup">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oeA7k4XYJGs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Совершенствуя Clojure</h2>
+            <p class="talk-description">Как сделать Clojure код еще лучше. Организация кода, стиль, соглашения, читаемость, опасные конструкции</p>
+            <p class="talk-extras"><a class="popup" href="http://tonsky.me/blog/readable-clojure/" target="_blank">Текстовая версия</a></p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2017.02%20Moscow%20Clojure%20Meetup.pdf" class="slides"></a></p>
+    </script>
 </div>
 
 
-<div class=event>
-    <h1><span class=q>“</span>UX of Developer Tools” talk</h1>
-    <p>Where developer tools lack simplicity and can be improved
-    <p class=links><a href="http://2011.codefest.ru/lecture/453">Announcement</a>, <a href="https://speakerdeck.com/tonsky/iuzabiliti-instrumientov-razrabotchika">slides</a> <span class=lang>(in Russian)</span>
-    <p class=where>March 2011 <span class=at>@</span>&nbsp;Codefest&#8202;—&#8202;big Russian IT conference, Novosibirsk</a>
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+
+    <script type="talk-version" data-lang="RU" data-date="December 2016" data-place="HolyJS, Moscow">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/x9yYlDNHI2Y?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Как подойти к современным веб-приложениям</h2>
+            <p class="talk-description">Архитектурное устройство современных коллаборативных веб-приложений. Модель данных, нормализация, клиентские хранилища, синхронизация данных, журналы событий, оптимистичный UI, совместная работа</p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2016.12%20HolyJS%20Moscow.pdf" class="slides"></a></p>
+    </script>
+
+    <script type="talk-version" data-active data-lang="EN" data-date="December 2016" data-place="f(by), Minsk">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bDBRY4e81Tk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>How to approach modern web apps</h2>
+            <p class="talk-description">High-level architecture overview of modern collaborative web apps. Data model, normalization, decoupling, client storages, data sync, event sourcing, optimistic UI, collaboration</p>
+            <p class="talk-downloads"><a href="http://s.tonsky.me/conferences/2016.12%20funcby.pdf" class="slides"></a></p>
+    </script>  
 </div>
 
 
-<div class=event>
-    <h1><span class=q>“</span>Basics of UI Design” talk</h1>
-    <p>Easy-to-apply principles and advices to develop not-so-bad UI when your team lacks dedicated UI designer
-    <p class=links><a href="http://devpoint.ru/video/devpoint2/46641_Nikita_Prokopov.html">Video</a> <span class=lang>(in Russian)</span>
-    <p class=where>October 2010 <span class=at>@</span>&nbsp;DevPoint&#8202;—&#8202;Russian IT conference, Novosibirsk</a>
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-lang="EN" data-date="December 2016" data-place="Clojure eXchange, London">
+        <div class="talk-view">
+            <div class="talk-view-stub"><a class="popup" href="https://skillsmatter.com/skillscasts/9149-modern-web-apps-with-rum" target="_blank">Watch at Skills Matter</a></div>
+        </div>
+        <div class="talk-details">
+            <h2>Modern web apps with Rum</h2>
+            <p class="talk-description">History and philosophy behind <a href="https://github.com/tonsky/rum" target="_blank">Rum</a>, isomorphic Clojure/Script UI library. Simplicity, transparency, extensibility, server-side rendering</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2016.12%20Clojure%20eXchange.pdf"></a></p>
+    </script>
+
+    <script type="talk-version" data-active data-lang="EN" data-date="September 2016" data-place="clojuTRE, Tampere">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/2fLx4fu9VV8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Modern web apps with Rum</h2>
+            <p class="talk-description">History and philosophy behind <a href="https://github.com/tonsky/rum" target="_blank">Rum</a>, isomorphic Clojure/Script UI library. Simplicity, transparency, extensibility, server-side rendering</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2016.09%20clojureTRE.pdf"></a></p>
+    </script>
 </div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="EN" data-date="November 2016" data-place="ViennaJS meetup">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0q_ldbQ5tL4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>A Database for the Client</h2>
+            <p class="talk-description">Short intro into <a href="https://github.com/tonsky/datascript" target="_blank">DataScript</a>, powerful client-side storage. Lightweight, relational, normalized, immutable, supports queries & transaction log</p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="July 2016">
+        <div class="talk-view">
+            <div class="talk-view-stub">
+            <audio controls>
+                <source src="http://devzen.ru/download/2016/devzen-0099-2016-07-02-7b99c042b13561a7.mp3" type="audio/mpeg">
+            </audio>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Подкаст DevZen, эпизод 99</h2>
+            <p class="talk-description">Обучение Clojure на <a href="http://ClojureCourse.by" target="_blank">ClojureCourse.by</a>, Ask Me Anything с Alan Kay и будущее языков программирования, React.js и работа с состоянием на фронтенде, Clojure.spec и property-based тесты, Websocket-ы в разных стеках.</p>
+            <p class="talk-extras"><a class="popup" href="http://devzen.ru/episode-0099/" target="_blank">Ссылки, обсуждение</a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="EN" data-date="June 2016" data-place="Cognician">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RqHnxkU9TZE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Rum workshop</h2>
+            <p class="talk-description">Capabilities, design philosophy, usage scenarios and lots of code examples</p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="June 2016" data-place="HolyJS, Saint-Petersburg">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZWNtxmrA4UY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Данные на фронтенде</h2>
+            <p class="talk-description">Анализ современных средств синхронизации данных. Проблематика, структура синхронизации, элементы архитектуры, плюсы и минусы Meteor, Firebase, PouchDB, Relay, Horizon, CRDT</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2016.06%20holyjs.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="EN" data-date="November 2015" data-place="Reactive, Bratislava">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5DyQwMQbWvs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>How immutability, functional programming, databases and reactivity change front-end</h2>
+            <p class="talk-description">Do frontend apps need a storage? Why? DataScript data model, queries, transactions, database as a value, foundations for reliable data sync and reactive&nbsp;UIs</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2015.11%20reactive.pdf"></a></p>
+    </script>
+</div>
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="October 2015">
+        <div class="talk-view">
+            <div class="talk-view-stub">
+                <audio controls>
+                    <source src="http://traffic.libsyn.com/razborpoletov/razbor_92.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Подкаст Разбор полетов, эпизод 92</h2>
+            <p class="talk-description">Clojure, ClojureScript, DataScript, Datomic</p>
+            <p class="talk-extras"><a class="popup" href="http://razbor-poletov.com/2015/10/episode-92.html" target="_blank">Ссылки, обсуждение</a></p>
+    </script>
+</div>
+
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-lang="RU" data-date="August 2015" data-place="FPConf, Moscow">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cRWrrHPrk9g?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Фронтенд без грусти</h2>
+            <p class="talk-description">Зачем веб-приложениям клиентский data storage и как использовать <a target="_blank" href="https://github.com/tonsky/datascript">DataScript</a> в single-page приложениях</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2015.08%20fpconf.pdf"></a></p>
+    </script>
+
+    <script type="talk-version" data-active data-lang="EN" data-date="July 2015" data-place="PolyConf, Poznań">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1dr-CzMMDD8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Web UI with Database in a Browser</h2>
+            <p class="talk-description">Why web apps need a client-side data storage and how to apply <a target="_blank" href="https://github.com/tonsky/datascript">DataScript</a> to reactive single-page web applications</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2015.07%20polyconf.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="May 2015" data-place="FrontendConf, Moscow">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6XzYYrQTsks?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2 class="highlight">Функциональное программирование в браузере</h2>
+            <p class="talk-description">Что такое чистые функции, разделение функций и данных, иммутабельность, ленивость в контексте веб-приложений</p>
+            <p class="talk-extras"><a class="popup" target="_blank" href="/talks/2015-frontendconf/">Текстовая версия</a>, <a class="popup" target="_blank" href="http://leonov.net/pages/functional-programming-in-a-browser/">English translation</a></p>
+    </script>
+
+    <script type="talk-version" data-lang="RU" data-date="March 2015" data-place="Codefest, Novosibirsk">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CohpRapbXqA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2 class="highlight">Функциональное программирование в браузере</h2>
+            <p class="talk-description">Что такое чистые функции, разделение функций и данных, иммутабельность, ленивость в контексте веб-приложений</p>
+            <p class="talk-extras"><a class="popup" target="_blank" href="/talks/2015-codefest/">Текстовая версия</a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="EN" data-date="December 2014" data-place="Clojure eXchange, London">
+        <div class="talk-view">
+            <div class="talk-view-stub"><a class="popup" target="_blank" href="https://skillsmatter.com/skillscasts/6038-datascript-for-web-development">Watch at Skills Matter</a></div>
+        </div>
+        <div class="talk-details">
+            <h2>DataScript for Web Development</h2>
+            <p class="talk-description">Overview of <a target="_blank" href="https://github.com/tonsky/datascript">DataScript</a> implementation and range of application architectures it enables</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2014.12%20clojure%20eXchange.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="EN" data-date="December 2014" data-place="ClojureScript NYC user group">
+        <div class="talk-view">
+            <iframe src="https://player.vimeo.com/video/114688970?title=0&byline=0&portrait=0" width="560" height="354" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>ToDo list in DataScript (webinar)</h2>
+            <p class="talk-description">Creating ToDo app from scratch using DataScript and React.js</p>
+            <p class="talk-extras"><a class="popup" href="https://github.com/tonsky/datascript-todo/tree/gh-pages/src">Source code</a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="November 2014" data-place="f(by), Minsk">
+        <div class="talk-view">
+            <div class="talk-view-stub"><a class="popup" target="_blank" href="http://tonsky.livejournal.com/297610.html">Полный текстовый транскрипт</a></div>
+        </div>
+        <div class="talk-details">
+            <h2>Как спорить о языках программирования</h2>
+            <p class="talk-description">Что важно, что неважно, чеклист аргументов</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2014.11%20fby.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="October 2014">
+        <div class="talk-view">
+            <div class="talk-view-stub">
+            <audio controls>
+                <source src="http://devzen.ru/download/2014/devzen-0012-2014-10-10-69edbed02b9a361c.mp3" type="audio/mpeg">
+            </audio>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Подкаст DevZen, эпизод 12</h2>
+            <p class="talk-description">ClojureCup, Transit, transducers, ClojureScript rationale, React</p>
+            <p class="talk-extras"><a class="popup" href="http://devzen.ru/episode-0012/" target="_blank">Ссылки, обсуждение</a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="October 2014">
+        <div class="talk-view">
+            <div class="talk-view-stub" style="padding-top: 125px;">
+                <audio controls>
+                    <source src="http://eaxcast.podfm.ru/_eaxcast/12/file/podfm_eaxcast__eaxcast_205.mp3" type="audio/mpeg">
+                </audio>
+                <audio controls>
+                    <source src="http://eaxcast.podfm.ru/_eaxcast/13/file/podfm_eaxcast__eaxcast_206.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Подкаст EaxCast, s02 e05-06</h2>
+            <p class="talk-description">Streams (Mail 3.0 concept), Lambda architecture, Storm, Zookeeper</p>
+            <p class="talk-extras">Транскрипт и обсуждение: <a class="popup" href="http://eax.me/eaxcast-s02e05/" target="_blank">часть I</a>, <a class="popup" href="http://eax.me/eaxcast-s02e06/" target="_blank">часть II</a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="May 2014" data-place="Clojure Russia">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jhBC81pczZY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>DataScript хэнгаут</h2>
+            <p class="talk-description">Обзор, возможности, ответы на вопросы</p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="May 2014" data-place="IT Life meetup, Saint-Petersburg">
+        <div class="talk-view">
+            <div class="talk-view-stub">
+                <a class="popup" target="_blank" href="/talks/2014-05-17-functional-approach-to-js/slides/">Только слайды</a>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Функциональный подход к JavaScript</h2>
+            <p class="talk-description">Как ФП помогает во фронтенд-разработке</p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="March-May 2014">
+        <div class="talk-view">
+            <div class="talk-view-stub">
+                <a class="popup" target="_blank" href="http://clojurecourse.by/">Все видео и задания</a>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2 class="highlight">Лекции для ClojureCourse.by</h2>
+            <p class="talk-description">Двухмесячный онлайн-курс по Clojure, библиотекам и экосистеме</p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="March 2013" data-place="Codefest, Novosibirsk">
+        <div class="talk-view">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jZI1aZcRHCI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Зачем вам нужна Clojure</h2>
+            <p class="talk-description">Что такое, сильные/слабые стороны, применимость, опыт использования</p>
+            <p class="talk-extras"><a class="popup" href="http://2013.codefest.ru/lecture/53" target="_blank">Тезисы</a>, <a class="popup" href="http://tonsky.livejournal.com/274489.html" target="_blank">обсуждение</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2013.03%20Codefest.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="August 2012" data-place="Echo, Ulyanovsk">
+        <div class="talk-view">
+            <iframe src="https://player.vimeo.com/video/47224529?title=0&byline=0&portrait=0" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Clojure @ Echo 02</h2>
+            <p class="talk-description">Библиотеки, web-стек, ClojureScript</p>
+            <p class="talk-extras"><a class="popup" href="http://tonsky.livejournal.com/266915.html" target="_blank">Обсуждение</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2012.07%20clojure%20at%20echo%2002.pdf"></a></p>
+    </script>
+</div>
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="July 2012" data-place="Echo, Ulyanovsk">
+        <div class="talk-view">
+            <iframe src="https://player.vimeo.com/video/45778765?title=0&byline=0&portrait=0" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Clojure @ Echo 01</h2>
+            <p class="talk-description">Структуры данных, полиморфизм, интероп</p>
+            <p class="talk-extras"><a class="popup" href="http://tonsky.livejournal.com/265621.html" target="_blank">Обсуждение</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2012.06%20clojure%20at%20echo%2001.pdf"></a></p>
+    </script>
+</div>
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="July 2012" data-place="Echo, Ulyanovsk">
+        <div class="talk-view">
+            <iframe src="https://player.vimeo.com/video/45018095?title=0&byline=0&portrait=0" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Clojure @ Echo 00</h2>
+            <p class="talk-description">Обзор, concurrency</p>
+            <p class="talk-extras"><a class="popup" href="http://tonsky.livejournal.com/265218.html" target="_blank">Обсуждение</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2012.06%20clojure%20at%20echo%2000.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden" style="min-height: 458px">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="September 2011" data-place="ProfitConf, Novosibirsk">
+        <div class="talk-view">
+            <iframe src="//www.slideshare.net/slideshow/embed_code/key/EqGuGjZtz5fpjo" width="560" height="456" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Правила хорошего тона для веб-приложений</h2>
+            <p class="talk-description">Автоматизация, простота, человечность, доступность, внимание к деталям</p>
+            <p class="talk-extras"><a class="popup" href="http://tonsky.livejournal.com/241759.html" target="_blank">Обсуждение</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2011.09%20ProfitConf.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="May 2011" data-place="ADDConf, Saint-Petersburg">
+        <div class="talk-view">
+            <iframe src="https://player.vimeo.com/video/23726142?title=0&byline=0&portrait=0" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Философия простоты, или еретическая лекция о программировании</h2>
+            <p class="talk-description">Как упростить и улучшить инструменты самих разработчиков</p>
+            <p class="talk-extras"><a class="popup" href="http://lib.custis.ru/1a2-philosophy-of-simplicity-prokopov" target="_blank">Отзывы</a></p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2011.05%20ADDconf.pdf"></a></p>
+    </script>
+
+    <script type="talk-version" data-lang="RU" data-date="March 2011" data-place="Codefest, Novosibirsk">
+        <div class="talk-view">
+            <iframe src="//www.slideshare.net/slideshow/embed_code/key/iZzUkk0CZ9mkvP" width="560" height="456" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Мы ведь тоже люди. Еретическая лекция про юзабилити инструментов разработчика</h2>
+            <p class="talk-description">Как упростить и улучшить инструменты самих разработчиков</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2011.03%20Codefest.pdf"></a></p>
+    </script>
+</div>
+
+
+<div class="talk talk_hidden" style="min-height: 458px">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="October 2010" data-place="DevPoint, Novosibirsk">
+        <div class="talk-view">
+            <iframe src="//www.slideshare.net/slideshow/embed_code/key/zhcVpOeuYz6OWH" width="560" height="456" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+        <div class="talk-details">
+            <h2>Основы проектирования интерфейсов</h2>
+            <p class="talk-description">Базовые приемы улучшения интерфейса на случай, если в команде нет UI-дизайнера</p>
+            <p class="talk-downloads"><a class="slides" href="http://s.tonsky.me/conferences/2010.10%20Devpoint.pdf"></a></p>
+    </script>
+</div>
+
