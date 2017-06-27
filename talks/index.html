@@ -63,9 +63,9 @@ class: page_wide
         talk.querySelector(".talk-inner").innerHTML = html + "</div>";
     }
 
-    function on_scroll() {
+    function on_scroll(e) {
         var wh     = window.innerHeight,
-            offset = document.body.scrollTop,
+            offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
             talks  = document.querySelectorAll(".talk_hidden");
         for (var i = 0; i < talks.length; ++i) {
             var talk = talks[i],
@@ -79,9 +79,9 @@ class: page_wide
         }
     }
 
-    window.addEventListener("scroll", on_scroll);
     window.addEventListener("load", function(e) {
         on_scroll(e);
+        window.addEventListener("scroll", on_scroll);
     });
 </script>
 
