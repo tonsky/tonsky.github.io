@@ -3,6 +3,7 @@ layout: post
 title: "My web app died from performance bankruptcy"
 category: blog
 summary: "Chrome team breaks existing web to make Chrome perform better"
+hackernews_id: 15634609
 ---
 
 *TL;DR Chrome team breaks web to make Chrome perform better.*
