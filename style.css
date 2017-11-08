@@ -5,7 +5,7 @@
 }
 
 body {
-  background: hsl(215, 50%, 55%);
+  background: hsl(215, 45%, 40%);
   color: white;
   font: 17px/30px 'Fira Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,10 +18,10 @@ body {
 
 .menu { width: 544px; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
 .menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
-.menu__item, a.menu__item { color: hsl(215, 50%, 77%); border-color: transparent; display: inline-block; }
+.menu__item, a.menu__item { color: hsl(215, 45%, 67%); border-color: transparent; display: inline-block; }
 a.menu__item:hover { color: inherit; border-color: hsl(45,98%,77%); border-width: 2px; }
 .menu__item_selected, a.menu__item_selected { color: white; border-bottom: 2px solid hsl(45,98%,77%); }
-.menu__item_inside, a.menu__item_inside { border-bottom: 2px solid hsl(215,50%,70%); }
+.menu__item_inside, a.menu__item_inside { border-bottom: 2px solid hsl(215,45%,60%); }
 
 h1, h2 { font: 200 1em 'Fira Sans'; margin: 2.5em 0 0.5em; }
 pre, code { font: 0.95em/1.5em 'Fira Mono', monospace; }
@@ -34,7 +34,7 @@ pre, code { font: 0.95em/1.5em 'Fira Mono', monospace; }
 }
 
 ::selection, ::-moz-selection { background-color: hsl(225, 10%, 85%); }
-a { color: inherit; text-decoration: none; border-bottom: 2px solid hsl(215, 50%, 70%); }
+a { color: inherit; text-decoration: none; border-bottom: 2px solid hsl(215, 45%, 60%); }
 a:hover { border-color: hsl(45,98%,77%); }
 p, blockquote { margin: 15px 0; }
 h1 + p + blockquote { margin-bottom: 30px; margin-right: 2em; }
@@ -74,10 +74,10 @@ sup, sub, .note-ref, .note-number, .footnote { vertical-align: baseline; positio
 sup, .note-ref, .note-number, .footnote { bottom: 1.4ex; }
 sub { top: .5ex; }
 .footnote { margin: 0 5px;  }
-.footnotes-br { width: 100px; height: 2px; background: hsl(215, 50%, 70%); margin-top: 5em; }
+.footnotes-br { width: 100px; height: 2px; background: hsl(215, 45%, 60%); margin-top: 5em; }
 .footnotes { padding-left: 1em;  }
 
-.date { font-size: 0.8em; color: hsl(215, 50%, 75%); }
+.date { font-size: 0.8em; color: hsl(215, 45%, 65%); }
 
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
