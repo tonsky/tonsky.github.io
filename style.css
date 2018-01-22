@@ -88,8 +88,8 @@ sub { top: .5ex; }
 .comments > a, .comments > span  {  margin-right: 5px; }
 
 
-.btn-share { text-decoration: none; background: white; color: hsl(215, 50%, 55%); border: none; font-size: 12px; padding: 0px 7px; display: inline-block; border-radius: 4px; position: relative; top: -1px; }
-.btn-share > svg { width: 21px; height: 21px; vertical-align: bottom; margin: 0 -2px 0 -5px; fill: hsl(215, 50%, 55%); }
+.btn-share { text-decoration: none; background: white; color: hsl(215, 45%, 40%); border: none; font-size: 12px; padding: 0px 7px; display: inline-block; border-radius: 4px; position: relative; top: -1px; }
+.btn-share > svg { width: 21px; height: 21px; vertical-align: bottom; margin: 0 -2px 0 -5px; fill: hsl(215, 45%, 45%); }
 
 .event { font-size: 14px; display: inline-block; width: 380px; vertical-align: top; margin: 0 20px 4em 0; }
 .event > h1 { font-size: 20px; margin: 0 0 1em 0; }
