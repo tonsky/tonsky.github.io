@@ -59,3 +59,8 @@ Just EIGHT YEARS! I can read books that are _centuries_ old just fine. Inception
 
 It’s _your_ personal responsibility to build a technology that doesn’t break every time wind changes. Get back to the drawing board and start thinking. Stuff ain’t that hard. It’s been done before. And no, “every developer, live or dead, should sit tight and update every website they have ever built until the end of times” is not an answer.
 
+## UPD: Emergency update
+
+People seem to misread what I’m saying and still try to make it about MooTools and how they are the bad guys here. They are not. In fact, it’s irreleveant. It’s not about MooTools, how old it is or how unpopular it is. If there existed just one website that had just one line of hand-crafted JS code that would break with that update it’s totally not worth it. Because there’re clean ways to extend the language, and there’re dirty ways, and dirty ones have no benefits. Why choose them if you can make _everyone_ happy?
+
+JS standard lets developers put stuff on prototypes, that’s game over, NO LANGUAGE UPDATE should EVER put stuff there, period. It’s not MooTools who should stop doing that, it’s TC39. Because stuff will break. It’s a breaking change. Nobody is in control of this situation. Given that you can get _exactly_ the same results without the breaking change, why break? Pick a different way, make sure you’re in control, make sure it’s safe, and _then_ start evolving JS.
