@@ -33,11 +33,11 @@ Maybe you just need experience to be able to see outside of your bubble. Or even
 
 <figure><img src="./degeneracy.png" /></figure>
 
-Let’s stop here for a moment. I always wanted to understand: what, in your opinion, is wrong with Java anyways? Last time I checked it was twice as fast as JavaScript, had static typing, dynamic linking, real multithreading, wast standard library, reliable package manager, tons of languages to compile from (including dynamic ones and yes, JS), ~100ms startup time (same as Node), perfect record of backward compatibility, language changes and API additions every major release, huge internal optimizations yet somehow it manages not to break its APIs and not to piss every developer on the planet. What’s wrong with that? A bit boring, not enough drama? Relationship not abusive enough? Well, if you call that degeneracy, I choose degeneracy.
+Let’s stop here for a moment. I always wanted to understand: what, in your opinion, is wrong with Java anyways? Last time I checked it was twice as fast as JavaScript, had static typing, dynamic linking, real multithreading, vast standard library, reliable package manager, tons of languages to compile from (including dynamic ones and yes, JS), ~100ms startup time (same as Node), perfect record of backward compatibility, language changes and API additions every major release, huge internal optimizations yet somehow it manages not to break its APIs and not to piss every developer on the planet. What’s wrong with that? A bit boring, not enough drama? Relationship not abusive enough? Well, if you call that degeneracy, I choose degeneracy.
 
 Reality check: Java does not have a bad reputation. JavaScript does. People laugh at JavaScript, its ecosystem, how it handles things and how childish their problems are. No, I’m not a Java developer, but I wish I could write websites in Java. Would’ve be at least twice as fast.
 
-Backward compatibility is not always hard to pull off, by the way. Changing behavior is hard. Removings stuff is hard. But adding stuff with 100% guaranteed backward compatibility? Seriously, that’s easy _anywhere_ but in JS land.
+Backward compatibility is not always hard to pull off, by the way. Changing behavior is hard. Removing stuff is hard. But adding stuff with 100% guaranteed backward compatibility? Seriously, that’s easy _anywhere_ but in JS land.
 
 <figure><img src="./adding.png" /></figure>
 
@@ -57,5 +57,5 @@ Maybe it’s a question of perspective. If websites are just job for you, it end
 
 Just EIGHT YEARS! I can read books that are _centuries_ old just fine. Inception came out 8 years ago. Imagine you couldn’t watch Inception today because of some technical mumbo-jumbo?
 
-It’s _your_ personal responsibility that _you_ have built a shitty technology that breaks every time wind changes. Get back to the drawing board and start thinking. Stuff ain’t that hard. And no, “every developer, live or dead, should sit tight and update every website they have ever built until the end of times” is not an answer.
+It’s _your_ personal responsibility to build a technology that doesn’t break every time wind changes. Get back to the drawing board and start thinking. Stuff ain’t that hard. It’s been done before. And no, “every developer, live or dead, should sit tight and update every website they have ever built until the end of times” is not an answer.
 
