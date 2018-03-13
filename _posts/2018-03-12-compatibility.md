@@ -25,7 +25,7 @@ I’m not sure why JavaScript developers are so opposed to the idea of backward 
 
 <figure><img src="http://tonsky.me/blog/compatibility/progress.png" /></figure>
 
-Isn’t it schizophrenic to thinks that language specification is permanent but websites built with it aren’t?
+Isn’t it schizophrenic to think that language specification is permanent but websites built with it aren’t?
 
 <figure><img src="http://tonsky.me/blog/compatibility/permanent.png" /></figure>
 
