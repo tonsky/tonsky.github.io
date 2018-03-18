@@ -1,0 +1,215 @@
+---
+layout: default
+title: Projects
+redirect_from: "/about/"
+---
+
+<style>
+  .table { font-size: 15px; line-height: 25px; display: grid; grid-template-columns: max-content 1fr; grid-gap: 5px 10px; }
+  .table > div:nth-child(2n+1) { font-weight: 300; } 
+  figure { width: 650px; margin: 120px -26px -85px; }
+  figure > a { border: none; display: block; }
+  h1 { margin-bottom: -80px; }
+  h2 { margin-top: 120px; }
+  .gh-stars:before { content:"★"; font-size: 20px; vertical-align: baseline; position: relative; top: -1px; margin: 0 5px 0 10px; }
+  .gh-stars { color: hsl(215, 45%, 60%); }
+  .icon { width: 128px; height: 128px; position: absolute; margin: 120px 0 0 -148px; }
+</style>
+
+<ul class=menu>
+  <li><a class="menu__item" href="/">Blog</a>
+  <li><a class="menu__item" href="/talks/">Talks</a>
+  <li><a class="menu__item menu__item_selected" href="/projects/">Projects</a>
+</ul>
+
+<figure style="margin-top: 0;"><img src=me.jpg height=467></figure>
+<h2>Hi there!</h2>
+
+<p>I’m Nikita, Software Engineer with vast open-source portfolio and strong UI/UX background. I help turning ideas into finished working products with support at all stages. </p>
+
+<div class="table">
+  <div>Expertise</div><div>13 years of distributed systems, highly interactive web apps (full stack), UX/UI design, Clojure/Script, Erlang, Python, Java</div>
+  <div>Github</div><div><a href="https://github.com/tonsky">github.com/tonsky</a></div>
+  <div>Contact me</div><div><a href="mailto:prokopov@gmail.com">prokopov@gmail.com</a> or @<a href="https://twitter.com/nikitonsky">nikitonsky</a></div>
+  <div>Location</div><div>Novosibirsk → Moscow, Russia (UTC+3)</div>
+</div>
+
+
+<h1>Projects (newest to oldest)</h1>
+
+<!-- <a href="https://github.com/tonsky/clojure-warrior"><img class=icon src=clojure_warrior.png></a>
+<h2><a href="https://github.com/tonsky/clojure-warrior">Clojure Warrior</a></h2>
+<p>Visual Studio Code plugin for Clojure development.</p>
+<div class="table">
+  <div>Period</div><div>December 2017 — now</div>
+  <div>Status</div><div>Stable, more features to come</div>
+</div> -->
+
+
+<figure><a href="https://grumpy.website/"><img src=grumpy.jpg height=465></a></figure>
+<h2><a href="https://grumpy.website/">Grumpy Website</a></h2>
+<p>Collective blog with an in-depth look into UI/UX and design pitfalls of modern day interfaces. Tech: from-the-scratch blog engine developed <a href="https://www.youtube.com/playlist?list=PLdSfLyn35ej8por7aH-5wYvOyDTu-bPoH">live on YouTube</a> in mere 36 hours.</p>
+<div class="table">
+  <div>Roles</div><div>Developer, Co-Author</div>
+  <div>Period</div><div>September 2017 — now</div>
+  <div>Status</div><div>In production, actively used</div>
+  <div>Stack</div><div>Clojure/Script, Rum/React</div>
+</div>
+
+
+<figure><img src=builder2.png height=610></figure>
+<h2>Collaborative document editor</h2>
+<p>In-browser, real-time, collaborative WYSIWYG editor for complex domain-specific documents.</p>
+<div class="table">
+  <div>Roles</div><div>UI/UX designer, Architect, Lead developer</div>
+  <div>Customer</div><div><a href="https://www.cognician.com/">Cognician, Inc</a></div>
+  <div>Period</div><div>September 2017 — April 2018</div>
+  <div>Status</div><div>Ongoing. Completed: UI, architecture, functional prototype</div>
+  <div>Stack</div><div>Clojure/Script, Datomic, DataScript, Rum/React, custom Datomic-DataScript sync layer</div>
+</div>
+
+
+<figure><a href="https://www.cognician.com/methodology"><img src=chat.jpg height=667></a></figure>
+<h2><a href="https://www.cognician.com/methodology">Coaching platform</a></h2>
+<p>Next generation of an in-browser (including mobile) self-serve coaching platform, developed from ground up in place of a legacy system.</p>
+<div class="table">
+  <div>Roles</div><div>Architect, Lead developer, Product manager</div>
+  <div>Customer</div><div><a href="https://www.cognician.com/">Cognician, Inc</a></div>
+  <div>Period</div><div>March 2015 — August 2015</div>
+  <div>Status</div><div>In production, actively used. Fully replaced legacy system, ongoing feature development and maintenance</div>
+  <div>Stack</div><div>Clojure/Script, Datomic, DataScript, Rum/React, custom Event Sourcing implementation, custom client-server sync layer</div>
+</div>
+
+
+<figure><a href="https://github.com/tonsky/AnyBar"><img src="anybar.png" height=114></a></figure>
+<h2><a href="https://github.com/tonsky/AnyBar">AnyBar</a><span class=gh-stars>4,400+</span></h2>
+<p>General-purpose macOS menubar status indicator.</p>
+<div class="table">
+  <div>Role</div><div>Creator</div>
+  <div>Period</div><div>March 2015 — August 2016</div>
+  <div>Status</div><div>Stable</div>
+</div>
+
+
+<figure><a href="https://github.com/tonsky/rum"><img src="rum.png" height=251></a></figure>
+<h2><a href="https://github.com/tonsky/rum">Rum</a><span class=gh-stars>1,000+</span></h2>
+<p>Simple, decomplected, isomorphic HTML UI library for ClojureScript (based on React) and Clojure (custom Server-Side Rendering implementation).</p>
+<div class="table">
+  <div>Role</div><div>Creator</div>
+  <div>Used by</div><div>
+    <a href="https://www.cognician.com">Cognician</a>,
+    <a href="https://attendify.com">Attendify</a>,
+    <a href="https://partsbox.io">PartsBox.io</a>,
+    <a href="https://modnaKasta.ua">modnaKasta</a>,
+    <a href="http://childrensheartsurgery.info">ChildrensHeartSurgery.info</a>,
+    <a href="http://mightyhype.com/">Mighty Hype</a>,
+    <a href="https://xn--80abhddbmm5bieahtk5n.xn--p1ai/">БезопасныеДороги.рф</a>,
+    <a href="http://houstonindoor.com/2016">TourneyBot</a>,
+    <a href="https://www.purposefly.com/">PurposeFly</a>,
+    <a href="https://www.simply.co.za">Simply</a>,
+    <a href="https://www.oscaro.com">Oscaro.com</a>
+  </div>
+  <div>Period</div><div>December 2014 — now</div>
+  <div>Status</div><div>Stable. Ongoing feature development and maintenance</div>
+</div>
+
+
+<figure><a href="https://github.com/tonsky/FiraCode"><img src="firacode.png" height=250></a></figure>
+<h2><a href="https://github.com/tonsky/FiraCode">Fira Code</a><span class=gh-stars>21,000+</span></h2>
+<p>The most popular programming font with ligatures.</p>
+<div class=table>
+  <div>Role</div><div>Creator</div>
+  <div>Used by</div><div>
+    <a href="https://www.jetbrains.com/">JetBrains</a>, 
+    <a href="https://codepen.io/">CodePen</a>, 
+    <a href="http://www.blink.sh/">Blink Shell</a>, 
+    <a href="http://app.klipse.tech/">Klipse</a>, 
+    <a href="http://ilyabirman.net/">IlyaBirman.net</a>, 
+    <a href="https://evilmartians.com/">EvilMartians.com</a>, 
+    <a href="https://webmakerapp.com/">Web Maker</a>
+  </div>
+  <div>Period</div><div>November 2014 — now</div>
+  <div>Status</div><div>Stable. Widely used, ongoing improvements</div>
+</div>
+
+
+<figure><a href="https://github.com/tonsky/datascript"><img src="datascript.png" height=132></a></figure>
+<h2><a href="https://github.com/tonsky/datascript">DataScript</a><span class=gh-stars>2,800+</span></h2>
+<p>Highly-flexible persistent in-memory storage and Datalog query engine for Clojure/Script and JS.</p>
+<div class=table>
+  <div>Role</div><div>Creator</div>
+  <div>Used by</div><div>
+    <a href="http://precursorapp.com/">Precursor</a>, 
+    <a href="http://lightmesh.com/">LightMesh</a>, 
+    <a href="https://www.cognician.com/">Cognician</a>, 
+    <a href="http://www.bitfountain.io/">bitfountain</a>, 
+    <a href="https://partsbox.io/">PartsBox</a>, 
+    <a href="https://www.iamfy.co/">I am Fy</a>, 
+    <a href="http://www.zetawar.com">Zetawar</a>, 
+    <a href="https://www.lemmings.io">Lemmings</a>
+  </div>
+  <div>Period</div><div>April 2014 — now</div>
+  <div>Status</div><div>Stable. Ongoing feature development and maintenance</div>
+</div>
+
+
+<h2>MZ Bench</h2>
+<p>Distributed benchmarking/load-testing tool with cross-machine coordination and DSL scripting.</p>
+<div class=table>
+  <div>Roles</div><div>Lead developer, Project manager, Team leader (4 Erlang Engineers)</div>
+  <div>Customer</div><div><a href="http://www.mz.com/">MachineZone, Inc</a></div>
+  <div>Period</div><div>February 2014 — November 2014</div>
+  <div>Status</div><div>Prototype</div>
+  <div>Stack</div><div>Erlang</div>
+</div>
+
+
+<figure><a href="https://web.archive.org/web/20130807223115/http://aboutecho.com/EchoPlatform/DataServerDemonstration"><img src="dataserver.jpg" height=209></a></figure>
+<h2><a href="https://web.archive.org/web/20130807223115/http://aboutecho.com/EchoPlatform/DataServerDemonstration">Echo DataServer</a></h2>
+<p>High-load real-time monitor/data crawler &amp; processing pipeline for Twitter, Facebook, Youtube and others.</p>
+<div class=table>
+  <div>Roles</div><div>Lead developer, Team leader (8 Clojure Engineers), Product manager</div>
+  <div>Customer</div><div><a href="http://www.aboutecho.com">Echo</a></div>
+  <div>Period</div><div>October 2011 — February 2014</div>
+  <div>Status</div><div>Active production use at the moment</div>
+  <div>Stack</div><div>Clojure, RabbitMQ, Redis</div>
+</div>
+
+<figure><a href="https://bitbucket.org/xored/spectre/src"><img src="spectre.jpg" height=724></a></figure>
+<h2><a href="https://bitbucket.org/xored/spectre/src">Spectre Web framework</a></h2>
+<p>Web framework built from the grounds up, inspired by Django, with web sockets, for Fantom language.</p>
+<div class=table>
+  <div>Roles</div><div>Designer, Lead Developer</div>
+  <div>Customer</div><div><a href="http://www.xored.com/">Xored Software, Inc</a></div>
+  <div>Period</div><div>October 2010 — October 2011</div>
+  <div>Status</div><div>Feature complete</div>
+</div>
+
+
+<figure><a href="http://tonsky.me/talks/"><img src="speaking.jpg" height=433></a></figure>
+<h2><a href="http://tonsky.me/talks/">Public speaking</a></h2>
+<p>I spoke at 40+ conferences, meetups, workshops, podcasts about technology, engineering culture, user experience and computer science.</p>
+<div class=table>
+  <div>Role</div><div>Speaker</div>
+  <div>Period</div><div>October 2010 — ongoing</div>
+  <div>Locations</div><div>London, Vienna, Bratislava, Riga, Tampere, Poznań, Kiev, Minsk, Moscow, Saint Petersburg, Novosibirsk, Yekaterinburg, Ulyanovsk</div>
+</div>
+
+
+<h2>Various Java projects</h2>
+<p>Automation, billing, prototyping for big Russian industrial facilities.</p>
+<div class=table>
+  <div>Roles</div><div>Senior Java Developer, Java Developer, Team Leader</div>
+  <div>Customers</div><div>Sibirenergo-Billing, MSS-Systems, KB Inform</div>
+  <div>Period</div><div>August 2005 — October 2010</div>
+</div>
+
+
+<figure><img src=diploma.jpg height=456></figure>
+<h2>Education</h2>
+<p>Master’s degree in Information Technology at <a href="http://fit.nsu.ru/">Novosibirsk State University</a>.</p>
+<div class=table>
+  <div>Role</div><div>Student</div>
+  <div>Period</div><div>2001 — 2007</div>
+  <div>Status</div><div>Complete</div>
+</div>
