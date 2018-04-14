@@ -40,6 +40,7 @@ p, blockquote { margin: 15px 0; }
 h1 + p + blockquote { margin-bottom: 30px; margin-right: 1em; }
 blockquote { padding-left: 1em; font-style: italic; border-left: 2px solid white; }
 blockquote em, blockquote i { font-style: normal; }
+.quote-author { text-align: right; font-size: 14px; }
 strong { font-weight: 500; }
 /* a[href] { color: inherit; text-decoration: none; border-bottom: 2px solid #ccc }
 a[href]:hover { border-color: hsl(45,98%,57%); }
