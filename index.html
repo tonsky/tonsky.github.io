@@ -13,7 +13,7 @@ title: Blog
   <h1>2018</h1>
   {% for post in site.posts %}
     {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2018" %}
+    {% if year == "2018" and post.draft != true %}
       <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
     {% endif %}
   {% endfor %}
