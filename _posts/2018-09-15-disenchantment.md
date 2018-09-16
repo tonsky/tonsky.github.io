@@ -158,6 +158,14 @@ or reinventing the wheel:
 
 We’re stuck with what we have, and nobody will ever save us.
 
+## Business won’t care
+
+Neither will users. They are only learned to expect what we can provide. We (engineers) say every Android app takes 350 Mb? Ok, they’ll live with that. We say we can’t give them smooth scrolling? Ok, they’ll live with a phone that stutter. We say “if it doesn’t work, reboot”? They’ll reboot. After all, they have no choice.
+
+There’s no competition either. Everybody is building the same slow, bloated, unreliable products. Occasional jump forward in quality does bring competitive advantage (iPhone/iOS vs other smartphones, Chrome vs other browsers) and forces everybody to regroup, but not for long.
+
+So it’s our mission as engineers to show the world what’s possible with today’s computers in terms of performance, reliability, quality, usability. If we care, people will learn. And there’s nobody but us to show them that it’s very much possible. If only we care.
+
 ## It’s not all bad
 
 There are some bright spots indicating that improving over state-of-the-art is not impossible.
