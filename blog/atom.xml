@@ -16,6 +16,7 @@ layout: nil
   </author>
  
   {% for post in site.posts %}
+  {% if post.draft != true %}
     <entry>
       <title>{{ post.title }}</title>
       <link rel="alternate" type="text/html" href="http://tonsky.me{{ post.url }}" />
@@ -37,6 +38,7 @@ layout: nil
         <email>prokopov@gmail.com</email>
       </author>
     </entry>
+  {% endif %}
   {% endfor %}
  
 </feed>
