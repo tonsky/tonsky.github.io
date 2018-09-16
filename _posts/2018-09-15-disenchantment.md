@@ -134,7 +134,7 @@ And dependencies? People easily add overengineered “full package solutions” 
 
 Programs can’t work for years without reboots anymore. Sometimes [even days are too much to ask](https://docs.gitlab.com/ee/administration/operations/unicorn.html#unicorn-worker-killer). Random stuff happens and nobody knows why.
 
-What’s worse, nobody has time to stop and figure out what happened. Why bother if you can always buy your way out of it. Spin another AWS instance. Restart process. Drop and restore the whole database. Write a watchdog that will restart your broken app every 20 minutes. Move fast, don’t fix.
+What’s worse, nobody has time to stop and figure out what happened. Why bother if you can always buy your way out of it. Spin another AWS instance. Restart process. Drop and restore the whole database. Write a watchdog that will restart your broken app every 20 minutes. Include same resources [multiple times, zip and ship](https://blog.timac.org/2017/0410-analysis-of-the-facebook-app-for-ios-v-87-0/). Move fast, don’t fix.
 
 That is not engineering. That’s just lazy programming. Engineering is understanding performance, structure, limits of what you build, deeply. Combining poorly written stuff with more poorly written stuff goes strictly against that. To progress, we need to understand what and why are we doing.
 
