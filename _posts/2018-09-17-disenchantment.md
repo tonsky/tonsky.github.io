@@ -169,7 +169,7 @@ So it’s our mission as engineers to show the world what’s possible with toda
 
 There are some bright spots indicating that improving over state-of-the-art is not impossible.
 
-Work [Marthin Tompson](https://twitter.com/mjpt777) has being doing ([LMAX Disruptor](https://github.com/LMAX-Exchange/disruptor), [SBE](https://github.com/real-logic/simple-binary-encoding), [Aeron](https://github.com/real-logic/aeron)) is impressive, refreshingly simple and efficient.
+Work [Martin Thompson](https://twitter.com/mjpt777) has being doing ([LMAX Disruptor](https://github.com/LMAX-Exchange/disruptor), [SBE](https://github.com/real-logic/simple-binary-encoding), [Aeron](https://github.com/real-logic/aeron)) is impressive, refreshingly simple and efficient.
 
 [Xi editor](https://github.com/google/xi-editor) by Raph Levien seems to be built with the right principles in mind.
 
