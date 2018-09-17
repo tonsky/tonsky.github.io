@@ -74,23 +74,26 @@ ul > li, ol > li { margin: 0.5em 0; }
 sup, sub, .note-ref, .note-number, .footnote { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
 sup, .note-ref, .note-number, .footnote { bottom: 1.4ex; }
 sub { top: .5ex; }
+
+.about > img { float: left; width: 160px; margin-left: -180px; margin-top: -30px; }
+.about_inner { font-size: 15px; line-height: 25px; border: 2px solid white; border-radius: 4px; padding: 10px 20px; margin: -12px -22px; }
+.about_inner > p { margin: 0 0 5px; }
+.btn-subscribe { line-height: 20px; text-decoration: none; background: white; color: hsl(215, 45%, 40%); border: none; font-size: 12px; padding: 0px 7px; display: inline-block; border-radius: 4px; position: relative; top: -1px; }
+.btn-subscribe > svg { width: 21px; height: 21px; vertical-align: bottom; margin: 0 -2px 0 -5px; fill: hsl(215, 45%, 45%); }
+
 .footnote { margin: 0 5px;  }
 .footnotes-br { width: 100px; height: 2px; background: hsl(215, 45%, 60%); margin-top: 5em; }
 .footnotes { padding-left: 1em;  }
 
-.date { font-size: 0.8em; color: hsl(215, 45%, 65%); }
-
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
 
+.footer { margin-bottom: 5em; font-size: 0.8em; color: hsl(215, 45%, 65%); }
+.footer > a { margin-right: 10px; }
+.footer > .separator { margin: 0 4px; }
+.footer > .btn-subscribe { float: right; }
+.footer > a { margin-right: 5px; }
 
-
-.comments {  margin: 60px 0 0 0; line-height: 20px; }
-.comments > a, .comments > span  {  margin-right: 5px; }
-
-
-.btn-share { text-decoration: none; background: white; color: hsl(215, 45%, 40%); border: none; font-size: 12px; padding: 0px 7px; display: inline-block; border-radius: 4px; position: relative; top: -1px; }
-.btn-share > svg { width: 21px; height: 21px; vertical-align: bottom; margin: 0 -2px 0 -5px; fill: hsl(215, 45%, 45%); }
 
 .event { font-size: 14px; display: inline-block; width: 380px; vertical-align: top; margin: 0 20px 4em 0; }
 .event > h1 { font-size: 20px; margin: 0 0 1em 0; }
