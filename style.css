@@ -90,10 +90,10 @@ sub { top: .5ex; }
 
 .footer, .date { font-size: 14px; color: hsl(215, 45%, 65%); }
 .footer { margin-bottom: 5em; }
-.footer > a { margin-right: 10px; }
 .footer > .separator { margin: 0 4px; }
 .footer > .btn-subscribe { float: right; }
 .footer > a { margin-right: 5px; }
+.footer > a:hover { color: white; }
 
 
 .event { font-size: 14px; display: inline-block; width: 380px; vertical-align: top; margin: 0 20px 4em 0; }
