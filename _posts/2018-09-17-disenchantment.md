@@ -3,7 +3,6 @@ layout: post
 title: "Software disenchantment"
 category: blog
 summary: "Everything is going to hell and nobody seems to care"
-draft: true
 ---
 
 I’ve been programming for 15 years now. Recently our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and the IT in general.
