@@ -88,8 +88,8 @@ sub { top: .5ex; }
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
 
-.footer, .date { font-size: 0.8em; color: hsl(215, 45%, 65%); }
-.footer { margin-bottom: 5em;  }
+.footer, .date { font-size: 14px; color: hsl(215, 45%, 65%); }
+.footer { margin-bottom: 5em; }
 .footer > a { margin-right: 10px; }
 .footer > .separator { margin: 0 4px; }
 .footer > .btn-subscribe { float: right; }
