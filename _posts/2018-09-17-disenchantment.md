@@ -17,7 +17,7 @@ Only in software, it’s fine if a program runs at 1% or even 0.01% of the possi
 
 You’ve probably heard this mantra: “programmer time is more expensive than computer time”. What it means basically is that we’re wasting computers at an unprecedented scale. Would you buy a car if it eats 100 liters per 100 kilometers? How about 1000 liters? With computers, we do that all the time.
   
-<figure><a href="https://xkcd.com/2021/"><img src="software_development_2x.png" height="450"></a></figure>
+<figure><a href="https://xkcd.com/2021/"><img src="software_development_2x.gif" height="440"></a></figure>
 
 ## Everything is unbearably slow
 
@@ -31,7 +31,7 @@ It also animates empty white boxes instead of showing their content because it�
 
 Windows 10 [takes 30 minutes to update](https://grumpy.website/post/0PeXr1S7N). What could it possibly be doing for that long? That much time is enough to fully format my SSD drive, download a fresh build and install it like 5 times in a row.
 
-<figure><img src="windows_update.png" ></figure>
+<figure><img src="windows_update.gif" height="435"></figure>
 
 > [Pavel Fatin](https://pavelfatin.com/typing-with-pleasure/): Typing in editor is a relatively simple process, so even 286 PCs were able to provide a rather fluid typing experience.
 
@@ -45,19 +45,19 @@ And then there’s bloat. Web apps could open up to 10× faster if you just simp
 
 Android system with no apps [takes almost 6 Gb](https://grumpy.website/post/0Oz1lDOq5). Just think for a second how obscenely HUGE that number is. What’s in there, HD movies? I guess it’s basically code: kernel, drivers. Some string and resources too, sure, but those can’t be big. So, how many drivers do you need for a phone?
 
-<figure><img src="android_storage.jpg"></figure>
+<figure><img src="android_storage.jpg" height="489"></figure>
   
 Windows 95 was 30Mb. Today we have web pages heavier than that! Windows 10 is 4Gb, which is 133 times as big. But is it 133 times as superior? I mean, functionally they are basically the same. Yes, we have Cortana, but I doubt it takes 3970 Mb. But whatever Windows 10 is, is Android really 150% of that?
 
 Google keyboard app routinely eats 150 Mb. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 Mb! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 Mb that just sit there and which I’m unable to delete.
 
-<figure><img src="apps_storage.png" height="500"></figure>
+<figure><img src="apps_storage.gif" height="480"></figure>
 
 All that leaves me around 1 Gb for my photos after I install all the essential (social, chats, maps, taxi, banks etc) apps. And that’s with no games and no music at all! Remember times when an OS, apps and all your data fit on a floppy?
 
 Your desktop todo app is probably written in Electron and thus [has userland driver for Xbox 360 controller in it](https://josephg.com/blog/electron-is-flash-for-the-desktop/), can render 3d graphics and play audio and take photos with your web camera.
 
-<figure><img src="slack_memory.png"></figure>
+<figure><img src="slack_memory.jpg" height="388"></figure>
 
 A simple text chat is notorious for its load speed and memory consumption. Yes, you really have to count Slack in as a resource-heavy application. I mean, chatroom and barebones text editor, those are supposed to be two of the less demanding apps in the whole world. Welcome to 2018.
 
@@ -85,7 +85,7 @@ Nobody understands anything at this point. Neither they want to. We just throw b
 
 Web pages ask you to refresh if anything goes wrong. Who has time to figure out what happened?
 
-<figure><img src="reload.png"></figure>
+<figure><img src="reload.jpg" height="185"></figure>
 
 Any web app produces a constant stream of “random” JS errors in the wild, even on compatible browsers.
 
@@ -93,7 +93,7 @@ The whole webpage/SQL database architecture is built on a premise (hope, even) t
 
 Most collaborative implementations are “best effort” and have many common-life scenarios in which they lose data. Ever seen this dialogue “which version to keep?” I mean, bar today is so low that your users would be happy to at least have a window like that.
 
-<figure><img src="icloud_conflict.png"></figure>
+<figure><img src="icloud_conflict.jpg" height="468"></figure>
 
 And no, in my world app that says “I’m gonna destroy some of your work, but you get to choose which one” is not okay.
 
@@ -101,7 +101,7 @@ Linux kills random processes _by design_. And yet it’s the most popular server
 
 Every device I own fails regularly one way or another. My Dell monitor needs a hard reboot from time to time because there’s software in it. Airdrop? You’re lucky if it’ll detect your device, otherwise, what do I do? Bluetooth? Spec is so complex that devices [won’t talk to each other](https://thewirecutter.com/blog/understanding-bluetooth-pairing-problems/) and [periodic resets are the best way to go](http://time.com/4358533/bluetooth-fix-how/).
 
-<figure><img src="plz_connect.jpg"></figure>
+<figure><img src="plz_connect.jpg" height="450"></figure>
 
 And I’m not even touching [Internet of Things](https://twitter.com/internetofshit). It’s so far beyond the laughing point I’m not even sure what to add.
 
@@ -117,7 +117,7 @@ Build systems are inherently unreliable and periodically require full clean, eve
 
 And build times? Nobody thinks compiler that works minutes or even hours is a problem. What happened to “programmer’s time is more important”? Almost all compilers, pre- and post-processors add significant, sometimes disastrous time tax to your build without providing proportionally substantial benefits.
 
-<figure><a href="https://xkcd.com/303/"><img src="compiling.png"></a></figure>
+<figure><a href="https://xkcd.com/303/"><img src="compiling.gif" height="360"></a></figure>
 
 You would expect programmers to make mostly rational decisions, yet sometimes they do the exact opposite of that. E.g. choosing Hadoop [even when it’s slower than running the same task on a single desktop](https://www.chrisstucchio.com/blog/2013/hadoop_hatred.html).
 
@@ -127,11 +127,11 @@ Machine learning and “AI” moved software to guessing in the times when most 
 
 We put virtual machines inside Linux, and then we put Docker inside virtual machines, simply because nobody was able to clean up the mess that most programs, languages and their environment produce. We cover shit with blankets just not to deal with it. “Single binary” is still a HUGE selling point for Go, for example. No mess == success.
 
-<figure><a href="https://xkcd.com/1987/" target="_blank"><img src="python_environment_2x.png"></a></figure>
+<figure><a href="https://xkcd.com/1987/" target="_blank"><img src="python_environment_2x.gif" height="594"></a></figure>
 
 And dependencies? People easily add overengineered “full package solutions” to solve the simplest problems without considering their costs. And those dependencies bring other dependencies. You end up with a tree that is something in between of horror story (OMG so big and full of conflicts) and comedy (there’s no reason we include these, [yet here they are](https://medium.com/@jdan/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558)):
 
-<figure><img src="dependencies.png"></figure>
+<figure><img src="dependencies.gif" height="440"></figure>
 
 Programs can’t work for years without reboots anymore. Sometimes [even days are too much to ask](https://docs.gitlab.com/ee/administration/operations/unicorn.html#unicorn-worker-killer). Random stuff happens and nobody knows why.
 
@@ -145,7 +145,7 @@ So everything is just a pile of barely working code added on top of previously w
 
 To have a healthy ecosystem you _need_ to go back and revisit. You _need_ to occasionally throw stuff away and replace it with better stuff.
 
-<figure><img src="design_process.jpg"></figure>
+<figure><img src="design_process.jpg" height="657"></figure>
 
 But who has time for that? We haven’t seen new OS kernels in what, 25 years? It’s just too complex to simply rewrite by now. Browsers are so full of edge cases and historical precedents by now that nobody dares to write layout engine from scratch.
 
