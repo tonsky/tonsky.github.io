@@ -24,7 +24,7 @@ layout: nil
       <published>{{ post.date | date_to_xmlschema }}</published>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       {% if post.summary %}
-        <summary> type="html"><![CDATA[
+        <summary type="html"><![CDATA[
           {{ post.summary }}
         ]]></summary>
       {% endif %}
