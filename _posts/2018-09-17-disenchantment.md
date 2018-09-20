@@ -7,6 +7,8 @@ hackernews_id: 18012334
 reddit_url: "https://www.reddit.com/r/programming/comments/9go8ul/software_disenchantment/"
 ---
 
+_Translations: <a href="it/">Italian</a> <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a>_
+
 I’ve been programming for 15 years now. Recently our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and the IT in general.
 
 Modern cars work, let’s say for the sake of argument, at 98% of what’s physically possible with the current engine design. Modern buildings use just enough material to fulfill their function and stay safe under the given conditions. All planes converged to the optimal size/form/load and basically look the same.
@@ -17,7 +19,7 @@ Only in software, it’s fine if a program runs at 1% or even 0.01% of the possi
 
 You’ve probably heard this mantra: “programmer time is more expensive than computer time”. What it means basically is that we’re wasting computers at an unprecedented scale. Would you buy a car if it eats 100 liters per 100 kilometers? How about 1000 liters? With computers, we do that all the time.
   
-<figure><a href="https://xkcd.com/2021/"><img src="software_development_2x.gif" height="440"></a></figure>
+<figure><a href="https://xkcd.com/2021/" target="_blank"><img src="software_development_2x.gif" height="440"></a></figure>
 
 ## Everything is unbearably slow
 
@@ -117,7 +119,7 @@ Build systems are inherently unreliable and periodically require full clean, eve
 
 And build times? Nobody thinks compiler that works minutes or even hours is a problem. What happened to “programmer’s time is more important”? Almost all compilers, pre- and post-processors add significant, sometimes disastrous time tax to your build without providing proportionally substantial benefits.
 
-<figure><a href="https://xkcd.com/303/"><img src="compiling.gif" height="360"></a></figure>
+<figure><a href="https://xkcd.com/303/" target="_blank"><img src="compiling.gif" height="360"></a></figure>
 
 You would expect programmers to make mostly rational decisions, yet sometimes they do the exact opposite of that. E.g. choosing Hadoop [even when it’s slower than running the same task on a single desktop](https://www.chrisstucchio.com/blog/2013/hadoop_hatred.html).
 
