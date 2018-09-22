@@ -7,7 +7,7 @@ hackernews_id: 18012334
 reddit_url: "https://www.reddit.com/r/programming/comments/9go8ul/software_disenchantment/"
 ---
 
-_Translations: <a href="it/">Italian</a> <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a>_
+_Translations: <a href="it/">Italian</a> <a href="https://blog.romainfallet.fr/desenchantement-logiciel/" target="_blank"></a> <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a>_
 
 I’ve been programming for 15 years now. Recently our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and the IT in general.
 
