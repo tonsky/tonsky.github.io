@@ -7,7 +7,7 @@ hackernews_id: 18012334
 reddit_url: "https://www.reddit.com/r/programming/comments/9go8ul/software_disenchantment/"
 ---
 
-_Translations: <a href="it/">Italian</a> <a href="https://blog.romainfallet.fr/desenchantement-logiciel/" target="_blank"></a> <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a>_
+_Translations: <a href="https://blog.romainfallet.fr/desenchantement-logiciel/" target="_blank">French</a> [Italian](it/) [Portuguese](pt/) <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a> [Spanish](es/)_
 
 I’ve been programming for 15 years now. Recently our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and the IT in general.
 
@@ -18,7 +18,7 @@ Only in software, it’s fine if a program runs at 1% or even 0.01% of the possi
 > [@tveastman](https://twitter.com/tveastman/status/1039002300600147968): I have a Python program I run every day, it takes 1.5 seconds. I spent six hours re-writing it in rust, now it takes 0.06 seconds. That efficiency improvement means I'll make my time back in 41 years, 24 days :-)
 
 You’ve probably heard this mantra: “programmer time is more expensive than computer time”. What it means basically is that we’re wasting computers at an unprecedented scale. Would you buy a car if it eats 100 liters per 100 kilometers? How about 1000 liters? With computers, we do that all the time.
-  
+
 <figure><a href="https://xkcd.com/2021/" target="_blank"><img src="software_development_2x.gif" height="440"></a></figure>
 
 ## Everything is unbearably slow
@@ -48,7 +48,7 @@ And then there’s bloat. Web apps could open up to 10× faster if you just simp
 Android system with no apps [takes almost 6 Gb](https://grumpy.website/post/0Oz1lDOq5). Just think for a second how obscenely HUGE that number is. What’s in there, HD movies? I guess it’s basically code: kernel, drivers. Some string and resources too, sure, but those can’t be big. So, how many drivers do you need for a phone?
 
 <figure><img src="android_storage.jpg" height="489"></figure>
-  
+
 Windows 95 was 30Mb. Today we have web pages heavier than that! Windows 10 is 4Gb, which is 133 times as big. But is it 133 times as superior? I mean, functionally they are basically the same. Yes, we have Cortana, but I doubt it takes 3970 Mb. But whatever Windows 10 is, is Android really 150% of that?
 
 Google keyboard app routinely eats 150 Mb. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 Mb! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 Mb that just sit there and which I’m unable to delete.
@@ -111,7 +111,7 @@ I want to take pride in my work. I want to deliver working, stable things. To do
 
 ## Programming is the same mess
 
-It just seems that nobody is interested in building quality, fast, efficient, lasting, foundational stuff anymore. Even when efficient solutions have been known for ages, we still struggle with the same problems: package management, build systems, compilers, language design, IDEs. 
+It just seems that nobody is interested in building quality, fast, efficient, lasting, foundational stuff anymore. Even when efficient solutions have been known for ages, we still struggle with the same problems: package management, build systems, compilers, language design, IDEs.
 
 Build systems are inherently unreliable and periodically require full clean, even though all info for invalidation is there. Nothing stops us from making build process reliable, predictable and 100% reproducible. Just nobody thinks its important. NPM has stayed in “sometimes works” state for years.
 
@@ -125,7 +125,7 @@ You would expect programmers to make mostly rational decisions, yet sometimes th
 
 Machine learning and “AI” moved software to guessing in the times when most computers are not even reliable enough in the first place.
 
-> [@rakhim](https://twitter.com/freetonik/status/1039826129190875136): When an app or a service is described as “AI-powered” or “ML-based”, I read it as “unreliable, unpredictable, and impossible to reason about behavior”. I try to avoid “AI” because I want computers to be the opposite: reliable, predictable, reasonable. 
+> [@rakhim](https://twitter.com/freetonik/status/1039826129190875136): When an app or a service is described as “AI-powered” or “ML-based”, I read it as “unreliable, unpredictable, and impossible to reason about behavior”. I try to avoid “AI” because I want computers to be the opposite: reliable, predictable, reasonable.
 
 We put virtual machines inside Linux, and then we put Docker inside virtual machines, simply because nobody was able to clean up the mess that most programs, languages and their environment produce. We cover shit with blankets just not to deal with it. “Single binary” is still a HUGE selling point for Go, for example. No mess == success.
 
