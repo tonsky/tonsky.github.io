@@ -42,9 +42,6 @@ Como tendencia general, no estamos obteniendo un software más rápido con más 
 
 Además está hinchado. Las aplicaciones web pueden abrirse 10 veces más rápido solo bloqueando los anuncios. Google suplica a todo el mundo que deje de dispararse en el pie y use la iniciativa AMP — una solución tecnológica a un problema que no necesita de ninguna tecnología, solo un poco se sentido común. Si eliminas la hinchazón, la Web va increíblemente rápida. ¿Hace falta ser muy listo para entenderlo?
 
-Il sistema operativo Android, senza app installate, [richiede quasi 6 Gb](https://grumpy.website/post/0Oz1lDOq5). Pensate solo per un secondo a quanto è esagerata questa cifra.
-Che c’è dentro, film in HD?  Scommetto che ci sarà in pratica solo del codice: il kernel e dirvers. Qualche stringa in più, e le risorse per funzionare , certamente, ma quanto possono essere grandi? Quindi, ma di quanti driver ha bisogno un telefono per funzionare?
-
 El sistema Android sin aplicaciones [ocupa casi 6 Gigas (6 GB)](https://grumpy.website/post/0Oz1lDOq5). Piensa un segundo cuan obscenamente GRANDE es ese número. ¿Qué hay dentro, películas HD? Creo que es básicamente código: kernel, drivers. Algunos textos y recursos también, seguro, pero no pueden ser tan grandes. Así que, ¿cuántos drivers necesitas para un teléfono?
 
 <figure><img src="../android_storage.jpg" height="489"></figure>
