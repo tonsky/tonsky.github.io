@@ -73,3 +73,9 @@ Yes, sometimes Clojure core can’t be changed enough to address the core issues
 And when something can be fixed—why not do it? Why not address the root reason instead of fixing the symptoms? Maybe it’s time we stop treating core as some sacred texts and start cleaning it up? At least could we start acknowledging some problems should be addressed there instead of at ecosystem level?
 
 My greates sympathies to Clojure.core team and everything they’ve done so far. I’m using software you made every day and couldn’t be happier about it. I’m only writing this so we can see problems clearly and talk about them more openly.
+
+UPD: A separate “dev” mode was also suggested in a podcast and [on Twitter](https://twitter.com/puredanger/status/1055109097362731010). This comes from a premise that novice developers and “pros” need different things. WRONG. We do not need different things. We both want the same thing: good error messages reporting the correct cause and a relevant stacktrace frames. We both DO NOT want cryptic messages reported at the wrong place.
+
+Do you imagine it like novice gets “You need to pass a set to core.set/union” and line number where he passed the wrong thing but “pro” gets a “Count not supported on this type: Long” and three times longer stacktrace pointing at the wrong place? No. Any pro will prefer “novice” option any time of the day. Professional are as annoyed with this as any novice would be.
+
+Just do the right thing and _everyone_ will be happy.
