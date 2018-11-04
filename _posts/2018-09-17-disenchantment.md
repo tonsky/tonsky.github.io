@@ -29,7 +29,7 @@ Look around: our portable computers are thousands of times more powerful than th
 
 Google Inbox, a web app written by Google, running in Chrome browser also by Google, [takes 13 seconds to open moderately-sized emails](https://twitter.com/nikitonsky/statuses/968882438024941568):
 
-<figure><iframe src="https://twitter.com/i/videos/tweet/968882438024941568?embed_source=clientlib&player_id=0&rpc_init=1&autoplay=1&language_code=en&use_syndication_guest_id=true" style="width: 650px; height: 406px" allowfullscreen allow="autoplay; fullscreen" frameBorder="0"></iframe></figure>
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="inbox.mp4" type="video/mp4"></video></figure>
 
 It also animates empty white boxes instead of showing their content because it’s the only way anything can be animated on a webpage with decent performance. No, decent doesn’t mean 60fps, it’s rather “as fast as this web page could possibly go”. I’m dying to see web community answer when 120Hz displays become mainstream. Shit barely hits 60Hz already.
 

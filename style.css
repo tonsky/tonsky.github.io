@@ -56,7 +56,8 @@ p > img, .fig, figure { margin: 2em 0; }
 img { max-width: 100%; }
 
 .fig, figure { text-align: center; font-size: 12px; font-style: italic; width: 600px; margin-left: -28px; margin-right: -28px; }
-.fig img, figure > img, figure > a > img { margin: 0 auto 1em; display: block; border-radius: 3px; }
+.fig img, figure > img, figure > video, figure > a > img { margin: 0 auto 1em; display: block; border-radius: 3px; }
+figure > video { max-width: 100%; }
 .label { text-align: center; font-size: 12px; font-style: italic; margin: -1em 0 1em 0; }
 
 pre { font-size: 14px;

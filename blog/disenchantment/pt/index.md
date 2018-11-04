@@ -24,7 +24,7 @@ Olhe em volta: Nosso computadores portáteis são milhares de vezes mais poderos
 
 Google Inbox, um web app criado pelo Google, rodando no Chrome também desenvolvido pelo Google, [demora 13 segundos para abrir um email de tamanho moderado.](https://twitter.com/nikitonsky/statuses/968882438024941568)
 
-<figure><iframe src="https://twitter.com/i/videos/tweet/968882438024941568?embed_source=clientlib&player_id=0&rpc_init=1&autoplay=1&language_code=en&use_syndication_guest_id=true" style="width: 650px; height: 406px" allowfullscreen allow="autoplay; fullscreen" frameBorder="0"></iframe></figure>
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="../inbox.mp4" type="video/mp4"></video></figure>
 
 O app também anima caixas vazias ao invés de mostrar o conteúdo do email, porque essa é a única forma de animar coisas na web com uma performance decente. Não, performance decente não significa 60fps, significa "tão rápido quanto uma página web pode ser". Não posso esperar para ver o que a comunidade web vai dizer quando monitores 120Hz se tornarem comuns. As coisas mal conseguem rodar a 60Hz agora.
 

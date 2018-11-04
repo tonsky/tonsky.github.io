@@ -24,7 +24,7 @@ Mira alrededor: nuestros portátiles son miles de veces más potentes que los or
 
 Google Inbox, una aplicación web escrita por Google, ejecuta un navegador Chrome escrito también por Google, [tarda unos 13 segundos en abrir un email de tamaño moderado](https://twitter.com/nikitonsky/statuses/968882438024941568):
 
-<figure><iframe src="https://twitter.com/i/videos/tweet/968882438024941568?embed_source=clientlib&player_id=0&rpc_init=1&autoplay=1&language_code=en&use_syndication_guest_id=true" style="width: 650px; height: 406px" allowfullscreen allow="autoplay; fullscreen" frameBorder="0"></iframe></figure>
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="../inbox.mp4" type="video/mp4"></video></figure>
 
 Anima también las cajas vacías en vez de solo pintarlas, porque es la única forma de que se puedan haber animaciones con un rendimiento decente. No, decente no significa 60fps, es más como "tan rápido como la página web pueda ir". Me muero por ver cómo responde la comunidad web cuando las pantallas de 120Hz sean lo normal. La mierda actual difícilmente llega a 60Hz.
 

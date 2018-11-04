@@ -24,7 +24,7 @@ Guardati intorno: i nostri portatili sono migliaia di volte più potenti di quel
 
 La Google inbox, una web app scritta da Google, girando su Chrome, un browser di Google, [Impiega 13 secondi ad aprire una mail di media grandezza](https://twitter.com/nikitonsky/statuses/968882438024941568):
 
-<figure><iframe src="https://twitter.com/i/videos/tweet/968882438024941568?embed_source=clientlib&player_id=0&rpc_init=1&autoplay=1&language_code=en&use_syndication_guest_id=true" style="width: 650px; height: 406px" allowfullscreen allow="autoplay; fullscreen" frameBorder="0"></iframe></figure>
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="../inbox.mp4" type="video/mp4"></video></figure>
 
 Inoltre mostra animazioni dentro a  quadrati vuoti invece di mostrarmi il loro contenuto perché è l’unico modo con cui può mostrare la pagina web mantenendo prestazioni decenti. No invece, perché decente non significa 60fps, ma significa piuttosto “quanto veloce una pagina web potrebbe andare . Mi viene da ridere quando vedo i commenti sul web, si risolverà quando i monitor a 120Hz saranno più diffusi.  Ma se fanno schifo già a 60hz.
 
