@@ -63,7 +63,7 @@ As we’ve already learned, commit is a snapshot of repo directory at some point
 
 So, we can view a Git repository not only as a series of periodical backups, but also as a series of changes applied on top of one another. Deltas are easier to comprehend and more directly represent “work done” (you usually think in terms of what was changed rather than entire repo state). They also enable a rich set of interactions with repo we’ll call “delta algebra”.
 
-Main operations of delta algebra are: combine deltas (squash), split delta into two, reverse delta. We’ll also need some brigde to/from commits, specifically getting delta from commit and creating commit from delta. Given that, all sort of Git magic can be expressed: rebase, cherry-pick, revert, commit reordering. Important thing to understand is that they all are based on a very basic delta operations&nbsp;— in essence, we always take _these_ changes, combine/<wbr>split/<wbr>reverse/<wbr>reorder them, and then apply them _there_. You won’t need nothing more than that.
+Main operations of delta algebra are: combine deltas (squash), split delta into two, reverse delta. We’ll also need some bridge to/from commits, specifically getting delta from commit and creating commit from delta. Given that, all sort of Git magic can be expressed: rebase, cherry-pick, revert, commit reordering. Important thing to understand is that they all are based on a very basic delta operations&nbsp;— in essence, we always take _these_ changes, combine/<wbr>split/<wbr>reverse/<wbr>reorder them, and then apply them _there_. You won’t need anything more than that.
 
 <div class="anim_cont">
   <div class="anim" style="background-image: url(squash@2x.png);"></div>
@@ -115,7 +115,7 @@ So, it has to be visual, what else? Nothing revolutionary here, just a few tweak
 
 - Branch always occupies vertical column, never bends right or left;
 - Commits are colored not by branch color (we keep branches visually separated by previous rule), but by author. Author matters&nbsp;— in a team, you usually either look for a commits by specific teammate (to review or merge), or you’re trying to understand who wrote specific piece;
-- Merge commits have a different, much subtle look, because they are not an effort per se, but a place where two other efforts join;
+- Merge commits have a different, much subtler look, because they are not an effort per se, but a place where two other efforts join;
 - Parents of the current HEAD highlighted, effectively slightly hiding future and parallel commits;
 - Branch labels on the left help scan what you are interested in: branches or commit messages.
 
