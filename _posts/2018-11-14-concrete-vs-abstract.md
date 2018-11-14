@@ -3,7 +3,6 @@ layout: post
 title: "Solve the problem at hand"
 category: blog
 summary: "Always prefer concrete code to abstract one. Don’t try to solve problems you don’t have."
-draft: true
 ---
 
 Imagine being at the interview where the interviewer asks you to convert a binary string into a number.
