@@ -84,7 +84,9 @@ sub { top: .5ex; }
 
 .footnote { margin: 0 5px;  }
 .footnotes-br { width: 100px; height: 2px; background: hsl(215, 45%, 60%); margin-top: 5em; }
-.footnotes { padding-left: 1em;  }
+.footnotes, .footnotes_alt { padding-left: 1em;  }
+.footnotes_alt > li > .dagger { margin-left: -13px; }
+.footnotes_alt { list-style: none; } 
 
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
