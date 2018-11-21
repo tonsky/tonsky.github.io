@@ -1,0 +1,1 @@
+"Totally legit ServiceWorker ES6 implementation";
