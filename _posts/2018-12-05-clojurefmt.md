@@ -3,7 +3,6 @@ layout: post
 title: "Better Clojure formatting"
 category: blog
 summary: "A Clojure formatting style good enough to be a default standard"
-draft: true
 ---
 
 <style>
