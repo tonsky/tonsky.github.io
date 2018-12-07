@@ -91,10 +91,12 @@ This is one of the stupidest things to automate. Unlike indenting, removing trai
 
 ## Ok, what do we do then?
 
-I propose a simple unconditioned formatting rule:
+I propose two simple unconditioned formatting rules:
 
-- Multi-line lists are always indented with two spaces,
-- Multi-line vectors, maps and sets are aligned with the first element (1 or 2 spaces).
+- Multi-line lists that start with a symbol are always indented with two spaces,
+- Other multi-line lists, vectors, maps and sets are aligned with the first element (1 or 2 spaces).
+
+*Note: rules was updated to address an issue with Parinfer and multi-arity fns indentation, as many people has pointed out.*
 
 Basically, these examples will “simply work”, with no form-specific rules or any exceptions:
 
@@ -113,6 +115,12 @@ Basically, these examples will “simply work”, with no form-specific rules or
                  d e f]
    body)
   
+(defn multi-arity
+  ([x]
+   body)
+  ([x y]
+   body))
+
 (let [x 1
       y 2]
   body)
@@ -149,13 +157,6 @@ These will produce results different from what you’re used to (not a bad thing
 (filter
   even?
   (range 1 10))
-
-; 1 additional space in bodies. Did you even notice it?
-(defn multiarg
-  ([x]
-    body)
-  ([x y]
-    body))
 ```
 
 It might be not what you’re used to, but it still looks decent, doesn’t it?
