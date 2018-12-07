@@ -3,6 +3,7 @@ layout: post
 title: "Better Clojure formatting"
 category: blog
 summary: "A Clojure formatting style good enough to be a default standard"
+hackernews_id: 18620309
 ---
 
 <style>
@@ -171,4 +172,4 @@ As Robert Griesemer put it in [his slides](https://talks.golang.org/2015/gofmt-e
 
 The point of such formatter is not to produce a style that everybody would love. This is probably impossible. The point is to enforce a style that will free people from arguing and making style decisions *at all*. To accomplish it, it doesn’t need to be smart, or pretty, or sophisticated. It has to be ubiquitous. It has to be everywhere.
 
-Let Clojure community know if you think this formatting is better fit for one-and-only-clojure-default-formatter-that-everyone-has-to-use-no-knobs-no-settings-no-questions-asked. Comment [on Clojureverse](https://clojureverse.org/t/clj-commons-building-a-formatter-like-gofmt-for-clojure/3240) or [on Twitter](https://twitter.com/nikitonsky/status/1070654163288276993).
+Let Clojure community know if you think this formatting is better fit for one-and-only-clojure-default-formatter-that-everyone-has-to-use-no-knobs-no-settings-no-questions-asked. Comment [on Clojureverse](https://clojureverse.org/t/clj-commons-building-a-formatter-like-gofmt-for-clojure/3240), on [Hacker News](https://news.ycombinator.com/item?id=18620309) or [on Twitter](https://twitter.com/nikitonsky/status/1070654163288276993).
