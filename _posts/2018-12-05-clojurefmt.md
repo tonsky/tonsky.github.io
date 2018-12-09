@@ -114,7 +114,7 @@ Basically, these examples will “simply work”, with no form-specific rules or
   
 (defn many-args [a b c
                  d e f]
-   body)
+  body)
   
 (defn multi-arity
   ([x]
