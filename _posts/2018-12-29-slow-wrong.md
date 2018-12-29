@@ -32,7 +32,7 @@ Let’s look at actual times it takes to compile the codebase and run full integ
     Clojure 1.10 on JVM:
       REPL boot time: 1.5 sec
       Compile time:   6.5 sec
-      Tests time:     O.45 sec
+      Tests time:     0.45 sec
       
     ClojureScript 1.10.439 with advanced compilation:
       Compile time:   78 sec
