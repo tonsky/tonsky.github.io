@@ -56,7 +56,7 @@ The same applies to all languages with terribly long build times. It’s not tha
 
 I know. But still, I think you kind of can compare them. They are all general-purpose languages, after all, and in the end what matters is if you have a working program on your hand and if it can produce the answer in a reasonable time. It doesn’t really matter how the developer arrived there. You might get some comfort in thinking that it does, but nobody really cares.
 
-Imagine this: there’s a plane from Moscow to Novosibirsk, the heart of Siberia, that takes 4 hours to flight 2800 kilometers. And there’s also a train that takes three days to cover the same distance. The train has no shower, bad food, beds you can’t sleep in. And the plane is a comfortable modern airplane. Which one would you choose? The price is the same. The only difference is your comfort and your time.
+Imagine this: there’s a plane from Moscow to Novosibirsk, the heart of Siberia, that takes 4 hours to fly 2800 kilometers. And there’s also a train that takes three days to cover the same distance. The train has no shower, bad food, beds you can’t sleep in. And the plane is a comfortable modern airplane. Which one would you choose? The price is the same. The only difference is your comfort and your time.
 
 <figure><img src="train.jpg"></figure>
 
