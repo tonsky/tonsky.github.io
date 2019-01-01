@@ -3,6 +3,7 @@ layout: post
 title: "It is fast or it is wrong"
 category: blog
 summary: "Fast programs are always fast, slow programs are slow even on a most powerful computers. Knowing that fast solution exists makes slow one plain wrong."
+hackernews_id: 18783704
 ---
 
 I’ve been doing some [Advent of Code](https://adventofcode.com/2018) programming recently (you can [watch the recordings](https://www.youtube.com/playlist?list=PLdSfLyn35ej-UL9AuxUvoFXerHac4RYnH)). They publish a small programming problem every day during December and you are supposed to write a program that solves it for you. It usually takes anything from a couple of minutes to a couple of hours and is pretty fun, I recommend that you try it too. Once the task is up, it’s always accessible, not only during December.
