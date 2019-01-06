@@ -78,7 +78,7 @@ sup, sub, .note-ref, .note-number, .footnote { vertical-align: baseline; positio
 sup, .note-ref, .note-number, .footnote { bottom: 1.4ex; }
 sub { top: .5ex; }
 
-.about_photo { float: left; width: 100px; height: 160px; margin-left: -150px; margin-top: -10px; background: url(/photo.png/); background-size: 200px; }
+.about_photo { float: left; width: 100px; height: 160px; margin-left: -150px; margin-top: -10px; background: url("/photo.png"); background-size: 200px; }
 .about_photo:hover { background-position: 100%; }
 .about_inner { font-size: 16px; line-height: 24px; border: 2px solid #00000030; border-radius: 4px; padding: 10px 20px; margin: -12px -22px; }
 .about_inner > p { margin: 0 0 8px; }
