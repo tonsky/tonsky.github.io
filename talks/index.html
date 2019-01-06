@@ -11,27 +11,30 @@ class: page_wide
 </ul>
 
 <style>
-    .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="hsl(215, 50%, 70%)" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
-    .popup:hover::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="white" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .talk { font-size: 18px; line-height: 25px; }
+    .popup { color: inherit; }
+    .popup:hover { color: #000; }
+    .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="#00000030" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .popup:hover::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
     .talk { width: 1000px; margin: 0 -100px 70px -100px; min-height: 315px; }
     .talk-view { width: 560px; }
     iframe { display: block; border-radius: 4px; }
-    .talk-view-stub { width: 100%; height: 315px; padding: 145px 20px 0 20px; background: hsl(215, 40%, 45%); border-radius: 4px; text-align: center; }
+    .talk-view-stub { width: 100%; height: 315px; padding: 145px 20px 0 20px; background: #00000015; border-radius: 4px; text-align: center; }
 
     .talk-view, .talk-details { display: table-cell; vertical-align: top; }
     .talk-details { padding-left: 20px; }
     audio { width: 100%; }
 
     .talk-details > h2 { margin: 0 0 0 0; }
-    .highlight::after { content: " "; margin: 0 0 -2px 4px; display: inline-block; width: 19px; height: 19px; background-image: url('data:image/svg+xml;utf8,<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="highlight" fill="%23FEE18B"><polygon id="Star" points="9.60845213 14 4.90617011 16.472136 5.80422607 11.236068 2 7.52786405 7.25731112 6.76393202 9.60845213 2 11.9595931 6.76393202 17.2169043 7.52786405 13.4126782 11.236068 14.3107341 16.472136"></polygon></g></svg>'); }
-    .talk-extras { font-size: 14px; margin: -15px 0 15px 0; }
+    .highlight::after { content: " "; margin: 0 0 -2px 4px; display: inline-block; width: 19px; height: 19px; background-image: url('data:image/svg+xml;utf8,<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="highlight" fill="%2300000050"><polygon id="Star" points="9.60845213 14 4.90617011 16.472136 5.80422607 11.236068 2 7.52786405 7.25731112 6.76393202 9.60845213 2 11.9595931 6.76393202 17.2169043 7.52786405 13.4126782 11.236068 14.3107341 16.472136"></polygon></g></svg>'); }
+    .talk-extras { font-size: 14px; margin: -15px 0 15px 0; color: #00000050; }
     .talk-downloads { display: none; font-size: 14px; margin: -15px 0 15px 0; }
-    .talk-version { font-size: 14px; line-height: 26px; color: hsl(215, 45%, 60%); cursor: pointer; }
-    .talk-version_active, .talk-version:hover { color: white; }
+    .talk-version { font-size: 14px; line-height: 26px; color: #00000050; cursor: pointer; }
+    .talk-version_active, .talk-version:hover { color: #000; }
     .talk-version_active { cursor: default; }
-    .talk-version-lang { background: hsl(215, 45%, 60%); color: hsl(215, 45%, 40%); padding: 1px 3px 0px 3px; border-radius: 2px; font-size: 10px; position: relative; top: -1px; margin: 0 3px 0 0; }
+    .talk-version-lang { background: #00000015; padding: 1px 3px 0px 3px; border-radius: 2px; font-size: 10px; position: relative; top: -1px; margin: 0 3px 0 0; }
     .talk-version_active > .talk-version-lang,
-    .talk-version:hover > .talk-version-lang { background: white; color: hsl(215, 45%, 40%); }
+    .talk-version:hover > .talk-version-lang { background: #00000030; }
     .talk-version-preview { display: none; }
 </style>
 
@@ -109,7 +112,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>Defn podcast, episode 40</h2>
+            <h2>Defn podcast, episode 40</h2>
             <p class="talk-description">Software disenchantment, DataScript, Rum, FiraCode and Flutter</p>
             <p class="talk-extras"><a class="popup" href="https://soundcloud.com/defn-771544745/40-nikita-prokopov-aka-tonsky" target="_blank">Links</a></p>
     </script>
@@ -127,7 +130,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>The REPL podcast, episode 5</h2>
+            <h2>The REPL podcast, episode 5</h2>
             <p class="talk-description">Data synchronisation, the web after tomorrow, Datascript, Rum, software quality, and font ligatures.</p>
             <p class="talk-extras"><a class="popup" href="https://www.therepl.net/episodes/5/" target="_blank">Links</a></p>
     </script>
@@ -140,7 +143,7 @@ class: page_wide
           <div class="talk-view-stub"><a class="popup" href="https://itunes.apple.com/ru/podcast/run-loop-4-%D0%BD%D0%B8%D0%BA%D0%B8%D1%82%D0%B0-%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BF%D0%BE%D0%B2/id1409669962?i=1000418215171&mt=2" target="_blank">Слушать в iTunes</a></div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст Run Loop, эпизод 4</h2>
+            <h2>Подкаст Run Loop, эпизод 4</h2>
             <p class="talk-description">Родился, вырос, написал AnyBar (и всё остальное)</p>
     </script>
 </div>
@@ -154,7 +157,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст Frontend Weekend, эпизод 55</h2>
+            <h2>Подкаст Frontend Weekend, эпизод 55</h2>
             <p class="talk-description">С какой целью было создано столько блогов и шрифт Fira Code? Почему ЖЖ до сих пор живой? Почему предпочитаю фронтенд и HolyJS в частности?</p>
             <p class="talk-extras"><a class="popup" href="https://soundcloud.com/frontend-weekend/fw-55" target="_blank">Ссылки</a></p>
     </script>
@@ -171,7 +174,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст DevZen, эпизод 193</h2>
+            <h2>Подкаст DevZen, эпизод 193</h2>
             <p class="talk-description">Хорошие интерфейсы — хорошо, но и плохие не смертельно; error монады в динамических языках.</p>
             <p class="talk-extras"><a class="popup" href="https://devzen.ru/episode-0193/" target="_blank">Ссылки, обсуждение</a></p>
     </script>
@@ -434,7 +437,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст DevZen, эпизод 99</h2>
+            <h2>Подкаст DevZen, эпизод 99</h2>
             <p class="talk-description">Обучение Clojure на <a href="http://ClojureCourse.by" target="_blank">ClojureCourse.by</a>, Ask Me Anything с Alan Kay и будущее языков программирования, React.js и работа с состоянием на фронтенде, Clojure.spec и property-based тесты, Websocket-ы в разных стеках.</p>
             <p class="talk-extras"><a class="popup" href="https://devzen.ru/episode-0099/" target="_blank">Ссылки, обсуждение</a></p>
     </script>
@@ -492,7 +495,7 @@ class: page_wide
             </div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст Разбор полетов, эпизод 92</h2>
+            <h2>Подкаст Разбор полетов, эпизод 92</h2>
             <p class="talk-description">Clojure, ClojureScript, DataScript, Datomic</p>
             <p class="talk-extras"><a class="popup" href="http://razbor-poletov.com/2015/10/episode-92.html" target="_blank">Ссылки, обсуждение</a></p>
     </script>

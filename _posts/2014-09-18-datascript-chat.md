@@ -7,7 +7,7 @@ summary: "How to write chat application with ClojureScript, core.async, React an
 
 What DataScript-driven application looks like? Does DataScript really makes the difference? I tried to answer both questions by writing small single-page application. Not to bore you (and myself; mostly myself) with another TodoMVC show-off, I made a simple chat. Meet CatChat:
 
-<p style="margin: -20px -38px;"><a style="border: none; " href="http://tonsky.me/datascript-chat/"><img src="./datascript_chat.png" style="width: 620px; height: 420px; margin: 20px 0;" /></a></p>
+<figure><a style="border: none; " href="http://tonsky.me/datascript-chat/"><img src="./datascript_chat.png" style="width: 620px; height: 420px; margin: 20px 0;" /></a></figure>
 
 Check out [source code](https://github.com/tonsky/datascript-chat) and [live version](http://tonsky.me/datascript-chat/).
 
@@ -273,7 +273,7 @@ Turned out adopting a database is a really good idea for client-side app. Progra
 
 Project trackers, email clients, calendars, online banks, professional to-do lists are all kinds of client-side apps that are highly structured and can benefit from adopting DataScript. Think Trello or GMail: in any sufficiently complex client-side app there’s a lot of structured data to take care of. I personally sometimes fantasize about rewriting GitHub issues page:
 
-<p style="margin: 0 -28px;"><img src="./github_issues.png" style="width: 600px; height: 375px; border-radius: 4px" /></p>
+<figure><img src="./github_issues.png"></figure>
 
 Just imagine how we can store all these tiny issues and all their little properties in DataScript, and then implement all these tabs, buttons and filters _on a client_, without even touching a server.
 

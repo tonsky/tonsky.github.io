@@ -5,18 +5,19 @@ layout: default
   <li><a class="menu__item menu__item_inside" href="/">Blog</a>
   <li><a class="menu__item" href="/talks/">Talks</a>
   <li><a class="menu__item" href="/projects/">Projects</a>
+  <li><a class="menu__item" href="/patrons/">Patrons</a>
 </ul>
 
 
 <div class="post">
-  <h1>{{ page.title }}</h1>
+  <h1 class="title">{{ page.title }}</h1>
 
   <p>{{ page.permalink }}</p>
 
   {{ content }}
 
   <p class=footer>
-    <span class=date>{{ page.date | date: "%B %-d, %Y" }}</span>
+    <span>{{ page.date | date: "%B %-d, %Y" }}</span>
     {% if page.hackernews_id or page.reddit_url %}
       <span class="separator">·</span>
       <span>Discuss on</span>
@@ -32,7 +33,7 @@ layout: default
   {% if page.hide_about %}  
   {% else %}
   <div class="about">
-    <img src="/photo.gif">
+    <div class="about_photo"></div>
     <div class="about_inner">
       <p>Hi!</p>
       <p>I’m Nikita. Here I write about programming and UI design <a style="margin-left: 5px" class="btn-subscribe" href="/blog/how-to-subscribe/" target="_blank"><svg viewBox="0 0 800 800"><path d="M493 652H392c0-134-111-244-244-244V307c189 0 345 156 345 345zm71 0c0-228-188-416-416-416V132c285 0 520 235 520 520z"/><circle cx="219" cy="581" r="71"/></svg> Subscribe</a></p>

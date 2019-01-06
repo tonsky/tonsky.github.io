@@ -7,8 +7,7 @@ hackernews_id: 18620309
 ---
 
 <style>
-blockquote { margin: 60px 0 30px 0; }
-blockquote > pre { margin: 15px 0; padding: 0; }
+blockquote > pre { margin: 15px 0; padding: 0; background: none; }
 </style>
 
 There has been [a discussion](https://clojureverse.org/t/clj-commons-building-a-formatter-like-gofmt-for-clojure/3240) recently whether Clojure should have its own version of gofmt, a default go code formatter. I think it’s a good opportunity to collect and formulate my thoughts on the subject.
