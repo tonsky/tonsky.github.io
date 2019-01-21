@@ -5,3 +5,4 @@ _site
 .vscode
 blog/readable-clojure/originals/*
 blog/readable-clojure/snippets/*
+vendor
