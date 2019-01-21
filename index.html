@@ -21,44 +21,13 @@ title: Blog
     </div>
   </div>
 
-  <h1>2018</h1>
-  {% for post in site.posts %}
-    {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2018" and post.draft != true %}
-      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
-    {% endif %}
-  {% endfor %}
-
-  <h1>2017</h1>
-  {% for post in site.posts %}
-    {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2017" and post.draft != true  %}
-      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
-    {% endif %}
-  {% endfor %}
-  
-  <h1>2016</h1>
-  {% for post in site.posts %}
-    {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2016" and post.draft != true  %}
-      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
-    {% endif %}
-  {% endfor %}
-  
-  <h1>2015</h1>
-  {% for post in site.posts %}
-    {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2015" and post.draft != true  %}
-      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
-    {% endif %}
-  {% endfor %}
-
-  <h1>2014</h1>
-  {% for post in site.posts %}
-    {% assign year = post.date | date: "%-Y" %}
-    {% if year == "2014" and post.draft != true  %}
-      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class=date>{{ post.date | date: "%-m/%-d"}}</span>
-    {% endif %}
+  {% assign published_posts = site.posts | where_exp: "post", "post.draft != true" %}
+  {% assign posts_by_year = published_posts | group_by_exp: "post", "post.date | date: '%Y'"  %}
+  {% for year in posts_by_year %}
+    <h1>{{ year.name }}</h1>
+    {% for post in year.items %}
+      <p><a href="{{ post.url }}">{{ post.title }}</a> <span class="date">{{ post.date | date: "%-m/%-d"}}</span>
+    {% endfor %}
   {% endfor %}
 
 <p class=comments>
