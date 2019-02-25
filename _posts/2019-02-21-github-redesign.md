@@ -12,6 +12,11 @@ draft: true
 .w400 { width: 400px; margin-left: 72px; margin-right: 72px; }
 </style>
 
+<figure class="w768">
+  <img src="./00_cover.png" />
+  Illustration by Yulia Prokopova
+</figure>
+
 Github design is pretty good: it gets the job done, it’s clean, has consistent visual language, its design is calm and suitable for everyday use.
 
 Given all that, there are still many areas that could be improved even further. Today we’ll take one interface—repository page—and look what UI problems it has and if we can fix them.
