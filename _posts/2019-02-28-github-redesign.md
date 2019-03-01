@@ -3,6 +3,7 @@ layout: post
 title: "Redesigning Github repository page"
 category: blog
 summary: "Better design for Github repository page"
+hackernews_id: 19276113
 ---
 
 <style>
