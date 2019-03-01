@@ -3,6 +3,7 @@ layout: post
 title: "Library focus"
 category: blog
 summary: "Why you shouldn’t write libraries as a part of a bigger software project"
+img_rel: true
 ---
 
 Software projects rely on libraries heavily. Usually it’s pretty simple: you have a need, you pick a library, you integrate it and get results. Most of the time it’s advantegeous—economically—because it’s faster than rolling your own implementation.

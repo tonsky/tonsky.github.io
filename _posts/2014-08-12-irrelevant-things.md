@@ -4,6 +4,7 @@ title: Irrelevant Things
 category: blog
 hackernews_id: 8167186
 summary: "As a programmer on a way to technical excellency, you should teach yourself to constantly spot and reduce waste."
+img_rel: true
 ---
 
 I had a conversation once, whether trailing spaces should be removed from code or not. Real conversation, with an actual person, with “arguments”, “pros and cons”. Even appeals to taste. Half an hour lost on something that isn’t a problem at all. Trailing spaces are okay, not having trailing spaces is okay too, I guess; I’m only concerned when somebody cares about such irrelevant thing.

@@ -3,6 +3,7 @@ layout: post
 title: Chatting cats use DataScript for fun
 category: blog
 summary: "How to write chat application with ClojureScript, core.async, React and DataScript"
+img_rel: true
 ---
 
 What DataScript-driven application looks like? Does DataScript really makes the difference? I tried to answer both questions by writing small single-page application. Not to bore you (and myself; mostly myself) with another TodoMVC show-off, I made a simple chat. Meet CatChat:

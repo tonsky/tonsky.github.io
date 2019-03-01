@@ -7,9 +7,11 @@ hackernews_id: 19276113
 ---
 
 <style>
-.w768 { width: 768px; margin-left: -112px; margin-right: -112px; }
-.w500 { width: 500px; margin-left: 22px; margin-right: 22px; }
-.w400 { width: 400px; margin-left: 72px; margin-right: 72px; }
+@media (min-width: 768px) {
+  .w768 { width: 768px; margin-left: -112px; margin-right: -112px; }
+  .w500 { width: 500px; margin-left: 22px; margin-right: 22px; }
+  .w400 { width: 400px; margin-left: 72px; margin-right: 72px; }
+}
 </style>
 
 <figure class="w768">

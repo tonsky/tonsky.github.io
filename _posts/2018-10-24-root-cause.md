@@ -3,6 +3,7 @@ layout: post
 title: "Address the root cause"
 category: blog
 summary: "Do not just fix symptoms. Find out the root cause and address it instead"
+img_rel: true
 ---
 
 Today I was listening for [Apropos Clojure #20](https://www.youtube.com/watch?v=6ftW8UwwP_4) and looks like it was me who [triggered Stu](https://twitter.com/nikitonsky/statuses/1014596144347926529) to start looking into the problem. What surprised me was what he said next.

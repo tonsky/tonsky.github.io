@@ -3,6 +3,7 @@ layout: post
 title: "A shallow dive into DataScript internals"
 category: blog
 summary: "An overview of DataScript code base, what’s there and how it’s structured"
+img_rel: true
 ---
 
 This is an overview of [DataScript code base](https://github.com/tonsky/datascript). Without going into much detail, it paints the overall picture of how code is structured, what parts it’s built of and what purpose they serve. If you’re interested in studying DataScript sources, this is a great place to start.

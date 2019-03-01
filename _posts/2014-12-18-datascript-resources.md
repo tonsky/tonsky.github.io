@@ -3,6 +3,7 @@ layout: post
 title: "Couple of DataScript resources"
 category: blog
 summary: "Couple of new talks about DataScript"
+img_rel: true
 ---
 
 There’s couple of new resources available about DataScript.

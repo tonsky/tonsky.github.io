@@ -4,6 +4,7 @@ title: "Skill acquisition"
 category: blog
 summary: "Dreyfus model of skill acquisition explains what happens in IT industry"
 draft: true
+img_rel: true
 ---
 
 There’s a great talk by Dan North about “Patterns of Effective Teams”:

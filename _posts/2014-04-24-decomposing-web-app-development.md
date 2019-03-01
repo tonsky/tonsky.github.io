@@ -4,6 +4,7 @@ title: Decomposing web app development
 category: blog
 hackernews_id: 7640473
 summary: "Web applications’ story has been incomplete for a long time. There’s a lot of people working in web development, a lot of effort put into it, a lot of thought (I hope), and still we’re far, far away from complex, evolving, reactive web apps. It’s still the Dark Ages."
+img_rel: true
 ---
 
 Web applications’ story has been incomplete for a long time. There’s a lot of people working in web development, a lot of effort put into it, a lot of thought (I hope), and still we’re far, far away from complex, evolving, reactive web apps. It’s still the Dark Ages.

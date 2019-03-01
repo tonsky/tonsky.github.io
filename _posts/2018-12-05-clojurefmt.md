@@ -4,6 +4,7 @@ title: "Better Clojure formatting"
 category: blog
 summary: "A Clojure formatting style good enough to be a default standard"
 hackernews_id: 18620309
+img_rel: true
 ---
 
 <style>

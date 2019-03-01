@@ -3,6 +3,7 @@ layout: post
 title: "The Blessing of Interactive Development"
 category: blog
 summary: "In this post I describe a couple of practice that makes the process of writing code faster, more predictable and straightforward"
+img_rel: true
 ---
 
 ## How do you write code?

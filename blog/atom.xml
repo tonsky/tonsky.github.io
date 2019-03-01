@@ -30,7 +30,11 @@ layout: nil
       {% endif %}
       <content type="html"><![CDATA[
         {% assign rel_prefix = 'href="http://tonsky.me' | append: post.url %}
-        {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url | append:'rss/' %}
+        {% if post.img_rel %}
+          {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url | append:'rss/' %}
+        {% else %}
+          {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url %}
+        {% endif %}
         {{ post.content | replace:'src="./',img_rel_prefix | replace:'href="./',rel_prefix | replace:'src="/','src="http://tonsky.me/rss/' | replace:'href="/','href="http://tonsky.me/' }}
       ]]></content>  
       <author>

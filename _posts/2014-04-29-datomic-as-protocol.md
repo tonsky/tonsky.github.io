@@ -3,6 +3,7 @@ layout: post
 title: Datomic as a Protocol
 category: blog
 summary: "Datomic introduced a data structure model: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance."
+img_rel: true
 ---
 
 Datomic introduced a data structure model\: entity-attribute-value store, transaction format, Datalog query language dialect. As you get familiar with it, you notice that this model has a lot of nice properties and is, in fact, more thought-out than it may appear at the first glance.

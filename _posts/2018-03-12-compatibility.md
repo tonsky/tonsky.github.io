@@ -3,6 +3,7 @@ layout: post
 title: "JavaScript v. backward compatibility"
 category: blog
 summary: "For some unclear reason, many JS developers are opposed to the idea of backward compatibility"
+img_rel: true
 ---
 
 > Inside the carton is a push-button unit fastened to a small wooden box. A glass dome covers the button. If you push the button, somewhere in the world someone you don’t know will die. In return you will receive a payment of $50,000. It could be anyone. All we guarantee is that you don’t know them. And, of course, that you wouldn’t have to watch them die. For $50,000.

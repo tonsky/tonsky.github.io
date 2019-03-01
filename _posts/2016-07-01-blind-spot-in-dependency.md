@@ -3,6 +3,7 @@ layout: post
 title: "Blind Spot in Dependency Management"
 category: blog
 summary: "Why changelogs are important and how come we don’t talk about it"
+img_rel: true
 ---
 
 Let’s talk about one overlooked aspect of dependency management.  I know what you would say, wait a minute, dependency management, the whole domain is a trivial problem that tricks everybody into overthinking overcomplicated solutions.
