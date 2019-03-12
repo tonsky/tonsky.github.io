@@ -31,11 +31,14 @@ layout: nil
       <content type="html"><![CDATA[
         {% assign rel_prefix = 'href="http://tonsky.me' | append: post.url %}
         {% if post.img_rel %}
-          {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url | append:'rss/' %}
+          {% assign img_rel_prefix = 'http://tonsky.me' | append: post.url | append:'rss/' %}
         {% else %}
-          {% assign img_rel_prefix = 'src="http://tonsky.me' | append: post.url %}
+          {% assign img_rel_prefix = 'http://tonsky.me' | append: post.url %}
         {% endif %}
-        {{ post.content | replace:'src="./',img_rel_prefix | replace:'href="./',rel_prefix | replace:'src="/','src="http://tonsky.me/rss/' | replace:'href="/','href="http://tonsky.me/' }}
+        {% assign src_prefix = 'src="' | append: img_rel_prefix %}
+        {% assign srcset_prefix = 'srcset="' | append: img_rel_prefix %}
+        {% assign srcset_prefix_comma = ', ' | append: img_rel_prefix %}
+        {{ post.content | replace:'src="./',src_prefix | replace:'srcset="./',srcset_prefix | replace:', ./',srcset_prefix_comma | replace:'href="./',rel_prefix | replace:'src="/','src="http://tonsky.me/rss/' | replace:'href="/','href="http://tonsky.me/' }}
       ]]></content>  
       <author>
         <name>Nikita Prokopov</name>
