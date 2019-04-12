@@ -12,7 +12,7 @@ layout: nil
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <author>
     <name>Nikita Prokopov</name>
-    <email>prokopov@gmail.com</email>
+    <email>niki@tonsky.me</email>
   </author>
  
   {% for post in site.posts %}
@@ -42,7 +42,7 @@ layout: nil
       ]]></content>  
       <author>
         <name>Nikita Prokopov</name>
-        <email>prokopov@gmail.com</email>
+        <email>niki@tonsky.me</email>
       </author>
     </entry>
   {% endif %}
