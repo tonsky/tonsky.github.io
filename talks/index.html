@@ -14,8 +14,8 @@ class: page_wide
     .talk { font-size: 18px; line-height: 25px; }
     .popup { color: inherit; }
     .popup:hover { color: #000; }
-    .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="#00000030" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
-    .popup:hover::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" fill="none" stroke-width="1"><polyline id="Rectangle" points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="%2300000030" fill="none" stroke-width="1.5"><polyline points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
+    .popup:hover::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="%23000" fill="none" stroke-width="1.5"><polyline points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
     .talk { width: 1000px; margin: 0 -100px 70px -100px; min-height: 315px; }
     .talk-view { width: 560px; }
     iframe { display: block; border-radius: 4px; }
@@ -88,6 +88,25 @@ class: page_wide
         window.addEventListener("scroll", on_scroll);
     });
 </script>
+
+<div class="talk talk_hidden">
+    <div class="talk-inner"></div>
+    <script type="talk-version" data-active data-lang="RU" data-date="May 2019">
+        <div class="talk-view">
+            <div class="talk-view">
+                <div class="talk-view-stub">
+                    <audio controls>
+                        <source src="https://s.tonsky.me/tonsky.me/2019-05%20Podcast%20Keyboards.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <div class="talk-details">
+            <h2>Подкаст Высший Клик, <a target="_blank" href="https://t.me/KgOfHedgehogs/509">эпизод 2</a></h2>
+            <p class="talk-description">Обсуждаем эргономику клавиатур и отвечаем на <a target="_blank" href="https://tonsky.livejournal.com/321097.html">вопросы из комментариев.</a></p>
+    </script>
+</div>
+
 
 <div class="talk talk_hidden">
     <div class="talk-inner"></div>
