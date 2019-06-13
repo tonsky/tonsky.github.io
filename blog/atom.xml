@@ -6,9 +6,9 @@ layout: nil
  
   <title>tonsky.me</title>
   <subtitle>Nikita Prokopov’s blog</subtitle>
-  <link type="application/atom+xml" href="http://tonsky.me/blog/atom.xml" rel="self" />
-  <link rel="alternate" type="text/html" href="http://tonsky.me/" />
-  <id>http://tonsky.me/</id>
+  <link type="application/atom+xml" href="https://tonsky.me/blog/atom.xml" rel="self" />
+  <link rel="alternate" type="text/html" href="https://tonsky.me/" />
+  <id>https://tonsky.me/</id>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <author>
     <name>Nikita Prokopov</name>
@@ -19,8 +19,8 @@ layout: nil
   {% if post.draft != true %}
     <entry>
       <title>{{ post.title }}</title>
-      <link rel="alternate" type="text/html" href="http://tonsky.me{{ post.url }}" />
-      <id>http://tonsky.me{{ post.url }}</id>
+      <link rel="alternate" type="text/html" href="https://tonsky.me{{ post.url }}" />
+      <id>https://tonsky.me{{ post.url }}</id>
       <published>{{ post.date | date_to_xmlschema }}</published>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       {% if post.summary %}
@@ -29,16 +29,16 @@ layout: nil
         ]]></summary>
       {% endif %}
       <content type="html"><![CDATA[
-        {% assign rel_prefix = 'href="http://tonsky.me' | append: post.url %}
+        {% assign rel_prefix = 'href="https://tonsky.me' | append: post.url %}
         {% if post.img_rel %}
-          {% assign img_rel_prefix = 'http://tonsky.me' | append: post.url | append:'rss/' %}
+          {% assign img_rel_prefix = 'https://tonsky.me' | append: post.url | append:'rss/' %}
         {% else %}
-          {% assign img_rel_prefix = 'http://tonsky.me' | append: post.url %}
+          {% assign img_rel_prefix = 'https://tonsky.me' | append: post.url %}
         {% endif %}
         {% assign src_prefix = 'src="' | append: img_rel_prefix %}
         {% assign srcset_prefix = 'srcset="' | append: img_rel_prefix %}
         {% assign srcset_prefix_comma = ', ' | append: img_rel_prefix %}
-        {{ post.content | replace:'src="./',src_prefix | replace:'srcset="./',srcset_prefix | replace:', ./',srcset_prefix_comma | replace:'href="./',rel_prefix | replace:'src="/','src="http://tonsky.me/rss/' | replace:'href="/','href="http://tonsky.me/' }}
+        {{ post.content | replace:'src="./',src_prefix | replace:'srcset="./',srcset_prefix | replace:', ./',srcset_prefix_comma | replace:'href="./',rel_prefix | replace:'src="/','src="https://tonsky.me/rss/' | replace:'href="/','href="https://tonsky.me/' }}
       ]]></content>  
       <author>
         <name>Nikita Prokopov</name>
