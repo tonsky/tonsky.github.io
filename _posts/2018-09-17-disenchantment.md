@@ -12,27 +12,27 @@ img_rel: true
 
 _Translations: <a href="https://blog.romainfallet.fr/desenchantement-logiciel/" target="_blank">French</a> [Italian](it/) [Portuguese](pt/) <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a> [Spanish](es/)_
 
-I’ve been programming for 15 years now. Recently our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and the IT in general.
+I’ve been programming for 15 years now. Recently, our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and IT in general.
 
 Modern cars work, let’s say for the sake of argument, at 98% of what’s physically possible with the current engine design. Modern buildings use just enough material to fulfill their function and stay safe under the given conditions. All planes converged to the optimal size/form/load and basically look the same.
 
-Only in software, it’s fine if a program runs at 1% or even 0.01% of the possible performance. Everybody just seems to be ok with it. People are often even proud about how much inefficient it is, as in “why should we worry, computers are fast enough”:
+Only in software, it’s fine if a program runs at 1% or even 0.01% of the possible performance. Everybody just seems to be ok with it. People are often even proud about how inefficient it is, as in “why should we worry, computers are fast enough”:
 
 > [@tveastman](https://twitter.com/tveastman/status/1039002300600147968): I have a Python program I run every day, it takes 1.5 seconds. I spent six hours re-writing it in rust, now it takes 0.06 seconds. That efficiency improvement means I'll make my time back in 41 years, 24 days :-)
 
-You’ve probably heard this mantra: “programmer time is more expensive than computer time”. What it means basically is that we’re wasting computers at an unprecedented scale. Would you buy a car if it eats 100 liters per 100 kilometers? How about 1000 liters? With computers, we do that all the time.
+You’ve probably heard this mantra: “Programmer time is more expensive than computer time.” What it means basically is that we’re wasting computers at an unprecedented scale. Would you buy a car if it eats 100 liters per 100 kilometers? How about 1000 liters? With computers, we do that all the time.
 
 <figure><a href="https://xkcd.com/2021/" target="_blank"><img src="software_development_2x.gif" height="440"></a></figure>
 
 ## Everything is unbearably slow
 
-Look around: our portable computers are thousands of times more powerful than the ones that brought man to the moon. Yet every other webpage struggles to maintain a smooth 60fps scroll on the latest top-of-the-line MacBook Pro. I can comfortably play games, watch 4K videos but not scroll web pages? How is it ok?
+Look around: our portable computers are thousands of times more powerful than the ones that brought man to the moon. Yet every other webpage struggles to maintain a smooth 60fps scroll on the latest top-of-the-line MacBook Pro. I can comfortably play games, watch 4K videos, but not scroll web pages? How is that ok?
 
 Google Inbox, a web app written by Google, running in Chrome browser also by Google, [takes 13 seconds to open moderately-sized emails](https://twitter.com/nikitonsky/statuses/968882438024941568):
 
 <figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="inbox.mp4" type="video/mp4"></video></figure>
 
-It also animates empty white boxes instead of showing their content because it’s the only way anything can be animated on a webpage with decent performance. No, decent doesn’t mean 60fps, it’s rather “as fast as this web page could possibly go”. I’m dying to see web community answer when 120Hz displays become mainstream. Shit barely hits 60Hz already.
+It also animates empty white boxes instead of showing their content because it’s the only way anything can be animated on a webpage with decent performance. No, decent doesn’t mean 60fps, it’s rather “as fast as this web page could possibly go”. I’m dying to see the web community answer when 120Hz displays become mainstream. Shit barely hits 60Hz already.
 
 Windows 10 [takes 30 minutes to update](https://grumpy.website/post/0PeXr1S7N). What could it possibly be doing for that long? That much time is enough to fully format my SSD drive, download a fresh build and install it like 5 times in a row.
 
@@ -40,7 +40,7 @@ Windows 10 [takes 30 minutes to update](https://grumpy.website/post/0PeXr1S7N). 
 
 > [Pavel Fatin](https://pavelfatin.com/typing-with-pleasure/): Typing in editor is a relatively simple process, so even 286 PCs were able to provide a rather fluid typing experience.
 
-Modern text editors have higher latency than 42-year-old Emacs. Text editors! What can be simpler? On each keystroke, all you have to do is update tiny rectangular region and modern text editors can’t do that in 16ms. It’s a lot of time. A LOT. A 3D game can fill the whole screen with hundreds of thousands (!!!) of polygons in the same 16ms and also process input, recalculate the world and dynamically load/unload resources. How come?
+Modern text editors have higher latency than 42-year-old Emacs. Text editors! What can be simpler? On each keystroke, all you have to do is update a tiny rectangular region and modern text editors can’t do that in 16ms. It’s a lot of time. A LOT. A 3D game can fill the whole screen with hundreds of thousands (!!!) of polygons in the same 16ms and also process input, recalculate the world and dynamically load/unload resources. How come?
 
 As a general trend, we’re not getting faster software with more features. We’re getting faster hardware that runs slower software with the same features. Everything works way below the possible speed. Ever wonder why your phone needs 30 to 60 seconds to boot? Why can’t it boot, say, in one second? There are no physical limitations to that. I would love to see that. I would love to see limits reached and explored, utilizing every last bit of performance we can get for something meaningful in a meaningful way.
 
