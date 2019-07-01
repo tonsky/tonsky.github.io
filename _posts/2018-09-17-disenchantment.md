@@ -46,7 +46,7 @@ As a general trend, we’re not getting faster software with more features. We�
 
 ## Everything is HUUUUGE
 
-And then there’s bloat. Web apps could open up to 10× faster if you just simply block all ads. Google begs everyone to stop shooting themselves in their feet with AMP initiative—a technology solution to a problem that doesn’t need any technology, just a little bit of common sense. If you remove bloat, the web becomes crazy fast. How smart do you have to be to understand that?
+And then there’s bloat. Web apps could open up to 10× faster if you just simply blocked all ads. Google begs everyone to stop shooting themselves in the foot with AMP initiative—a technology solution to a problem that doesn’t need any technology, just a little bit of common sense. If you remove bloat, the web becomes crazy fast. How smart do you have to be to understand that?
 
 Android system with no apps [takes almost 6 Gb](https://grumpy.website/post/0Oz1lDOq5). Just think for a second how obscenely HUGE that number is. What’s in there, HD movies? I guess it’s basically code: kernel, drivers. Some string and resources too, sure, but those can’t be big. So, how many drivers do you need for a phone?
 
@@ -54,13 +54,13 @@ Android system with no apps [takes almost 6 Gb](https://grumpy.website/post/0Oz1
 
 Windows 95 was 30Mb. Today we have web pages heavier than that! Windows 10 is 4Gb, which is 133 times as big. But is it 133 times as superior? I mean, functionally they are basically the same. Yes, we have Cortana, but I doubt it takes 3970 Mb. But whatever Windows 10 is, is Android really 150% of that?
 
-Google keyboard app routinely eats 150 Mb. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 Mb! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 Mb that just sit there and which I’m unable to delete.
+Google's keyboard app routinely eats 150 Mb. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 Mb! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 Mb that just sit there and which I’m unable to delete.
 
 <figure><img src="apps_storage.gif" height="480"></figure>
 
 All that leaves me around 1 Gb for my photos after I install all the essential (social, chats, maps, taxi, banks etc) apps. And that’s with no games and no music at all! Remember times when an OS, apps and all your data fit on a floppy?
 
-Your desktop todo app is probably written in Electron and thus [has userland driver for Xbox 360 controller in it](https://josephg.com/blog/electron-is-flash-for-the-desktop/), can render 3d graphics and play audio and take photos with your web camera.
+Your desktop todo app is probably written in Electron and thus [has a userland driver for the Xbox 360 controller in it](https://josephg.com/blog/electron-is-flash-for-the-desktop/), can render 3D graphics and play audio and take photos with your web camera.
 
 <figure><img src="slack_memory.jpg" height="388"></figure>
 
@@ -74,7 +74,7 @@ At least it works, you might say. Well, bigger doesn’t imply better. Bigger me
 
 iPhone 4s was released with iOS 5, but can barely run iOS 9. And it’s not because iOS 9 is that much superior—it’s basically the same. But their new hardware is faster, so they made software slower. Don’t worry—you got exciting new capabilities like...running the same apps with the same speed! I dunno.
 
-iOS 11 dropped support for 32-bit apps. That means if the developer isn’t around at the time of iOS 11 release or isn’t willing to go back and update a once-perfectly-fine app, chances are you won’t be seeing their app ever again.
+iOS 11 dropped support for 32-bit apps. That means if the developer isn’t around at the time of the iOS 11 release or isn’t willing to go back and update a once-perfectly-fine app, chances are you won’t be seeing their app ever again.
 
 > @[jckarter](https://twitter.com/jckarter/statuses/1017071794245623808): A DOS program can be made to run unmodified on pretty much any computer made since the 80s. A JavaScript app might break with tomorrow’s Chrome update
 
@@ -86,7 +86,7 @@ I think we can and should do better than that. Everyone is busy building stuff f
 
 ## Worse is better
 
-Nobody understands anything at this point. Neither they want to. We just throw barely baked shit out there, hope for the best and call it “startup wisdom”.
+Nobody understands anything at this point. Neither do they want to. We just throw barely baked shit out there, hope for the best and call it “startup wisdom”.
 
 Web pages ask you to refresh if anything goes wrong. Who has time to figure out what happened?
 
@@ -96,11 +96,11 @@ Any web app produces a constant stream of “random” JS errors in the wild, ev
 
 The whole webpage/SQL database architecture is built on a premise (hope, even) that nobody will touch your data while you look at the rendered webpage.
 
-Most collaborative implementations are “best effort” and have many common-life scenarios in which they lose data. Ever seen this dialogue “which version to keep?” I mean, bar today is so low that your users would be happy to at least have a window like that.
+Most collaborative implementations are “best effort” and have many common-life scenarios in which they lose data. Ever seen this dialogue “which version to keep?” I mean, the bar is so low today that your users would be happy to at least have a window like that.
 
 <figure><img src="icloud_conflict.jpg" height="468"></figure>
 
-And no, in my world app that says “I’m gonna destroy some of your work, but you get to choose which one” is not okay.
+And no, in my world, an app that says “I’m gonna destroy some of your work, but you get to choose which one” is not okay.
 
 Linux kills random processes _by design_. And yet it’s the most popular server-side OS.
 
