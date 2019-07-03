@@ -46,19 +46,19 @@ As a general trend, we’re not getting faster software with more features. We�
 
 ## Everything is HUUUUGE
 
-And then there’s bloat. Web apps could open up to 10× faster if you just simply blocked all ads. Google begs everyone to stop shooting themselves in the foot with AMP initiative—a technology solution to a problem that doesn’t need any technology, just a little bit of common sense. If you remove bloat, the web becomes crazy fast. How smart do you have to be to understand that?
+And then there’s bloat. Web apps could open up to 10 times faster if you just simply blocked all ads. Google begs everyone to stop shooting themselves in the foot with the AMP initiative—a technology solution to a problem that doesn’t need any technology, just a little bit of common sense. If you remove bloat, the web becomes crazy fast. How smart do you have to be to understand that?
 
-Android system with no apps [takes almost 6 Gb](https://grumpy.website/post/0Oz1lDOq5). Just think for a second how obscenely HUGE that number is. What’s in there, HD movies? I guess it’s basically code: kernel, drivers. Some string and resources too, sure, but those can’t be big. So, how many drivers do you need for a phone?
+An Android system with no apps [takes up almost 6 GB](https://grumpy.website/post/0Oz1lDOq5). Just think for a second about how obscenely HUGE that number is. What’s in there, HD movies? I guess it’s basically code: kernel, drivers. Some string and resources too, sure, but those can’t be big. So, how many drivers do you need for a phone?
 
 <figure><img src="android_storage.jpg" height="489"></figure>
 
-Windows 95 was 30Mb. Today we have web pages heavier than that! Windows 10 is 4Gb, which is 133 times as big. But is it 133 times as superior? I mean, functionally they are basically the same. Yes, we have Cortana, but I doubt it takes 3970 Mb. But whatever Windows 10 is, is Android really 150% of that?
+Windows 95 was 30MB. Today we have web pages heavier than that! Windows 10 is 4GB, which is 133 times as big. But is it 133 times as superior? I mean, functionally they are basically the same. Yes, we have Cortana, but I doubt it takes 3970 MB. But whatever Windows 10 is, is Android really 150% of that?
 
-Google's keyboard app routinely eats 150 Mb. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 Mb! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 Mb that just sit there and which I’m unable to delete.
+Google's keyboard app routinely eats 150 MB. Is an app that draws 30 keys on a screen really five times more complex than the whole Windows 95? Google app, which is basically just a package for Google Web Search, is 350 MB! Google Play Services, which I do not use (I don’t buy books, music or videos there)—300 MB that just sit there and which I’m unable to delete.
 
 <figure><img src="apps_storage.gif" height="480"></figure>
 
-All that leaves me around 1 Gb for my photos after I install all the essential (social, chats, maps, taxi, banks etc) apps. And that’s with no games and no music at all! Remember times when an OS, apps and all your data fit on a floppy?
+All that leaves me around 1 GB for my photos after I install all the essential (social, chats, maps, taxi, banks etc) apps. And that’s with no games and no music at all! Remember times when an OS, apps and all your data fit on a floppy?
 
 Your desktop todo app is probably written in Electron and thus [has a userland driver for the Xbox 360 controller in it](https://josephg.com/blog/electron-is-flash-for-the-desktop/), can render 3D graphics and play audio and take photos with your web camera.
 
@@ -70,9 +70,9 @@ At least it works, you might say. Well, bigger doesn’t imply better. Bigger me
 
 ## Everything rots
 
-16Gb Android phone was perfectly fine 3 years ago. Today with Android 8.1 it’s barely usable because each app has become at least twice as big _for no apparent reason_. There are no additional functions. They are not faster or more optimized. They don’t look different. They just...grow?
+A 16GB Android phone was perfectly fine 3 years ago. Today, with Android 8.1, it’s barely usable because each app has become at least twice as big _for no apparent reason_. There are no additional features. They are not faster or more optimized. They don’t look different. They just...grow?
 
-iPhone 4s was released with iOS 5, but can barely run iOS 9. And it’s not because iOS 9 is that much superior—it’s basically the same. But their new hardware is faster, so they made software slower. Don’t worry—you got exciting new capabilities like...running the same apps with the same speed! I dunno.
+The iPhone 4s was released with iOS 5, but can barely run iOS 9. And it’s not because iOS 9 is that much superior—it’s basically the same. But their new hardware is faster, so they made software slower. Don’t worry—you got exciting new capabilities like...running the same apps with the same speed! I dunno.
 
 iOS 11 dropped support for 32-bit apps. That means if the developer isn’t around at the time of the iOS 11 release or isn’t willing to go back and update a once-perfectly-fine app, chances are you won’t be seeing their app ever again.
 
@@ -104,11 +104,11 @@ And no, in my world, an app that says “I’m gonna destroy some of your work, 
 
 Linux kills random processes _by design_. And yet it’s the most popular server-side OS.
 
-Every device I own fails regularly one way or another. My Dell monitor needs a hard reboot from time to time because there’s software in it. Airdrop? You’re lucky if it’ll detect your device, otherwise, what do I do? Bluetooth? Spec is so complex that devices [won’t talk to each other](https://thewirecutter.com/blog/understanding-bluetooth-pairing-problems/) and [periodic resets are the best way to go](http://time.com/4358533/bluetooth-fix-how/).
+Every device I own fails regularly one way or another. My Dell monitor needs a hard reboot from time to time because there’s software in it. Airdrop? You’re lucky if it’ll detect your device, otherwise, what do I do? Bluetooth? The spec is so complex that devices [won’t talk to each other](https://thewirecutter.com/blog/understanding-bluetooth-pairing-problems/) and [periodic resets are the best way to go](http://time.com/4358533/bluetooth-fix-how/).
 
 <figure><img src="plz_connect.jpg" height="450"></figure>
 
-And I’m not even touching [Internet of Things](https://twitter.com/internetofshit). It’s so far beyond the laughing point I’m not even sure what to add.
+And I’m not even touching the [Internet of Things](https://twitter.com/internetofshit). It’s so far beyond the laughing point I’m not even sure what to add.
 
 I want to take pride in my work. I want to deliver working, stable things. To do that, we need to understand what we are building, in and out, and that’s impossible to do in bloated, over-engineered systems.
 
@@ -116,7 +116,7 @@ I want to take pride in my work. I want to deliver working, stable things. To do
 
 It just seems that nobody is interested in building quality, fast, efficient, lasting, foundational stuff anymore. Even when efficient solutions have been known for ages, we still struggle with the same problems: package management, build systems, compilers, language design, IDEs.
 
-Build systems are inherently unreliable and periodically require full clean, even though all info for invalidation is there. Nothing stops us from making build process reliable, predictable and 100% reproducible. Just nobody thinks its important. NPM has stayed in “sometimes works” state for years.
+Build systems are inherently unreliable and periodically require full clean, even though all info for invalidation is there. Nothing stops us from making build processes reliable, predictable and 100% reproducible. Just nobody thinks its important. NPM has stayed in “sometimes works” state for years.
 
 > [@przemyslawdabek](https://twitter.com/przemyslawdabek/status/940547268729606145): It seems to me that `rm -rf node_modules` is indispensable part of workflow when developing Node.js/JavaScript projects.
 
@@ -166,7 +166,7 @@ We’re stuck with what we have, and nobody will ever save us.
 
 ## Business won’t care
 
-Neither will users. They are only learned to expect what we can provide. We (engineers) say every Android app takes 350 Mb? Ok, they’ll live with that. We say we can’t give them smooth scrolling? Ok, they’ll live with a phone that stutter. We say “if it doesn’t work, reboot”? They’ll reboot. After all, they have no choice.
+Neither will users. They are only learned to expect what we can provide. We (engineers) say every Android app takes 350 MB? Ok, they’ll live with that. We say we can’t give them smooth scrolling? Ok, they’ll live with a phone that stutter. We say “if it doesn’t work, reboot”? They’ll reboot. After all, they have no choice.
 
 There’s no competition either. Everybody is building the same slow, bloated, unreliable products. Occasional jump forward in quality does bring competitive advantage (iPhone/iOS vs other smartphones, Chrome vs other browsers) and forces everybody to regroup, but not for long.
 
@@ -190,6 +190,6 @@ I want to see progress. I want change. I want state-of-the-art in software engin
 
 What we have today is not progress. We barely meet business goals with poor tools applied over the top. We’re stuck in local optima and nobody wants to move out. It’s not even a good place, it’s bloated and inefficient. We just somehow got used to it.
 
-So I want to call it out: where we are today is bullshit. As engineers, we can, and should, and will do better. We can have better tools, we can build better apps, faster, more predictable, more reliable, using fewer resources (orders of magnitude fewer!). We need to understand deeply what are we doing and why. We need to deliver: reliably, predictably, with topmost quality. We can—and should–take pride in our work. Not just “given what we had...”—no buts!
+So I want to call it out: where we are today is bullshit. As engineers, we can, and should, and will do better. We can have better tools, we can build better apps, faster, more predictable, more reliable, using fewer resources (orders of magnitude fewer!). We need to understand deeply what we are doing and why. We need to deliver: reliably, predictably, with topmost quality. We can—and should–take pride in our work. Not just “given what we had...”—no buts!
 
 I hope I’m not alone at this. I hope there are people out there who want to do the same. I’d appreciate if we at least start talking about how absurdly bad our current situation in the software industry is. And then we maybe figure out how to get out.
