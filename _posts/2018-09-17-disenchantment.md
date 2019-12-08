@@ -10,7 +10,7 @@ img_rel: true
 
 <figure><img src="cover.jpg" height="337"></figure>
 
-_Translations: [Italian](it/) <a href="https://muchtrans.com/translations/software-disenchantment.ko.html" target="_blank">Korean</a> [Portuguese](pt/) <a href="https://habr.com/post/423889/" target="_blank" rel="nofollow">Russian</a> [Spanish](es/)_
+_Translations: [Italian](it/) <a href="https://muchtrans.com/translations/software-disenchantment.ko.html" target="_blank">Korean</a> [Portuguese](pt/) [Russian](ru/) [Spanish](es/)_
 
 I’ve been programming for 15 years now. Recently, our industry’s lack of care for efficiency, simplicity, and excellence started really getting to me, to the point of me getting depressed by my own career and IT in general.
 
