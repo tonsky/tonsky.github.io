@@ -1,0 +1,16 @@
+<svg width="436" height="191" viewBox="0 0 436 191" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M210.16 168H231.52V159.5H262.04V168H284V159.5L263.04 96.5H230.52L210.16 159.5V168Z" fill="#ECC600"/>
+<path d="M367.227 168H422.5V148.2H390.267V134.88H408.5V116.52V96.5H390.267H367.227V168Z" fill="#ECC600"/>
+<path d="M326.78 168H355V116.52H323.5V134.88H336.38V148.2H324.5C314.4 148.2 310 143.5 310 131.5V96.5H288.02V126.24C288.02 151.68 295.78 168 326.78 168Z" fill="#ECC600"/>
+<rect width="93" height="191" rx="46.5" fill="#ECC600"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="210" y="96" width="213" height="72">
+<path d="M210.16 168H231.52V159.5H262.04V168H284V159.5L263.04 96.5H230.52L210.16 159.5V168Z" fill="#ECC600"/>
+<path d="M367.227 168H422.5V148.2H390.267V134.88H408.5V116.52V96.5H390.267H367.227V168Z" fill="#ECC600"/>
+<path d="M326.78 168H355V116.52H323.5V134.88H336.38V148.2H324.5C314.4 148.2 310 143.5 310 131.5V96.5H288.02V126.24C288.02 151.68 295.78 168 326.78 168Z" fill="#ECC600"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="207" y="105" width="233" height="7" fill="#C2A300"/>
+</g>
+<rect y="87" width="436" height="18" fill="black"/>
+<rect y="105" width="93" height="7" fill="#C2A300"/>
+</svg>
