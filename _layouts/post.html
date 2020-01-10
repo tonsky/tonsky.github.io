@@ -19,11 +19,20 @@ layout: default
 
   <p class=footer>
     <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-    {% if page.hackernews_id or page.reddit_url %}
+    {% if page.related_url and page.related_title %}
+      <span class="separator">·</span>
+      <span>Related</span>
+      <a href="{{ page.related_url }}">{{ page.related_title }}</a>
+    {% endif %}
+
+    {% if page.hackernews_id or page.hackernews_id_2 or page.reddit_url %}
       <span class="separator">·</span>
       <span>Discuss on</span>
       {% if page.hackernews_id %}
         <a href="https://news.ycombinator.com/item?id={{ page.hackernews_id }}" target="_blank">HackerNews</a>
+      {% endif %}
+      {% if page.hackernews_id_2 %}
+        <a href="https://news.ycombinator.com/item?id={{ page.hackernews_id_2 }}" target="_blank">Also HackerNews</a>
       {% endif %}
       {% if page.reddit_url %}
         <a href="{{ page.reddit_url }}" target="_blank">Reddit</a>

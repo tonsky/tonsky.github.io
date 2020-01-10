@@ -3,6 +3,8 @@ layout: post
 title: "Good times create weak men"
 category: blog
 summary: "Software abstraction ladder becomes too tall and starts to fall"
+related_url: "/blog/disenchantment/"
+related_title: "Software disenchantment"
 ---
 
 In [Software Disenchantment](https://tonsky.me/blog/disenchantment/) we’ve seen how software has degraded in the past two decades. Recently Jonathan Blow gave a talk where he explained why it might be happening:

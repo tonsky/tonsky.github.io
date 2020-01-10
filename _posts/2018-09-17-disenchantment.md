@@ -4,7 +4,10 @@ title: "Software disenchantment"
 category: blog
 summary: "Everything is going to hell and nobody seems to care"
 hackernews_id: 18012334
+hackernews_id_2: 21929709
 reddit_url: "https://www.reddit.com/r/programming/comments/9go8ul/software_disenchantment/"
+related_url: "/blog/good-times-weak-men/"
+related_title: "Good times create weak men"
 img_rel: true
 ---
 
