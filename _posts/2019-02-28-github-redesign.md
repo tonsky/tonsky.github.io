@@ -4,6 +4,7 @@ title: "Redesigning Github repository page"
 category: blog
 summary: "Better design for Github repository page"
 hackernews_id: 19276113
+reddit_url: "https://www.reddit.com/r/programming/comments/aw7swh/redesigning_the_github_repository_page_tonskyme/"
 ---
 
 <style>

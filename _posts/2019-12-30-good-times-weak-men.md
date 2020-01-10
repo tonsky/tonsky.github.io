@@ -3,6 +3,7 @@ layout: post
 title: "Good times create weak men"
 category: blog
 summary: "Software abstraction ladder becomes too tall and starts to fall"
+hackernews_id: 21932049
 related_url: "/blog/disenchantment/"
 related_title: "Software disenchantment"
 ---
