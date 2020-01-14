@@ -4,6 +4,7 @@ title: "Cursor keys belong at the center of your keyboard"
 category: blog
 summary: "Remap `CapsLock` + `IJKL` to act as cursor keys and teach yourself to use it"
 img_rel: true
+starred: true
 ---
 
 *TL;DR Remap `CapsLock` + `IJKL` to act as cursor keys and teach yourself to use it*

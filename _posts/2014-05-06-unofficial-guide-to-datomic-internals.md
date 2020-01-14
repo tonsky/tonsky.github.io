@@ -4,6 +4,7 @@ title: Unofficial guide to Datomic internals
 category: blog
 summary: "This post is a compilation of publicly available information, Datomic docs and google group answers about Datomic internals. Intention is to help others understand implementation model and use Datomic more efficiently."
 img_rel: true
+starred: true
 ---
 
 *Disclaimer: I do not work for Cognitect and, unfortunately, haven’t seen any source code of Datomic. I just made it through a lot of public talks, docs and google group answers about Datomic. This post is a compilation thereof. Intention is to help others use Datomic more efficiently by understanding what they are doing.*

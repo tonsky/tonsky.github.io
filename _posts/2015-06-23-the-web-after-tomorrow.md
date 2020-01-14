@@ -5,6 +5,7 @@ category: blog
 hackernews_id: 9765780
 summary: "This post looks at what is missing from the current state-of-the-art web architectures, where they should be improved and what tools we have at hand for that."
 img_rel: true
+starred: true
 ---
 
 *Modern web does a good job of bringing you live, real-time web applications. Or does it? This post looks at what is missing from the current state-of-the-art web architectures, where they should be improved and what tools we have at hand for that.*

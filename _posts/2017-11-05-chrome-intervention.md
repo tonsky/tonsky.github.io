@@ -6,6 +6,7 @@ summary: "Chrome team breaks existing web to make Chrome perform better"
 hackernews_id: 15634609
 reddit_url: "https://www.reddit.com/r/programming/comments/7b5hjg/my_web_app_died_from_performance_bankruptcy_tldr/"
 img_rel: true
+starred: true
 ---
 
 *TL;DR Chrome team breaks web to make Chrome perform better.*

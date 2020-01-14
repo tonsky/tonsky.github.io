@@ -6,6 +6,7 @@ hackernews_id: 7906511
 reddit_url: "https://www.reddit.com/r/programming/comments/28j3u7/reinventing_git_interface/"
 summary: "A set of recommendations on how Git UI can be improved not on a cosmetic, but on a very fundamental level. We aim at making Git more usable, powerful and easier to learn by radically simplifying its interface and keeping compartibility with the implementation"
 img_rel: true
+starred: true
 ---
 
 I have a long love-hate relationship with Git. Despite solving all my problems with version control and having a technically excellent implementation, the whole experience sucks constantly. I’ve tried it all: official CLI, non-official CLIs, gitk, third-party GUIs. It always strikes me&nbsp;— how, while having this brilliant model, the model that’s plain dead simple at its heart, the one about DAG of commits,&nbsp;— how _every other interface to it_ manages to ruin it completely?
