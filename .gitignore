@@ -6,3 +6,4 @@ _site
 blog/readable-clojure/originals/*
 blog/readable-clojure/snippets/*
 vendor
+.jekyll-cache
