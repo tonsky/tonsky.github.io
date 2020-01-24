@@ -18,9 +18,15 @@ Many programmers seem to believe that’s an ok way to develop products:
 
 ![](jetpack.png)
 
-But I never understood this logic. Not really. I figure if your program is still a prototype and does, for example, 1% (20%, 50%, 90%) of what it’s supposed to do, _and it is already slow_, then it’ll only be slower after you finish it, no? You will make it do more, why would it become faster?
+First, it’s not an excuse for [not thinking about performance at all](https://medium.com/@okaleniuk/premature-optimization-is-the-root-of-all-evil-is-the-root-of-evil-a8ab8056c6b). There’s no proud in doing sloppy job. It’s an attitude like this that brought Software Disenchantment upon us.
 
-Some can say: we are building programs correct first, performant later. We will optimize it after it’s feature complete. What that actually means is: performance would stay mostly the same, _unless_ those people find some low-hanging fruits that will allow them to make the program fast without changing too much of what they’ve already built.
+But even if you don’t take Knuth’s quote as an excuse, I still see flaws in this logic. If your program is still a prototype and does, for example, 1% (20%, 50%, 90%) of what it’s supposed to do, _and it is already slow_, then it’ll only be slower after you finish it, no? You will make it do more, why would it become faster?
+
+Some can say: 
+
+“We are building programs correct first, performant later. We will optimize it after it’s feature complete.”
+
+What that actually means is: performance would stay mostly the same, _unless_ those people find some low-hanging fruits that will allow them to make the program fast without changing too much of what they’ve already built.
 
 And I have a problem with that. This more or less equals to leaving final performance in the hands of a blind chance. IF you manage to find some huge performance bottleneck and IF altering it would not affect architecture, you MIGHT get some speedups, yes. But nobody can _guarantee_ you that. It’s a bet. You either do or you don’t. Basically, you’re accepting whatever performance you’ll get with a slight chance for a slight improvement. Is that what you call good engineering?
 
