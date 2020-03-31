@@ -3,7 +3,6 @@ layout: post
 title: "Cleaning up form UI"
 category: blog
 summary: "Simple tips on fixing small details in UI"
-draft: true
 ---
 
 <style>
