@@ -6,7 +6,9 @@ summary: "Simple tips on fixing small details in UI"
 ---
 
 <style>
-    p > img { width: 736px; height: 472px; max-width: unset; margin: 0 -96px; }
+    @media (min-width: 736px) {
+      p > img { width: 736px; height: 472px; max-width: unset; margin: 0 -96px; }
+    }
 </style>
 
 This is one of the first dialogs you see after launching IntelliJ Idea 2020.1 EAP. What do you think about it?
