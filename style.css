@@ -52,6 +52,7 @@ strong { font-weight: 500; }
 h1, h2 { margin: 2.5em 0 0.5em; }
 h1 { font-size: 1.7em; }
 h2 { font-size: 1.4em; }
+h1 + h2 { margin: -0.75em 0 0.9em; }
 .title { font-size: 2.5em; line-height: 50px; margin: 1.5em 0 0.75em 0; }
 
 p > img, .fig, figure { margin: 2em 0; }
