@@ -11,6 +11,8 @@ summary: "Simple tips on fixing small details in UI"
     }
 </style>
 
+_Translations: [Japanese](https://coliss.com/articles/build-websites/operation/work/cleaning-up-form-ui.html)_
+
 This is one of the first dialogs you see after launching IntelliJ Idea 2020.1 EAP. What do you think about it?
 
 ![](00.original.png)
