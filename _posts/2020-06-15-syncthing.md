@@ -3,11 +3,10 @@ layout: post
 title: "Computers as I used to love them"
 category: blog
 summary: "File synchronization can be fun and painless if you don’t have to deal with corporate bullshit."
-draft: true
 ---
 
 <figure>
-    <img src="cover.png">
+    <img src="cover.gif">
     Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
 </figure>
 
