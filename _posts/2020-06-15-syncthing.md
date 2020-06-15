@@ -219,7 +219,7 @@ The answer is simple: the only way Dropbox can survive is by building and sellin
 
 iCloud is much younger and doesn’t have feature bloat yet, but they are still interested in selling more Macs and iPhones. So they will always try to isolate you from the rest of the world. Expect weird restrictions and great inconveniences, like iCloud folder location or moving Desktop folder when you enable/disable sync for it.
 
-Syncthing survival, on the other hand, does not depend on making more features. They do one thing, but they do it well. Look, their menu<a id="f1" href="#fn1" class="footnote">1</a> looks exactly how Dropbox used to look when it still was good in 2012:
+Syncthing survival, on the other hand, does not depend on making more features. They do one thing, but they do it well. Look, their menu[^1] looks exactly how Dropbox used to look when it still was good in 2012:
 
 <figure>
     <img src="./menubar.png">
@@ -260,7 +260,4 @@ Syncthing, on the other hand, simply doesn’t care. They don’t get any money 
 Syncthing has reminded me how great computers can be if they are not made by corporations. It’s simple, predictable, sane, acts no-nonsense. You can configure it however you like and it always keeps you in control. It’s a pure function and it’s good at that. It’s free and open-source, but I’m much more happy to donate them €10/month than e.g. Dropbox. I would be a much happier person if at least half of the programs on my Mac/iPhone were like that.
 
 <div class="footnotes-br"></div>
-<ol class="footnotes">
-<li id="fn1">If you choose to install <a href="https://github.com/syncthing/syncthing-macos">macOS app</a>. <a href="#f1" class>↩︎</a></li>
-</ol>
-
+[^1]: If you choose to install <a href="https://github.com/syncthing/syncthing-macos">macOS app</a>.

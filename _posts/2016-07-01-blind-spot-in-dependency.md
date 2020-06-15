@@ -22,9 +22,9 @@ But that’s not the problem. How do you decide, in each particular case, if you
 
 Sometimes it’s easy. Don’t touch what’s working, they say. But you only think it is.
 
-Say, you need a specific bug fixed, and people behind the library use an issue tracker, and you even happen to know the ticket id. Now, if that issue tracker is something punk and unpopular, like Github, strangely, it won’t help you at all. You can’t figure out in which version it was fixed given an issue or pull request id. Even if you’re a very responsible maintainer and do everything right. Lesson #1: don’t host your libraries on Github, kids.<a id="f1" href="#fn1" class="footnote">1</a>
+Say, you need a specific bug fixed, and people behind the library use an issue tracker, and you even happen to know the ticket id. Now, if that issue tracker is something punk and unpopular, like Github, strangely, it won’t help you at all. You can’t figure out in which version it was fixed given an issue or pull request id. Even if you’re a very responsible maintainer and do everything right. Lesson #1: don’t host your libraries on Github, kids.[^1]
 
-Luckily, solid time-tested full-package solutions like JIRA give you a “fix version” number (if you can find it on issue page). Problem is, you can’t _just_ upgrade to that version. You bug was fixed in 4.7.8, you’re on 4.3.2, god knows _what else_ will that upgrade bring.<a id="f2" href="#fn2" class="footnote">2</a> If I were you, I’d pass on that. I once tried to bump AWS client from 1.8 to 1.10, and they renamed, like, every class inside. I’d rather start a new project from scratch than upgrade my libraries.
+Luckily, solid time-tested full-package solutions like JIRA give you a “fix version” number (if you can find it on issue page). Problem is, you can’t _just_ upgrade to that version. You bug was fixed in 4.7.8, you’re on 4.3.2, god knows _what else_ will that upgrade bring.[^2] If I were you, I’d pass on that. I once tried to bump AWS client from 1.8 to 1.10, and they renamed, like, every class inside. I’d rather start a new project from scratch than upgrade my libraries.
 
 “That’s why JIRA can generate you a changelog!”
 
@@ -40,7 +40,7 @@ Is there?
 
 <figure><img src="./github.jpg" /></figure>
 
-It’d be better if there wasn’t. Thing is, many people treat commit log as an actual log. A diary of theirs. They will write down their life events, current mood, messages to team members, emoticons in there.<a id="f3" href="#fn3" class="footnote">3</a> You’ll be reading about all the wrong paths taken, bad merges and attempts to fix them (no, you don’t want to see a visual tree of git commits in an actively developed project), and, best of all, typos. It also appears they can’t hold it, and their commit rate might approach several commits per minute. Good luck filtering the noise out.<a id="f4" href="#fn4" class="footnote">4</a>
+It’d be better if there wasn’t. Thing is, many people treat commit log as an actual log. A diary of theirs. They will write down their life events, current mood, messages to team members, emoticons in there.[^3] You’ll be reading about all the wrong paths taken, bad merges and attempts to fix them (no, you don’t want to see a visual tree of git commits in an actively developed project), and, best of all, typos. It also appears they can’t hold it, and their commit rate might approach several commits per minute. Good luck filtering the noise out.[^4]
 
 Which leads us to the obvious answer: _Changelog!_ Changelog. Pause right there and think for a second. What if there was a place specifically designed to communicate what has changed between releases? A changelog. The changelog.
 
@@ -90,16 +90,14 @@ That’s it. Simple, right?
 
 Dependency management software is pretty good. It is. You need to understand it (I know, totally unfair), but most of the time it gets the job done. Inside a single technology, people usually agree on version numbers, central repo, build tools—most of the technicalities.
 
-What people don’t agree on is that every new version should come with a human-readable list of changes. Upgrading your stack shouldn’t be a blind game of luck. Maybe one day we’ll see a tool like `lein ancient` that will print you all the changes before asking you if you want to upgrade.<a id="f5" href="#fn5" class="footnote">5</a> And that list would be short, precise, well-written piece of poetry.
+What people don’t agree on is that every new version should come with a human-readable list of changes. Upgrading your stack shouldn’t be a blind game of luck. Maybe one day we’ll see a tool like `lein ancient` that will print you all the changes before asking you if you want to upgrade.[^5] And that list would be short, precise, well-written piece of poetry.
 
 Not.
 
 <div class="footnotes-br"></div>
 
-<ol class="footnotes">
-<li id="fn1">Seriously, Github. Please figure that out. People try to use you for work stuff. People use versions. People need versions (except for Go folks, they gave up on them. They’re more than welcome to host on Github) <a href="#f1" class>↩︎</a></li>
-<li id="fn2">Where is your semantic versioning now, huh? <a href="#f2" class>↩︎</a></li>
-<li id="fn3">Nothing wrong with emoticons, of course. <a href="#f3" class>↩︎</a></li>
-<li id="fn4">Did I mentioned that Github won’t show you tags on commits page? Good luck figuring out when that release happened. <a href="#f4" class>↩︎</a></li>
-<li id="fn5">I know, I’m an idealist. People would never agree on a single format of anything, be it beer glass units, paper size or AC outlet. Unless it’s a cigarette lighter receptacle. Strangely enough, there’s only one standard for cigarette lighter receptacle in the world. <a href="#f5" class>↩︎</a></li>
-</ol>
+[^1]: Seriously, Github. Please figure that out. People try to use you for work stuff. People use versions. People need versions (except for Go folks, they gave up on them. They’re more than welcome to host on Github).
+[^2]: Where is your semantic versioning now, huh?
+[^3]: Nothing wrong with emoticons, of course.
+[^4]: Did I mentioned that Github won’t show you tags on commits page? Good luck figuring out when that release happened.
+[^5]: I know, I’m an idealist. People would never agree on a single format of anything, be it beer glass units, paper size or AC outlet. Unless it’s a cigarette lighter receptacle. Strangely enough, there’s only one standard for cigarette lighter receptacle in the world.

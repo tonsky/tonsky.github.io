@@ -80,8 +80,8 @@ pre > code { background: none; padding: 0; font-size: inherit; white-space: unse
 ul { padding: 0 0 0 1em; list-style-type: square; }
 ul > li, ol > li { margin: 0.5em 0; }
 
-sup, sub, .note-ref, .note-number, .footnote { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
-sup, .note-ref, .note-number, .footnote { bottom: 1.4ex; }
+sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative; font-size: .7em; line-height: 1; }
+sup, .note-ref, .note-number { bottom: 1.4ex; }
 sub { top: .5ex; }
 
 .about_photo { float: left; width: 100px; height: 160px; margin-left: -150px; margin-top: -10px; background: url("/photo.png"); background-size: 200px; }
@@ -94,9 +94,7 @@ sub { top: .5ex; }
 
 .footnote { margin: 0 5px;  }
 .footnotes-br { width: 100px; height: 2px; background: #000000; margin-top: 5em; }
-.footnotes, .footnotes_alt { padding-left: 1em;  }
-.footnotes_alt > li > .dagger { margin-left: -13px; }
-.footnotes_alt { list-style: none; } 
+.footnotes > ol { padding-left: 1em;  }
 
 .notes { font-size: 0.8em; }
 .note-number { margin-left: -1em; }
