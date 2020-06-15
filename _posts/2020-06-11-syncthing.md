@@ -6,6 +6,11 @@ summary: "File synchronization can be fun and painless if you don’t have to de
 draft: true
 ---
 
+<figure>
+    <img src="cover.png">
+    Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
+</figure>
+
 I’ve been struggling with file sync solutions [for years](https://tonsky.livejournal.com/323469.html). In the beginning, Dropbox was great, but in the last few years, they started to bloat up. I moved to iCloud, but it was even worse. Finally, a few days ago, after iCloud [cryptically broke again](https://twitter.com/nikitonsky/status/1269741673715810304), I decided it’s time to try something different.
 
 I tried [Syncthing](https://syncthing.net/), a free and open-source alternative. And you know what? It’s been liberating. The sanity, the simplicity, the reliability, the features. It brings the joy of use and makes you believe <a href="https://tonsky.me/blog/good-times-weak-men/">the collapse of civilization</a> can be slowed down a bit.
@@ -179,7 +184,7 @@ Commercial solutions are interested in keeping users locked in and constantly up
 Top to bottom:
 
 - I already have an annoying red dot in the menubar,
-- Link to another product (Parer), even though it has nothing to do with file synchronization,
+- Link to another product (Paper), even though it has nothing to do with file synchronization,
 - A firm suggestion I should enable notifications,
 - A notification that says my Desktop app is ready for use?! I mean, I’m looking at it from the desktop app!
 - Dropbox advertising some sort of trial,
