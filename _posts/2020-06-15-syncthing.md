@@ -3,6 +3,7 @@ layout: post
 title: "Computers as I used to love them"
 category: blog
 summary: "File synchronization can be fun and painless if you don’t have to deal with corporate bullshit."
+hackernews_id: 23537243
 ---
 
 <figure>
