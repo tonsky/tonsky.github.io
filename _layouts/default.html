@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=640" />
   {% endif %}
   <meta name="theme-color" content="hsl(51, 100%, 59%)">
-  <link href="/favicon.png" rel="icon" sizes="32x32">
+  <link href="/i/favicon.png" rel="icon" sizes="32x32">
 
-  <link href='/style.css?v=20200617' rel='stylesheet' type='text/css' />
+  <link href='/style.css?v=20200618' rel='stylesheet' type='text/css' />
   <title>{{ page.title }} @ tonsky.me</title>
 
   <link href="/blog/atom.xml" rel="alternate" title="Nikita Prokopov’s blog" type="application/atom+xml" />
@@ -55,5 +55,10 @@
 
   ga('create', 'UA-5928238-7', 'tonsky.me');
   ga('send', 'pageview');
+</script>
 
+<script>
+  document.querySelector(".dark_mode").onclick = function() {
+    document.body.classList.toggle("dark");
+  }
 </script>

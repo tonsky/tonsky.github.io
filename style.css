@@ -28,13 +28,14 @@ body {
 .page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
 .page_wide { width: 810px; }
 
-.menu { width: 544px; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; }
-.menu > li { list-style: none; display: inline-block; margin: 0 1.5em 0 0; vertical-align: top; }
+.menu { width: 544px; margin: 0 auto 0; padding: 0 0 50px 0; vertical-align: top; display: flex; }
+.menu > li { list-style: none; margin: 0 1.5em 0 0; vertical-align: top; }
 .menu__item, a.menu__item { color: rgba(0,0,0,0.3); border-color: transparent; display: inline-block; }
 .menu__item_selected,
 a.menu__item_selected,
 a.menu__item:hover { color: #000; border-bottom: 2px solid #000; }
 .menu__item_inside, a.menu__item_inside { border-bottom: 2px solid rgba(0,0,0,0.2); }
+.spacer { flex-grow: 1; }
 
 .starred { margin: 0 0.5em 0 -1.5em; }
 
@@ -84,7 +85,7 @@ sup, sub, .note-ref, .note-number { vertical-align: baseline; position: relative
 sup, .note-ref, .note-number { bottom: 1.4ex; }
 sub { top: .5ex; }
 
-.about_photo { float: left; width: 100px; height: 160px; margin-left: -150px; margin-top: -10px; background: url("/photo.png"); background-size: 200px; }
+.about_photo { float: left; width: 100px; height: 160px; margin-left: -150px; margin-top: -10px; background: url("/i/photo.png"); background-size: 200px; }
 .about_photo:hover { background-position: 100%; }
 .about_inner { font-size: 16px; line-height: 24px; border: 2px solid rgba(0,0,0,0.2); border-radius: 4px; padding: 10px 20px; margin: -12px -22px; }
 .about_inner > p { margin: 0 0 8px; }
@@ -114,3 +115,8 @@ sub { top: .5ex; }
   .hoverable.clicked:hover { object-fit: cover; object-position: center top; }
   .hoverable:hover { object-position: center bottom; }
 }
+
+.dark_mode { align-self: center; width: 50px; height: 24px; border-radius: 12px; background-image: url("/i/dark_mode.png"); background-size: 76px 24px; background-position: -26px 0; transition: 100ms; }
+body.dark { background: #000; }
+body.dark .dark_mode { background-position: 0 0; }
+.dark .about_photo { display: none; }
