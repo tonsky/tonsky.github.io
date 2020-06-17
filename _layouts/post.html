@@ -43,6 +43,12 @@ layout: default
     {% endif %}
   </p>
 
+  <script>
+    document.querySelectorAll(".hoverable").forEach(function (e) {
+        e.onclick = function() { e.classList.toggle("clicked"); }
+    });
+  </script>
+
   {% if page.hide_about %}  
   {% else %}
   <div class="about">
