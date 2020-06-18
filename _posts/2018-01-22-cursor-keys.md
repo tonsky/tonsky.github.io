@@ -81,6 +81,28 @@ CapsLock & i::Send, {blind}{Up}
 CapsLock & h::Send, {blind}{Backspace}
 ```
 
+## How-to for Ubuntu
+
+The recepie below was contributed by the reader. I have not tried it and can’t confirm if it works.
+
+Create a file `ijkl` in your home directory:
+
+```
+keycode 66 = Mode_switch
+keysym j = j J Left
+keysym l = l L Right
+keysym i = i I Up
+keysym k = k K Down 
+```
+
+Open Startup Applications Preferences and put the following in the “Command”:
+
+```
+xmodmap ijkl
+```
+
+Reboot and you're good to go.
+
 ## Important: Overriding Your Habits
 
 I wish it was all you need to do. It is not. The last thing to reconfigure is yourself.
