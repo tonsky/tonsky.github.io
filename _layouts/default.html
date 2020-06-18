@@ -69,9 +69,13 @@
     body.classList.toggle("dark");
     if (body.classList.contains("dark")) {
       updateFlashlight(e);
-      document.documentElement.onmousemove = updateFlashlight;
+      ["mousemove", "touchstart", "touchmove", "touchend"].forEach(function(s) {
+        document.documentElement.addEventListener(s, updateFlashlight, false);
+      });
     } else {
-      document.documentElement.onmousemove = undefined;
+      ["mousemove", "touchstart", "touchmove", "touchend"].forEach(function(s) {
+        document.documentElement.removeEventListener(s, updateFlashlight, false);
+      });
     }
   }
 </script>
