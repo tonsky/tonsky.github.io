@@ -58,7 +58,20 @@
 </script>
 
 <script>
-  document.querySelector(".dark_mode").onclick = function() {
-    document.body.classList.toggle("dark");
+  function updateFlashlight(e) {
+    var style = document.body.style;
+    style.backgroundPositionX = e.pageX - 250 + "px";
+    style.backgroundPositionY = e.pageY - 250 + "px";
+  }
+
+  document.querySelector(".dark_mode").onclick = function(e) {
+    var body = document.body;
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+      updateFlashlight(e);
+      document.documentElement.onmousemove = updateFlashlight;
+    } else {
+      document.documentElement.onmousemove = undefined;
+    }
   }
 </script>
