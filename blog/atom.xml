@@ -16,10 +16,8 @@ layout: nil
   </author>
  
   {% assign everything = site.posts | concat: site.data.talks | sort: "date" | reverse %}
-  {% assign to_pop = everything.size | minus: 10 %}
-  {% assign everything = everything | pop: to_pop  %}
 
-  {% for post in everything %}
+  {% for post in everything limit: 10 %}
   {% if post.draft != true %}
     {% assign prefix = post.url | slice: 0, 4 %}
     {% if prefix == "http" %}
