@@ -92,7 +92,8 @@ class: page_wide
     });
 </script>
 
-{% for talk in site.data.talks | sort: "date" | reverse %}
+{% assign talks = site.data.talks | sort: "date" | reverse %}
+{% for talk in talks %}
 <div class="talk talk_hidden">
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="{{ talk.lang }}" data-date="{{ talk.date | date: '%B %Y' }}">

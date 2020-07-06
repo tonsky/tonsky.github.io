@@ -21,7 +21,7 @@ layout: nil
 
   {% for post in everything %}
   {% if post.draft != true %}
-    {% assign prefix = post.url | slice 0, 4 %}
+    {% assign prefix = post.url | slice: 0, 4 %}
     {% if prefix == "http" %}
       {% assign absolute_url = post.url %}
     {% else %}
