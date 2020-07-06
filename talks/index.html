@@ -92,57 +92,21 @@ class: page_wide
     });
 </script>
 
+{% for talk in site.data.talks | sort: "date" | reverse %}
 <div class="talk talk_hidden">
     <div class="talk-inner"></div>
-    <script type="talk-version" data-active data-lang="EN" data-date="July 2020">
+    <script type="talk-version" data-active data-lang="{{ talk.lang }}" data-date="{{ talk.date | date: '%B %Y' }}">
         <div class="talk-view">
             <div class="talk-view">
-                <iframe width="100%" height="220" scrolling="no" frameborder="no" src="https://changelog.com/podcast/401/embed?theme=night&referrer=https://tonsky.me/talks/"></iframe>
-                <!-- https://cdn.changelog.com/uploads/podcast/401/the-changelog-401.mp3 -->
-                <!-- https://s.tonsky.me/tonsky.me/2020-07%20The%20Changelog%20401.mp3 -->
+                {{ talk.embed }}
             </div>
         </div>
         <div class="talk-details">
-            <h2>The Changelog, <a target="_blank" href="https://changelog.com/podcast/401">episode 401</a></h2>
-            <p class="talk-description">The intersection of coding and fonts: coding fonts! Fira Code episode.</p>
+            <h2><a target="_blank" href="{{ talk.url }}">{{ talk.title }}</a></h2>
+            <p class="talk-description">{{ talk.content }}</p>
     </script>
 </div>
-
-
-<div class="talk talk_hidden">
-    <div class="talk-inner"></div>
-    <script type="talk-version" data-active data-lang="EN" data-date="November 2019">
-        <div class="talk-view">
-            <div class="talk-view">
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/792131173&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-            </div>
-        </div>
-        <div class="talk-details">
-            <h2>ClojureScript podcast, s4e4</h2>
-            <p class="talk-description">Rum With Nikita Prokopov</p>
-            <p class="talk-extras"><a class="popup" href="https://soundcloud.com/user-959992602/s4-e4-rum-with-nikita-prokopov" target="_blank">Links</a></p>
-    </script>
-</div>
-
-
-<div class="talk talk_hidden">
-    <div class="talk-inner"></div>
-    <script type="talk-version" data-active data-lang="RU" data-date="May 2019">
-        <div class="talk-view">
-            <div class="talk-view">
-                <div class="talk-view-stub">
-                    <audio controls>
-                        <source src="https://s.tonsky.me/tonsky.me/2019-05%20Podcast%20Keyboards.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
-        </div>
-        <div class="talk-details">
-            <h2>Подкаст Высший Клик, <a target="_blank" href="https://t.me/KgOfHedgehogs/509">эпизод 2</a></h2>
-            <p class="talk-description">Обсуждаем эргономику клавиатур и отвечаем на <a target="_blank" href="https://tonsky.livejournal.com/321097.html">вопросы из комментариев.</a></p>
-    </script>
-</div>
-
+{% endfor %}
 
 <div class="talk talk_hidden">
     <div class="talk-inner"></div>

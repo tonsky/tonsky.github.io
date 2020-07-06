@@ -15,12 +15,23 @@ layout: nil
     <email>niki@tonsky.me</email>
   </author>
  
-  {% for post in site.posts %}
+  {% assign everything = site.posts | concat: site.data.talks | sort: "date" | reverse %}
+  {% assign to_pop = everything.size | minus: 10 %}
+  {% assign everything = everything | pop: to_pop  %}
+
+  {% for post in everything %}
   {% if post.draft != true %}
+    {% assign prefix = post.url | slice 0, 4 %}
+    {% if prefix == "http" %}
+      {% assign absolute_url = post.url %}
+    {% else %}
+      {% assign absolute_url = post.url | prepend: "https://tonsky.me" %}
+    {% endif %}
+    
     <entry>
       <title>{{ post.title }}</title>
-      <link rel="alternate" type="text/html" href="https://tonsky.me{{ post.url }}" />
-      <id>https://tonsky.me{{ post.url }}</id>
+      <link rel="alternate" type="text/html" href="{{ absolute_url }}" />
+      <id>{{ absolute_url }}</id>
       <published>{{ post.date | date_to_xmlschema }}</published>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       {% if post.summary %}
@@ -29,16 +40,20 @@ layout: nil
         ]]></summary>
       {% endif %}
       <content type="html"><![CDATA[
-        {% assign rel_prefix = 'href="https://tonsky.me' | append: post.url %}
+        {% assign rel_prefix = absolute_url | prepend: 'href="' %}
         {% if post.img_rel %}
-          {% assign img_rel_prefix = 'https://tonsky.me' | append: post.url | append:'rss/' %}
+          {% assign img_rel_prefix = absolute_url | append:'rss/' %}
         {% else %}
-          {% assign img_rel_prefix = 'https://tonsky.me' | append: post.url %}
+          {% assign img_rel_prefix = absolute_url %}
         {% endif %}
         {% assign src_prefix = 'src="' | append: img_rel_prefix %}
         {% assign srcset_prefix = 'srcset="' | append: img_rel_prefix %}
         {% assign srcset_prefix_comma = ', ' | append: img_rel_prefix %}
         {{ post.content | replace:'src="./',src_prefix | replace:'srcset="./',srcset_prefix | replace:', ./',srcset_prefix_comma | replace:'href="./',rel_prefix | replace:'src="/','src="https://tonsky.me/rss/' | replace:'href="/','href="https://tonsky.me/' }}
+        {% if post.embed %}
+          <br />
+          {{ post.embed }}
+        {% endif %}
       ]]></content>  
       <author>
         <name>Nikita Prokopov</name>
