@@ -67,7 +67,7 @@ img { max-width: 100%; }
 figure > video { max-width: 100%; }
 .label { text-align: center; font-size: 12px; font-style: italic; margin: -1em 0 1em 0; }
 
-code { font-style: normal; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 17px; white-space: nowrap; }
+code { font-style: normal; background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 17px; }
 pre { font-size: 16px;
       background: rgba(0,0,0,0.06);
       padding: 16px 30px 14px;
