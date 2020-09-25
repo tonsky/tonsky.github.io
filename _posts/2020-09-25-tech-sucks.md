@@ -3,6 +3,7 @@ layout: post
 title: "People expect technology to suck because it actually sucks"
 category: blog
 summary: "I get at least 27 tech annoyances on a single day"
+hackernews_id: 24589145
 ---
 
 Jay Sitter in his article [People expect technology to suck](https://www.kilobitspersecond.com/2020/09/22/people-expect-technology-to-suck/) writes about people who keep using tech despite heavy annoyances like very dim screen or constant popups and not doing anything about it. He concludes:
