@@ -16,6 +16,13 @@
   embed:   '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/792131173&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>'      
 
 - lang:    RU
+  date:    2019-08-09 00:00:00 +0000
+  url:     https://devzen.ru/episode-0245/
+  title:   'Подкаст DevZen, эпизод 245'
+  content: 'Обсуждаем физические принципы клавиатур, виды раскладок, как клавиатура приводит к RSI и как этого избежать, как правильно собрать свою клавиатуру.'
+  embed:   '<div class="talk-view-stub"><audio controls><source src="https://devzen.ru/download/2019/devzen-0245-2019-06-08-6efc58d701a6bd18.mp3" type="audio/mpeg"></audio></div>'
+
+- lang:    RU
   date:    2019-05-20 00:00:00 +0000
   url:     https://t.me/KgOfHedgehogs/509
   title:   'Подкаст Высший Клик, эпизод 2'
