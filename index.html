@@ -25,6 +25,8 @@ title: Blog
     </div>
   </div>
 
+  <div class="lazy-load"></div>
+
   {% assign published_posts = site.posts | where_exp: "post", "post.draft != true" %}
   {% assign posts_by_year = published_posts | group_by_exp: "post", "post.date | date: '%Y'"  %}
   {% for year in posts_by_year %}

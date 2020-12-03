@@ -116,6 +116,11 @@ sub { top: .5ex; }
   .hoverable:hover { object-position: center bottom; }
 }
 
+.lazy-load::after {
+  content: '';
+  background-image: url(/i/flashlight.png);
+}
+
 .dark_mode { align-self: center; width: 50px; height: 24px; border-radius: 12px; background-image: url("/i/dark_mode.png"); background-size: 76px 24px; background-position: -26px 0; transition: 100ms; }
 body.dark { background-color: #000; background-image: url(/i/flashlight.png); background-repeat: no-repeat; background-size: 500px 500px; }
 body.dark .dark_mode { background-position: 0 0; }
