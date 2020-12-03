@@ -116,7 +116,7 @@ sub { top: .5ex; }
   .hoverable:hover { object-position: center bottom; }
 }
 
-.lazy-load::after {
+.preload::after {
   content: '';
   background-image: url(/i/flashlight.png);
 }
