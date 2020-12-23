@@ -1,3 +1,11 @@
+
+- lang:    EN
+  date:    2020-12-23 00:00:00 +0000
+  url:     https://www.youtube.com/watch?v=t1X-Oln1u24
+  title:   'SciCloj #18: Introducing Skija'
+  content: 'What Skija is about, how does it work, what is it good for.'
+  embed:   '<iframe width="560" height="315" src="https://www.youtube.com/embed/t1X-Oln1u24?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+
 - lang:    EN
   date:    2020-07-03 00:00:00 +0000
   url:     https://changelog.com/podcast/401
