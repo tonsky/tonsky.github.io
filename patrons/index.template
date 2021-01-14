@@ -1,0 +1,30 @@
+---
+layout: default
+title: Patrons
+---
+
+<style>
+li { list-style: none; }
+</style>
+
+<ul class=menu>
+  <li><a class="menu__item" href="/">Blog</a></li>
+  <li><a class="menu__item" href="/talks/">Talks</a></li>
+  <li><a class="menu__item" href="/projects/">Projects</a></li>
+  <li><a class="menu__item" href="/design/">Logos</a></li>
+  <!-- <li><a class="menu__item" href="/consulting/">UX&nbsp;Consulting</a></li> -->
+  <li><span class="menu__item menu__item_selected" href="/patrons/">Patrons</span></li>
+  <div class="spacer"></div>
+  <div class="dark_mode"></div>
+</ul>
+
+<h1 class="title">People supporting my work</h1>
+<h2>on <a href="https://patreon.com/tonsky" target="_blank">Patreon</a> and <a href="https://github.com/sponsors/tonsky" target="_blank">Github Sponsors</a></h2>
+<div class="footer">Last updated ${date}</div>
+
+${members}
+
+<h2>— Thank you!</h2>
+
+</div>
+
