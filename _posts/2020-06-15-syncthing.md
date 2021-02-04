@@ -82,7 +82,7 @@ Just to give you the perspective, these are all the steps that Dropbox puts you 
     <img src="./dropbox_11.png">
 </figure>
 
-Aaaaand... that’s not all! You also get this annoying notificaiton to deal with:
+Aaaaand... that’s not all! You also get this annoying notification to deal with:
 
 <figure>
     <img src="./dropbox_12.png">
