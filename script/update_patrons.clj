@@ -154,6 +154,7 @@
 
 (defn sponsors []
   (->> (cache "sponsors" fetch-sponsors)
+    (filter #(not-empty (:sponsorEntity %)))
     (mapv normalize-sponsor)))
 
 ;; Merging
