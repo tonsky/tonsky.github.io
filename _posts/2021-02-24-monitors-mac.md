@@ -6,10 +6,10 @@ summary: "Macs/4K 120Hz displays compatibility list"
 ---
 
 <style>
-	h1 + h2 { margin: 2.5em 0 0.5em; }
-	h2, .row { display: flex; align-items: center; }
-	h2 > img, .row > img { margin: 0 0.5em 0 0; }
-	figure > img { border-radius: 10px; }
+  h1 + h2 { margin: 2.5em 0 0.5em; }
+  h2, .row { display: flex; align-items: center; }
+  h2 > img, .row > img { margin: 0 0.5em 0 0; }
+  figure > img { border-radius: 10px; }
 </style>
 
 Following is the compatibilty list between various Macs and various 4k 120+ Hz displays.
@@ -46,13 +46,17 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>ASUS XG27UQ</span></div>
 
-## <img src="mbp_16_2020.png" height=32> <span>Macbook Pro (16-inch, 2020) w/ Radeon 5500M</span>
+## <img src="mbp_16_2020.png" height=32> <span>Macbook Pro (16-inch, 2019) w/ Radeon 5500M</span>
 
 <div class="row"><img src="works.png" height=64> <span>ASUS XG27UQ</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
 
 # How to contribute?
 
