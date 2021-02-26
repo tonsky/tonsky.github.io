@@ -38,6 +38,17 @@ title: Logos
 
 Sometimes, when I have a bit of free time and mind, I like to casually design logos for my or my friends’ projects.
 
+<h1>2021</h1>
+
+{% assign design = site.data.design | sort: "date" | reverse %}
+{% for logo in design %}
+<figure id="{{ logo.id }}">
+  <img src="{{ logo.src }}">
+</figure>
+
+{{ logo.desc }}
+{% endfor %}
+
 <h1>2020</h1>
 
 <figure>

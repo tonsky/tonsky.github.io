@@ -15,7 +15,7 @@ layout: nil
     <email>niki@tonsky.me</email>
   </author>
  
-  {% assign everything = site.posts | concat: site.data.talks | concat: site.data.feed | sort: "date" | reverse %}
+  {% assign everything = site.posts | concat: site.data.talks | concat: site.data.feed | concat: site.data.design | sort: "date" | reverse %}
 
   {% for post in everything limit: 10 %}
   {% if post.draft != true %}

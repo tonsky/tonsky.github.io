@@ -1,0 +1,11 @@
+
+- date:    2021-02-26 00:00:00 +0000
+  title:   'DuckDuckGo logo redesign'
+  id:      duckduckgo
+  url:     /design/#duckduckgo
+  src:     2021-02-duckduckgo.png
+  desc:    'Following a trend of turning internet logos into abstract spirals, I redesigned a canonical <a href="https://duckduckgo.com/">DuckDuckGO</a> logo.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-02-duckduckgo.png" width="600"></p>
+
+    <p>Following a trend of turning internet logos into abstract spirals, I redesigned a canonical <a href="https://duckduckgo.com/">DuckDuckGO</a> logo.</p>
