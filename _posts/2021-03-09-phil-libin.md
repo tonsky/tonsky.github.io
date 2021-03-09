@@ -3,7 +3,6 @@ layout: post
 title: "Phil Libin: Find a new way to ski"
 category: blog
 summary: "Brief transcript of What I Know podcast with Phil Libin on entrepreneurship"
-draft: true
 ---
 
 Recently I listened to a very inspiring and refreshing [episode of “What I know”](https://www.inc.com/christine-lagorio/phil-libin-evernote-what-i-know-podcast.html) with a guest Phil Libin. He’s a co-founder of Evernote and recently mmhmm (yes, that’s the app name).
