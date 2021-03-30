@@ -28,7 +28,7 @@ Send a PR! Read the contribution guidelines at the end.
 
 > Why is my display listed red, even though I can use it just fine?
 
-This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <span style="padding: 2px 6px; border-radius: 4px; background-color: #4dcf01;">Green</span> icon means this Mac can work with that display at 4k _and_ 120Hz. <span style="padding: 2px 6px; border-radius: 4px; background-color: #ff5835">Red</span> icon means it works, but in compomised settings (60 Hz, 1440p resolution).
+This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <span style="padding: 2px 6px; border-radius: 4px; background-color: #4dcf01;">Green</span> icon means this Mac can work with that display at 4k _and_ 120Hz. <span style="padding: 2px 6px; border-radius: 4px; background-color: #ff5835">Red</span> icon means it works, but in compromised settings (60 Hz, 1440p resolution).
 
 # The list
 
