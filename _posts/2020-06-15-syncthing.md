@@ -12,6 +12,8 @@ hackernews_id: 23537243
     Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
 </figure>
 
+_Translations: [Russian](https://habr.com/ru/company/itelma/blog/550404/)_
+
 I’ve been struggling with file sync solutions [for years](https://tonsky.livejournal.com/323469.html). In the beginning, Dropbox was great, but in the last few years, they started to bloat up. I moved to iCloud, but it was even worse. Finally, a few days ago, after iCloud [cryptically broke again](https://twitter.com/nikitonsky/status/1269741673715810304), I decided it’s time to try something different.
 
 I tried [Syncthing](https://syncthing.net/), a free and open-source alternative. And you know what? It’s been liberating. The sanity, the simplicity, the reliability, the features. It brings the joy of use and makes you believe <a href="https://tonsky.me/blog/good-times-weak-men/">the collapse of civilization</a> can be slowed down a bit.
