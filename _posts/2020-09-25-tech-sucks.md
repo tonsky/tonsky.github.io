@@ -6,6 +6,8 @@ summary: "I get at least 27 tech annoyances on a single day"
 hackernews_id: 24589145
 ---
 
+_Translations: [Russian](https://habr.com/ru/company/itelma/blog/550816/)_
+
 Jay Sitter in his article [People expect technology to suck](https://www.kilobitspersecond.com/2020/09/22/people-expect-technology-to-suck/) writes about people who keep using tech despite heavy annoyances like very dim screen or constant popups and not doing anything about it. He concludes:
 
 > If my screen were at 5% brightness, or if I couldn’t use my phone without hitting “Cancel” every five seconds, I’d spend hours or days on Google trying to find a solution if that’s what it took. That these people mostly just lived with it means that these problems couldn’t have been markedly worse than technology has already been for them historically.
