@@ -3,8 +3,9 @@ layout: post
 title: "Building an ultimate writing machine from Sublime Text"
 category: blog
 summary: "My setup for long-form writing in Sublime Text"
-draft: true
 ---
+
+_UPD: It’s been more than a month since I wrote the original draft for this article. I’ve since published three other blog posts here and more than twenty in [my telegam channel](https://t.me/nikitonsky_pub). The setup has proven itself fantastic, I am LOVING it and have zero urge looking anywhere else._
 
 I’ve been a long-time fan of [iA Writer](https://ia.net/writer) for, well, writing. I bought the original iPad version, the original macOS version (when it was still called MacOS X), the Android one, and even the one they re-released as a “paid full-price update”. For me, it has found the perfect balance between features and simplicity, design and focus.
 
@@ -119,7 +120,7 @@ Sources: [github.com/tonsky/sublime-profiles](https://github.com/tonsky/sublime-
 
 In Package Control: `Profile Switcher`.
 
-P.S. Perhaps a simpler way would be to put writing-specific settings in Markdown syntax-specific settings file. Well, I thought about it too late, after I already wrote Profile Switcher :)
+P.S. An alternative way would be to put writing-specific settings in Markdown syntax-specific settings file. I like this approach less, because it affects e.g. Sublime Merge diff view 🤷 and all markdown files, some of which I don’t want to see in writing mode.
 
 Also, Profile Switcher seems like something that can be useful beyond just writing/coding duo.
 
@@ -250,5 +251,3 @@ Sublime Text can be customized pretty heavily and become a fantastic writing too
 Specialized software like iA Writer can do more, though.
 
 Hope you find this useful, or (even better!) get inspired to do some writing.
-
-P.S. I wrote the whole post in Sublime Text and LOVED IT.
