@@ -148,9 +148,7 @@ Also, Profile Switcher seems like something that can be useful beyond just writi
   "scroll_past_end": 0.5,
   "word_wrap": true,
   "wrap_width": 72,
-  "color_scheme": "auto",
-  "dark_color_scheme": "Packages/sublime-scheme-writer/Writer Dark.sublime-color-scheme",
-  "light_color_scheme": "Packages/sublime-scheme-writer/Writer.sublime-color-scheme",
+  "color_scheme": "Packages/sublime-scheme-writer/Writer.sublime-color-scheme",
   "theme": "Adaptive.sublime-theme",
 }
 ```
