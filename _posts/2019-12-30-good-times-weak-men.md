@@ -8,6 +8,8 @@ related_url: "/blog/disenchantment/"
 related_title: "Software disenchantment"
 ---
 
+_Translations: [Russian](https://habr.com/ru/company/itelma/blog/550620/)_
+
 In [Software Disenchantment](https://tonsky.me/blog/disenchantment/) we’ve seen how software has degraded in the past two decades. Recently Jonathan Blow gave a talk where he explained why it might be happening:
 
 <figure>

@@ -5,6 +5,8 @@ category: blog
 summary: "“Premature optimization being the root of all evil” is the root of all evil"
 ---
 
+_Translations: [Russian](https://habr.com/ru/company/itelma/blog/550432/)_
+
 How does one build fast software?
 
 # The wrong way
