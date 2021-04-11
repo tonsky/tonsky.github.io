@@ -1,4 +1,11 @@
 - lang:    RU
+  date:    2021-04-10 00:00:00 +0000
+  url:     https://devzen.ru/episode-0331/
+  title:   'Подкаст DevZen, эпизод 331'
+  content: 'Разработка IDE, какой она должна быть, какие они были за последние 50 лет, отзывчивость UI, тренды и идеи.'
+  embed:   <div class="talk-view-stub"><audio controls><source src="https://devzen.ru/download/2021/devzen-0331-2021-04-10-2920e2429455a440.mp3" type="audio/mpeg"></audio></div>
+
+- lang:    RU
   date:    2021-04-07 00:00:00 +0000
   url:     https://soundcloud.com/vsapronov/my-obrecheny-open-source-govorim-s-nikitoi-prokopovym
   title:   'Мы обречены — Open Source'
