@@ -48,6 +48,7 @@
         headers {"Authorization" (str "Bearer " token)}
         query   {"fields[member]" (str/join ","
                                     ["currently_entitled_amount_cents"
+                                     "pledge_cadence"
                                      "full_name"
                                      "last_charge_status"
                                      "patron_status"
@@ -81,7 +82,10 @@
 (defn normalize-patron [{:keys [attributes] :as patron}]
   {:name      (str/trim (:full_name attributes))
    :id        (:email attributes)
-   :pledge    (int (/ (:currently_entitled_amount_cents attributes) 100))
+   :pledge    (-> (:currently_entitled_amount_cents attributes)
+                (/ (:pledge_cadence attributes))
+                (/ 100)
+                (int))
    :platforms #{:patreon}})
 
 (defn patrons []
