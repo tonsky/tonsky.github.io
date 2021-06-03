@@ -7,6 +7,8 @@ hackernews_id: 18783704
 img_rel: true
 ---
 
+_Translations: [Russian](https://habr.com/ru/company/timeweb/blog/560666/)_
+
 I’ve been doing some [Advent of Code](https://adventofcode.com/2018) programming recently (you can [watch the recordings](https://www.youtube.com/playlist?list=PLdSfLyn35ej-UL9AuxUvoFXerHac4RYnH)). They publish a small programming problem every day during December and you are supposed to write a program that solves it for you. It usually takes anything from a couple of minutes to a couple of hours and is pretty fun, I recommend that you try it too. Once the task is up, it’s always accessible, not only during December.
 
 <figure><img src="advent.png"></figure>
