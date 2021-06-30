@@ -1,3 +1,13 @@
+- date:    2021-06-30 00:00:00 +0000
+  title:   'JWM Logo'
+  id:      jwm
+  url:     /design/#jwm
+  src:     2021-06-jwm.svg
+  desc:    '<a href="https://github.com/JetBrains/JWM">Java Window Management library</a> has window and management in its logo.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-06-jwm.svg"></p>
+
+    <p><a href="https://github.com/JetBrains/JWM">Java Window Management library</a> has window and management in its logo.</p>
 
 - date:    2021-02-26 00:00:00 +0000
   title:   'DuckDuckGo logo redesign'
