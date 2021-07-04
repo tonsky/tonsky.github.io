@@ -50,7 +50,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
-<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B</span></div>
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B</span> (1440p @ 144Hz)</div>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>ASUS XG27UQ</span></div>
 
