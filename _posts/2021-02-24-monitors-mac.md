@@ -66,7 +66,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="imac_2020.png" height=44> <span>iMac (2020) w/ Radeon 5700XT</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Asus PA32UCG</span></div>
+<div class="row"><img src="works.png" height=64> <span>Asus PA32UCG</span></div>
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
