@@ -34,19 +34,19 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13", 2018)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (13 inch, 2019)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2019) w/ Radeon Pro 560X</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
@@ -56,7 +56,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5300M</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO V3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_16_2020.png" height=32> <span>Macbook Pro (16-inch, 2019) w/ Radeon 5500M</span>
 
@@ -70,9 +70,11 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator X27 (X27 bmiphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
