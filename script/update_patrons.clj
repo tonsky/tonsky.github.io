@@ -109,7 +109,10 @@
         createdAt, id
         sponsorEntity {
           ... on User {
-            id, email, name, login
+            id, user_email: email, name, login
+          }
+          ... on Organization {
+            id, org_email: email, name, login
           }
         }
         tier {
@@ -137,6 +140,7 @@
                        (deref)
                        :body
                        (json/parse-string true))
+            _ (prn response)
             sponsors' (into sponsors
                         (-> response :data :viewer :sponsorshipsAsMaintainer :nodes))]
         (print-progress "Fetching sponsors"
@@ -149,12 +153,13 @@
             sponsors'))))))
 
 (defn normalize-sponsor [{entity :sponsorEntity :as sponsor}]
-  {:name      (str/trim (or (:name entity) (:login entity)))
-   :id        (if (str/blank? (:email entity))
-                (:login entity)
-                (:email entity))
-   :pledge    (-> sponsor :tier :monthlyPriceInDollars)
-   :platforms #{:github}})
+  (let [email (or (:user_email entity) (:org_email entity))]
+    {:name      (str/trim (or (:name entity) (:login entity)))
+     :id        (if (str/blank? email)
+                  (:login entity)
+                  email)
+     :pledge    (-> sponsor :tier :monthlyPriceInDollars)
+     :platforms #{:github}}))
 
 (defn sponsors []
   (->> (cache "sponsors" fetch-sponsors)
