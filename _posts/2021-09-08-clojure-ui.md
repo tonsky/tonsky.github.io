@@ -13,7 +13,7 @@ After that, I joined JetBrains and worked not on one, but two different UI frame
 
 Lately, Clojurists Together and Roam Research agreed to sponsor this work. I just can’t keep ignoring the signs the Universe is sending me.
 
-I have no code written as of yet, but I laid out some foundations in [Skija](https://tonsky.me/blog/skija/) and [JWM](https://github.com/HumbleUI/JWM/).
+I have no framework code yet, but some foundations are laid out in [Skija](https://tonsky.me/blog/skija/) and [JWM](https://github.com/HumbleUI/JWM/).
 
 This post is my thoughts on the subject, some opinions I have and some questions I am not sure how to answer. It’s aimed to facilitate discussion, so please, share your thoughts!
 
@@ -245,4 +245,4 @@ That’s why I want to start a discussion:
 - Do you have a better insight into any of the topics?
 - Did I miss something important that should be covered?
 
-Share your thoughts! [Drop me a letter](mailto:niki@tonsky.me).
+Share your thoughts! Reply [on Twitter](https://twitter.com/nikitonsky/status/1435624249381826566?s=20) or [drop me a letter](mailto:niki@tonsky.me).
