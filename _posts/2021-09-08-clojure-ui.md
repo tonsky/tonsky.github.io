@@ -3,7 +3,6 @@ layout: post
 title: "Thoughts on Clojure UI framework"
 category: blog
 summary: "Ideas and inspirations for new Clojure framework for desktop apps"
-draft: true
 ---
 
 I had a long‑standing dream: to implement a UI framework. Nothing inspires me more than noticing hundreds of subtle interactions (e.g. text selection in a text box) and seeing how combined, they bring together a feel of an alive and native component.
@@ -246,4 +245,4 @@ That’s why I want to start a discussion:
 - Do you have a better insight into any of the topics?
 - Did I miss something important that should be covered?
 
-Share your thoughts! Reply [on Twitter](#), on Hackernews ↓, or [drop me a letter](mailto:niki@tonsky.me).
+Share your thoughts! [Drop me a letter](mailto:niki@tonsky.me).
