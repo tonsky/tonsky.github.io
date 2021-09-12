@@ -3,6 +3,7 @@ layout: post
 title: "Thoughts on Clojure UI framework"
 category: blog
 summary: "Ideas and inspirations for new Clojure framework for desktop apps"
+hackernews_id: 28469498
 ---
 
 I had a long‑standing dream: to implement a UI framework. Nothing inspires me more than noticing hundreds of subtle interactions (e.g. text selection in a text box) and seeing how combined, they bring together a feel of an alive and native component.
@@ -246,3 +247,72 @@ That’s why I want to start a discussion:
 - Did I miss something important that should be covered?
 
 Share your thoughts! Reply [on Twitter](https://twitter.com/nikitonsky/status/1435624249381826566?s=20) or [drop me a letter](mailto:niki@tonsky.me).
+
+## UPD: feedback
+
+I finally processed most (all?) of the feedback this post has accumulated. Thank you for it, I’ll be looking deeper into every link mentioned. Here’s the list:
+
+Accessibility—I missed it in the original post, but yes, it will be accounted from the start. BTW any good resources on how to get it right/not get it wrong?
+
+Localization (RTL)—Same.
+
+### State management
+
+- Reagent and Re-frame were mentioned both positively and negatively.
+- SwiftUI only negatively.
+- Automerge
+
+### Styling
+
+CSS in JS as a good idea (we won’t start from CSS separated from layout, but it’s good to not to repeat HTML’s mistake).
+
+Adobe [Design tokens](https://spectrum.adobe.com/page/design-tokens/)
+
+[Registering a ‘defaults pack’ with a set of defaults, pass them around as arguments.](https://twitter.com/danielwithmusic/status/1435941938906099714?s=20)
+
+### Layout
+
+Flexbox/Grid as inspiration
+
+[Every Layout](https://every-layout.dev/)
+
+[Elm-UI](https://github.com/mdgriffith/elm-ui) and specifically these two talks:
+
+<figure>
+    <iframe width="600" height="337" src="https://www.youtube-nocookie.com/embed/NYb2GDWMIm0" title="YouTube video player" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+<figure>
+    <iframe width="600" height="337" src="https://www.youtube-nocookie.com/embed/Ie-gqwSHQr0" title="YouTube video player" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+</figure>
+
+### Things to draw inspiration from
+
+- [Makepad whitepaper](https://github.com/makepad/makepad_docs/blob/main/Makepad%20Whitepaper%202020.pdf)
+- Elm Model
+- [Druid](https://raphlinus.github.io/rust/druid/2020/09/25/principled-reactive-ui.html)
+- [Membrane](https://github.com/phronmophobic/membrane/blob/master/docs/tutorial.md)
+- [How to build a functional UI library from scratch](https://blog.phronemophobic.com/what-is-a-user-interface.html)
+- WxWidgets
+- [Tauri Apps](https://tauri.studio/en/)
+- [Re-frame without React](https://blog.danieljanus.pl/2019/02/05/clj-tvision/)
+- Flutter
+- ClojureDart
+- SWT
+- TornadoFX, a Kotlin wrapper for JavaFX
+- [Seesaw](https://github.com/clj-commons/seesaw), Swing wrapper for Clojure
+- [Vrac](https://app.pitch.com/app/public/player/d673c9f7-c98f-45eb-a6ff-668b42909f1c), Write once, Run Anyhow
+- [Adobe ASL](https://stlab.adobe.com/group__asl__overview.html)
+- AutoCAD’s AutoLisp/VisualLisp
+- [Gio](https://eliasnaur.com/blog/immediate-mode-gui-programming)
+- [Best cross-platform GUI toolkits](https://www.slant.co/topics/983/~best-cross-platform-gui-toolkits)
+
+### Further ideas
+
+- [Shipping UI over the wire](https://twitter.com/alekseipublic/status/1435700344907051013?s=20)
+- Linkable navigation (URL-like)
+
+### General concerns
+
+- [Text Input being hard](https://twitter.com/alex_frantic/status/1435705191987232770?s=20)
+- Framework is as great as the apps people will build with it
