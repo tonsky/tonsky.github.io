@@ -9,7 +9,7 @@ hackernews_id: 23537243
 
 <figure>
     <img src="./cover.gif">
-    Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
+    Illustration by <a href="https://www.behance.net/julia_litvin" target="_blank">Yulia Prokopova</a>
 </figure>
 
 _Translations: [Russian](https://habr.com/ru/company/itelma/blog/550404/)_
