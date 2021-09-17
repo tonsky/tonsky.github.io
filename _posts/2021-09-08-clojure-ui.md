@@ -293,6 +293,7 @@ Flexbox/Grid as inspiration
 - [Druid](https://raphlinus.github.io/rust/druid/2020/09/25/principled-reactive-ui.html)
 - [Membrane](https://github.com/phronmophobic/membrane/blob/master/docs/tutorial.md)
 - [How to build a functional UI library from scratch](https://blog.phronemophobic.com/what-is-a-user-interface.html)
+- [A Layout Language](https://github.com/matt0xFF/uiwiki/wiki/A-Layout-Language)
 - WxWidgets
 - [Tauri Apps](https://tauri.studio/en/)
 - [Re-frame without React](https://blog.danieljanus.pl/2019/02/05/clj-tvision/)
