@@ -4,6 +4,7 @@ title: "Thoughts on Clojure UI framework"
 category: blog
 summary: "Ideas and inspirations for new Clojure framework for desktop apps"
 hackernews_id: 28469498
+reddit_url: "https://www.reddit.com/r/Clojure/comments/pkjthk/thoughts_on_clojure_ui_framework/"
 ---
 
 I had a long‑standing dream: to implement a UI framework. Nothing inspires me more than noticing hundreds of subtle interactions (e.g. text selection in a text box) and seeing how combined, they bring together a feel of an alive and native component.
