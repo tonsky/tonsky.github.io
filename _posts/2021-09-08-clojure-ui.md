@@ -257,6 +257,10 @@ Accessibility—I missed it in the original post, but yes, it will be accounted 
 
 Localization (RTL)—Same.
 
+### Accessibility
+
+- [AccessKit](https://github.com/AccessKit/accesskit)
+
 ### State management
 
 - Reagent and Re-frame were mentioned both positively and negatively.
