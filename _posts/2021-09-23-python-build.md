@@ -63,7 +63,7 @@ E.g. how do you download maven dependencies? Well, it’s a simple `urllib.reque
 
 Wait, really? Yes, really. It’s not that hard! “Real” Java developers could argue that it’s not a “proper” way to do things because responsibilty, separation of concerns, you are not supposed to write this code, it’s already implemented, yada-yada-yada. But hey, it’s three lines of code, Maven wouldn’t do it any better than my Python script, and the end result is the same. If generating `pom.properties` is a price I have to pay to avoid touching Maven, I am happy to pay!
 
-In retrospect, Python is the obvious choice. It is the perfect glue. It’s scriptable. It doesn’t care what language rest of your system is written in. It’s has all the batteries. It’s fast and cross-platfrom. Goole has figured it out long time ago, because (I assume) there’s a lot of gluing in Google. Now I have figured it out, too.
+In retrospect, Python is the obvious choice. It is the perfect glue. It’s scriptable. It doesn’t care what language rest of your system is written in. It’s has all the batteries. It’s fast and cross-platfrom. Google has figured it out long time ago, because (I assume) there’s a lot of gluing in Google. Now I have figured it out, too.
 
 # Conclusion
 
