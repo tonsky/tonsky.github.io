@@ -5,7 +5,7 @@ category: blog
 summary: "Why Skija and JWM use Python instead of existing build tool"
 ---
 
-Normally, when starting a Java project (or any other programming project, really), you don’t want to reinvent the wheel. You go with the de-facto build system, folder structure, environment etc. The ones that the rest of the world is using.
+Normally, when starting a Java project (or any other programming project, really), you don’t want to reinvent the wheel. You go with the de-facto build system, folder structure, environment, etc. The ones that the rest of the world is using.
 
 Yet, both [Skija](https://github.com/JetBrains/skija/tree/master/script) and [JWM](https://github.com/HumbleUI/JWM/tree/main/script) are built using Python scripts instead of more traditional Ant/Maven/Gradle/SBT. Why? Let’s find out!
 
@@ -13,17 +13,17 @@ Yet, both [Skija](https://github.com/JetBrains/skija/tree/master/script) and [JW
 
 When we just started Skija, I used Maven because I knew it well. Pretty soon we run into Maven limitations: it’s a very rigid system. It does well on standard projects, but when you need something extra, it becomes an obstacle.
 
-And we had very non-standard project. Skija is 50/50 Java AND C++ project. We build native artifacts and pack them in JARs files. We have multiple different JARs built from the same source (one per platform). We also pre-process Java sources with Lombok before compiling them.
+And we had a very non-standard project. Skija is 50/50 Java AND C++ project. We build native artifacts and pack them in JARs files. We have multiple different JARs built from the same source (one per platform). We also pre-process Java sources with Lombok before compiling them.
 
 > Fun fact: the only IDE that supports simultaneous Java + C++ development is Android Studio. No, we weren’t ready to make this sacrifice.
 
 With each complication, I fought hard to make it work with Maven. But its rigidness made easy things extremely hard. E.g. I couldn’t control which files from the directory should go into JARs and which should not. I couldn’t tell it at which directory to look.
 
-Eventually, I gave up. It was _ridiculously_ hard affair to achieve trivial things. E.g. you need to generate/modify XML file on the fly just to pass credentials from the environment. Or I couldn’t _stop_ Maven from running tests when I didn’t need to.
+Eventually, I gave up. It was _ridiculously_ hard affair to achieve trivial things. E.g. you need to generate/modify an XML file on the fly just to pass credentials from the environment. Or I couldn’t _stop_ Maven from running tests when I didn’t need to.
 
 # Gradle
 
-We didn’t even try Gradle on Skija project, but I saw my colleagues use it in the wild. Gradle is mostly magic: you write “hints” to the build system and then, hopefully, right thing will happen at the right time. It’s also full of defaults and conventions, so many details are implicit. You have to know them to guess what will happen, but you can’t google them, because there’s no code.
+We didn’t even try Gradle on the Skija project, but I saw my colleagues use it in the wild. Gradle is mostly magic: you write “hints” to the build system and then, hopefully, the right thing will happen at the right time. It’s also full of defaults and conventions, so many details are implicit. You have to know them to guess what will happen, but you can’t google them, because there’s no code.
 
 # Make
 
@@ -43,15 +43,15 @@ Being a faithful Clojurist, I tried Babashka. It’s a Clojure interpreter with 
 
 Babashka almost made it. It was imperative, doing exactly what I wanted in the most straightforward way possible. It was cross-platform. Sure, it felt a little like a stretch (JetBrains isn’t known for its love for Clojure, and other people who wanted to participate would have to learn it) but I was in despair and ready to try anything.
 
-Babashka also was fast. I didn’t mention it earlier, but by invoking javac/cmake directly you can have an incremental rebuild of both Java and C++ done and new version of the app running by the time that only takes Maven/Gradle to wake up. It’s a difference between 1 second and 3-5 seconds, but when you do it a few times a minute (yes, I like to try things out a lot), it becomes important and _very_ noticeable.
+Babashka also was fast. I didn’t mention it earlier, but by invoking javac/cmake directly you can have an incremental rebuild of both Java and C++ done and a new version of the app running by the time that only takes Maven/Gradle to wake up. It’s a difference between 1 second and 3-5 seconds, but when you do it a few times a minute (yes, I like to try things out a lot), it becomes important and _very_ noticeable.
 
-So what was wrong? Unfortunately, batteries weren’t exactly there. Working with files (default directory, parent, listing children etc) was a bit cumbersome, invoking external processes was also tricky. I caught myself trying to improve usability of some functions but then it wouldn’t be portable, I’d have to copy the implementation whenever I go, etc.
+So what was wrong? Unfortunately, batteries weren’t exactly there. Working with files (default directory, parent, listing children, etc) was a bit cumbersome, invoking external processes was also tricky. I caught myself trying to improve the usability of some functions but then it wouldn’t be portable, I’d have to copy the implementation whenever I go, etc.
 
-Also, I was really concerned about forcing random people to learn Clojure. I’d probably try it again in when it matures and when the rest of the code will already be in a Clojure. Then it’ll be a match made in Heaven.
+Also, I was really concerned about forcing random people to learn Clojure. I’d probably try it again when it matures and when the rest of the code will already be in Clojure. Then it’ll be a match made in Heaven.
 
 # Python
 
-Enter Python. It’s cross-platform. It’s fast to invoke. Unlike Bash, it’s a real programming language. It’s one of the most popular languages on the planet. Standard library seems pretty good: it is optmized for scripting as much as for programming. All the necessary batteries are there: to this day, all my build scripts only depend on Python standard library and on zero external dependencies.
+Enter Python. It’s cross-platform. It’s fast to invoke. Unlike Bash, it’s a real programming language. It’s one of the most popular languages on the planet. The standard library seems pretty good: it is optimized for scripting as much as for programming. All the necessary batteries are there: to this day, all my build scripts only depend on Python standard library and on zero external dependencies.
 
 From the very beginning, I was unbelievably happy. The contrast with Maven was stark: if I wanted to move some files to the folder, I just wrote one line to copy them. If I wanted to run a test, I wrote one line that invokes `java`. No more fighting with the defaults. No more “declarative” hints that might or might not do what you need.
 
@@ -69,9 +69,9 @@ In retrospect, Python is the obvious choice. It is the perfect glue. It’s scri
 
 If you play by common wisdom rules, you get rewarded with integration, support, ease of setup. If you have lots of programmers, or a huge project, you get the benefit of standardization.
 
-But there’s overhead, and the overhead is non-zero. I would argue that for small or non-standard projects it makes more sense to write a few custom scripts rather than investing and fighting with existing build systems that weren’t designed for your use case. You’ll win some perfromance, too.
+But there’s overhead, and the overhead is non-zero. I would argue that for small or non-standard projects it makes more sense to write a few custom scripts rather than investing and fighting with existing build systems that weren’t designed for your use case. You’ll win some performance, too.
 
-As for the best scripting language, please don’t use Bash. I know, it’s tempting, it’s just “two lines of code”. It always starts small until one day it grows into a unportable, unsupportable mess. In fact, Bash is so simple and so natural to just start using that I had to make a very strict rule: never use Bash. Just. Don’t.
+As for the best scripting language, please don’t use Bash. I know, it’s tempting, it’s just “two lines of code”. It always starts small until one day it grows into an unportable, unsupportable mess. In fact, Bash is so simple and so natural to just start using that I had to make a very strict rule: never use Bash. Just. Don’t.
 
 But Python is great. Use Python! Or Ruby, Ruby might be good, too. Just, please, don’t use 2.7, it’s not even funny anymore.
 
