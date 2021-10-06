@@ -140,7 +140,6 @@
                        (deref)
                        :body
                        (json/parse-string true))
-            _ (prn response)
             sponsors' (into sponsors
                         (-> response :data :viewer :sponsorshipsAsMaintainer :nodes))]
         (print-progress "Fetching sponsors"
