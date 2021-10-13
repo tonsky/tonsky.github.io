@@ -84,6 +84,10 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
+## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (M1, 2020)</span>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B</span> (4k @ 144Hz)</div>
+
 # How to contribute?
 
 If you have a combination of 4k monitor with 120+ Hz refresh rate and a Mac that’s not listed here, please [open a PR](https://github.com/tonsky/tonsky.github.io) (don’t worry about graphics/icons, I can add those myself).
