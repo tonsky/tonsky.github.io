@@ -1,3 +1,14 @@
+- date:    2021-10-26 00:00:00 +0000
+  title:   'Sublime Clojure Logo'
+  id:      sublime-clojure
+  url:     /design/#sublime-clojure
+  src:     2021-10-sublime-clojure.png
+  desc:    '<a href="https://github.com/tonsky/sublime-clojure">Sublime Clojure</a> is a Clojure development environment for Sublime Text.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-10-sublime-clojure.png"></p>
+
+    <p><a href="https://github.com/tonsky/sublime-clojure">Sublime Clojure</a> is a Clojure development environment for Sublime Text.</p>
+
 - date:    2021-06-30 00:00:00 +0000
   title:   'JWM Logo'
   id:      jwm
