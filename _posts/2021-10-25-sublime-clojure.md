@@ -193,7 +193,7 @@ Simple test. Send this to evaluate:
 
 All REPLs with the exception of nREPL will get stuck: they will stop accepting any input and will wait for you to close the missing paren. This is ok when you work from the console but completely unacceptable when trying to integrate with another program.
 
-Errors are part of the process of developing software. They should be _expected_, especially during development, and dealt with grace. They certainly shouldn’t punish you by getting the system in a weird stuck state. Simple “Sorry, Dave, I don’t understand you” is a million times better than “I will not tell you what my problem is, you should’ve guessed”.
+Errors are part of the process of developing software. They are called exceptions, but that doesn’t mean they are exceptional or rare. Exceptions should be _expected_, especially during development, and dealt with grace. They certainly shouldn’t punish you by getting the system in a weird stuck state. Simple “Sorry, Dave, I don’t understand you” is a million times better than “I will not tell you what my problem is, you should’ve guessed”.
 
 <figure>
     <img src="./malformed_input.png">
