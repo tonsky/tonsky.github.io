@@ -125,6 +125,40 @@ Sublime Clojure will display the time it took to run your command if it took mor
 
 Let’s just say it’s my way to motivate developers to write faster software. Being aware of the problem is the first step.
 
+### Animations
+
+During long evaluation, there’s an animation playing. Seems minor and stupidly simple to implement, but so much fun looking at it!
+
+<figure>
+  <video style="border-radius: 11px" autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./progress_clock.mp4" type="video/mp4"></video>
+</figure>
+
+The best part? It’s trivially customizable. For example, by setting
+
+```
+"progress_phases": ["⠏", "⠛", "⠹", "⢸", "⣰", "⣤", "⣆", "⡇"]
+```
+
+I get this:
+
+<figure>
+  <video style="border-radius: 11px" autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./progress_braile.mp4" type="video/mp4"></video>
+</figure>
+
+By applying a little more imagination, it’s not hard getting this:
+
+<figure>
+  <video style="border-radius: 11px" autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./progress_wave.mp4" type="video/mp4"></video>
+</figure>
+
+Finally, utilizing Fira Code 6 progress bar glyphs, you can get this:
+
+<figure>
+  <video style="border-radius: 11px" autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./progress_bounce.mp4" type="video/mp4"></video>
+</figure>
+
+Your imagination is the limit! Send me crazy progress bars you come up with!
+
 ### Overloaded shortcuts
 
 Human memory is limited, so some commands in Sublime Clojure do different things depending on the context.
@@ -179,10 +213,16 @@ In other words, I don’t really see an alternative. And I’m also surprised ho
 
 The initial version is out now on Package Control. All the instructions can be found in the repo:
 
-<center><a href="https://github.com/tonsky/sublime-clojure"><img src="./logo.png" width=350 height=350></a></center>
+<figure>
+    <a href="https://github.com/tonsky/sublime-clojure"><img src="./banner.png"></a>
+</figure>
 
 Feel free to try it out and leave feedback [in the issues](https://github.com/tonsky/sublime-clojure/issues).
 
-For future plans, check out the issues in the repo, too.
+For future plans, check out the issues in the repo, too. There’s a few already, perfect if you want to help. Come help me improve this!
 
-Any help is welcome, so come help me improve this. The future of Clojure in Sublime looks very bright right now.
+## Conclusion
+
+It’s magical how good the ability to evaluate code directly in editor feels. The very first day when I got basic evaluation working I felt the power of it on my fingertips immediately. It’s a superpower.
+
+Now it’s much more polished and ready for the world. The future of Clojure in Sublime looks very bright right now.
