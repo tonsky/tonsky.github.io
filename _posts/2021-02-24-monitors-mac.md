@@ -57,6 +57,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5300M</span>
 
 <div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+
 <div class="row"><img src="doesnt_work.png" height=64> <span>2021 LG C1 65-inch OLED</span></div>
 
 ## <img src="mbp_16_2020.png" height=32> <span>Macbook Pro (16-inch, 2019) w/ Radeon 5500M</span>
@@ -74,15 +75,17 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) only on Monterey</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator X27 (X27 bmiphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
 ## <img src="air_2020.png" height=32> <span>MacBook Air (M1, 2020)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>ASUS PG27UQ</span></div>
 
