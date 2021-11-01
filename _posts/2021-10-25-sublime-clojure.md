@@ -179,6 +179,28 @@ In the future, I plan to overload it further to show pretty-printed values of ev
 
 The idea is that you have one single shortcut to remember and muscle memory will be built much faster.
 
+### Binding keys to eval code
+
+Every project is different, and sometimes it’s convenient to run a piece of code so often you’d want it on a shortcut. It might be namespace reload, test execution, linter, database reconnect — possibilities are endless.
+
+Trick is, it’s hard for plugin developer to know what you might need in advance. That’s why best way to address this need is to give users the ultimate tool: ability to run code.
+
+To support such use cases, Sublime Clojure allows you to bind arbitrary piece of code to a keyboard shortcut. E.g. by adding something like this:
+
+```
+{"keys": ["ctrl+t"],
+ "command": "sublime_clojure_eval_code",
+ "args": {"code": "(clojure.test/run-all-tests)"}}
+```
+
+and then pressing `Ctrl` + `T` I get myself a little ad-hoc test runner without any need to address this in the plugin itself!
+
+<figure>
+    <img src="./eval_code.png" alt="Eval Code">
+</figure>
+
+The result is conveniently displayed in the status bar.
+
 ### nREPL
 
 Sublime Clojure chooses to communicate with nREPL instead of Socket REPL/pREPL/unREPL. Why?
