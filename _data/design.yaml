@@ -1,3 +1,14 @@
+- date:    2021-11-24 00:00:00 +0000
+  title:   'clj-commons Logo'
+  id:      clj-commons
+  url:     /design/#clj-commons
+  src:     2021-11-clj-commons.svg
+  desc:    '<a href="https://github.com/clj-commons">clj-commons</a> is a community-led project to build up the supporting infrastructure around Clojure.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-11-clj-commons.svg"></p>
+
+    <p><a href="https://github.com/clj-commons">clj-commons</a> is a community-led project to build up the supporting infrastructure around Clojure.</p>
+
 # - date:    2021-10-26 00:00:00 +0000
 #   title:   'Sublime Clojure Logo'
 #   id:      sublime-clojure
