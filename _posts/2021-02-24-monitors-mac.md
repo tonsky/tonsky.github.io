@@ -80,6 +80,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
+<div class="row"><img src="works.png" height=64> <span>Acer XV272K KV only on Monterey</span></div>
+
 <div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) only on Monterey</span></div>
