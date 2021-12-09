@@ -54,6 +54,10 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B</span> (1440p @ 144Hz)</div>
 
+## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2018) w/ Radeon Pro 560X</span>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Gigabyte M28U</span></div>
+
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5300M</span>
 
 <div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
