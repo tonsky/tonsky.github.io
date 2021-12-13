@@ -3,7 +3,6 @@ layout: post
 title: "Sublime ❤︎ Clojure"
 category: blog
 summary: "New Sublime Text plugin for working with Clojure"
-draft: true
 ---
 
 REPL is Clojure’s superpower. For a long time, I’ve been enjoying Sublime Text but was unable to match it with Clojure. This ends today: I’m happy to present my new Sublime Text plugin, [Sublime Clojure](https://github.com/tonsky/sublime-clojure).
@@ -233,7 +232,7 @@ In other words, I don’t really see an alternative. And I’m also surprised ho
 
 ### How to get
 
-The initial version is out now on Package Control. All the instructions can be found in the repo:
+The initial version is out now on GitHub (Package Control [will come later](https://github.com/wbond/package_control_channel/pull/8394)). All the instructions can be found in the repo:
 
 <figure>
     <a href="https://github.com/tonsky/sublime-clojure"><img src="./banner.png"></a>
