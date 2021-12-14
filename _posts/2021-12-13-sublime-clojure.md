@@ -3,6 +3,7 @@ layout: post
 title: "Sublime ❤︎ Clojure"
 category: blog
 summary: "New Sublime Text plugin for working with Clojure"
+hackernews_id: 29549392
 ---
 
 REPL is Clojure’s superpower. For a long time, I’ve been enjoying Sublime Text but was unable to match it with Clojure. This ends today: I’m happy to present my new Sublime Text plugin, [Sublime Clojure](https://github.com/tonsky/sublime-clojure).
