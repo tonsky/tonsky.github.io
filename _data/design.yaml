@@ -1,3 +1,14 @@
+- date:    2021-12-13 00:00:00 +0000
+  title:   'Clojure Sublimed Logo'
+  id:      clojure-sublimed
+  url:     /design/#clojure-sublimed
+  src:     2021-12-clojure-sublimed.png
+  desc:    '<a href="https://github.com/tonsky/Clojure-Sublimed">Clojure Sublimed</a> is a Clojure development environment for Sublime Text.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-10-clojure-sublimed.png"></p>
+
+    <p><a href="https://github.com/tonsky/Clojure-Sublimed">Clojure Sublimed</a> is a Clojure development environment for Sublime Text.</p>
+
 - date:    2021-11-30 00:00:00 +0000
   title:   'EQL Logo'
   id:      eql
@@ -20,16 +31,6 @@
 
     <p><a href="https://github.com/clj-commons">clj-commons</a> is a community-led project to build up the supporting infrastructure around Clojure. Idea: Erik Assum.</p>
 
-# - date:    2021-10-26 00:00:00 +0000
-#   title:   'Sublime Clojure Logo'
-#   id:      sublime-clojure
-#   url:     /design/#sublime-clojure
-#   src:     2021-10-sublime-clojure.png
-#   desc:    '<a href="https://github.com/tonsky/sublime-clojure">Sublime Clojure</a> is a Clojure development environment for Sublime Text.'
-#   content: |-
-#     <p><img src="https://tonsky.me/design/2021-10-sublime-clojure.png"></p>
-# 
-#     <p><a href="https://github.com/tonsky/sublime-clojure">Sublime Clojure</a> is a Clojure development environment for Sublime Text.</p>
 
 - date:    2021-06-30 00:00:00 +0000
   title:   'JWM Logo'

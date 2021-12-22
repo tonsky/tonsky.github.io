@@ -7,11 +7,11 @@ hackernews_id: 29549392
 reddit_url: "https://www.reddit.com/r/Clojure/comments/rflhxf/sublime_clojure/"
 ---
 
-REPL is Clojure’s superpower. For a long time, I’ve been enjoying Sublime Text but was unable to match it with Clojure. This ends today: I’m happy to present my new Sublime Text plugin, [Sublime Clojure](https://github.com/tonsky/sublime-clojure).
+REPL is Clojure’s superpower. For a long time, I’ve been enjoying Sublime Text but was unable to match it with Clojure. This ends today: I’m happy to present my new Sublime Text plugin, [Clojure Sublimed](https://github.com/tonsky/Clojure-Sublimed).
 
 ## Road there
 
-The work started in 2018 when I got too annoyed with built-in Sublime Clojure grammar. It was there and highlighted _some_ things while reporting errors or misunderstanding others perfectly valid things:
+The work started in 2018 when I got too annoyed with built-in Clojure Sublimed grammar. It was there and highlighted _some_ things while reporting errors or misunderstanding others perfectly valid things:
 
 <figure>
   <img src="./grammar.png">
@@ -25,7 +25,7 @@ On top of that, Sublime just introduced nested contexts in their grammars, so I 
 
 I didn’t know that yet, but this fact will later allow me to utilize highlighting info to efficiently detect form boundaries. There’s a lesson there, I think: embrace the true nature in the API and it will pay off sooner or later.
 
-I never published this grammar as a separate package but have been using it since 2018 and it has been rock solid. It now comes as a part of the Sublime Clojure plugin, so feel free to install it. Even if you don’t need a REPL, it’s very useful.
+I never published this grammar as a separate package but have been using it since 2018 and it has been rock solid. It now comes as a part of the Clojure Sublimed plugin, so feel free to install it. Even if you don’t need a REPL, it’s very useful.
 
 To be honest, in the last three years the Clojure grammar that is built-in in Sublime Text was improved, too, from what I can see.
 
@@ -80,7 +80,7 @@ But this also means there are now two places to check, depending on how your `pr
 
 And it drove me crazy before: I was banging my head way too often trying to understand why my `println` prints nothing, only to realize I was looking in the wrong place.
 
-So Sublime Clojure just gets rid of this complexity. Any stdout, either from evaluation or from any other thread goes straight to `System.out`. If you want something else, just wrap your code with `(with-out-str ...) ` or `(binding [*out* ...] ...`).
+So Clojure Sublimed just gets rid of this complexity. Any stdout, either from evaluation or from any other thread goes straight to `System.out`. If you want something else, just wrap your code with `(with-out-str ...) ` or `(binding [*out* ...] ...`).
 
 As an added bonus, there’s no extra panel to manage. There might be one if you choose to start your Clojure program directly from Sublime, but it’s completely up to you.
 
@@ -112,13 +112,13 @@ Compare:
     <img src="./trace.png">
 </figure>
 
-Sublime Clojure makes an effort to clean it up, present Clojure functions with their original names, and remove the parts that happen inside middleware, nREPL, Clojure runtime, or in a Clojure compiler. Most of the time you want to debug your own app, not the REPL or clojure.core.
+Clojure Sublimed makes an effort to clean it up, present Clojure functions with their original names, and remove the parts that happen inside middleware, nREPL, Clojure runtime, or in a Clojure compiler. Most of the time you want to debug your own app, not the REPL or clojure.core.
 
-It’s been two weeks since I started using Sublime Clojure REPL myself. And you know what? I started to really enjoy Clojure exceptions! Short, concise, pointing directly to the error, formatted in Clojure naming convention, not in Java munged style which you need to decypher back to Clojure. It’s a fantastic experience, even if on paper it doesn’t sound as much.
+It’s been two weeks since I started using Clojure Sublimed REPL myself. And you know what? I started to really enjoy Clojure exceptions! Short, concise, pointing directly to the error, formatted in Clojure naming convention, not in Java munged style which you need to decypher back to Clojure. It’s a fantastic experience, even if on paper it doesn’t sound as much.
 
 ### Little conveniences
 
-Sublime Clojure will display the time it took to run your command if it took more than 100 ms (configurable).
+Clojure Sublimed will display the time it took to run your command if it took more than 100 ms (configurable).
 
 <figure>
     <img src="./elapsed.png">
@@ -162,7 +162,7 @@ Your imagination is the limit! Send me crazy progress bars you come up with!
 
 ### Overloaded shortcuts
 
-Human memory is limited, so some commands in Sublime Clojure do different things depending on the context.
+Human memory is limited, so some commands in Clojure Sublimed do different things depending on the context.
 
 `Ctrl` + `Enter` evals topmost form if there’s no selection, but current selection if there is one.
 
@@ -186,7 +186,7 @@ Every project is different, and sometimes it’s convenient to run a piece of co
 
 Trick is, it’s hard for plugin developer to know what you might need in advance. That’s why best way to address this need is to give users the ultimate tool: ability to run code.
 
-To support such use cases, Sublime Clojure allows you to bind arbitrary piece of code to a keyboard shortcut. E.g. by adding something like this:
+To support such use cases, Clojure Sublimed allows you to bind arbitrary piece of code to a keyboard shortcut. E.g. by adding something like this:
 
 ```
 {"keys": ["ctrl+t"],
@@ -204,7 +204,7 @@ The result is conveniently displayed in the status bar.
 
 ### nREPL
 
-Sublime Clojure chooses to communicate with nREPL instead of Socket REPL/pREPL/unREPL. Why?
+Clojure Sublimed chooses to communicate with nREPL instead of Socket REPL/pREPL/unREPL. Why?
 
 Because (surprisingly) all other REPLs are built for interactive use. Using web analogy: they are all human-readable HTML pages when nREPL is the JSON API: it’s machine-oriented. It would be strange to build tools on top of human-readable web page, right?
 
@@ -237,10 +237,10 @@ In other words, I don’t really see an alternative. And I’m also surprised ho
 The initial version is out now on GitHub (Package Control [will come later](https://github.com/wbond/package_control_channel/pull/8394)). All the instructions can be found in the repo:
 
 <figure>
-    <a href="https://github.com/tonsky/sublime-clojure"><img src="./banner.png"></a>
+    <a href="https://github.com/tonsky/Clojure-Sublimed"><img src="./banner.png"></a>
 </figure>
 
-Feel free to try it out and leave feedback [in the issues](https://github.com/tonsky/sublime-clojure/issues).
+Feel free to try it out and leave feedback [in the issues](https://github.com/tonsky/Clojure-Sublimed/issues).
 
 For future plans, check out the issues in the repo, too. There’s a few already, perfect if you want to help. Come help me improve this!
 
