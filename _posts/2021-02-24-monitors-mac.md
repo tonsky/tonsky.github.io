@@ -82,6 +82,10 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>2021 LG C1 48-inch OLED</span></div>
 
+## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (Intel, 13-inch, 2020) </span>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U</span></div>
+
 ## <img src="imac_2020.png" height=44> <span>iMac (2020) w/ Radeon Pro 5700 XT</span>
 
 <div class="row"><img src="works.png" height=64> <span>ASUS ProArt Display PA32UCG</span></div>
@@ -99,7 +103,6 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B</span></div>
-
 
 ## <img src="air_2020.png" height=32> <span>MacBook Air (M1, 2020)</span>
 
