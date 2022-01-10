@@ -5,6 +5,7 @@ category: blog
 summary: "File synchronization can be fun and painless if you don’t have to deal with corporate bullshit."
 starred: true
 hackernews_id: 23537243
+hackernews_id_2: 29837696
 ---
 
 <figure>
