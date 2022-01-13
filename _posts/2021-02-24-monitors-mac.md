@@ -34,29 +34,29 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13-inch, 2018)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (13-inch, 2019)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2019) w/ Radeon Pro 560X</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>ASUS ROG Strix XG27UQ</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
-<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B</span> (1440p @ 144Hz)</div>
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B (1440p @ 144Hz)</span></div>
 
 ## <img src="mp_2019.png" height=32> <span>Mac Pro (2019) w/ Radeon Pro 580X</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer X27</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Predator X27</span></div>
 
 ## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2018) w/ Radeon Pro 560X</span>
 
@@ -64,13 +64,13 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5300M</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>2021 LG C1 65-inch OLED</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021)</span></div>
 
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5500M</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
 
@@ -78,9 +78,9 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>2021 LG C1 65-inch OLED</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021)</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>2021 LG C1 48-inch OLED</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (48-inch, 2021)</span></div>
 
 ## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (Intel, 13-inch, 2020) </span>
 
@@ -92,9 +92,9 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer XV272K KV only on Monterey</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV272K KV) only on Monterey</span></div>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) only on Monterey</span></div>
 
@@ -106,13 +106,13 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="air_2020.png" height=32> <span>MacBook Air (M1, 2020)</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>ASUS ROG Swift PG27UQ</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>LG CX 55</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG CX 4K OLED TV (55-inch, 2020)</span></div>
 
 ## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (M1, 2020)</span>
 
@@ -120,11 +120,11 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 ## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Pro, 14-inch, 2021)</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO XV3 (XV273K Pbmiipphzx)</span></div>
-
-<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
 
 ## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Max, 14-inch, 2021)</span>
 
