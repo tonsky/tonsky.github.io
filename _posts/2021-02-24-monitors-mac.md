@@ -35,6 +35,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>ROG Swift PG32UQX</span></div>
 
 ## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13-inch, 2018)</span>
 
