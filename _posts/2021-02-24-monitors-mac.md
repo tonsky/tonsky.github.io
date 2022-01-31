@@ -109,6 +109,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>DELL P2415Q</span></div>
+
 <div class="row"><img src="works.png" height=64> <span>ASUS ROG Swift PG27UQ</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
