@@ -35,7 +35,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
-<div class="row"><img src="doesnt_work.png" height=64> <span>ROG Swift PG32UQX</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>ASUS ROG Swift PG32UQX</span></div>
 
 ## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13-inch, 2018)</span>
 
@@ -105,6 +105,10 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>ASUS ROG Swift PG32UQX (144 Hz, VRR) only via DP</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (MacOS only support HDMI 2.0)</span></div>
 
 ## <img src="air_2020.png" height=32> <span>MacBook Air (M1, 2020)</span>
 
