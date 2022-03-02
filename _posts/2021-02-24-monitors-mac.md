@@ -134,6 +134,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) (4k @ 120Hz)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB283K KVbmiipruzx (4k @ 144Hz)</span></div>
+
 ## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Max, 14-inch, 2021)</span>
 
 <div class="row"><img src="works.png" height=64> <span>Gigabyte M28U (4k @ 144Hz)</span></div>
