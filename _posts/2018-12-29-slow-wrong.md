@@ -15,9 +15,9 @@ I’ve been doing some [Advent of Code](https://adventofcode.com/2018) programmi
 
 One thing it taught me is that there are two types of solutions you end up with: ones that can calculate the answer in a couple of milliseconds and the ones that would take years to finish. If you end up with the second type, you’re doing it wrong. There’s no point in waiting, although _technically_ it might do the right thing too.
 
-Another interesting observation is that it makes no difference what hardware you use to run it. If the solution is fast, it’ll be fast on a notebook as well as on a beefed-up workstation-class desktop. Sure, it might be twice or thrice slower, but it’ll be a difference between 10ms and 30ms. You still get your answer, so it doesn’t really matter.
+Another interesting observation is that it makes no difference what hardware you use to run it. If the solution is fast, it’ll be fast on a laptop as well as on a beefed-up workstation-class desktop. Sure, it might be twice or thrice slower, but it’ll be a difference between 10ms and 30ms. You still get your answer, so it doesn’t really matter.
 
-If it’s slow, on the other hand, then you can throw at it any amount of computing power and it still won’t be enough. It might reduce the time from three years on a notebook to one year on a most powerful computer I can possibly build. So what? It’s still too long.
+If it’s slow, on the other hand, then you can throw at it any amount of computing power and it still won’t be enough. It might reduce the time from three years on a laptop to one year on a most powerful computer I can possibly build. So what? It’s still too long.
 
 Now let’s get to software. It’s easy to call solutions of Advent Of Code wrong when they are slow since we know the fast solution has to exist. With real-world problems, nobody guarantees that.
 
