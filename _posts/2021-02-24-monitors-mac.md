@@ -30,8 +30,6 @@ Send a PR! Read the contribution guidelines at the end.
 
 This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <span style="padding: 2px 6px; border-radius: 4px; background-color: #4dcf01;">Green</span> icon means this Mac can work with that display at 4k _and_ 120Hz. <span style="padding: 2px 6px; border-radius: 4px; background-color: #ff5835">Red</span> icon means it works, but in compromised settings (60 Hz, 1440p resolution).
 
-# The list
-
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
@@ -147,6 +145,11 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 ## <img src="mbp_16_2021.png" height=32> <span>MacBook Pro (M1 Max, 16-inch, 2021)</span>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
+
+## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Ultra, 2022)</span>
+
+<div class="row"><img src="works.png" height=64> <span>2 ×
+Gigabyte M32U (4k @ 144Hz)</span></div>
 
 # How to contribute?
 
