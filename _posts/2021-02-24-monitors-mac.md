@@ -86,6 +86,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Gigabyte M32U</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB283K KV</span></div>
+
 ## <img src="imac_2020.png" height=44> <span>iMac (2020) w/ Radeon Pro 5700 XT</span>
 
 <div class="row"><img src="works.png" height=64> <span>ASUS ProArt Display PA32UCG</span></div>
