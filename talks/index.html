@@ -16,6 +16,7 @@ class: page_wide
 
 <style>
     .talk { font-size: 18px; line-height: 25px; }
+    .talk h2 { line-height: 1.5em; }
     .popup { color: inherit; }
     .popup:hover { color: #000; }
     .popup::after { content: " "; margin: 0 0 0 5px; display: inline-block; width: 15px; height: 13px; background-image: url('data:image/svg+xml;utf8,<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="%2300000030" fill="none" stroke-width="1.5"><polyline points="11 9 11 12 1 12 1 4 4 4"></polyline><rect x="4" y="1" width="10" height="8"></rect></g></svg>'); }
@@ -25,7 +26,7 @@ class: page_wide
     iframe { display: block; border-radius: 4px; }
     .talk-view-stub { width: 100%; height: 315px; padding: 145px 20px 0 20px; background: #00000015; border-radius: 4px; text-align: center; }
 
-    .podcast { height: 315px; background-size: cover; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 10px; }
+    .podcast { height: 315px; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 10px; }
     .podcast audio { margin: 0 5px 5px 5px; width: calc(100% - 10px); border-radius: 5px; } 
 
     .talk-view, .talk-details { display: table-cell; vertical-align: top; }
@@ -43,6 +44,12 @@ class: page_wide
     .talk-version_active > .talk-version-lang,
     .talk-version:hover > .talk-version-lang { background: #00000030; }
     .talk-version-preview { display: none; }
+
+    @media (max-width: 1000px) {
+        .talk { width: 100vw; margin-left: 0; margin-right: 0; }
+        .talk-view { width: 60vw; }
+        .talk-details { width: 40vw; }
+    }
 </style>
 
 <script>
