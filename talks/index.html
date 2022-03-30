@@ -25,6 +25,9 @@ class: page_wide
     iframe { display: block; border-radius: 4px; }
     .talk-view-stub { width: 100%; height: 315px; padding: 145px 20px 0 20px; background: #00000015; border-radius: 4px; text-align: center; }
 
+    .podcast { height: 315px; background-size: cover; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 10px; }
+    .podcast audio { margin: 0 5px 5px 5px; width: calc(100% - 10px); border-radius: 5px; } 
+
     .talk-view, .talk-details { display: table-cell; vertical-align: top; }
     .talk-details { padding-left: 20px; }
     audio { width: 100%; }
@@ -99,9 +102,7 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="{{ talk.lang }}" data-date="{{ talk.date | date: '%B %Y' }}">
         <div class="talk-view">
-            <div class="talk-view">
-                {{ talk.embed }}
-            </div>
+            {{ talk.embed }}
         </div>
         <div class="talk-details">
             <h2><a target="_blank" href="{{ talk.url }}">{{ talk.title }}</a></h2>
@@ -153,13 +154,12 @@ class: page_wide
     <script type="talk-version" data-active data-lang="EN" data-date="October 2018">
         <div class="talk-view">
             <div class="talk-view">
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/516023691&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <div class="podcast" style="background-image: url(./covers/Defn.png"><audio controls><source src="https://s.tonsky.me/tonsky.me/2018-10%20Defn.mp3" type="audio/mpeg"></audio></div>
             </div>
         </div>
         <div class="talk-details">
-            <h2>Defn podcast, episode 40</h2>
+            <h2><a href="https://soundcloud.com/defn-771544745/40-nikita-prokopov-aka-tonsky" target="_blank">Defn podcast, episode 40</a></h2>
             <p class="talk-description">Software disenchantment, DataScript, Rum, FiraCode and Flutter</p>
-            <p class="talk-extras"><a class="popup" href="https://soundcloud.com/defn-771544745/40-nikita-prokopov-aka-tonsky" target="_blank">Links</a></p>
     </script>
 </div>
 
@@ -168,9 +168,9 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="EN" data-date="October 2018">
         <div class="talk-view">
-            <div class="talk-view-stub">
+            <div class="podcast" style="background-image: url(./covers/The%20REPL.png">
             <audio controls>
-                <source src="https://tracking.feedpress.it/link/redirect.mp3/19896/https://media.therepl.net/therepl/therepl-005.mp3" type="audio/mpeg">
+                <source src="https://s.tonsky.me/tonsky.me/2018-10%20The%20REPL.mp3" type="audio/mpeg">
             </audio>
             </div>
         </div>
@@ -185,7 +185,7 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="August 2018">
         <div class="talk-view">
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/488485098&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <div class="podcast" style="background-image: url(./covers/Run%20Loop.png"><audio controls><source src="https://s.tonsky.me/tonsky.me/2018-08%20Run%20Loop.mp3" type="audio/mpeg"></audio></div>
         </div>
         <div class="talk-details">
             <h2>Подкаст Run Loop, эпизод 4</h2>
@@ -198,13 +198,13 @@ class: page_wide
     <script type="talk-version" data-active data-lang="RU" data-date="May 2018">
         <div class="talk-view">
             <div class="talk-view">
-                <iframe frameborder="0" style="border:none;width:100%;height:180px;" width="100%" height="180" src="https://music.yandex.ru/iframe/#track/70282010/6842995">Listen to <a href='https://music.yandex.ru/album/6842995/track/70282010?lang=en'>#55 – Никита Прокопов про ClojureScript, ведение блогов и создание собственного шрифта</a> on Yandex Music</iframe>
+                <div class="podcast" style="background-image: url(./covers/Frontend%20Weekend.png"><audio controls><source src="https://s.tonsky.me/tonsky.me/2018-05%20Frontend%20Weekend.mp3" type="audio/mpeg"></audio></div>
             </div>
         </div>
         <div class="talk-details">
-            <h2>Подкаст Frontend Weekend, эпизод 55</h2>
+            <h2><a href="https://music.yandex.ru/album/6842995/track/70282010" target="_blank">Подкаст Frontend Weekend, эпизод 55</a></h2>
             <p class="talk-description">С какой целью было создано столько блогов и шрифт Fira Code? Почему ЖЖ до сих пор живой? Почему предпочитаю фронтенд и HolyJS в частности?</p>
-            <p class="talk-extras"><a class="popup" href="https://soundcloud.com/frontend-weekend/fw-55" target="_blank">Ссылки</a></p>
+            
     </script>
 </div>
 
@@ -212,9 +212,9 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="May 2018">
         <div class="talk-view">
-            <div class="talk-view-stub">
+            <div class="podcast" style="background-image: url(./covers/DevZen.png">
             <audio controls>
-                <source src="https://devzen.ru/download/2018/devzen-0193-2018-05-27-7147dd8cc85ec45c.mp3" type="audio/mpeg">
+                <source src="https://s.tonsky.me/tonsky.me/2018-05%20DevZen.mp3" type="audio/mpeg">
             </audio>
             </div>
         </div>
@@ -488,9 +488,9 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="July 2016">
         <div class="talk-view">
-            <div class="talk-view-stub">
+            <div class="podcast" style="background-image: url(./covers/DevZen.png">
             <audio controls>
-                <source src="https://devzen.ru/download/2016/devzen-0099-2016-07-02-7b99c042b13561a7.mp3" type="audio/mpeg">
+                <source src="https://s.tonsky.me/tonsky.me/2016-07%20DevZen.mp3" type="audio/mpeg">
             </audio>
             </div>
         </div>
@@ -546,9 +546,9 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="October 2015">
         <div class="talk-view">
-            <div class="talk-view-stub">
+            <div class="podcast" style="background-image: url(./covers/Разбор%20полетов.png">
                 <audio controls>
-                    <source src="http://traffic.libsyn.com/razborpoletov/razbor_92.mp3" type="audio/mpeg">
+                    <source src="https://s.tonsky.me/tonsky.me/2015-10%20Разбор%20полетов.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </div>
@@ -655,9 +655,9 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="October 2014">
         <div class="talk-view">
-            <div class="talk-view-stub">
+            <div class="podcast" style="background-image: url(./covers/DevZen.png">
             <audio controls>
-                <source src="https://devzen.ru/download/2014/devzen-0012-2014-10-10-69edbed02b9a361c.mp3" type="audio/mpeg">
+                <source src="https://s.tonsky.me/tonsky.me/2014-10%20DevZen.mp3" type="audio/mpeg">
             </audio>
             </div>
         </div>
@@ -673,12 +673,12 @@ class: page_wide
     <div class="talk-inner"></div>
     <script type="talk-version" data-active data-lang="RU" data-date="October 2014">
         <div class="talk-view">
-            <div class="talk-view-stub" style="padding-top: 125px;">
+            <div class="podcast" style="background-image: url(./covers/EaxCast.png">
                 <audio controls>
-                    <source src="http://eaxcast.podfm.ru/_eaxcast/12/file/podfm_eaxcast__eaxcast_205.mp3" type="audio/mpeg">
+                    <source src="https://s.tonsky.me/tonsky.me/2014-10%20EaxCast.s02e05.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls>
-                    <source src="http://eaxcast.podfm.ru/_eaxcast/13/file/podfm_eaxcast__eaxcast_206.mp3" type="audio/mpeg">
+                    <source src="https://s.tonsky.me/tonsky.me/2014-10%20EaxCast.s02e06.mp3" type="audio/mpeg">
                 </audio>
             </div>
         </div>
