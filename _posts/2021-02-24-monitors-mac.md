@@ -53,6 +53,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B (1440p @ 144Hz)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Samsung Curved UltraWide C43J89</span></div>
+
 ## <img src="mp_2019.png" height=32> <span>Mac Pro (2019) w/ Radeon Pro 580X</span>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator X27</span></div>
