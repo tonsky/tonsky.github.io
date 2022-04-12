@@ -52,6 +52,17 @@ Another reason why I don’t like queries is performance. Index scans are the sa
 
 Performance for simple queries could be solved, I think. But the general viability of queries (despite their attractivenes) is under question.
 
+## Recursive walking
+
+What saddens me the most in DataScript/Datomic is that rules are often used to do simple recursive walking. Like, go all the way up or all the way down the tree through these relations until a condition is met. Some examples:
+
+- Go all the way up through `:entity/parent` until `(= (:entity/type %) :document)`
+- Do breadth-first search recusrive through `:entity/children` and collect `:entity/text`
+
+You don’t really need a Datalog semantic there: building sets, joining and all that. But people still use it because it’s the only thing they got.
+
+So maybe a collection of convenient recursive walk functions could do instead?
+
 ## Ordering
 
 We need a good built-in way to order stuff. Not sure how API would look like, but we need that. Order in UI is very important.
@@ -61,6 +72,22 @@ We need a good built-in way to order stuff. Not sure how API would look like, bu
 Re-rendering your whole application is great (and it worked very well for us). But I always want to be more efficient. Since we won’t have queries, how about subscribing to individual entity updates?
 
 I have a feeling this could be done even today, without modifying DataScript even, but designing it from the beginning might work out even better.
+
+The simplest API I’m thinking is like
+
+```
+(d/subscribe conn e a v callback)
+```
+
+where any of `e`, `a`, `v` could be `nil`. E.g.
+
+```
+(d/subscribe conn 100 nil nil callback)
+```
+
+means you want any changes in any attributes for entity 100.
+
+This API is simple, could be implemented efficiently, could get you a long way (hopefully).
 
 ## Persistence
 
