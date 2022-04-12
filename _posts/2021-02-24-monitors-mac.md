@@ -120,6 +120,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>LG CX 4K OLED TV (55-inch, 2020)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
 ## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (M1, 2020)</span>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
