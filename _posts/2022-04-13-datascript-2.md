@@ -3,7 +3,6 @@ layout: post
 title: "Ideas for DataScript 2"
 category: blog
 summary: "Things that came to mind while working on DataScript 1"
-draft: true
 ---
 
 No, I am not working on second version. This is just a list of ideas based on 8 years developing DataScript and 3 years building web-applications with it full-time.
