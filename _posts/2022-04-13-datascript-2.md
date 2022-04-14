@@ -62,9 +62,19 @@ You don’t really need a Datalog semantic there: building sets, joining and all
 
 So maybe a collection of convenient recursive walk functions could do instead?
 
+Suggestions:
+
+- Circular reference attribute grammars by [Brandon Bloom](https://twitter.com/BrandonBloom/status/1514294816095449088)
+- [Pathom 3’s smart maps](https://pathom3.wsscode.com/docs/smart-maps/) by [Kenny Williams](https://twitter.com/kennyjwilli/status/1514408433037893635)
+
 ## Ordering
 
 We need a good built-in way to order stuff. Not sure how API would look like, but we need that. Order in UI is very important.
+
+Suggestions:
+
+- 4-tuples to support an additional indexed `order` value by [@denik](https://twitter.com/denik/status/1514278505814577154)
+- [Fractional indexing](https://observablehq.com/@dgreensp/implementing-fractional-indexing) by [@ccorcos](https://twitter.com/ccorcos/status/1514319234829991937)
 
 ## Reactive updates
 
@@ -97,6 +107,10 @@ As experience shows, even in browser DataScript databases could grow quite large
 - Rebuild indexes once in a while
 
 Would be cool to have file system / SQLite / IndexedDB storages for starters.
+
+Suggestions:
+
+- LSM trees by [Tweets McSjørup](https://twitter.com/zorendk/status/1514306839625801731)
 
 ## Async API
 
