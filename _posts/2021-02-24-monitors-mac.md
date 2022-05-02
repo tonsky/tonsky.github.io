@@ -158,6 +158,10 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
 
+## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Max, 2022)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV282K KVbmiipruzx) (4k @ 144Hz)</span></div>
+
 ## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Ultra, 2022)</span>
 
 <div class="row"><img src="works.png" height=64> <span>2 ×
