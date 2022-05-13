@@ -207,4 +207,4 @@ During my development of Clojure Sublimed, I was deciding between using nREPL or
 
 Because of that, I would love to see a Clojure Network Eval API that could be used to build editor integrations with minimal modifications and interoperable with all existing Clojure servers: JVM, CLJS, Babashka, nbbjs etc.
 
-My thoughts here are provided just as a starting point/idea dump, I would be happy to move the discussion/join it elsewhere!
+This is my starting point/idea dump. Join the discussion at [nREPL forum](https://github.com/nrepl/nrepl/discussions/275).
