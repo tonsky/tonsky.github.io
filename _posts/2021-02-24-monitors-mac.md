@@ -68,6 +68,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021)</span></div>
 
+<div class="row"><img src="doesnt_work.png" height=64> <span>Samsung G70A 28" 4K 144 Hz</span></div>
+
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5500M</span>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
