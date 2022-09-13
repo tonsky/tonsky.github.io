@@ -178,6 +178,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Asus ROG Swift PG32UQ (4k @ 144Hz)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Japannext GX28 (4k @ 144Hz)</span></div>
+
 ## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Ultra, 2022)</span>
 
 <div class="row"><img src="works.png" height=64> <span>2 ×
