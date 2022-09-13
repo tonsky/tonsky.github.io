@@ -66,7 +66,7 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021)</span></div>
+<div class="row"><img src="works.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021) with <a href="https://en.j5create.com/products/jcc157">JCC157 Cable</a></span></div>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Samsung G70A 28" 4K 144 Hz</span></div>
 
