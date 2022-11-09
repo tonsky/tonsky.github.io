@@ -132,6 +132,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Dell G3223Q</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Samsung G70A 28" (4K @ 144 Hz)</span></div>
+
 ## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (M1, 2020)</span>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
@@ -153,6 +155,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 ## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Max, 14-inch, 2021)</span>
 
 <div class="row"><img src="works.png" height=64> <span>Gigabyte M28U (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Samsung G70A 28" (4K @ 144 Hz)</span></div>
 
 ## <img src="mbp_16_2021.png" height=32> <span>MacBook Pro (M1 Pro, 16-inch, 2021)</span>
 
