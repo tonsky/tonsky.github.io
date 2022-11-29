@@ -1,4 +1,12 @@
 - lang:    EN
+  date:    2022-10-29 00:00:00 +0000
+  url:     https://www.youtube.com/watch?v=cM5e_tJqbT8
+  title:   'Clojure + UI = ❤️'
+  place:   Dutch Clojure Days, Amsterdam
+  content: 'Introducing Humble UI, a desktop UI framework for Clojure'
+  embed:   '<iframe width="560" height="315" src="https://www.youtube.com/embed/cM5e_tJqbT8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+
+- lang:    EN
   date:    2022-03-30 00:00:00 +0000
   url:     https://soundcloud.com/clojurestream/sublimed-with-nikita-prokopov
   title:   'ClojureStream — Clojure Sublimed'

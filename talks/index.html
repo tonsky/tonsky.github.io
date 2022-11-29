@@ -75,7 +75,7 @@ class: page_wide
                  +  ">"
                  +    "<span class='talk-version-lang'>" + lang + "</span> "
                  +    date
-                 +    (place === null ? "" : " × " + place)
+                 +    ((place === null || place === "") ? "" : " × " + place)
                  +  "</div>";
         }
         talk.querySelector(".talk-inner").innerHTML = html + "</div>";
@@ -107,7 +107,7 @@ class: page_wide
 {% for talk in talks %}
 <div class="talk talk_hidden">
     <div class="talk-inner"></div>
-    <script type="talk-version" data-active data-lang="{{ talk.lang }}" data-date="{{ talk.date | date: '%B %Y' }}">
+    <script type="talk-version" data-active data-lang="{{ talk.lang }}" data-date="{{ talk.date | date: '%B %Y' }}" data-place="{{ talk.place }}">
         <div class="talk-view">
             {{ talk.embed }}
         </div>
