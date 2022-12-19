@@ -1,3 +1,11 @@
+- lang:    RU
+  date:    2022-12-19 00:00:00 +0000
+  url:     https://www.youtube.com/watch?v=6B92JkMWajw
+  title:   'Как мы попали в IT'
+  place:   Разрабы
+  content: 'Как влиять на технологии и делать значимый опенсорс'
+  embed:   '<iframe width="560" height="315" src="https://www.youtube.com/embed/6B92JkMWajw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
+
 - lang:    EN
   date:    2022-10-29 00:00:00 +0000
   url:     https://www.youtube.com/watch?v=cM5e_tJqbT8
@@ -9,7 +17,8 @@
 - lang:    EN
   date:    2022-03-30 00:00:00 +0000
   url:     https://soundcloud.com/clojurestream/sublimed-with-nikita-prokopov
-  title:   'ClojureStream — Clojure Sublimed'
+  title:   'Clojure Sublimed'
+  place:   ClojureStream
   content: 'Sublime Text setup for Clojure development'
   cover:   ClojureStream.png
   embed:   '<div class="podcast" style="background-image: url(./covers/ClojureStream.png)"><audio controls><source src="https://s.tonsky.me/tonsky.me/2022-03%20ClojureStream%20Clojure%20Sublimed.mp3" type="audio/mpeg"></audio></div>'
@@ -18,6 +27,7 @@
   date:    2021-11-17 00:00:00 +0000
   url:     https://www.youtube.com/watch?v=1qDyWccmcuY
   title:   'Мы обречены'
+  place:   'Мы обречены'
   content: 'Разочарование в софте, разочарование в Дюне Вильнева'
   embed:   '<iframe width="560" height="315" src="https://www.youtube.com/embed/1qDyWccmcuY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
 
