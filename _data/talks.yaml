@@ -1,4 +1,13 @@
 - lang:    RU
+  date:    2022-12-23 00:00:00 +0000
+  url:     https://soundcloud.com/javaswag/e40
+  title:   'Java Swag'
+  place:   Java Swag
+  content: 'Разочарование в Java, простота Clojure и опенсорс проекты'
+  cover:   'Java Swag.png'
+  embed:   '<div class="podcast" style="background-image: url(./covers/Java%20Swag.png)"><audio controls><source src="https://s.tonsky.me/tonsky.me/2022-12%20Java%20Swag.mp3" type="audio/mpeg"></audio></div>'
+
+- lang:    RU
   date:    2022-12-19 00:00:00 +0000
   url:     https://www.youtube.com/watch?v=6B92JkMWajw
   title:   'Как мы попали в IT'
