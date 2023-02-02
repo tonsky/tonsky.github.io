@@ -178,6 +178,8 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="works.png" height=64> <span>Asus ROG Swift PG32UQ (4k @ 144Hz)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>Samsung Odyssey Neo G7 S32BG75 (4k @ 120Hz)</span></div>
+
 ## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Max, 2022)</span>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV282K KVbmiipruzx) (4k @ 144Hz)</span></div>
