@@ -39,6 +39,12 @@ This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <sp
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
+## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (Retina, 13-inch, 2018)</span>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG 32GQ950 UltraGear</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG TV 65NANO867NA</span></div>
+
 ## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (13-inch, 2019)</span>
 
 <div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
