@@ -153,6 +153,8 @@ Which basically means: if you see opening bracket, consume forms and whitespace 
 
 Well, what if there’s none? That means it wasn’t a `'brackets'` form in the first place! Which is technically correct, but also means that we have to mark opening bracket as error and then _re-parse everything inside again_. That’s your quadratic behavior right here!
 
+<figure><img src="./algorithm.webp" style="max-width: 540px"></figure>
+
 A simple change got rid of this problem:
 
 ```
@@ -172,6 +174,84 @@ I also now understand why Lisps were so popular back in the day: they are really
 Anyways, if you need Clojure parser in Python, take a peek at [my implementation](https://github.com/tonsky/Clojure-Sublimed/blob/master/cs_parser.py) — maybe it’ll help you out!
 
 # Protocol
+
+Let’s move to the second part of our architecture: communication channel.
+
+How does server talks to a client? Die-hard Clojure fans would answer immediately: EDN! But it’s not that simple.
+
+Yes, EDN is the simplest thing for Clojure users. But don’t forget that on the other side there’s an arbitrary platform and, despite Rich’s best efforts, EDN is not as widespread as we’d like.
+
+## Bencode
+
+nREPL solves this problem beautifully: it uses bencode. It’s a simple binary encoding developed for BitTorrent.
+
+And when I say simple, I mean _very_ simple. Yes, simpler than JSON (a lot). This is its entire grammar:
+
+```
+number = '0' / '-'? [1-9][0-9]*
+int    = 'i' number 'e'
+list   = 'l' value* 'e'
+dict   = 'd' (value value)* 'e'
+string = length ':' bytes
+length = '0' / [1-9][0-9]*
+value  = int / list / dict / string
+```
+
+And here are some actual messages when communicating with nREPL server:
+
+<figure><img src="./nrepl.png"></figure>
+ 
+Bencode is not supported out of the box by neither Python nor Clojure, but implementation easily fits in 200 LoC.
+
+## Socket REPL
+
+Unfortunately, Clojure doesn’t ship with nREPL. Instead, it ships with human-oriented text-based interactive REPL, which I, during the stubborness of my character, also wanted to support.
+
+Actually, Clojure ships with two different REPLs: `clojure.core.server/repl` and `clojure.core.server/io-prepl`. Both are very basic and are not enough for serious everyday use.
+
+Lucky for us, they are REPLs—as in, full power of Clojure is at our fingertips! We can make them evaluate a function that intercepts stdin/stdout and actually implement REPL protocol that we actually want.
+
+First, we send in a lot of Clojure code (unformatted, because machine doesn’t care):
+
+<figure><img src="./socket_snd.webp"></figure>
+
+Then, we receive this:
+
+<figure><img src="./socket_rcv.png"></figure>
+
+Which basically means “Yes, I’ve heard you”.
+
+This is all happening inside basic Clojure Socket Server REPL. It looks messy beacuse it was designed for human consumption (eye-balling), and we don’t even try to interpret it. We just cross our fingers and hope everything we sent works.
+
+At this point, we’re ready to “upgrade” our REPL. This is how we do it:
+
+<figure><img src="./socket_started.png"></figure>
+
+`(repl)` is a function we defined in our initial payload. `{:tag :started}` is the first message of our own protocol. I really, really, really hope here that it will not be messed by other output (printing in Socket Server is not synchronized, and everyone who worked with Clojure REPL in terminal knows how often it messes up your output).
+
+After client sees `{:tag :started}` somewhere in the socket, it considers upgrade to be finished and now works in our own protocol. What is it based on? EDN.
+
+## EDN
+
+Actually, any format would do. I considered JSON (Python has it in stdlib, but not Clojure), bencode (again, I’d have to write Clojure parser and blow up inintal payload a little).
+
+I even considered asymmetrical protocols: client sends EDN (easy to parse in Clojure), server sends JSON (easy to parse in Python). Not elegant, but, you know, gets the job done. In all these cases, messages are simple enough to be composed with string concatenation, and parsers are built-in and thus stdlib authors’ problem.
+
+Why EDN then? Mainly because I already had EDN parser (well, Clojure, but potato-potato notation). I don’t really support every feature or edge-case of EDN, just enough to parse a dictionary with some keywords and strings in it.
+
+I also don’t support streaming parsing (read from socket until form ends), so I have to rely on newlines to find message boundaries. If only TCP was message-oriented — one can dream!
+
+In the end, this is what my upgraded Socket Server REPL looks like on the wire:
+
+<figure><img src="./socket_sublimed.png"></figure>
+
+Yes, it looks like nREPL over EDN.
+
+No, it’s not exactly nREPL, it’s subtly different, so there can be more chaos.
+
+Did I invent another wheel? Maybe. But it’s a good wheel and it suits my needs well.
+
+Also, the beauty of it is that it’s zero-dependency: you only need Clojure and nothing more. Everything I need I bring with me. 
 
 # Server
 
