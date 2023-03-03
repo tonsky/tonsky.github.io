@@ -255,7 +255,86 @@ Also, the beauty of it is that it’s zero-dependency: you only need Clojure and
 
 # Server
 
+Finally, third and final part of our achitecture: server. When I only started learning about Clojure and Lisps, I imagined that REPL is literally that:
+
+```
+(loop []
+  (->
+    (read)
+    (eval)
+    (println))
+  (recur))
+```
+
+Because of that ignorance, it was hard to me to understand why there are different REPL implementations and why do you need to “implement” REPL at all.
+
+Let’s go from simplest case to more harder ones.
+
+## Naive REPL
+
+Funny enough, the function I showed you above works:
+
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./repl_naive.mp4" type="video/mp4"></video></figure>
+
+It’s very fragile, though: it’ll die on the first exception. It also doesn’t manage your input/output streams, doesn’t isolate thread-local variables, doesn’t print your namespace, doesn’t provide interrupt, doesn’t print exceptions, doesn’t assign source code position, doesn’t create \*1, \*2, \*3 and \*e for you, and all these nice things which more sophisticated REPLs provide.
+
+## clojure.main/repl
+
+This is the REPL you get when you run `clj` or `clojure` command-line utility.
+
+It works essentially the same, but does a little bit of extra work for you:
+
+First and most notably, it prints a command prompt that displays current namespace:
+
+<figure><img src="./repl_main_prompt.png"></figure>
+
+Which you can actually customize to your liking:
+
+<figure><img src="./repl_main_custom_prompt.png"></figure>
+
+Then, it catches and prints exceptions, so your REPL doesn’t die is you make a mistake:
+
+<figure><img src="./repl_main_exception.png"></figure>
+
+It also stores last calculated values in special `*1`..`*3` dynamic vars and last exception in `*e`. These variables do not exist outside of REPL:
+
+<figure><img src="./repl_main_dynamic.png"></figure>
+
+Another convenience that default REPL does is requiring some stuff from `clojure.repl` and `clojure.pprint`:
+
+<figure><img src="./repl_main_requires.png"></figure>
+
+Were you wondering where `(doc)` in REPL comes from? Now you know.
+
+Finally, it isolates vars like `*ns*` or `*warn-on-reflection*` so that when you `set!` them in your REPL session it doesn’t alter their root bindings.
+
+Quite a bit of nuance, huh? With all that, `clojure.main/repl` is still considered very basic. There’re more stuff you can do!
+
+## clojure.core.server/repl
+
+Basically the same as `main/repl`, but for the access over the network.
+
+The only difference is output. If your entire program IS the REPL, you don’t have to do anything special with it.
+
+But if you are connecting dynamically to a working program, things get trickier. Where should `(println "Hello")` print? 
+
+If it prints to stdout of the process, you won’t see it in your REPL. It’ll go to wherever server process redirects its standard output.
+
+So what Server REPL does it it redefines `*in*`/`*out*`/`*err*` to socket streams instead of process’s stdout and sends to you what _you_ print over the network. Everybody gets their own stdout!
+
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./repl_server_stdout.mp4" type="video/mp4"></video></figure>
+
+Really tricky stuff to figure out, but essential to understand if you consider yourself an advanced Clojure REPL user.
+
+The rest is the same. Server REPL literally calls into `main/repl` after rebinding `*in*`/`*out*`/`*err*`.
+
+## clojure.core.server/prepl
+
+
+
 ## Socket Server
+
+
 
 # You were going to ask anyway
 
