@@ -213,7 +213,7 @@ Lucky for us, they are REPLs—as in, full power of Clojure is at our fingertips
 
 First, we send in a lot of Clojure code (unformatted, because machine doesn’t care):
 
-<figure><img src="./socket_snd.webp"></figure>
+<figure><img src="./socket_snd.png"></figure>
 
 Then, we receive this:
 
@@ -243,7 +243,7 @@ I also don’t support streaming parsing (read from socket until form ends), so 
 
 In the end, this is what my upgraded Socket Server REPL looks like on the wire:
 
-<figure><img src="./socket_sublimed.png"></figure>
+<figure><img src="./socket_sublime.png"></figure>
 
 Yes, it looks like nREPL over EDN.
 
