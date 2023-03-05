@@ -6,25 +6,27 @@ summary: "Writing Clojure REPL plugin for Sublime Text"
 draft: true
 ---
 
-It’s weird to announce, but I wrote Clojure plugin for Sublime Text. Again.
+It’s a strange thing to announce, but I wrote [Clojure plugin for Sublime Text](https://github.com/tonsky/Clojure-Sublimed). [Again](https://tonsky.me/blog/sublime-clojure/).
 
 I mean, previous version worked fine, but it had a few flaws:
 
 - REPL depended on syntax highlighting (yikes!)
-- Everything was in a single file
-- Hard to add REPLs
+- Whole implementation was in a single file
+- It was hard to add REPLs
 
 So, let’s do it again, almost from scratch, and right this time!
 
 # What is REPL?
 
-In a nutshell, REPL consists of two parts: client and server. Here’s an architectural diagram for you:
+In a nutshell, REPL consists of three parts: client, server and communication protocol between them.
+
+Here’s an architectural diagram for you:
 
 <figure><img src="./architecture.png"></figure>
 
 # REPL Client
 
-As you can see from the diagram, REPL clients live in a variety of environment, dictated by their host: Java for Idea, Python for Sublime Text, JS for VS Code etc. In my case, it was Sublime Text, so the environment happened to be Python 3.8.
+As you can see from the diagram, REPL clients live in a variety of environments dictated by their host: Java for Idea, Python for Sublime Text, JS for VS Code etc. In my case, it was Sublime Text, so the environment I was stuck with happened to be Python 3.8.
 
 Of course, writing client-server apps is not hard in any language. Unfortunately for us, REPL client needs to be able to read, speak and actually understand Clojure for a few features:
 
@@ -36,7 +38,7 @@ The level of understanding is non-trivial: there could be multiple namespace dec
 
 <figure><img src="./ns_switching.png"></figure>
 
-The declaration itself could be complex, too, containg comments and/or meta tokens before the actual name:
+The declaration itself could be complex, too, containing comments and/or meta tokens before the actual name:
 
 <figure><img src="./complex_ns.png"></figure>
 
@@ -44,11 +46,13 @@ The declaration itself could be complex, too, containg comments and/or meta toke
 
 I want shortcut that evals “topmost form” around my cursor. To do so, I need to know where those boundaries are. 
 
-Notice how I don’t explicitly “select” what I want to evaluate, instead, REPL client finds form boundary for me:
+Notice how I don’t explicitly “select” what I want to evaluate. Instead, REPL client finds form boundary for me:
 
 <figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./form_boundaries.mp4" type="video/mp4"></video></figure>
 
-This is tricky, too. For the very least, you can count parens, but even then you’d have to aware of strings. To make things harder, Clojure also has reader tags `#inst "2023-02-24"`, metadata `^bytes b` and different weird symbols like `@` or `#'` that are not wrapped in parens but are still considered a single form.
+This is tricky, too. For the very least, you can count parens, but even then you’d have to be aware of strings.
+
+To make things harder, Clojure also has reader tags `#inst "2023-02-24"`, metadata `^bytes b` and different weird symbols like `@` or `#'` that are not wrapped in parens but are still considered to be part of the form.
 
 Bonus points for treating technically second-level forms inside `(comment)` as top-level.
 
@@ -56,21 +60,21 @@ All of this requires really deep understanding of Clojure syntax.
 
 ## Problem 3: Indentation and pretty-printing
 
-Clojure Sublimed originally started when I wasn’t happy what happens when I press “Enter” in Clojure file. Cursor would go to the wrong place, and I (subjectively) was spending too much time correcting it, so I decided to fix that once and for all.
+Clojure Sublimed originally started when I wasn’t happy with what happens when I press “Enter” in Clojure file. Cursor would go to the wrong place, and I (subjectively) was spending too much time correcting it, so I decided to fix that once and for all.
 
 <figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./indent.mp4" type="video/mp4"></video></figure>
 
 Indentation is not really a REPL concern, but it’s another part of Clojure Sublimed that requires model of Clojure code.
 
-Indentation logic re-applied to the whole file is formatting, so I get that one basically for free (both follow [Better Clojure formatting](https://tonsky.me/blog/clojurefmt/) rules).
+Indentation logic re-applied to the whole file is formatting, so I got this one for free (both follow [Better Clojure formatting](https://tonsky.me/blog/clojurefmt/) rules).
 
 <figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./format.mp4" type="video/mp4"></video></figure>
 
-Finally, there’s a question of pretty-printing, which is basically indentation + deciding where to put line breaks. Normally this could be done Clojure-side, but doing it on a client have clear advantages:
+Finally, there’s a question of pretty-printing, which is basically indentation + deciding where to put line breaks. Normally this would be done on Clojure side, but doing it on a client have clear advantages:
 
-- you have to send less data when transferring evaluation results (no need to sends spaces at the beginning of the line)
-- it works for every Clojure REPL the same
-- it can adjust for your current editor configuration instead of some arbitrary server-side number like 80 characters
+- you have to send less data when transferring evaluation results (no need to sends spaces at the beginning of the line),
+- it works for every Clojure REPL the same,
+- it can adjust for your current editor configuration instead of some arbitrary server-side number like 80 characters.
 
 <figure>
     <img src="./pretty_print.png">
@@ -83,11 +87,11 @@ Another upside is that I can adjust pretty-printing rules to my liking, of cours
 
 So, client lives inside your code editor, and needs to understand Clojure _before_ it starts communicating with it. Meaning, without Clojure runtime. Meaning, we had to parse Clojure in Python!
 
-Things get harder because support for libraries, especially native ones, is not great in Sublime Text. Meaning, pure python implementation!
+This is where things get hard because support for libraries, especially native ones, is not great in Sublime Text. Meaning, pure Python implementation!
 
 I was put off by that task for a long time because it felt enormous. In the first Clojure Sublimed version, I deduced this information from syntax highlighting (Sublime Text already parses your source code for highlighting, and you can kind of access results of that). But this time I wanted to make things right.
 
-And, in fact, it turned out not to be all that bad! Clojure, as any Lisp, _is_ relatively easy to parse. This is the whole grammar, more or less:
+And, in fact, it turned out not to be all that bad! Clojure, as any Lisp, _is_ relatively easy to parse. This is the entire grammar:
 
 <figure><img src="./grammar.png"></figure>
 
@@ -129,9 +133,11 @@ Having this early on saved me a ton of time and I am 100% happy I made that inve
 
 Parsing valid Clojure code is quite easy. But code in the process of edit is not always correct, even syntactically. That means that our parser has to work around errors somehow!
 
-This surprised me, though:
+So I decided to see how people smarter than me do it and found this:
 
-> In the yacc and bison parser generators, the parser has an ad hoc mechanism to abandon the current statement, discard some parsed phrases and lookahead tokens surrounding the error, and resynchronize the parse at some reliable statement-level delimiter like semicolons or braces.
+> In the yacc and bison parser generators, the parser has an ad hoc mechanism to abandon the current statement, discard some parsed phrases and lookahead tokens surrounding the error, and resynchronize the parse at some reliable statement-level delimiter like semicolons or braces.
+
+So yeah, I guess no beautiful theory on error recovery.
 
 For our purposes, though, it was quite simple: see something that you don’t understand? That must be an error. Most stuff gets consumed as a symbol or a number, though, so these were rare.
 
@@ -139,7 +145,9 @@ We did accept some invalid programs as valid, but that’s okay for our use-case
 
 ## Parser: Accidentally quadratic
 
-One funny thing happened during testing: I noticed that sometimes parser was becoming ultra-slow on moderately-sized files. That means I had quadratic behavior somewhere.
+One funny thing happened during testing: I noticed that sometimes parser was becoming ultra-slow on moderately-sized files. Like, seconds instead of milliseconds. That means I had quadratic behavior somewhere.
+
+<figure><img src="./algorithm.webp" style="max-width: 540px"></figure>
 
 And that was indeed the case. First version of the parser, roughly, was parsing parens/brackets/braces like this:
 
@@ -149,11 +157,10 @@ Seq(Char("["),
     Char("]"))
 ```
 
-Which basically means: if you see opening bracket, consume forms and whitespace inside as long as you can, and in the end there must be a closing bracket.
+Which basically means: if you see an opening bracket, consume forms and whitespace inside as long as you can, and in the end there must be a closing bracket.
 
-Well, what if there’s none? That means it wasn’t a `'brackets'` form in the first place! Which is technically correct, but also means that we have to mark opening bracket as error and then _re-parse everything inside again_. That’s your quadratic behavior right here!
+Well, what if it’s not there? That means it wasn’t a `'brackets'` form in the first place! Which is technically correct, but also means we have to mark opening bracket as error and then _re-parse everything inside it again_. That’s your quadratic behavior right here!
 
-<figure><img src="./algorithm.webp" style="max-width: 540px"></figure>
 
 A simple change got rid of this problem:
 
@@ -167,9 +174,9 @@ Technically, this accepts incorrect programs. In practice, though, it works exac
 
 ## Parser: Conclusion
 
-Writing parser was very fun! So many little details to figure out and get right, but in the end, when everything clicks into its place, it’s so satisfying!
+Writing parser was very fun! So many little details to figure out and get right, but in the end, when everything snaps into place, it’s so satisfying!
 
-I also now understand why Lisps were so popular back in the day: they are really made for ease of implementation. Hacking together the whole parser from scratch in a weekend — can you imagine it for something like C++ or Python?
+I also now understand why Lisps were so popular back in the day: they are really made for ease of implementation. Hacking together an entire parser from scratch in a weekend — can you imagine it for something like C++ or Python?
 
 Anyways, if you need Clojure parser in Python, take a peek at [my implementation](https://github.com/tonsky/Clojure-Sublimed/blob/master/cs_parser.py) — maybe it’ll help you out!
 
@@ -179,13 +186,42 @@ Let’s move to the second part of our architecture: communication channel.
 
 How does server talks to a client? Die-hard Clojure fans would answer immediately: EDN! But it’s not that simple.
 
-Yes, EDN is the simplest thing for Clojure users. But don’t forget that on the other side there’s an arbitrary platform and, despite Rich’s best efforts, EDN is not as widespread as we’d like.
+Yes, EDN is the simplest thing for Clojure users. But what about rest of the world? Don’t forget that on the other side there’s an arbitrary platform and, despite Rich’s best efforts, EDN is not as widespread as we’d like.
+
+## Just send... forms?
+
+This is what `clojure.core.server/repl` does. Basically it’s the same interactive experience as with command-line REPL, but over a socket:
+
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./socket_repl.mp4" type="video/mp4"></video></figure>
+
+Not machine-friendly at all.
+
+## Half-EDN
+
+Type in forms, receive EDN-formatted output. `clojure.core.server/io-prepl` does that:
+
+<figure><img src="./prepl.png"></figure>
+
+Half machine-friendly, and you have to be able to parse EDN.
+
+## JSON + EDN
+
+Following half-EDN example, our protocol doesn’t have to be symmetric, either. If we make ease of implementation our first priority, we can go crazy:
+
+- Client sends EDN, which is easy to parse in Clojure,
+- Server sends JSON, which could be parsed with Python stdlib.
+
+Not elegant, but, you know, gets the job done. In both cases, messages are simple enough to be composed with string concatenation, so we only really care about parsing.
+
+The only problem I have with this solution is that it offends my sense of beauty.
 
 ## Bencode
 
-nREPL solves this problem beautifully: it uses bencode. It’s a simple binary encoding developed for BitTorrent.
+nREPL also had this problem: common denominator for multiple clients in all possible languages. Their answer? Bencode.
 
-And when I say simple, I mean _very_ simple. Yes, simpler than JSON (a lot). This is its entire grammar:
+Bencode is a simple binary encoding developed for BitTorrent. And when I say simple, I mean _very_ simple. Yes, simpler than JSON.
+
+This is the entire Bencode grammar:
 
 ```
 number = '0' / '-'? [1-9][0-9]*
@@ -203,55 +239,43 @@ And here are some actual messages when communicating with nREPL server:
  
 Bencode is not supported out of the box by neither Python nor Clojure, but implementation easily fits in 200 LoC.
 
-## Socket REPL
+Problem? It’s binary. Unfortunately, you can’t run binary protocols on top of Socket Server, only the text ones. So to being able to use bencode you’ll have to start your own server.
 
-Unfortunately, Clojure doesn’t ship with nREPL. Instead, it ships with human-oriented text-based interactive REPL, which I, during the stubborness of my character, also wanted to support.
+Clojure Sublimed uses bencode for connecting to nREPL servers.
 
-Actually, Clojure ships with two different REPLs: `clojure.core.server/repl` and `clojure.core.server/io-prepl`. Both are very basic and are not enough for serious everyday use.
+## MessagePack
 
-Lucky for us, they are REPLs—as in, full power of Clojure is at our fingertips! We can make them evaluate a function that intercepts stdin/stdout and actually implement REPL protocol that we actually want.
+MessagePack is beautiful, exacly as I would’ve designed a compact binary serialization format. Everything is length-prefixed, super-simple to implement and you can support only parts that you actually use.
 
-First, we send in a lot of Clojure code (unformatted, because machine doesn’t care):
+But it’s binary, so can’t be used on top of Socket Server, and I’m not prepared to write my own REPL server yet.
 
-<figure><img src="./socket_snd.png"></figure>
+Consider voting for [this issue](https://clojure.atlassian.net/browse/CLJ-2752) and situation might change! I believe Clojure deserves binary REPLs as much as text-based ones.
 
-Then, we receive this:
+## EDN both ways
 
-<figure><img src="./socket_rcv.png"></figure>
+A lucky coincidence saved me here. Remember first part where I was writing Clojure parser? Guess what? Since EDN is a subset of Clojure, my parser also can parse EDN well enough to understand REPL server responses!
 
-Which basically means “Yes, I’ve heard you”.
-
-This is all happening inside basic Clojure Socket Server REPL. It looks messy beacuse it was designed for human consumption (eye-balling), and we don’t even try to interpret it. We just cross our fingers and hope everything we sent works.
-
-At this point, we’re ready to “upgrade” our REPL. This is how we do it:
-
-<figure><img src="./socket_started.png"></figure>
-
-`(repl)` is a function we defined in our initial payload. `{:tag :started}` is the first message of our own protocol. I really, really, really hope here that it will not be messed by other output (printing in Socket Server is not synchronized, and everyone who worked with Clojure REPL in terminal knows how often it messes up your output).
-
-After client sees `{:tag :started}` somewhere in the socket, it considers upgrade to be finished and now works in our own protocol. What is it based on? EDN.
-
-## EDN
-
-Actually, any format would do. I considered JSON (Python has it in stdlib, but not Clojure), bencode (again, I’d have to write Clojure parser and blow up inintal payload a little).
-
-I even considered asymmetrical protocols: client sends EDN (easy to parse in Clojure), server sends JSON (easy to parse in Python). Not elegant, but, you know, gets the job done. In all these cases, messages are simple enough to be composed with string concatenation, and parsers are built-in and thus stdlib authors’ problem.
-
-Why EDN then? Mainly because I already had EDN parser (well, Clojure, but potato-potato notation). I don’t really support every feature or edge-case of EDN, just enough to parse a dictionary with some keywords and strings in it.
-
-I also don’t support streaming parsing (read from socket until form ends), so I have to rely on newlines to find message boundaries. If only TCP was message-oriented — one can dream!
-
-In the end, this is what my upgraded Socket Server REPL looks like on the wire:
+This is what my upgraded Socket Server REPL looks like on the wire:
 
 <figure><img src="./socket_sublime.png"></figure>
 
 Yes, it looks like nREPL over EDN.
 
-No, it’s not exactly nREPL, it’s subtly different, so there can be more chaos.
+No, it’s not exactly nREPL, it’s subtly different (see the server breakdown below), so there can be more chaos.
 
 Did I invent another wheel? Maybe. But it’s a good wheel and it suits my needs well.
 
-Also, the beauty of it is that it’s zero-dependency: you only need Clojure and nothing more. Everything I need I bring with me. 
+## A note on message boundaries
+
+Tricky part of EDN-on-the-wire? How to separate messages.
+
+Clojure has streaming parser: it consumes data from socket char-by-char and parses it as it goes, until it reads a complete form. That’s why, for example, you can’t eval something like `(+ 1 2` in the REPL, no matter how many times you press Enter.
+
+But my Python parser wasn’t streaming :( You give it a string, it’ll parse it. But it can’t tell you how much of that string to read from a socket. If only TCP was message-oriented — one can dream!
+
+So the solution was... split on newlines :) Lucky for me, default Clojure printer escapes newlines in strings, so it can’t occur inside the message.
+
+EDN doesn’t exacly forbid newlines, though, so let’s hope they won’t suddenly start to appear one day.
 
 # Server
 
@@ -268,7 +292,7 @@ Finally, third and final part of our achitecture: server. When I only started le
 
 Because of that ignorance, it was hard to me to understand why there are different REPL implementations and why do you need to “implement” REPL at all.
 
-Let’s go from simplest case to more harder ones.
+Let’s go from simplest case to more complex ones.
 
 ## Naive REPL
 
@@ -276,7 +300,9 @@ Funny enough, the function I showed you above works:
 
 <figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./repl_naive.mp4" type="video/mp4"></video></figure>
 
-It’s very fragile, though: it’ll die on the first exception. It also doesn’t manage your input/output streams, doesn’t isolate thread-local variables, doesn’t print your namespace, doesn’t provide interrupt, doesn’t print exceptions, doesn’t assign source code position, doesn’t create \*1, \*2, \*3 and \*e for you, and all these nice things which more sophisticated REPLs provide.
+It’s very fragile, though: it’ll die on the first exception.
+
+It also doesn’t do many things which you’ll see more sophisticated REPLs provide.
 
 ## clojure.main/repl
 
@@ -292,7 +318,7 @@ Which you can actually customize to your liking:
 
 <figure><img src="./repl_main_custom_prompt.png"></figure>
 
-Then, it catches and prints exceptions, so your REPL doesn’t die is you make a mistake:
+Then, it catches and prints exceptions, so your REPL doesn’t die when you make a mistake:
 
 <figure><img src="./repl_main_exception.png"></figure>
 
@@ -328,18 +354,126 @@ Really tricky stuff to figure out, but essential to understand if you consider y
 
 The rest is the same. Server REPL literally calls into `main/repl` after rebinding `*in*`/`*out*`/`*err*`.
 
-## clojure.core.server/prepl
+## clojure.core.server/io-prepl
 
+pREPL is Clojure team’s answer to nREPL and critique that Clojure Socket REPL is not machine-friendly. It’s basically `server/repl` but with EDN-formatted output:
 
+<figure><img src="./prepl.png"></figure>
 
-## Socket Server
+pREPL consumes raw Clojure forms but outputs EDN-structured data.
 
+In terms of what it does for you, it also formats exceptions (not in Clojure-aware way, unfortunately) and synchronizes your output so that two threads can’t print simultaneously. But that’s about it.
 
+The main problem with pREPL is that it’s based on EDN and, thus, aimed at Clojure clients first and foremost.
+
+## nREPL
+
+nREPL is a third-party server started by Chas Emerick and lately adopted by Bozhidar Batsov. It’s a separate library that you have to add to your project and start the server yourself.
+
+As Rich Hickey put it, ”[nREPL is not a REPL, it’s remote evaluation API](https://nextjournal.com/mk/rich-hickey-on-repls)”. He’s not wrong, but I think that’s exacly what tooling authors need: remote eval API, not interactive console.
+
+First, nREPL is machine-friendly both ways. It receives bencode-d data and sends bencode-d data back.
+
+Second, it walks an extra mile for you:
+
+- Its `eval` optionally accepts file name and position in that file, so that stacktraces would contain correct position.
+- It limits the size of the output to a user-provided threshold, saving you from printing infinite sequences which are not rare in Clojure.
+- It provides interruption for already executing evals.
+- Some of it functions like `lookup` and `load-file` solve problems  that their Clojure alternatives don’t.
+- Some are just conveniences like `completions`.
+- It’s extensible, allowing you to create your own operations.
+
+All this stuff is very useful and doesn’t come “naturally” with naive REPL implementations.
+
+The downside? You need to add nREPL server dependency to your app. It also has a noticeable startup cost (~500ms on my machine).
+
+## Extended nREPL
+
+Since nREPL is extensible, one can extend it to do even more. That’s what first version of Clojure Sublimed did and still does. Including:
+
+- Formating stacktraces in a Clojure-aware way and send them back with errors:
+
+<figure><img src="./cs_repl_stacktrace.png"></figure>
+
+- Parrallel evaluation and execution time:
+
+<figure><video autoplay="" muted="" loop="" preload="auto" playsinline="" controls><source src="./cs_repl_parallel.mp4" type="video/mp4"></video></figure>
+
+It worked well for me for 1.5 years, but still, you know, nREPL dependency, startup time, NIH syndrom. I wanted to give REPL a shot on my own.
+
+## REPL, upgraded
+
+Even the simplest REPL still has full power of Clojure in it! We can start with something very basic, like `server.repl`, send our own server’s code to it first thing after connect and then take control over stdin/stdout and start serving our own protocol with our own execution model.
+
+This is called “upgrading” your REPL and that’s how Christophe Grand’s Unrepl works, for example. The beauty of it is zero dependencies: you only need Clojure and nothing more. Everything you need you bring with you.
+
+In our case, it looks like this. First, we send a lot of Clojure code (unformatted, because machine doesn’t care):
+
+<figure><img src="./socket_snd.png"></figure>
+
+Then, we receive this:
+
+<figure><img src="./socket_rcv.png"></figure>
+
+Which basically means “Yes, I’ve heard you”.
+
+This is all happening inside basic `server/repl`. It looks messy beacuse it was designed for human consumption (eye-balling), and we don’t even try to interpret it. We just cross our fingers and hope everything we sent works.
+
+At this point, we’re ready to “upgrade” our REPL. This is how we do it:
+
+<figure><img src="./socket_started.png"></figure>
+
+`(repl)` is a function we defined in our initial payload. `{:tag :started}` is the first message of our own protocol. I really, really, really hope here that it will not be messed by other output (printing in Socket Server is not synchronized, and everyone who worked with Clojure REPL in terminal knows how often it messes up your output).
+
+After client sees `{:tag :started}` somewhere in the socket, it considers upgrade to be finished and now works in our own nREPL-like EDN-based protocol.
+
+## Clojure Sublimed REPL Server
+
+Our upgraded Clojure Sublimed REPL does all the same basic stuff that nREPL does. The only practical difference for clients is batch evaluation: send multiple forms together (e.g. when evaluating whole buffer) and get separate results for each one.
+
+nREPL eval-buffer:
+
+<figure><img src="./nrepl_batch_eval.png"></figure>
+
+Clojure Sublimed eval-buffer:
+
+<figure><img src="./cs_repl_batch_eval.png"></figure>
+
+Under-the-hood, though, it’s a completely new REPL. It sits on top of Socket Server, yes, but it has its own evaluation model and its own protocol. It’s clean, minimal, fast to load and works much better with Clojure Sublimed client than nREPL.
+
+I don’t want to release yet separately from Clojure Sublimed (yet?), but, you know, take a peek [at the implementation](https://github.com/tonsky/Clojure-Sublimed/blob/master/src_clojure/clojure_sublimed/socket_repl.clj) anyway.
+
+## Your own REPL!
+
+Original version of Clojure Sublimed (client) was organized quite poorly and adding new REPLs was problematic.
+
+New, refactored Clojure Sublimed was designed to be easy to extend. Out of the box, we shit with these now:
+
+- JVM nREPL which installs a few extra middlewares.
+- (new) Raw nREPL for non-JVM environments (babashka, etc).
+- Shadow-CLJS nREPL which (now) adapts better to shadow-cljs quirks.
+- (new) JVM Socket REPL which works on top of bare-bone Clojure Socket Server.
+
+And there could be more! If you are interested, let me know or, better, jump in with a PR! I promise, it should be much easier now. I even wrote docstrings <strike>everywhere</strike> at some places :)
+
+# Conclusion
+
+So, Clojure Sublimed v3 is out there. To sum up the major differences:
+
+- REPL doesn’t depend on syntax highlighting,
+- new JVM Socket REPL,
+- easier to add new REPLs,
+- client-side pretty-printer,
+- faster indenter and formatter.
+
+As always, you can get new version in [Package Control](https://packagecontrol.io/packages/Clojure%20Sublimed) or on Github:
+
+<figure><a href="https://github.com/tonsky/Clojure-Sublimed"><img src="./banner.png"></a></figure>
+
+Let me know what you think! Issues are open :) And happy Clojur-ing!
 
 # You were going to ask anyway
 
-Curious what color scheme do I use? Check out my new repo, [tonsky/sublime-color-schemes](https://github.com/tonsky/sublime-color-schemes/).
+Color scheme: [Niki Berkeley](https://github.com/tonsky/sublime-color-schemes/).
 
-I know, it looks like pain for the eyes. I made it as a joke, but suddenly started to like it a lot and have been using it for the past two months.
-
-The font is [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/).
+Font on screenshots: [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono/).
