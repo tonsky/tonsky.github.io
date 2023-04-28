@@ -12,7 +12,7 @@ I haven’t decided on anything for Humble UI yet, let’s say I’m in an exper
 
 This is a compilation of my research so far.
 
-# Object-oriented user interface
+# Object-oriented user interface (OOUI)
 
 Classic UIs like Swing, original native Windows/macOS APIs and the browser’s DOM are all implemented in an OOP manner: components are objects and they have methods: `addChild`, `removeChild`, `render`. That fits so well, actually, that you might think OOP was invented specifically for graphical UIs.
 
@@ -89,11 +89,11 @@ Remember — components are values, so the `body` reference will stay the same a
 
 This is both good and bad: it works, but it’s kinda backward (you wouldn’t want to write your UI this way).
 
-It also creates very confusing “owning” semantics. Like, who should “unmount” the `body` in that case? Padding? Dynamic? Neither of them, because `body` technically outlives them both. But then, they have no way of knowing this.
+It also creates very confusing “owning” semantics. Like, who should “unmount” the `body` in that case? Should it be `padding`? Or `dynamic`? Actually, it can be neither of them, because `body` outlives them both, and they have no way of knowing this.
 
 Why is it a problem? Stateful components. If I throw away and re-create the text field, for example, it’ll lose selection, cursor position, scroll position, etc. Not good.
 
-Funny enough, in current implementation text fields ask you to hold their state for them because they have no place to put it reliably.
+Funnily enough, current implementation of text field asks you to hold its state because it has nowhere to put it reliably.
 
 But overall, we managed to get quite far with this approach and polish some stateful components, so I don’t consider it a waste.
 
@@ -188,21 +188,25 @@ If you, like me, ever wondered why didn’t browsers implement React natively so
 
 Declarative UIs are great but require a layer of real mutable widgets underneath. That means it’s all overhead, and all we can do is make it as small as possible.
 
-But we still want declarativity for its developer experience. We want to write more concise code and we don’t want to write update logic.
+But we still want declarativity, if only for developer experience alone. We want to write more concise code and we don’t want to write update logic.
 
 [As Raph Levien put it](https://raphlinus.github.io/ui/druid/2019/11/22/reactive-ui.html), “industry is fast converging on the reactive approach” (reactive/declarative, nobody knows what these words mean anymore). We are not going to argue with that.
 
 # Reconciliation
 
-In declarative frameworks, each component exists in two forms: a lightweight, user-generated description of it (React elements, Flutter Widgets, SwiftUI Views) and a “heavy” stateful counterpart (DOM nodes, Flutter RenderObjects).
+In declarative frameworks, each component exists in two forms: a lightweight, user-generated description of it (React elements, Flutter Widgets, SwiftUI Views, let’s call them VDOM) and a “heavy” stateful counterpart (DOM nodes, Flutter RenderObjects, “real DOM”).
 
-Reconciliation is a process of transforming the former into the latter. This gives up two main sources of overhead on top of OOUI: how much garbage do we generate and how fast can we reconcile it.
+Reconciliation is a process of transforming the former into the latter. This gives up two main sources of overhead on top of OOUI:
+
+1. Garbage. VDOM, while lightweight, still has allocates objects and needs to be cleaned up after reconciliation.
+
+2. Diffing. We need to figure out how much has changed. The less we do it, the faster our apps will be.
 
 # Full top-down reconciliation
 
 The simplest, but probably most wasteful, way is just to regenerate the entire UI _description_ on each frame. This is what Dear ImGui does, for example.
 
-The problem is that then you have to reconcile the whole tree, too. And if some parts of your UI take a lot of time to generate, sorry to be you, you can’t skip them.
+The problem is that then you have to reconcile the whole tree, too. And if some parts of your UI take a lot of time to generate — sorry to be you, you can’t skip them.
 
 Here’s a diagram of the full top-down reconciliation:
 
@@ -265,9 +269,11 @@ function TemperatureConverter() {
 }
 ```
 
-Notice that `CelsiusInput` state is declared in the parent component whose only purpose is to pass it to its sibling, `FahrenheitOutput`. Because of that, not only `CelsiusInput` and `FahrenheitOutput` will have to be re-rendered, but their parent `TemperatureConverter`, too.
+In this example, `TemperatureConverter` owns the mutable state and both `CelsiusInput` and `FahrenheitOutput` have a data dependency on it, received through properties.
 
-Another problem is that, because of the way React is written, the body of `TemperatureConverter` will be re-evaluated, which means, for example, a new instance of `handleCelsiusChange` will be created, even though it’s completely unnecessary.
+Intuitively it feels like `CelsiusInput` should own that state, but beacuse it’s used in its sibling, it has to be declared in the parent component. Because of that, not only `CelsiusInput` and `FahrenheitOutput` will have to be re-rendered, but their parent `TemperatureConverter`, too.
+
+Another problem is that, because `TemperatureConverter` is written as a single function, when `setCelsius` is called `TemperatureConverter` its entire body will be re-evaluated. This, for example, means that a new instance of `handleCelsiusChange` will be created, even though it’s completely unnecessary.
 
 These are two problems that frameworks like Svelte and SolidJS tried to solve: update as little as possible, only components that need to be updated and nothing more:
 
@@ -283,7 +289,9 @@ How do they do it? Well,
 
 What’s the incrementalization framework? Imagine you compute a function once, but then are asked to compute it again, with slightly different inputs. If you store some partial computations somewhere and can do the computation faster a second time, if the input hasn’t changed too much, then you have an incremental function.
 
-Now, imagine you build your UI like this: you start with some data sources, like counter “signal” (same as a variable, but reactive). Then you derive some “computables” from it, like “counter squared”, which is, well, counter with square function applied to it. Finally, UI components that display counter state and its square could be further derived from those signals. Something like:
+The way Solid/Svelte solve re-evaluation problem is by rewriting your function body. They try to split it into isolated pieces and insert reactive callbacks where needed. I’m not sure I’m a huge fan of implicit rewrites, but the goal seems noble enough to pursue.
+
+Now, imagine you build your UI like this: you start with some data sources, like a `counter` signal (same as a variable, but reactive). Then you derive some computables from it, like `squared`, which is, well, counter with square function applied to it. Finally, UI components that display `counter` and `squared` could be further derived from those signals. Something like:
 
 ```
 const counter      = reactive(0);
@@ -299,13 +307,13 @@ This creates an acyclic dependency graph like this:
 
 <figure><img src="./reactively.png"></figure>
 
-which can be efficiently updated. For example, if we bump `counter`, it will trigger `squared` and `counterLabel` update. `squared` will trigger `squaredLabel` update. Both `counterLabel` and `squaredLabel` could be effects that update their corresponding DOM node, but the return value is the same — they return exactly the same node their work with, so they won’t trigger further updates at all: app structure is static and doesn’t need to be revisited.
+which can be efficiently updated. For example, if we bump `counter`, it will trigger updates of `squared` and `counterLabel`. Then `squared` will trigger an update of `squaredLabel`. Both `counterLabel` and `squaredLabel` could be effects that update their corresponding DOM node, but the return value is the same — they return exactly the same node their work with, so they won’t trigger further updates at all: app structure is static and doesn’t need to be revisited.
 
 This is the simplified and at the same time the most ideal case that we want to at least try to approach in Humble UI.
 
 # State management
 
-UI doesn’t exist in itself. Components on a screen represent some state (business model), but they often also have an internal state to keep track of (scroll position, selection, etc).
+UI’s don’t exist in isolation, they need to interact with larger program. Components on a screen represent some state (business model), but they often also have an internal state to keep track of (scroll position, selection, etc).
 
 In OOUI that wasn’t a problem: you just keep the state inside components. Each component is an object, state is just that object’s fields. As I said — OOP fits UI very nicely. And if the business model changes, well, you go and change your UI with `addNode`/`removeNode`/...
 
@@ -496,31 +504,33 @@ I guess the point here is that parent creates a child (and could do it condition
 
 Again, maybe it’s not a problem if each component would be a macro that evaluates its children separately from itself, but still tricky to think about.
 
-Think of it this way: some data flows from top to bottom, defining which components should be created. Then changes flow from leaves back to top. Sometimes change in a signal might invalidate both a leaf and its parent, and that parent might decide not to re-create said leaf! Sounds like a recipe for disaster.
+Think of it this way: some data flows from top to bottom, defining which components should be created. Then changes flow from leaves back to top. Sometimes change in a signal might invalidate both a leaf and its parent, and that parent might decide not to re-create said leaf! This could lead to some unnecessary evaluations if not handled properly.
 
 ## Component persistence
 
 One more example:
 
 ```
-(if @*errors
-  (ui/border 0xFF0000
-    (ui/text-field @*state))
-  (ui/border 0xCCCCCC
-    (ui/text-field @*state)))
+(ui/dynamic _ [has-errors? (boolean @*errors)]
+  (if has-errors?
+    (ui/border 0xFF0000
+      (ui/text-field @*state))
+    (ui/border 0xCCCCCC
+      (ui/text-field @*state))))
 ```
 
-Should these two text fields be different or the same? I mean, in our example we want them to be the same, but by construction, they are different _object instances_.
+Should these two text fields be different _objects_ or the same? I mean, in our example we want them to be the same, but by construction, they are different _object instances_.
 
 In React they will be the same, because React only cares about what you return and reconciles values, ignoring e.g. positional information or object instances.
 
 But then, we can trick React, too, to re-create text field:
 
 ```
-(if @*errors
-  (ui/border 0xFF0000
-    (ui/text-field @*state))
-  (ui/text-field @*state))
+(ui/dynamic _ [has-errors? (boolean @*errors)]
+  (if has-errors?
+    (ui/border 0xFF0000
+      (ui/text-field @*state))
+    (ui/text-field @*state)))
 ```
 
 Now, because the return structure is different, React will drop the previous instance of the text field and create a new one, even if we don’t want it. It’ll drop the state, too. If I understand this correctly, even keys wouldn’t help us in this case (Flutter seems to have `GlobalKey` for cases like this, though). 
@@ -529,10 +539,11 @@ When operating on heavy-weight components directly, we can do this transformatio
 
 ```
 (let [text-field (ui/text-field @*state)]
-  (if @*errors
-    (ui/border 0xFF0000
-      text-field)
-    text-field))
+  (ui/dynamic _ [has-errors? (boolean @*errors)]
+    (if has-errors?
+      (ui/border 0xFF0000
+        text-field)
+      text-field)))
 ```
 
 So it feels like this approach is a little bit more capable? I’m not sure how well it converts into that incremental dream, by the way.
