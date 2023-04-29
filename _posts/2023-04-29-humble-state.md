@@ -3,7 +3,6 @@ layout: post
 title: "Humble Chronicles: State Management"
 category: blog
 summary: "Search for the best state management solution for Humble UI"
-draft: true
 ---
 
 Recently I’ve been trying to improve state management and component API in Humble UI. For that, I’ve tried to read and compile all the possible known approaches and synthesize something from them.
