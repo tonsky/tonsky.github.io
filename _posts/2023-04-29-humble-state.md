@@ -553,7 +553,7 @@ React plays very well with live reload because it does its thing in runtime. Bas
 
 This property of React is very appealing. I’m not sure how development experience is with incremental frameworks that require additional compilation, but I assume it’s more complicated.
 
-Full restart is also an option, as long as it happens in the same JVM and allows you to keep at least an extrernal state intact. Luckily, Clojure works well for that.
+Full restart is also an option, as long as it happens in the same JVM and allows you to keep at least an external state intact. Luckily, Clojure works well for that.
 
 For example, after a certain threshold I switched from buffer evals for reload to full `tools.namespace` nuke & load because manual buffer evals were becoming too complex:
 
