@@ -1,3 +1,37 @@
+- date:    2021-12-13 00:00:00 +0000
+  title:   'Clojure Sublimed Logo'
+  id:      clojure-sublimed
+  url:     /design/#clojure-sublimed
+  src:     2021-12-clojure-sublimed.png
+  desc:    '<a href="https://github.com/tonsky/Clojure-Sublimed">Clojure Sublimed</a> is a Clojure development environment for Sublime Text.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-12-clojure-sublimed.png"></p>
+
+    <p><a href="https://github.com/tonsky/Clojure-Sublimed">Clojure Sublimed</a> is a Clojure development environment for Sublime Text.</p>
+
+- date:    2021-11-30 00:00:00 +0000
+  title:   'EQL Logo'
+  id:      eql
+  url:     /design/#eql
+  src:     2021-11-eql.svg
+  desc:    '<a href="https://edn-query-language.org/">EQL</a> is a declarative query language to make hierarchical (and possibly nested) selections of information.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-11-eql.svg"></p>
+
+    <p><a href="https://edn-query-language.org/">EQL</a> is a declarative query language to make hierarchical (and possibly nested) selections of information.</p>
+
+- date:    2021-11-24 00:00:00 +0000
+  title:   'clj-commons Logo'
+  id:      clj-commons
+  url:     /design/#clj-commons
+  src:     2021-11-clj-commons.svg
+  desc:    '<a href="https://github.com/clj-commons">clj-commons</a> is a community-led project to build up the supporting infrastructure around Clojure. Idea: Erik Assum.'
+  content: |-
+    <p><img src="https://tonsky.me/design/2021-11-clj-commons.svg"></p>
+
+    <p><a href="https://github.com/clj-commons">clj-commons</a> is a community-led project to build up the supporting infrastructure around Clojure. Idea: Erik Assum.</p>
+
+
 - date:    2021-06-30 00:00:00 +0000
   title:   'JWM Logo'
   id:      jwm

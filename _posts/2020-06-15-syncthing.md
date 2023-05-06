@@ -5,11 +5,12 @@ category: blog
 summary: "File synchronization can be fun and painless if you don’t have to deal with corporate bullshit."
 starred: true
 hackernews_id: 23537243
+hackernews_id_2: 29837696
 ---
 
 <figure>
     <img src="./cover.gif">
-    Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
+    Illustration by <a href="https://www.behance.net/julia_litvin" target="_blank">Yulia Prokopova</a>
 </figure>
 
 _Translations: [Russian](https://habr.com/ru/company/itelma/blog/550404/)_

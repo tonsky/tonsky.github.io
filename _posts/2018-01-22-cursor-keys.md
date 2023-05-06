@@ -9,11 +9,11 @@ starred: true
 
 *TL;DR Remap `CapsLock` + `IJKL` to act as cursor keys and teach yourself to use it*
 
-Have you ever wondered if default keyboard layout is optimal for today’s tasks? Modern keyboards inherit their design all the way back from early typewriters. Typewriters were optimized for, well, typing. That makes modern keyboards best optimized for typing too. With your hands in the _default position_ every letter and punctuation are easy to access.
+Have you ever wondered if the default keyboard layout is optimal for today’s tasks? Modern keyboards inherit their design all the way back from early typewriters. Typewriters were optimized for, well, typing. That makes modern keyboards best optimized for typing too. With your hands in the _default position_ every letter and punctuation are easy to access.
 
 <figure><img src="./normal_position.png" /></figure>
 
-But on modern computers you also need to move the cursor around. Typewriter didn’t have a cursor, so there were no buttons for it nor was there a good place saved for them. So, on computers cursor keys are put far away from the center.
+But on modern computers you also need to move the cursor around. The typewriter didn’t have a cursor, so there were no buttons for it nor was there a good place saved for them. So, on computers cursor keys are put far away from the center.
 
 <figure><img src="./far_away.png" /></figure>
 
@@ -37,7 +37,7 @@ This is what I did: I scripted `CapsLock+IJKL` to act as cursor keys system-wide
 
 <figure><img src="./remap.png" /></figure>
 
-Keyboard geeks know that CapsLock key is special: an absolutely useless key sitting on a home row, almost at the center, super easy to reach. How lucky are we to have it? And `IJKL` form nice “reverse T” shape that is natural to use.
+Keyboard geeks know that the CapsLock key is special: an absolutely useless key sitting on a home row, almost at the center, super easy to reach. How lucky are we to have it? And `IJKL` form a nice “reverse T” shape that is natural to use.
 
 ## How-to for macOS
 

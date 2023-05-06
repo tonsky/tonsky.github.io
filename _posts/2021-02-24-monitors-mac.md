@@ -30,53 +30,178 @@ Send a PR! Read the contribution guidelines at the end.
 
 This list is about supporting full 4k resolution (3840×2160) at 120Hz only! <span style="padding: 2px 6px; border-radius: 4px; background-color: #4dcf01;">Green</span> icon means this Mac can work with that display at 4k _and_ 120Hz. <span style="padding: 2px 6px; border-radius: 4px; background-color: #ff5835">Red</span> icon means it works, but in compromised settings (60 Hz, 1440p resolution).
 
-# The list
-
 ## <img src="mini_2018.png" height=32> <span>Mac mini 2018</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>ASUS ROG Swift PG32UQX</span></div>
 
-## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13", 2018)</span>
+## <img src="air_2018.png" height=32> <span>MacBook Air (Retina, 13-inch, 2018)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
-## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (13 inch, 2019)</span>
+## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (Retina, 13-inch, 2018)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG 32GQ950 UltraGear</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG TV 65NANO867NA</span></div>
+
+## <img src="mbp_13_2019.png" height=32> <span>MacBook Pro (13-inch, 2019)</span>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 ## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2019) w/ Radeon Pro 560X</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>ASUS ROG Strix XG27UQ</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
 
-<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B</span> (1440p @ 144Hz)</div>
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 34GN850-B (1440p @ 144Hz)</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>ASUS XG27UQ</span></div>
+## <img src="mp_2019.png" height=32> <span>Mac Pro (2019) w/ Radeon Pro 580X</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator X27</span></div>
+
+## <img src="mbp_15_2019.png" height=32> <span>MacBook Pro (15-inch, 2018) w/ Radeon Pro 560X</span>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Gigabyte M28U</span></div>
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U (4k @ 120Hz)</span></div>
 
 ## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5300M</span>
 
-<div class="row"><img src="works.png" height=64> <span>Acer NITRO V3 (XV273K Pbmiipphzx)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
-## <img src="mbp_16_2020.png" height=32> <span>Macbook Pro (16-inch, 2019) w/ Radeon 5500M</span>
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950</span></div>
 
-<div class="row"><img src="works.png" height=64> <span>ASUS XG27UQ</span></div>
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (65-inch, 2021)</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Samsung G70A 28" 4K 144 Hz</span></div>
+
+## <img src="mbp_16_2020.png" height=32> <span>MacBook Pro (16-inch, 2019) w/ Radeon Pro 5500M</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>ASUS ROG Strix XG27UQ</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG CX 4K OLED TV (55-inch, 2020)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>LG C1 4K OLED TV (2021) with <a href="https://en.j5create.com/products/jcc157">JCC157 cable</a></span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>Dell G3223Q</span></div>
+
+## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (Intel, 13-inch, 2020) </span>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB283K KV</span></div>
+
+## <img src="imac_2020.png" height=44> <span>iMac (2020) w/ Radeon Pro 5700 XT</span>
+
+<div class="row"><img src="works.png" height=64> <span>ASUS ProArt Display PA32UCG</span></div>
+
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M1, 2020)</span>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer XV273KPbmiipphzx</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV272K KV) only on Monterey</span></div>
 
-<div class="row"><img src="doesnt_work.png" height=64> <span>Acer Predator XB3 (XB273K GP)</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) only on Monterey</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator X27 (X27 bmiphzx)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>ASUS ROG Swift PG32UQX (144 Hz, VRR) only via DP</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG C1 4K OLED TV (MacOS only support HDMI 2.0)</span></div>
 
 ## <img src="air_2020.png" height=32> <span>MacBook Air (M1, 2020)</span>
 
-<div class="row"><img src="works.png" height=64> <span>ASUS PG27UQ</span></div>
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx) only on Monterey</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>ASUS ROG Swift PG27UQ</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Asus ROG Swift PG32UQ (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U (4k @ 144Hz)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GN950-B</span></div>
+
+<div class="row"><img src="doesnt_work.png" height=64> <span>LG CX 4K OLED TV (55-inch, 2020)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Dell G3223Q</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Samsung G70A 28" (4K @ 144 Hz)</span></div>
+
+## <img src="mbp_13_2020.png" height=32> <span>MacBook Pro (M1, 2020)</span>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
+
+## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Pro, 14-inch, 2021)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV3 (XV273K Pbmiipphzx)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte AORUS FI32U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB3 (XB273K GP) (4k @ 120Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Predator XB283K KVbmiipruzx (4k @ 144Hz)</span></div>
+
+## <img src="mbp_14_2021.png" height=32> <span>MacBook Pro (M1 Max, 14-inch, 2021)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Samsung G70A 28" (4K @ 144 Hz)</span></div>
+
+## <img src="mbp_16_2021.png" height=32> <span>MacBook Pro (M1 Pro, 16-inch, 2021)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M28U</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV282K KVbmiipruzx) (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Samsung Odyssey G7 S28AG70 (4k @ 144Hz)</span></div>
+
+## <img src="mbp_16_2021.png" height=32> <span>MacBook Pro (M1 Max, 16-inch, 2021)</span>
+
+<div class="row"><img src="works.png" height=64> <span>LG UltraGear 27GP950-B (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Gigabyte M32U (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Asus ROG Swift PG32UQ (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Samsung Odyssey Neo G7 S32BG75 (4k @ 120Hz)</span></div>
+
+## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Max, 2022)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Acer Nitro XV2 (XV282K KVbmiipruzx) (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Asus ROG Swift PG32UQ (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>Japannext GX28 (4k @ 144Hz)</span></div>
+
+## <img src="studio_2022.png" height=32> <span>Mac Studio (M1 Ultra, 2022)</span>
+
+<div class="row"><img src="works.png" height=64> <span>2 ×
+Gigabyte M32U (4k @ 144Hz)</span></div>
+
+## <img src="air_2022.png" height=32> <span>MacBook Air (M2, 2022)</span>
+
+<div class="row"><img src="works.png" height=64> <span>GIGABYTE M32U</span></div>
 
 # How to contribute?
 

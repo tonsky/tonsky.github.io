@@ -18,7 +18,7 @@ starred: true
 
 <figure class="w768">
   <img src="./00_cover.png" />
-  Illustration by <a href="https://www.behance.net/yuliaprokopova" target="_blank">Yulia Prokopova</a>
+  Illustration by <a href="https://www.behance.net/julia_litvin" target="_blank">Yulia Prokopova</a>
 </figure>
 
 Github design is pretty good: it gets the job done, it’s clean, has consistent visual language, its design is calm and suitable for everyday use.
