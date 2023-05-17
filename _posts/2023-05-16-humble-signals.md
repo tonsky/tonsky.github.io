@@ -187,7 +187,7 @@ One can imagine that we’ll need incremental versions of `filter`, `concat`, `r
 
 One important feature we’re missing in our incremental framework is effects.
 
-We implement mixed push/pull model: recalculating values is lazy (not done until explicitly requested), but marking as dirty is eager (immediate dependencies are marked as `:dirty` and their transitive deps are marked with `:check`, which means might or might not be dirty):
+We implement a mixed push/pull model: recalculating values is lazy (not done until explicitly requested), but marking as dirty is eager (immediate dependencies are marked as `:dirty` and their transitive deps are marked with `:check`, which means might or might not be dirty):
 
 ```
 (s/defsignal *a
@@ -229,7 +229,7 @@ Or for us visual thinkers:
 
 For details, see [Reactively algorithm description](https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph#reactively).
 
-Effect is basically a signal that watches when it gets marked `:check` (something down the deps tree has changed) and forces its dependencies to see if any of them are actually `:dirty`. If any of them are, it evaluates its body:
+An effect is a signal that watches when it gets marked `:check` (something down the deps tree has changed) and forces its dependencies to see if any of them are actually `:dirty`. If any of them are, it evaluates its body:
 
 ```
 (s/defsignal *a
@@ -246,7 +246,7 @@ Effect is basically a signal that watches when it gets marked `:check` (somethin
 (s/reset! *a 6) ; => (no stdout: *b didn’t change)
 ```
 
-This is exactly what we need to schedule re-renders. We put effect as a downstream dependency to every signal that was read during the last `draw`. That means we’ll create an explicit dependency for everything that affected the final picture one way or another.
+This is exactly what we need to schedule re-renders. We put an effect as a downstream dependency on every signal that was read during the last `draw`. That means we’ll create an explicit dependency for everything that affected the final picture one way or another.
 
 <figure>
   <img src="./rendering1.png">
@@ -498,6 +498,61 @@ Alternatively, we might introduce a version of concat that accepts both signals 
        (ui/button ...)])))
 ```
 
+## Ambiguity
+
+It was not always clear to me which parts of the state should be signals and which should be values. Right now, for example, a list of todos is signal containing signals that point to todos:
+
+```
+(defn random-todo []
+  {:id       (rand-int 1000)
+   :checked? (rand-nth [true false])})
+
+(s/defsignal *todos
+  [(s/signal (random-todo))
+   (s/signal (random-todo))
+   (s/signal (random-todo))
+   ...])
+```
+
+This way list of todos could be decoupled from the todos themselves. When we add new todo, we need to change the list and generate a new component. But when an individual todo is e.g. toggled, it’s handled entirely inside and shouldn’t affect the list.
+
+I guess this solution is okay, although double-nested mutable structures do give me pause.
+
+Could the same be done “single atom”-style? Probably, with some sort of keyed map operator and lenses?
+
+```
+(s/defsignal *todos
+  [(random-todo)
+   (random-todo)
+   (random-todo)
+   ...])
+
+(def *todo-0
+  (s/signal
+    {:read  (nth @*todos 0)
+     :write #(s/update *todos assoc 0 %)}))
+```
+
+The same ambiguity problem happens here:
+
+```
+(s/defsignal *text
+  "Hello")
+  
+(ui/label *text)
+```
+
+or
+
+```
+(s/signal
+  (ui/label @*text))
+```
+
+Should I use a label that contains a signal or a signal that contains a label? Both are viable.
+
+This is not necessarily a problem, just an observation. I guess I prefer Python’s “There should be one—and preferably only one—obvious way to do it” to Perl’s “There’s more than one way to do it”.
+
 ## Repeating computations
 
 I have a few constants defined in my app, including `*scale` (UI scale, e.g. `2.0` on Retina) and `*padding` (in logical pixels, e.g. `10`).
@@ -622,6 +677,8 @@ But it seems that the stakes are not that high: the worst that could happen is y
 ## Is there a deeper reason?
 
 There’s probably a good reason React won and FRP/incremental remain marginal technologies that have been tried dozens of times. I understand the appeal, but I also see how it’s not everybody’s cup of tea.
+
+OTOH, Reagent seems to be doing fine in Clojure land, although many people prefer to pair it with re-frame.
 
 ## Source code
 
