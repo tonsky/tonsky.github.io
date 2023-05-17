@@ -84,7 +84,7 @@ Now, our state might look somewhat like this:
 (s/defsignal *tab-content
   (column
     (ui/checkbox *checked?)
-    (when @*checked
+    (when @*checked?
       (ui/text-field *text))))
 
 (s/defsignal *app
@@ -130,7 +130,7 @@ If you pass `font-ui` as an argument to every component, it will create a false 
 
 In a perfect world, though, `font-ui` change should only affect components that _actually use_ that font. E.g. it shouldn’t affect paddings, backgrounds, or scrolls, but should affect labels and paragraphs.
 
-Well, incremental computation solves this problem beautifully! If you make your default font a singal, then only components that _actually read it_ will subscribe to its changes:
+Well, incremental computation solves this problem beautifully! If you make your default font a signal, then only components that _actually read it_ will subscribe to its changes:
 
 <figure>
   <img src="./drilling2.png">
@@ -185,7 +185,9 @@ One can imagine that we’ll need incremental versions of `filter`, `concat`, `r
 
 # Effects
 
-One important feature we’re missing in our incremental framework is effects. Basically, signals in our model are lazy: unless you dereference them, their value is not computed:
+One important feature we’re missing in our incremental framework is effects.
+
+We implement mixed push/pull model: recalculating values is lazy (not done until explicitly requested), but marking as dirty is eager (immediate dependencies are marked as `:dirty` and their transitive deps are marked with `:check`, which means might or might not be dirty):
 
 ```
 (s/defsignal *a
@@ -197,13 +199,19 @@ One important feature we’re missing in our incremental framework is effects. B
 (s/defsignal *c
   (+ 100 @*b))
 
-(:state *b) ; => :clean
-(:value *b) ; => :11
+@*a ; => 1
+@*b ; => 11
+@*c ; => 111
 
-(reset! *a 2)
+(:state *b) ; => :clean
+(:value *b) ; => 11
+
+(s/reset! *a 2)
 
 (:state *b) ; => :dirty
 (:value *b) ; => 11
+(:state *c) ; => :check
+(:value *c) ; => 111
 
 @*b ; => 12
 
@@ -219,9 +227,9 @@ Or for us visual thinkers:
   <img src="./lazyness.png">
 </figure>
 
-This is a lazy/pull model with an eager push step for marking parts of the graph that might have changed.
+For details, see [Reactively algorithm description](https://dev.to/modderme123/super-charging-fine-grained-reactive-performance-47ph#reactively).
 
-For rendering, we have a special type of signal that triggers every time its dependencies _might_ have changed:
+Effect is basically a signal that watches when it gets marked `:check` (something down the deps tree has changed) and forces its dependencies to see if any of them are actually `:dirty`. If any of them are, it evaluates its body:
 
 ```
 (s/defsignal *a
@@ -230,15 +238,15 @@ For rendering, we have a special type of signal that triggers every time its dep
 (s/defsignal *b
   (mod @*a 3))
 
-(effect [*b]
-  (pritnln @*a "mod 3 =" @*b))
+(s/effect [*b]
+  (println @*a "mod 3 =" @*b))
 
-(reset! *a 2) ; => "2 mod 3 = 2"
-(reset! *a 3) ; => "3 mod 3 = 0"
-(reset! *a 6) ; => (no stdout: *b didn’t change)
+(s/reset! *a 2) ; => "2 mod 3 = 2"
+(s/reset! *a 3) ; => "3 mod 3 = 0"
+(s/reset! *a 6) ; => (no stdout: *b didn’t change)
 ```
 
-The solution is simple: we put effect as a downstream dependency to every signal that was read during the last `draw`. That means we’ll create an explicit dependency for everything that affected the final picture one way or another.
+This is exactly what we need to schedule re-renders. We put effect as a downstream dependency to every signal that was read during the last `draw`. That means we’ll create an explicit dependency for everything that affected the final picture one way or another.
 
 <figure>
   <img src="./rendering1.png">
@@ -266,7 +274,7 @@ Well, due to the nature of signals, they actually keep references to both upstre
   <img src="./dangling_signal.png">
 </figure>
 
-We can introduce `dispose` method that could be called to unregister itself from upstream, but nobody can guarantee that users will call that in time. It’s so easy to accidentally lose a reference in garbage-collected language!
+We can introduce `dispose` method that could be called to unregister itself from upstream, but nobody can guarantee that users will call that in time. It’s so easy to accidentally lose a reference in a garbage-collected language!
 
 And this is what I am struggling with. The signal network _has_ to be dynamic. Meaning, new dependencies will come and go. But de-registering something doesn’t really feel natural in Clojure or even Java code, and there’s no way to enforce that every resource that is no longer needed will be properly disposed of.
 
@@ -393,7 +401,13 @@ The problem is, we over-depend here: we only use `:id` from `*todo` but we depen
 
 which seems a bit too tedious to write. It probably doesn’t matter all that much in this particular case, but what if computations are more expensive?
 
-My point is: it’s too easy to make this mistake.
+My point is: it’s too easy to make this mistake. 
+
+Ambrose Bonnaire-Sergeant has pointed out that Reagent and CljFX solve this by providing an explicit API:
+
+```
+@(subscribe [:items])
+```
 
 ## Dependency at the wrong time
 
