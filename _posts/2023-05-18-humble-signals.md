@@ -3,7 +3,6 @@ layout: post
 title: "Humble Chronicles: Managing State with Signals"
 category: blog
 summary: "An experiment of using incremental computations for managing state in Humble UI"
-draft: true
 ---
 
 After [the previous post](https://tonsky.me/blog/humble-state/), I figured that the best way to decide on the direction for Humble UI is to make an experiment. 
