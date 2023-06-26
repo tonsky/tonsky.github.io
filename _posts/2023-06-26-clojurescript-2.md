@@ -12,15 +12,15 @@ Quick context:
 - Clojure is a modern Lisp.
 - ClojureScript is a Clojure dialect that compiles to JS.
 - From its very beginning, it relied on the Google Closure compiler in an elaborate plan to confuse people with Clojure/Closure naming (joking).
-- It has two important compilation modes: simple and advanced.
-- Simple is what you are supposed to develop with.
-- Advanced is what you ship: smaller bundle size, stripped of unused code, better performance, worse stacktraces.
+- It has two important compilation modes: `:none` and `:advanced`.
+- `:none` is what you are supposed to develop with.
+- `:advanced` is what you ship: smaller bundle size, stripped of unused code, better performance, worse stacktraces.
 
-So, I was complaining about compilation times and ergonomics of using `:advanced` mode and other devs could not understand me. Apparently, they all work in `:simple` and their experience is much better.
+So, I was complaining about compilation times and ergonomics of using `:advanced` mode and other devs could not understand me. Apparently, they all work in `:none` and their experience is much better.
 
 This is where an interesting chain of cause and effect starts that leads (in my opinion) to what ultimately should become ClojureScript 2.0.
 
-You see, the very existence of `:advanced` mode means you can’t really develop in `:simple`.
+You see, the very existence of `:advanced` mode means you can’t really develop in `:none`.
 
 I know, sounds like clickbait. Let’s unpack.
 
@@ -78,11 +78,11 @@ What I’m saying is: since we are not getting into really super-small, super hi
 
 Is there really a difference between, say, a 500k bundle and a 1M bundle? A practical one? One that users will definitely notice in a meaningful way?
 
-# Why not just always use simple mode?
+# Why not just always use `:none` mode?
 
 It might seem that having more options is always better. Hey, do you want small bundle sizes and good perf? We got you covered. Great dev experience? We’ve got you too!
 
-And that is partially true. For app developers, at least. I think some people just ship `:simple` mode and it works for them. Why wouldn’t it?
+And that is partially true. For app developers, at least. I think some people just ship `:none` mode and it works for them. Why wouldn’t it?
 
 For library authors, it’s worse. Because `:advanced` mode exists, just the fact of its existence, means we have to take it into account. We don’t really get to choose. People use it → we have to support it. In some sense having more options made life harder for us.
 
