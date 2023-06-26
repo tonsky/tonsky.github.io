@@ -3,7 +3,6 @@ layout: post
 title: "A case for ClojureScript 2.0"
 category: blog
 summary: "Innocent early design decision that led to a disaster years later"
-draft: true
 ---
 
 I was [complaining the other day](https://twitter.com/nikitonsky/status/1671532290172649479) about the ergonomics of ClojureScript and realized an interesting thing.
@@ -111,7 +110,7 @@ So what am I proposing? Basically,
 2. Move whatever performance optimizations it does into the ClojureScript compiler. Or accept that it’ll be slightly slower.
 3. Use whatever bundler JS people use. Even if it outputs larger bundles. It’s okay, ClojureScript is already pretty thick anyways. The important part is that it should only make safe transformations and not try to destroy your code.
 
-JS is an ecosystem. A strange one, but a huge one, too. So it was a very strange choice to ignore it completely or make it really hard to use. One of the selling of JVM Clojure always was: to use whatever Java libraries you need. Using Java from Clojure is easier than from Java (not kidding).
+JS is an ecosystem. A strange one, but a huge one, too. So it was a very strange choice to ignore it completely or make it really hard to use. One of the selling points of JVM Clojure always was: to use whatever Java libraries you need. Using Java from Clojure is easier than from Java (not kidding).
 
 Whereas in ClojureScript it’s more like: don’t use JS libraries. It’s very hard. There are a million “buts”. Are you in node or a browser?
 
