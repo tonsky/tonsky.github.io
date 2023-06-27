@@ -3,6 +3,7 @@ layout: post
 title: "A case for ClojureScript 2.0"
 category: blog
 summary: "Innocent early design decision that led to a disaster years later"
+reddit_url: "https://www.reddit.com/r/Clojure/comments/14jfs48/comment/jplxjm3/"
 ---
 
 I was [complaining the other day](https://twitter.com/nikitonsky/status/1671532290172649479) about the ergonomics of ClojureScript and realized an interesting thing.
