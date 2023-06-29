@@ -127,7 +127,7 @@ What’s important is what we’ll gain:
 
 Ease of Mind.<br><br>
 
-Hapiness.</center>
+Happiness.</center>
 
 I fell in love with Clojure because of how simple everything was. To this day I’m still reflecting on how the same things are unnecessarily complicated in other languages.
 
