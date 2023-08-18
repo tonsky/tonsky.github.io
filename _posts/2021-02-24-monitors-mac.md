@@ -205,6 +205,13 @@ Gigabyte M32U (4k @ 144Hz)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>GIGABYTE M32U</span></div>
 
+## <img src="mini_2018.png" height=32> <span>Mac mini (M2, 2023)</span>
+
+<div class="row"><img src="works.png" height=64> <span>Dell G3223Q (4k @ 144Hz)</span></div>
+
+<div class="row"><img src="works.png" height=64> <span>
+Gigabyte M32U (4k @ 144Hz)</span></div>
+
 # How to contribute?
 
 If you have a combination of 4k monitor with 120+ Hz refresh rate and a Mac that’s not listed here, please [open a PR](https://github.com/tonsky/tonsky.github.io) (don’t worry about graphics/icons, I can add those myself).
