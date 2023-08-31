@@ -205,6 +205,8 @@ Gigabyte M32U (4k @ 144Hz)</span></div>
 
 <div class="row"><img src="works.png" height=64> <span>GIGABYTE M32U</span></div>
 
+<div class="row"><img src="works.png" height=64> <span>LG OLED42C29LB (2022) with <a href="https://www.cablematters.com/pc-1372-124-usb-c-to-8k-hdmi-cable.aspx">TB4 -> HDMI 2.1 Adapter-Cable</a> + custom Firmware by Cable Matters</span></div>
+
 ## <img src="mini_2018.png" height=32> <span>Mac mini (M2, 2023)</span>
 
 <div class="row"><img src="works.png" height=64> <span>Dell G3223Q (4k @ 144Hz)</span></div>
